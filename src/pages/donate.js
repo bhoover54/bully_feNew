@@ -1,13 +1,15 @@
-import { useState } from "react"
+// import { useState } from "react"
 import { useForm } from "react-hook-form"
+import { Col, Row, Input, Button } from "reactstrap"
+import useSchool from "../hooks/school.hook"
 import BASE_URL from "../misc/url"
 
 const Donate = () => {
   const { register, handleSubmit } = useForm()
-  const [schoolId, setSchoolId] = useState("")
+  const { school } = useSchool()
 
   const submit = async (data) => {
-    const response = await fetch(`${BASE_URL}donate/school/${schoolId}`, {
+    const response = await fetch(`${BASE_URL}donate/school`, {
       method: "POST",
       body: JSON.stringify(data),
       headers: new Headers({
@@ -23,18 +25,50 @@ const Donate = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(submit)}>
-      <input type="text" placeholder="Full Name" {...register("name")} />
-      <br />
-      <input type="email" placeholder="email" {...register("email")} />
-      <br />
-      <input type="text" placeholder="Amount" {...register("amount")} />
-      <br />
+    <Row>
+      <Col md="6" className="mx-auto mb-5">
+        <form onSubmit={handleSubmit(submit)}>
+          <Input type="select" {...register("school_id")} className="shadow-none mb-3 ">
+            <option>select</option>
+            {school.length
+              ? school.map(
+                  (e) =>
+                    e.approved === "approved" && (
+                      <option value={e.id}>
+                        {e.school_name} {e.zipCode}
+                      </option>
+                    )
+                )
+              : ""}
+          </Input>
+          <Input
+            bsSize="sm"
+            className="mb-3 shadow-none"
+            type="text"
+            placeholder="Full Name"
+            {...register("name")}
+          />
+          <Input
+            bsSize="sm"
+            className="mb-3 shadow-none"
+            type="email"
+            placeholder="email"
+            {...register("email")}
+          />
+          <Input
+            bsSize="sm"
+            className="mb-3 shadow-none"
+            type="text"
+            placeholder="Amount"
+            {...register("amount")}
+          />
 
-      <br />
-
-      <input type="submit" value="Donate" />
-    </form>
+          <Button bsSize="sm" color="dark" className="mb-3 shadow-none form-control" type="submit">
+            Donate
+          </Button>
+        </form>
+      </Col>
+    </Row>
   )
 }
 

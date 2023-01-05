@@ -1,8 +1,11 @@
-import { useForm } from "react-hook-form"
+import { useForm, Controller } from "react-hook-form"
+import { useNavigate } from "react-router-dom"
 import BASE_URL from "../misc/url"
+import { Button, Col, Input, Row } from "reactstrap"
 
 const Register = () => {
-  const { register, handleSubmit } = useForm()
+  const { handleSubmit, control } = useForm()
+  const navigate = useNavigate()
   const submit = async (data) => {
     const response = await fetch(`${BASE_URL}signup`, {
       method: "POST",
@@ -14,27 +17,45 @@ const Register = () => {
     const result = await response.json()
     if (response.status < 400) {
       console.log(result)
-      return
+      navigate("/signin")
     }
     console.log(result)
   }
+
   return (
-    <form onSubmit={handleSubmit(submit)}>
-      <input type="text" placeholder="Fullname" {...register("fullName")} />
-      <br />
-      <input type="email" placeholder="email" {...register("email")} />
-      <br />
-      <input type="text" placeholder="country" {...register("country")} />
-      <br />
-      <input type="number" placeholder="Phone" {...register("phone")} />
-      <br />
-      <input type="password" placeholder="password" {...register("password")} />
-      <br />
-      {/* <input type="password" placeholder="confirm password" {...register} /> */}
-      <br />
-      <input type="submit" value="Sign In" />
-    </form>
+    <Row
+      style={{ minHeight: "100vh" }}
+      className="d-flex justify-content-center align-items-center"
+    >
+      <Col md="6" lg="3" className="mx-auto h-100 p-5 shadow rounded">
+        <form onSubmit={handleSubmit(submit)}>
+          <Icontroller name="fullName" placeholder="Fullname" control={control} />
+          <Icontroller name="email" placeholder="Email" type="email" control={control} />
+          <Icontroller name="country" placeholder="Country" control={control} />
+          <Icontroller name="phone" placeholder="Phone" type="number" control={control} />
+          <Icontroller name="password" placeholder="Password" type="password" control={control} />
+
+          <Button className="shadow-none mb-3 form-control" type="submit">
+            Sign In
+          </Button>
+        </form>
+      </Col>
+    </Row>
   )
 }
 
 export default Register
+
+export const Icontroller = ({ name, placeholder, control, type = "text" }) => {
+  return (
+    <>
+      <Controller
+        name={name}
+        control={control}
+        render={({ field }) => (
+          <Input {...field} placeholder={placeholder} className="shadow-none mb-3" type={type} />
+        )}
+      />
+    </>
+  )
+}
