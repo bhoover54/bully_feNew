@@ -41,7 +41,7 @@ const Nav = () => {
                     Sponsor
                   </Link>
                 </NavItem>
-                {role.length && (
+                {role && (
                   <>
                     <NavItem>
                       <Link to="/admin" className="nav-link">
