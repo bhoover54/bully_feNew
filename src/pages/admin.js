@@ -1,4 +1,5 @@
 import DataTable from "react-data-table-component"
+import { Col, Row, Button } from "reactstrap"
 import useSchool from "../hooks/school.hook"
 import BASE_URL from "../misc/url"
 
@@ -29,16 +30,37 @@ const Admin = () => {
       selector: (row) => row.school_name
     },
     {
-      name: "ZipCode",
-      selector: (row) => row.zipCode
+      name: "Zip Code",
+      selector: (row) => row.zip_code
+    },
+    {
+      name: "Business Name",
+      selector: (row) => row.business_name
+    },
+    {
+      name: "Business Email",
+      selector: (row) => row.business_email
+    },
+    {
+      name: "Business Mobile",
+      selector: (row) => row.business_mobile
+    },
+    {
+      name: "Business Type",
+      selector: (row) => row.business_type
+    },
+    {
+      name: "Business Website",
+      selector: (row) => row.business_website
     },
     {
       name: "Status",
-      //   selector: (row) => row.year,
       cell: (row) => (
         <>
           {row.approved === "pending" ? (
-            <button onClick={() => approve(row.id)}>approve</button>
+            <Button color="dark" onClick={() => approve(row.id)}>
+              Approve
+            </Button>
           ) : (
             row.approved
           )}
@@ -48,9 +70,13 @@ const Admin = () => {
   ]
 
   return (
-    <div>
-      <DataTable columns={columns} data={school} />
-    </div>
+    <Row>
+      <Col md="2">menu</Col>
+      {/* <Col md="1"></Col> */}
+      <Col md="10" className=" px-0 rounded shadow overflow-hidden">
+        <DataTable columns={columns} title="Registered Scools" pagination data={school} />
+      </Col>
+    </Row>
   )
 }
 

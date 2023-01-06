@@ -3,17 +3,21 @@ import { useForm } from "react-hook-form"
 import { getItem } from "../misc/helper"
 import BASE_URL from "../misc/url"
 import { Button, Col, Input, Row } from "reactstrap"
+import { Icontroller } from "./signup"
+import useSchool from "../hooks/school.hook"
 
 const Report = () => {
   const {
     register,
     handleSubmit,
+    control,
     reset,
     formState: { errors }
   } = useForm()
   const [upload, setUpload] = useState("")
   const [blob, setBlob] = useState("")
-
+  const { school, getSchools } = useSchool()
+  console.log(school)
   const preview = (e) => {
     const url = e.target.files[0]
     const blobUrl = URL.createObjectURL(url)
@@ -66,160 +70,67 @@ const Report = () => {
                 Your browser does not support HTML5 video.
               </video>
 
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="email"
-                name="email"
-                placeholder="email"
-                {...register("email", {
-                  pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-                })}
+              <Icontroller name="email" placeholder="Email" control={control} />
+              <Icontroller name="report_type" placeholder="Report Type" control={control} />
+              <Icontroller
+                name="school_name"
+                placeholder="School name"
+                control={control}
+                type="select"
+                opt={
+                  <>
+                    <option>select</option>
+                    {school.map((e) => (
+                      <option value={e.school_name}>
+                        {e.school_name} (zip code: {e.zip_code})
+                      </option>
+                    ))}
+                  </>
+                }
               />
-              {errors.email && "invalid email format"}
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="text"
-                placeholder="Report Type"
-                {...register("report_type")}
-              />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="text"
-                placeholder="Scool Name"
-                {...register("school_name")}
-              />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="text"
-                placeholder="Zip code"
-                {...register("zip_code")}
-              />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="text"
-                placeholder="Bully Teaher"
-                {...register("bully_teacher")}
-              />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="text"
-                placeholder="Bully First Name"
-                {...register("bully_fname")}
-              />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="text"
-                placeholder="Bully Last Name"
-                {...register("bully_lname")}
-              />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="text"
-                placeholder="Bully Gender "
-                {...register("bully_gender")}
-              />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="text"
-                placeholder="Bully Grade "
-                {...register("bully_grade")}
-              />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
+              {/* <Icontroller name="zip_code" placeholder="Zip code" control={control} /> */}
+              <Icontroller name="bully_teacher" placeholder="Bully Teacher" control={control} />
+              <Icontroller name="bully_fname" placeholder="Bully First Name" control={control} />
+              <Icontroller name="bully_lname" placeholder="Bully Last Name" control={control} />
+              <Icontroller name="bully_gender" placeholder="Bully Gender" control={control} />
+              <Icontroller name="bully_grade" placeholder="Bully Grade" control={control} />
+              <Icontroller
+                name="incident_date"
                 type="date"
-                placeholder="Incident Date"
-                {...register("incident_date")}
+                placeholder="Incident date"
+                control={control}
               />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
+              <Icontroller
+                name="incident_time"
                 type="time"
-                placeholder="Incident Time"
-                {...register("incident_time")}
+                placeholder="Incident time"
+                control={control}
               />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="text"
-                placeholder="Staff Presence?"
-                {...register("staff_witnessed")}
-              />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="text"
-                placeholder="Staff Name?"
-                {...register("staff_witness")}
-              />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="text"
-                placeholder="Staff Action?"
-                {...register("staff_action")}
-              />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="text"
-                placeholder="Incident Place?"
-                {...register("inceident_place")}
-              />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="text"
-                placeholder="Pysical Abused? "
-                {...register("physical_abuse")}
-              />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="text"
+              <Icontroller name="staff_witness" placeholder="Staff Name" control={control} />
+              <Icontroller name="staff_action" placeholder="Staff Action" control={control} />
+              <Icontroller name="inceident_place" placeholder="Incident Place?" control={control} />
+              <Icontroller name="physical_abuse" placeholder="Pysical Abused? " control={control} />
+              <Icontroller
+                name="victim_handicapped"
                 placeholder="Victim Hhandicapped? "
-                {...register("victim_handicapped")}
+                control={control}
               />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="text"
-                placeholder="Victim Younger? "
-                {...register("victim_younger")}
+              <Icontroller
+                name="victim_younger"
+                placeholder=" Victim Younger?  "
+                control={control}
               />
-
-              <Input
-                bsSize="sm"
-                className="mb-3 shadow-none"
-                type="text"
-                placeholder="Details? "
-                {...register("details")}
+              <Icontroller
+                name="details"
+                placeholder="Details?"
+                type="textarea"
+                control={control}
+              />
+              <Icontroller
+                name="other_incident"
+                placeholder="Other Incident?"
+                type="textarea"
+                control={control}
               />
 
               <Button

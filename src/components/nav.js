@@ -42,11 +42,18 @@ const Nav = () => {
                   </Link>
                 </NavItem>
                 {role === "ADMIN" && (
-                  <NavItem>
-                    <Link to="/admin" className="nav-link">
-                      Admin
-                    </Link>
-                  </NavItem>
+                  <>
+                    <NavItem>
+                      <Link to="/admin" className="nav-link">
+                        Admin
+                      </Link>
+                    </NavItem>
+                    <NavItem>
+                      <Link to="/uploads" className="nav-link">
+                        Uploads
+                      </Link>
+                    </NavItem>
+                  </>
                 )}
               </Nav2>
               <Nav2>

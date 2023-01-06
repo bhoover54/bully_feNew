@@ -46,14 +46,23 @@ const Register = () => {
 
 export default Register
 
-export const Icontroller = ({ name, placeholder, control, type = "text" }) => {
+export const Icontroller = ({ name, placeholder, control, type = "text", opt, defaultV }) => {
   return (
     <>
       <Controller
         name={name}
+        defaultValue={defaultV || ""}
         control={control}
         render={({ field }) => (
-          <Input {...field} placeholder={placeholder} className="shadow-none mb-3" type={type} />
+          <Input
+            {...field}
+            bsSize="sm"
+            placeholder={placeholder}
+            className="shadow-none mb-3"
+            type={type}
+          >
+            {opt}
+          </Input>
         )}
       />
     </>

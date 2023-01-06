@@ -8,6 +8,8 @@ import Report from "./pages/report"
 import Register from "./pages/signup"
 import Home from "./pages/home"
 import Nav from "./components/nav"
+import Upload from "./pages/video"
+import AdminReport from "./pages/admin-report"
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/sponsor" element={<Sponsor />} />
           <Route path="/report" element={<Report />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/uploads" element={<Upload />} />
+          <Route path="/admin/report" element={<AdminReport />} />
         </Route>
 
         <Route path="/signin" element={<Login />} />
