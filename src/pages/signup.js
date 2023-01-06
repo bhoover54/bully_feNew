@@ -16,10 +16,10 @@ const Register = () => {
     })
     const result = await response.json()
     if (response.status < 400) {
-      console.log(result)
+      //console.log(result)
       navigate("/signin")
     }
-    console.log(result)
+    //console.log(result)
   }
 
   return (

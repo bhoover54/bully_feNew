@@ -11,7 +11,7 @@ const Sponsor = () => {
   const [message, setMessage] = useState("")
 
   const search = async (data) => {
-    console.log(data, "working")
+    //console.log(data, "working")
     const response = await fetch(`${BASE_URL}school/filter`, {
       method: "POST",
       body: JSON.stringify(data),
@@ -22,7 +22,7 @@ const Sponsor = () => {
     })
     const result = await response.json()
     if (response.status < 400) {
-      console.log(result)
+      //console.log(result)
       if (!result.data) setMessage("school not sponsored by any business")
       else
         setMessage(
@@ -30,11 +30,11 @@ const Sponsor = () => {
         )
       reset()
     }
-    console.log(result)
+    //console.log(result)
   }
 
   const submitData = async (data) => {
-    console.log(data)
+    //console.log(data)
     const response = await fetch(`${BASE_URL}sponsor/school`, {
       method: "POST",
       body: JSON.stringify(data),
@@ -45,11 +45,11 @@ const Sponsor = () => {
     })
     const result = await response.json()
     if (response.status < 400) {
-      console.log(result)
+      //console.log(result)
       setMessage("school sponsored successful, awaiting approvals")
       reset2()
     }
-    console.log(result)
+    //console.log(result)
   }
 
   return (

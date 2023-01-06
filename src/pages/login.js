@@ -21,11 +21,11 @@ const Login = () => {
     if (response.status === 201) {
       setItem("bly_token", result.token)
       setItem("bly_role", result.role)
-      console.log(result, response.status)
+      //console.log(result, response.status)
       navigate("/sponsor", { replace: true })
       return
     }
-    console.log(result.message)
+    //console.log(result.message)
   }
 
   return (

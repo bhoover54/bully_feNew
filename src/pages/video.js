@@ -17,10 +17,10 @@ const Upload = () => {
     if (response.status < 400) {
       const result = await response.json()
       setFilter(result.data)
-      console.log(result)
+      //console.log(result)
       return
     }
-    console.log("error")
+    //console.log("error")
   }
 
   const findMatches = (e) => {

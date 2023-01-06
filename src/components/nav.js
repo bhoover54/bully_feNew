@@ -8,8 +8,8 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav as Nav2,
-  NavItem,
-  NavLink
+  NavItem
+  //   NavLink
 } from "reactstrap"
 const Nav = () => {
   const { token, logout, role } = useContext(AppContext)
@@ -41,11 +41,16 @@ const Nav = () => {
                     Sponsor
                   </Link>
                 </NavItem>
-                {role === "ADMIN" && (
+                {role.length && (
                   <>
                     <NavItem>
                       <Link to="/admin" className="nav-link">
                         Admin
+                      </Link>
+                    </NavItem>
+                    <NavItem>
+                      <Link to="/admin/report" className="nav-link">
+                        View Reports
                       </Link>
                     </NavItem>
                     <NavItem>

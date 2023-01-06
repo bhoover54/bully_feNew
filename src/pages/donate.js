@@ -1,16 +1,16 @@
 // import { useState } from "react"
 import { useForm } from "react-hook-form"
-import { Col, Row, Input, Button } from "reactstrap"
+import { Col, Row, Button } from "reactstrap"
 import useSchool from "../hooks/school.hook"
 import BASE_URL from "../misc/url"
 import { Icontroller } from "./signup"
 
 const Donate = () => {
-  const { register, handleSubmit, control, reset } = useForm()
+  const { handleSubmit, control, reset } = useForm()
   const { school } = useSchool()
 
   const submit = async (data) => {
-    console.log(data)
+    //console.log(data)
     const response = await fetch(`${BASE_URL}donate/school`, {
       method: "POST",
       body: JSON.stringify(data),
@@ -20,11 +20,11 @@ const Donate = () => {
     })
     const result = await response.json()
     if (response.status < 400) {
-      console.log(result)
+      //console.log(result)
       reset()
       return
     }
-    console.log(result)
+    //console.log(result)
   }
 
   return (

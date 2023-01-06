@@ -7,7 +7,7 @@ const Admin = () => {
   const { school, getSchools } = useSchool()
 
   const approve = async (id) => {
-    console.log(id)
+    //console.log(id)
     const response = await fetch(`${BASE_URL}approve/school/${id}`, {
       method: "PUT",
       body: JSON.stringify({}),
@@ -15,13 +15,13 @@ const Admin = () => {
         "Content-Type": "application/json"
       })
     })
-    const result = await response.json()
+    await response.json()
     if (response.status < 400) {
-      console.log(result)
+      //console.log(result)
       getSchools()
       return
     }
-    console.log(result)
+    //console.log(result)
   }
 
   const columns = [

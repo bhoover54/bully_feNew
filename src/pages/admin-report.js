@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react"
 import { Row, Modal, ModalHeader, ModalBody, ModalFooter, Button, Col } from "reactstrap"
 import BASE_URL from "../misc/url"
@@ -59,9 +60,9 @@ const AdminReport = () => {
 
     const result = await response.json()
     if (response.status === 200) {
-      console.log(result)
+      //   //console.log(result)
       setReports(result.data)
-      console.log(result, response.status)
+      //   //console.log(result, response.status)
     }
   }
 

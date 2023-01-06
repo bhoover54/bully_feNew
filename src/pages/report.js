@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { getItem } from "../misc/helper"
@@ -7,17 +8,11 @@ import { Icontroller } from "./signup"
 import useSchool from "../hooks/school.hook"
 
 const Report = () => {
-  const {
-    register,
-    handleSubmit,
-    control,
-    reset,
-    formState: { errors }
-  } = useForm()
+  const { handleSubmit, control, reset } = useForm()
   const [upload, setUpload] = useState("")
   const [blob, setBlob] = useState("")
   const { school, getSchools } = useSchool()
-  console.log(school)
+  //console.log(school)
   const preview = (e) => {
     const url = e.target.files[0]
     const blobUrl = URL.createObjectURL(url)
@@ -30,7 +25,7 @@ const Report = () => {
     formData.append("upload", upload)
     const j = Object.keys(data)
     j.forEach((e) => formData.append(e, data[e]))
-    console.log(formData)
+    //console.log(formData)
     const response = await fetch(`${BASE_URL}report`, {
       method: "POST",
       body: formData,
@@ -40,11 +35,11 @@ const Report = () => {
     })
     const result = await response.json()
     if (response.status === 200) {
-      console.log(result, response.status)
+      //console.log(result, response.status)
       setUpload("")
       reset()
     }
-    console.log(response.status)
+    //console.log(response.status)
   }
 
   return (
