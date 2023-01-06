@@ -43,7 +43,7 @@ const Sponsor = () => {
         "Authorization": `Bearer ${getItem("bly_token")}`
       })
     })
-    const result = await response.json()
+    await response.json()
     if (response.status < 400) {
       //console.log(result)
       setMessage("school sponsored successful, awaiting approvals")

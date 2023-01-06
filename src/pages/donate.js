@@ -18,7 +18,7 @@ const Donate = () => {
         "Content-Type": "application/json"
       })
     })
-    const result = await response.json()
+    await response.json()
     if (response.status < 400) {
       //console.log(result)
       reset()
