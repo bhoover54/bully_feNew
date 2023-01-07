@@ -48,7 +48,7 @@ const Nav = () => {
                         Admin
                       </Link>
                     </NavItem>
-                    <NavItem>
+                    {/* <NavItem>
                       <Link to="/admin/report" className="nav-link">
                         View Reports
                       </Link>
@@ -57,7 +57,7 @@ const Nav = () => {
                       <Link to="/uploads" className="nav-link">
                         Uploads
                       </Link>
-                    </NavItem>
+                    </NavItem> */}
                   </>
                 )}
               </Nav2>

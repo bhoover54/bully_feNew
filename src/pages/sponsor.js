@@ -109,7 +109,18 @@ const Sponsor = () => {
           <h4 className="mb-3">Sponsor School</h4>
           <form onSubmit={handleSubmit2(submitData)}>
             <Icontroller name="business_name" placeholder="Company name" control={control2} />
-            <Icontroller name="business_type" placeholder="Business Type" control={control2} />
+            <Icontroller
+              name="business_type"
+              placeholder="Business Type"
+              control={control2}
+              type="select"
+              opt={
+                <>
+                  <option></option>
+                  <option value="real estate">Real Estate</option>
+                </>
+              }
+            />
             <Icontroller
               name="business_email"
               type="email"
@@ -118,6 +129,7 @@ const Sponsor = () => {
             />
             <Icontroller
               name="business_mobile"
+              type="number"
               placeholder="Business phone number"
               control={control2}
             />
