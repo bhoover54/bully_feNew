@@ -1,11 +1,12 @@
 import { useForm } from "react-hook-form"
 import BASE_URL from "../misc/url"
 import { getItem, setItem } from "../misc/helper"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Button, Col, Row } from "reactstrap"
 import { Icontroller } from "./signup"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
+import AppContext from "../misc/appContext"
 
 const Sponsor = () => {
   const { handleSubmit, reset, control } = useForm()
@@ -14,7 +15,7 @@ const Sponsor = () => {
   const [message, setMessage] = useState("")
   const [found, setFound] = useState({})
   const [loading, setLoading] = useState(false)
-
+  const { token } = useContext(AppContext)
   const search = async (data) => {
     setLoading(true)
     const response = await fetch(`${BASE_URL}school/filter`, {
@@ -41,6 +42,10 @@ const Sponsor = () => {
   }
 
   const submitData = async (data) => {
+    if (!token) {
+      toast("sign in to sponsor a school")
+      return
+    }
     //console.log(data)
     const response = await fetch(`${BASE_URL}sponsor/school`, {
       method: "POST",
