@@ -26,11 +26,11 @@ const Nav = () => {
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
               <Nav2 className="me-auto" navbar>
-                <NavItem>
+                {/* <NavItem>
                   <Link className="nav-link" to="/donate">
                     Donate
                   </Link>
-                </NavItem>
+                </NavItem> */}
                 <NavItem>
                   <Link className="nav-link" to="/report">
                     Report
@@ -41,7 +41,7 @@ const Nav = () => {
                     Sponsor
                   </Link>
                 </NavItem>
-                {role && (
+                {role === "ADMIN" && (
                   <>
                     <NavItem>
                       <Link to="/admin" className="nav-link">

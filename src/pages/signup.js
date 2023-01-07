@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import BASE_URL from "../misc/url"
 import { Button, Col, Input, Row } from "reactstrap"
 import { useState } from "react"
+import { toast } from "react-toastify"
 
 const Register = () => {
   const { handleSubmit, control } = useForm()
@@ -19,9 +20,11 @@ const Register = () => {
     })
     await response.json()
     if (response.status < 400) {
-      //console.log(result)
-      navigate("/signin")
+      navigate("/sign up success")
+      toast("success")
+      return
     }
+    toast("problem signing up! try again latter")
     setLoading(false)
   }
 
@@ -65,22 +68,26 @@ export default Register
 export const Icontroller = ({ name, placeholder, control, type = "text", opt, defaultV }) => {
   return (
     <>
-      <Controller
-        name={name}
-        defaultValue={defaultV || ""}
-        control={control}
-        render={({ field }) => (
-          <Input
-            {...field}
-            bsSize="sm"
-            placeholder={placeholder}
-            className="shadow-none mb-3"
-            type={type}
-          >
-            {opt}
-          </Input>
-        )}
-      />
+      <div className="mb-2">
+        <label className="py-1">{placeholder}</label>
+        <Controller
+          name={name}
+          defaultValue={defaultV || ""}
+          control={control}
+          render={({ field }) => (
+            <Input
+              {...field}
+              // onChange={event}
+              bsSize="sm"
+              // placeholder={placeholder}
+              className="shadow-none"
+              type={type}
+            >
+              {opt}
+            </Input>
+          )}
+        />
+      </div>
     </>
   )
 }

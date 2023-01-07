@@ -10,6 +10,9 @@ import Home from "./pages/home"
 import Nav from "./components/nav"
 import Upload from "./pages/video"
 import AdminReport from "./pages/admin-report"
+import AdminSponsor from "./pages/admin-sponsors"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 function App() {
   return (
@@ -20,21 +23,18 @@ function App() {
           <Route path="/donate" element={<Donate />} />
           <Route path="/sponsor" element={<Sponsor />} />
           <Route path="/report" element={<Report />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/uploads" element={<Upload />} />
-          <Route path="/admin/report" element={<AdminReport />} />
+          <Route path="/admin" element={<Admin />}>
+            <Route index={true} element={<AdminSponsor />} />
+            <Route path="/admin/uploads" element={<Upload />} />
+            <Route path="/admin/report" element={<AdminReport />} />
+          </Route>
         </Route>
 
         <Route path="/signin" element={<Login />} />
         <Route path="/signup" element={<Register />} />
       </Routes>
 
-      {/* <Sponsor /> */}
-      {/* <Login /> */}
-      {/* <Report /> */}
-      {/* <Sponsor /> */}
-      {/* <Donate /> */}
-      {/* <Register /> */}
+      <ToastContainer autoClose={7000} hideProgressBar position="top-right" />
     </div>
   )
 }

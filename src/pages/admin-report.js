@@ -108,9 +108,8 @@ const AdminReport = () => {
   }, [])
   return (
     <Row>
-      <Col md="2"></Col>
-      <Col md="10" className=" px-0 rounded shadow overflow-hidden">
-        <DataTable columns={columns} data={reports} />
+      <Col className=" px-0 rounded shadow overflow-hidden">
+        <DataTable columns={columns} data={reports} title="Reports" />
       </Col>
       <Modal isOpen={modal} toggle={toggle} backdrop={backdrop}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>

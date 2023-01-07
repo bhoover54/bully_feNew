@@ -5,6 +5,7 @@ import { Button, Col, Row } from "reactstrap"
 import { Icontroller } from "./signup"
 import { useContext, useState } from "react"
 import AppContext from "../misc/appContext"
+import { toast } from "react-toastify"
 
 const Login = () => {
   const { handleSubmit, control } = useForm()
@@ -25,8 +26,10 @@ const Login = () => {
     if (response.status === 201) {
       loggedIn(result)
       navigate("/", { replace: true })
+      toast("login successful")
       return
     }
+    toast("invalid username or password")
     setLoading(false)
   }
 

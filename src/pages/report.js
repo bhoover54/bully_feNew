@@ -1,17 +1,24 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { getItem } from "../misc/helper"
 import BASE_URL from "../misc/url"
 import { Button, Col, Input, Row } from "reactstrap"
 import { Icontroller } from "./signup"
 import useSchool from "../hooks/school.hook"
+import { toast } from "react-toastify"
+import AppContext from "../misc/appContext"
+import { useNavigate } from "react-router-dom"
 
 const Report = () => {
   const { handleSubmit, control, reset } = useForm()
   const [upload, setUpload] = useState("")
+  const [loading, setLoading] = useState(false)
   const [blob, setBlob] = useState("")
   const { school, getSchools } = useSchool()
+  const { token, role } = useContext(AppContext)
+  const navigate = useNavigate()
   //console.log(school)
   const preview = (e) => {
     const url = e.target.files[0]
@@ -20,7 +27,15 @@ const Report = () => {
     setUpload(url)
   }
 
+  const getSigned = () => {
+    if (!token) {
+      navigate("/signin")
+      toast("login to send report")
+    }
+  }
+
   const report = async (data) => {
+    setLoading(true)
     const formData = new FormData()
     formData.append("upload", upload)
     const j = Object.keys(data)
@@ -33,14 +48,21 @@ const Report = () => {
         "Authorization": `Bearer ${getItem("bly_token")}`
       })
     })
-    const result = await response.json()
+    await response.json()
     if (response.status === 200) {
-      //console.log(result, response.status)
+      setLoading(false)
       setUpload("")
       reset()
+      toast("report sent succfullys")
+      return
     }
-    //console.log(response.status)
+    toast("unable to send report try again latter")
+    setLoading(false)
   }
+
+  useEffect(() => {
+    getSigned()
+  }, [])
 
   return (
     <Row>
@@ -74,7 +96,7 @@ const Report = () => {
                 type="select"
                 opt={
                   <>
-                    <option>select</option>
+                    <option></option>
                     {school.map((e) => (
                       <option value={e.school_name}>
                         {e.school_name} (zip code: {e.zip_code})
@@ -84,6 +106,7 @@ const Report = () => {
                 }
               />
               {/* <Icontroller name="zip_code" placeholder="Zip code" control={control} /> */}
+              <Icontroller name="zip_code" placeholder="Zip Code" control={control} />
               <Icontroller name="bully_teacher" placeholder="Bully Teacher" control={control} />
               <Icontroller name="bully_fname" placeholder="Bully First Name" control={control} />
               <Icontroller name="bully_lname" placeholder="Bully Last Name" control={control} />
@@ -130,6 +153,7 @@ const Report = () => {
 
               <Button
                 bsSize="sm"
+                disabled={loading}
                 color="dark"
                 className="mb-3 shadow-none form-control"
                 type="submit"

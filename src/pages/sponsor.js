@@ -1,17 +1,22 @@
 import { useForm } from "react-hook-form"
 import BASE_URL from "../misc/url"
-import { getItem } from "../misc/helper"
+import { getItem, setItem } from "../misc/helper"
 import { useState } from "react"
 import { Button, Col, Row } from "reactstrap"
 import { Icontroller } from "./signup"
+import { useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
 
 const Sponsor = () => {
   const { handleSubmit, reset, control } = useForm()
+  const navigate = useNavigate()
   const { handleSubmit: handleSubmit2, reset: reset2, control: control2 } = useForm()
   const [message, setMessage] = useState("")
+  const [found, setFound] = useState({})
+  const [loading, setLoading] = useState(false)
 
   const search = async (data) => {
-    //console.log(data, "working")
+    setLoading(true)
     const response = await fetch(`${BASE_URL}school/filter`, {
       method: "POST",
       body: JSON.stringify(data),
@@ -22,15 +27,17 @@ const Sponsor = () => {
     })
     const result = await response.json()
     if (response.status < 400) {
-      //console.log(result)
       if (!result.data) setMessage("school not sponsored by any business")
-      else
-        setMessage(
-          `${result.data.school_name} with zip code ${result.data.zip_code} is already sponsored by ${result.data.business_name}`
-        )
+      else {
+        setFound(result)
+      }
       reset()
+      toast.info("success")
+      setLoading(false)
+      return
     }
-    //console.log(result)
+    setLoading(false)
+    toast.info("not found")
   }
 
   const submitData = async (data) => {
@@ -59,6 +66,27 @@ const Sponsor = () => {
           <Col xs="12">
             <p className="my-3 text-center">{message}</p>
           </Col>
+        ) : (
+          ""
+        )}
+        {Object.keys(found).length ? (
+          <div className="text-center p-3 mb-5 shadow rounded">
+            {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is already
+            sponsored by {found.data.business_name} with sponsor balance of $
+            {found.data.wallet.balance}. <br />
+            <Button
+              className="text-decoration-none bg-transparent text-primary border-0"
+              onClick={() => {
+                setItem("s_sch", JSON.stringify(found.data))
+                navigate("/donate")
+                // console.log(found.data)
+              }}
+              disabled={loading}
+            >
+              Donate{" "}
+            </Button>
+            to school
+          </div>
         ) : (
           ""
         )}
