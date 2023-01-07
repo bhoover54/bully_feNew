@@ -57,11 +57,9 @@ const Sponsor = () => {
     })
     await response.json()
     if (response.status < 400) {
-      //console.log(result)
       setMessage("school sponsored successful, awaiting approvals")
       reset2()
     }
-    //console.log(result)
   }
 
   return (
@@ -75,13 +73,11 @@ const Sponsor = () => {
           ""
         )}
         {Object.keys(found).length ? (
-          <>
+          <div className="text-center p-3 mb-5 shadow rounded">
             {found.data.approved === "pending" ? (
-              <div className="text-center p-3 mb-5 shadow rounded">
-                {found.data.school_name.toUpperCase()} is pending approval
-              </div>
+              <> {found.data.school_name.toUpperCase()} is pending approval</>
             ) : (
-              <div className="text-center p-3 mb-5 shadow rounded">
+              <>
                 {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is
                 already sponsored by {found.data.business_name} with sponsor balance of $
                 {found.data?.wallet?.balance}. <br />
@@ -96,10 +92,10 @@ const Sponsor = () => {
                 >
                   Donate{" "}
                 </Button>
-                to school
-              </div>
+              </>
             )}
-          </>
+            to school
+          </div>
         ) : (
           ""
         )}
