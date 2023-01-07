@@ -28,10 +28,9 @@ function App() {
             <Route path="/admin/uploads" element={<Upload />} />
             <Route path="/admin/report" element={<AdminReport />} />
           </Route>
+          <Route path="/signin" element={<Login />} />
+          <Route path="/signup" element={<Register />} />
         </Route>
-
-        <Route path="/signin" element={<Login />} />
-        <Route path="/signup" element={<Register />} />
       </Routes>
 
       <ToastContainer autoClose={7000} hideProgressBar position="top-right" />

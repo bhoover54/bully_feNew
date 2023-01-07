@@ -34,14 +34,11 @@ const Login = () => {
   }
 
   return (
-    <Row
-      style={{ minHeight: "100vh" }}
-      className="d-flex justify-content-center align-items-center"
-    >
-      <Col md="6" lg="4" className="mx-auto h-100  p-5 shadow rounded">
-        <Link to="/" className="btn btn-info btn-sm text-dark fw-bold mb-3">
+    <Row style={{ minHeight: "70vh" }} className="d-flex justify-content-center align-items-center">
+      <Col md="6" lg="4" className="mx-auto  p-5 shadow rounded">
+        {/* <Link to="/" className="btn btn-info btn-sm text-dark fw-bold mb-3">
           home
-        </Link>
+        </Link> */}
         <form onSubmit={handleSubmit(login)}>
           <Icontroller name="email" type="email" placeholder="Email" control={control} />
           <Icontroller name="password" type="password" placeholder="Password" control={control} />

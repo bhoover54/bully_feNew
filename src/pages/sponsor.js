@@ -75,23 +75,31 @@ const Sponsor = () => {
           ""
         )}
         {Object.keys(found).length ? (
-          <div className="text-center p-3 mb-5 shadow rounded">
-            {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is already
-            sponsored by {found.data.business_name} with sponsor balance of $
-            {found.data.wallet.balance}. <br />
-            <Button
-              className="text-decoration-none bg-transparent text-primary border-0"
-              onClick={() => {
-                setItem("s_sch", JSON.stringify(found.data))
-                navigate("/donate")
-                // console.log(found.data)
-              }}
-              disabled={loading}
-            >
-              Donate{" "}
-            </Button>
-            to school
-          </div>
+          <>
+            {found.data.approved === "pending" ? (
+              <div className="text-center p-3 mb-5 shadow rounded">
+                {found.data.school_name.toUpperCase()} is pending approval
+              </div>
+            ) : (
+              <div className="text-center p-3 mb-5 shadow rounded">
+                {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is
+                already sponsored by {found.data.business_name} with sponsor balance of $
+                {found.data?.wallet?.balance}. <br />
+                <Button
+                  className="text-decoration-none bg-transparent text-primary border-0"
+                  onClick={() => {
+                    setItem("s_sch", JSON.stringify(found.data))
+                    navigate("/donate")
+                    // console.log(found.data)
+                  }}
+                  disabled={loading}
+                >
+                  Donate{" "}
+                </Button>
+                to school
+              </div>
+            )}
+          </>
         ) : (
           ""
         )}
