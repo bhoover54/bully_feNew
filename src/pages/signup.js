@@ -38,7 +38,6 @@ const Register = () => {
           <Icontroller name="first_name" placeholder="First Name" control={control} />
           <Icontroller name="last_name" placeholder="Last Name" control={control} />
           <Icontroller name="email" placeholder="Email" type="email" control={control} />
-          <Icontroller name="country" placeholder="Country" control={control} />
           <Icontroller name="phone" placeholder="Phone" type="number" control={control} />
           <Icontroller name="password" placeholder="Password" type="password" control={control} />
           <Button
