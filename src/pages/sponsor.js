@@ -92,9 +92,9 @@ const Sponsor = () => {
                 >
                   Donate{" "}
                 </Button>
+                to school
               </>
             )}
-            to school
           </div>
         ) : (
           ""
