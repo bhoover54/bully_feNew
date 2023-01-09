@@ -58,7 +58,7 @@ const Sponsor = () => {
     await response.json()
     if (response.status === 409) {
       toast("school already sponsored")
-      setMessage("school already sponsored")
+      setMessage("school already sponsored by another company")
       return
     }
     if (response.status < 400) {
