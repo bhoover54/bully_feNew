@@ -23,9 +23,9 @@ function App() {
           <Route path="/donate" element={<Donate />} />
           <Route path="/sponsor" element={<Sponsor />} />
           <Route path="/report" element={<Report />} />
+          <Route path="/uploads" element={<Upload />} />
           <Route path="/admin" element={<Admin />}>
             <Route index={true} element={<AdminSponsor />} />
-            <Route path="/admin/uploads" element={<Upload />} />
             <Route path="/admin/report" element={<AdminReport />} />
           </Route>
           <Route path="/signin" element={<Login />} />

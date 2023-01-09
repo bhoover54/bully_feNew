@@ -11,9 +11,6 @@ const Admin = () => {
         <Link to="/admin/report" className="d-block text-decoration-none text-dark py-2">
           Reports
         </Link>
-        <Link to="/admin/uploads" className="d-block text-decoration-none text-dark py-2">
-          Videos
-        </Link>
       </Col>
       {/* <Col md="1"></Col> */}
       <Col md="10">

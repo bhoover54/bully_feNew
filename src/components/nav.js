@@ -41,6 +41,12 @@ const Nav = () => {
                     Sponsor
                   </Link>
                 </NavItem>
+                <NavItem>
+                  <Link className="nav-link" to="/uploads">
+                    Video
+                  </Link>
+                </NavItem>
+
                 {role === "ADMIN" && (
                   <>
                     <NavItem>

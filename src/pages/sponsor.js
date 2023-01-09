@@ -56,6 +56,11 @@ const Sponsor = () => {
       })
     })
     await response.json()
+    if (response.status === 409) {
+      toast("school already sponsored")
+      setMessage("school already sponsored")
+      return
+    }
     if (response.status < 400) {
       setMessage("school sponsored successful, awaiting approvals")
       reset2()
@@ -103,7 +108,7 @@ const Sponsor = () => {
         <Col md="3" className="mb-5">
           <h4 className="mb-3">Search Sponsored School</h4>
           <form onSubmit={handleSubmit(search)}>
-            <Icontroller name="schoolName" placeholder="School name" control={control} />
+            <Icontroller name="school_name" placeholder="School name" control={control} />
             <Icontroller name="zip_code" placeholder="Zip code" control={control} />
 
             <Button type="submit" color="dark" size="sm">
