@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form"
 import BASE_URL from "../misc/url"
 import { getItem, setItem } from "../misc/helper"
 import { useContext, useState } from "react"
-import { Button, Col, Row } from "reactstrap"
+import { Button, Col, Input, Row } from "reactstrap"
 import { Icontroller } from "./signup"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
@@ -16,6 +16,9 @@ const Sponsor = () => {
   const [found, setFound] = useState({})
   const [loading, setLoading] = useState(false)
   const { token } = useContext(AppContext)
+  const [blob, setBlob] = useState("")
+  const [upload, setUpload] = useState("")
+
   const search = async (data) => {
     setLoading(true)
     const response = await fetch(`${BASE_URL}school/filter`, {
@@ -55,16 +58,26 @@ const Sponsor = () => {
         "Authorization": `Bearer ${getItem("bly_token")}`
       })
     })
+
     await response.json()
     if (response.status === 409) {
       toast("school already sponsored")
       setMessage("school already sponsored by another company")
+      setUpload("")
+      setBlob("")
       return
     }
     if (response.status < 400) {
       setMessage("school sponsored successful, awaiting approvals")
       reset2()
     }
+  }
+
+  const preview = (e) => {
+    const url = e.target.files[0]
+    const blobUrl = URL.createObjectURL(url)
+    setBlob(blobUrl)
+    setUpload(url)
   }
 
   return (
@@ -122,6 +135,25 @@ const Sponsor = () => {
         <Col md="6">
           <h4 className="mb-3">Sponsor School</h4>
           <form onSubmit={handleSubmit2(submitData)}>
+            <label className="py-1">Video Intro</label>
+            <Input
+              bsSize="sm"
+              className="mb-3 shadow-none"
+              type="file"
+              name="video"
+              placeholder="Video Evidence? "
+              onChange={preview}
+              accept="video/*"
+              role="button"
+            />
+
+            {upload && (
+              <video width="100%" controls className="mb-3">
+                <source src={blob} />
+                Your browser does not support HTML5 video.
+              </video>
+            )}
+
             <Icontroller name="business_name" placeholder="Company name" control={control2} />
             <Icontroller
               name="business_type"
@@ -141,6 +173,7 @@ const Sponsor = () => {
               placeholder="Business Email"
               control={control2}
             />
+
             <Icontroller
               name="business_mobile"
               type="number"

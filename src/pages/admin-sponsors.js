@@ -53,6 +53,10 @@ const AdminSponsor = () => {
       selector: (row) => row.business_website
     },
     {
+      name: "Wallet Balance",
+      selector: (row) => row.wallet.balance
+    },
+    {
       name: "Status",
       cell: (row) => (
         <>

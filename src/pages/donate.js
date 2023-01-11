@@ -1,9 +1,10 @@
 // import { useState } from "react"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
+import StripeCheckout from "react-stripe-checkout"
 import { toast } from "react-toastify"
-import { Col, Row, Button } from "reactstrap"
+import { Col, Row, Button, Input } from "reactstrap"
 // import useSchool from "../hooks/school.hook"
 import { getItem } from "../misc/helper"
 import BASE_URL from "../misc/url"
@@ -14,12 +15,47 @@ const Donate = () => {
   const school = JSON.parse(getItem("s_sch"))
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
-  const submit = async (data) => {
-    setLoading(true)
-    data.school_id = school.id
+  const [data, setData] = useState({})
+
+  const submit = async (d) => {
+    console.log(d)
+    // return data
+    // setData(d)
+    // console.log(d)
+    // donateref.current.console.log(donateref.current)
+    // console.log(btnCLick)
+    // setLoading(true)
+    // data.school_id = school.id
+    // const response = await fetch(`${BASE_URL}donate/school`, {
+    //   method: "POST",
+    //   body: JSON.stringify(data),
+    //   headers: new Headers({
+    //     "Content-Type": "application/json"
+    //   })
+    // })
+    // await response.json()
+    // if (response.status < 400) {
+    //   reset()
+    //   setLoading(false)
+    //   toast("donation successful")
+    //   navigate("/")
+    //   return
+    // }
+    // setLoading(false)
+    // toast("unable to send donation")
+  }
+
+  const handleChange = (e) => setData({ ...data, [e.target.name]: e.target.value })
+
+  const handleToken = async (token) => {
+    // setData({ ...data, school_id: school.id })
+
+    const resData = data
+    resData.school_id = school.id
+    console.log(resData, school)
     const response = await fetch(`${BASE_URL}donate/school`, {
       method: "POST",
-      body: JSON.stringify(data),
+      body: JSON.stringify({ token, ...resData }),
       headers: new Headers({
         "Content-Type": "application/json"
       })
@@ -32,8 +68,11 @@ const Donate = () => {
       navigate("/")
       return
     }
-    setLoading(false)
-    toast("unable to send donation")
+    if (response.status === 400) {
+      toast("maximum sponsor reached")
+      return
+    }
+    toast("sponsorhip fail")
   }
 
   return (
@@ -43,19 +82,44 @@ const Donate = () => {
           <p>
             School Name: <span className="fw-bold text-uppercase"> {school.school_name} </span>
           </p>
-          <Icontroller name="name" placeholder="Full Name" control={control} />
-          <Icontroller name="email" placeholder="Email" control={control} />
-          <Icontroller name="amount" placeholder="Amount" control={control} />
+          <div className="mb-2">
+            <label className="py-1">Full Name</label>
+            <Input bsSize="sm" className="shadow-none" name="name" onChange={handleChange} />
+          </div>
+          <div className="mb-2">
+            <label className="py-1">Amount</label>
+            <Input
+              bsSize="sm"
+              className="shadow-none"
+              name="amount"
+              type="number"
+              onChange={handleChange}
+            />
+          </div>
+          {/* <Icontroller name="name" placeholder="Full Name" control={control} /> */}
+          {/* <Icontroller name="email" placeholder="Email" control={control} /> */}
+          {/* <Icontroller name="amount" placeholder="Amount" control={control} /> */}
 
-          <Button
+          {/* <Button
+            ref={btnCLick}
             bsSize="sm"
             color="dark"
             className="mb-3 shadow-none form-control"
             type="submit"
             disabled={loading}
           >
-            Donate
-          </Button>
+            Procced 
+          </Button> */}
+          <StripeCheckout
+            className="form-control"
+            onSubmit={submit}
+            allowRememberMe
+            stripeKey="pk_test_51KOluiEvT7coUybkV5V9bsEwzMG1GStiV16pTbXwRj0BIuWtNoIcE2PVF0ImnIfVCxV7h7d8IIHcd7d8CmnWqWtu00yMhvuQJZ"
+            amount={data.amount * 100}
+            label="Donate"
+            token={handleToken}
+            name="Donate"
+          />
         </form>
       </Col>
     </Row>
