@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 // import { useState } from "react"
-import { useRef, useState } from "react"
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import StripeCheckout from "react-stripe-checkout"
@@ -8,7 +9,7 @@ import { Col, Row, Button, Input } from "reactstrap"
 // import useSchool from "../hooks/school.hook"
 import { getItem } from "../misc/helper"
 import BASE_URL from "../misc/url"
-import { Icontroller } from "./signup"
+// import { Icontroller } from "./signup"
 
 const Donate = () => {
   const { handleSubmit, control, reset } = useForm()
@@ -17,33 +18,7 @@ const Donate = () => {
   const navigate = useNavigate()
   const [data, setData] = useState({})
 
-  const submit = async (d) => {
-    console.log(d)
-    // return data
-    // setData(d)
-    // console.log(d)
-    // donateref.current.console.log(donateref.current)
-    // console.log(btnCLick)
-    // setLoading(true)
-    // data.school_id = school.id
-    // const response = await fetch(`${BASE_URL}donate/school`, {
-    //   method: "POST",
-    //   body: JSON.stringify(data),
-    //   headers: new Headers({
-    //     "Content-Type": "application/json"
-    //   })
-    // })
-    // await response.json()
-    // if (response.status < 400) {
-    //   reset()
-    //   setLoading(false)
-    //   toast("donation successful")
-    //   navigate("/")
-    //   return
-    // }
-    // setLoading(false)
-    // toast("unable to send donation")
-  }
+  const submit = async (d) => {}
 
   const handleChange = (e) => setData({ ...data, [e.target.name]: e.target.value })
 
