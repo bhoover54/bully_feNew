@@ -224,7 +224,7 @@ const Report = () => {
                       />
 
                       <Icontroller
-                        name="student_aware"
+                        name="threat_student_aware"
                         placeholder="Do any other people/students have knowledge of this threat? "
                         control={control}
                         type="select"
@@ -237,7 +237,7 @@ const Report = () => {
                         }
                       />
                       <Icontroller
-                        name="other_students"
+                        name="threat_other_student"
                         placeholder="If yes, what are their names? (if more than one person, separate their names using commas)"
                         type="textarea"
                         control={control}
@@ -324,11 +324,11 @@ const Report = () => {
                   {/* bully section */}
                   {reportType === "bullying" && (
                     <>
-                      <Icontroller
+                      {/* <Icontroller
                         name="bully_teacher"
                         placeholder="Bully Teacher"
                         control={control}
-                      />
+                      /> */}
                       <Icontroller
                         name="bully_fname"
                         placeholder="Bully First Name"
@@ -458,7 +458,7 @@ const Report = () => {
                         }
                       />
                       <Icontroller
-                        name="abuse_witnessed"
+                        name="serail_bully"
                         placeholder="Have you witnessed this bully abusing other students in the past?"
                         control={control}
                         type="select"

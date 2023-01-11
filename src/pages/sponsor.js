@@ -49,10 +49,15 @@ const Sponsor = () => {
       toast("sign in to sponsor a school")
       return
     }
+
+    const formData = new FormData()
+    formData.append("upload", upload)
+    const j = Object.keys(data)
+    j.forEach((e) => formData.append(e, data[e]))
     //console.log(data)
     const response = await fetch(`${BASE_URL}sponsor/school`, {
       method: "POST",
-      body: JSON.stringify(data),
+      body: formData,
       headers: new Headers({
         "Content-Type": "application/json",
         "Authorization": `Bearer ${getItem("bly_token")}`
