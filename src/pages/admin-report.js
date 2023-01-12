@@ -15,8 +15,20 @@ const AdminReport = () => {
 
   const columns = [
     {
-      name: "Bully Name",
-      selector: (row) => `${row?.bully_fname + " " + row?.bully_lname}`
+      name: "Student Name",
+      // selector: (row) =>
+      //   `${row?.bully_fname + " " + row?.bully_lname + row.w_name + row.threat_name}`,
+      cell: (row) => (
+        <>
+          {row?.bully_fname && (
+            <>
+              {row?.bully_fname} {row?.bully_lname}{" "}
+            </>
+          )}
+          {row?.w_name && row.w_name}
+          {row.threat_name && row.threat_name}
+        </>
+      )
     },
     {
       name: "Reporter",

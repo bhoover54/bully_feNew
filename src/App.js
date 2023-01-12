@@ -9,6 +9,7 @@ import Register from "./pages/signup"
 import Home from "./pages/home"
 import Nav from "./components/nav"
 import Upload from "./pages/video"
+import Periscope from "./pages/periscope"
 import AdminReport from "./pages/admin-report"
 import AdminSponsor from "./pages/admin-sponsors"
 import { ToastContainer } from "react-toastify"
@@ -24,6 +25,7 @@ function App() {
           <Route path="/sponsor" element={<Sponsor />} />
           <Route path="/report" element={<Report />} />
           <Route path="/uploads" element={<Upload />} />
+          <Route path="/periscope" element={<Periscope />} />
           <Route path="/admin" element={<Admin />}>
             <Route index={true} element={<AdminSponsor />} />
             <Route path="/admin/report" element={<AdminReport />} />

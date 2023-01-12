@@ -46,6 +46,11 @@ const Nav = () => {
                     Video
                   </Link>
                 </NavItem>
+                <NavItem>
+                  <Link className="nav-link" to="/periscope">
+                    Periscope
+                  </Link>
+                </NavItem>
 
                 {role === "ADMIN" && (
                   <>
