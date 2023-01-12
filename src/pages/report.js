@@ -22,6 +22,7 @@ const Report = () => {
   const [chosenSchool, setChosenSchool] = useState({})
   const { token, role } = useContext(AppContext)
   const [trustee, setTrustee] = useState()
+  const [otherData, setOtherData] = useState({})
   const [reportType, setReportType] = useState("")
   const navigate = useNavigate()
 
@@ -66,8 +67,10 @@ const Report = () => {
     const formData = new FormData()
     formData.append("upload", upload)
     const j = Object.keys(data)
+    const k = Object.keys(otherData)
     j.forEach((e) => formData.append(e, data[e]))
-    //console.log(formData)
+    k.forEach((e) => formData.append(e, data[e]))
+
     const response = await fetch(`${BASE_URL}report`, {
       method: "POST",
       body: formData,
@@ -75,6 +78,7 @@ const Report = () => {
         "Authorization": `Bearer ${getItem("bly_token")}`
       })
     })
+
     await response.json()
     if (response.status === 200) {
       setLoading(false)
@@ -85,6 +89,10 @@ const Report = () => {
     }
     toast("unable to send report try again latter")
     setLoading(false)
+  }
+
+  const handleEv = (e) => {
+    setOtherData({ ...otherData, [e.target.name]: e.target.value })
   }
 
   useEffect(() => {
@@ -116,12 +124,7 @@ const Report = () => {
               </video>
               <div className="my-2">
                 <label>Report Type</label>
-                <Input
-                  type="select"
-                  name="report_type"
-                  className="shadow-none"
-                  onChange={(e) => setReportType(e.target.value)}
-                >
+                <Input type="select" name="report_type" className="shadow-none" onChange={handleEv}>
                   <option value=""></option>
                   <option value="bullying">Bullying</option>
                   <option value="threats against school">Threats against school</option>
@@ -167,14 +170,15 @@ const Report = () => {
                   )}
 
                   <label className="py-1">
-                    <Input type="radio" name="trustee" className="me-2" /> I am a trustee reporting
-                    this information for another individual who requests to not be identified;
-                    however, I will act as an intermediary so you can immediately access any
-                    additional information you need.
+                    <Input type="radio" name="trustee" className="me-2" onChange={handleEv} /> I am
+                    a trustee reporting this information for another individual who requests to not
+                    be identified; however, I will act as an intermediary so you can immediately
+                    access any additional information you need.
                   </label>
                   <label className="py-1">
-                    <Input type="radio" name="trustee" className="me-2" /> I am not a trustee for
-                    someone else, I am submitting this information on my own behalf.
+                    <Input type="radio" name="trustee" className="me-2" onChange={handleEv} /> I am
+                    not a trustee for someone else, I am submitting this information on my own
+                    behalf.
                   </label>
 
                   <Icontroller name="email" placeholder="Principal Email" control={control} />
