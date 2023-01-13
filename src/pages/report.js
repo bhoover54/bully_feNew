@@ -61,8 +61,7 @@ const Report = () => {
 
   const report = async (data) => {
     let html = ""
-    // console.log(notify)
-    // return
+
     const { email: reporterEmail, others } = reporter
     const templateRush = { ...data, ...otherData, ...chosenSchool, reporterEmail: reporterEmail }
     const bullyT = bullyTemplate(templateRush)

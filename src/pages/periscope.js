@@ -67,7 +67,7 @@ const Periscope = () => {
     }
   }
 
-  const handleToken = (token) => console.log(token)
+  // const handleToken = (token) => console.log(token)
 
   const findMatch = (e) => {
     console.log(e, "39")
