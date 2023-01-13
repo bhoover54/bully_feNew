@@ -170,9 +170,9 @@ const Periscope = () => {
               >
                 Pay
               </Button>
-              <p>{message}</p>
             </>
           )}
+          <p>{message}</p>
         </form>
       </Col>
       {result.length && report ? (
