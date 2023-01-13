@@ -33,7 +33,8 @@ const Periscope = () => {
         })
       })
       const res = await response.json()
-      if (res.data) setResult(res.data)
+      if (res.data.length) setResult(res.data)
+      else setMessage("No report found")
     } catch (error) {
       console.log(error)
     } finally {
@@ -43,23 +44,30 @@ const Periscope = () => {
   }
 
   const search = async (token) => {
+    console.log(token)
     try {
-      const response = await fetch(`${BASE_URL}/pay/periscope`, {
+      const response = await fetch(`${BASE_URL}pay/periscope`, {
         method: "POST",
-        body: JSON.stringify(token),
+        body: JSON.stringify({ token }),
         headers: new Headers({
           "Content-Type": "application/json",
           "Authorization": `Bearer ${getItem("bly_token")}`
         })
       })
       const res = await response.json()
+      console.log(res)
       if (res.message === "success") {
+        setPay(false)
         setReport(true)
+        setMessage("")
+        console.log(res, final)
       }
     } catch (error) {
       console.log(error)
     }
   }
+
+  const handleToken = (token) => console.log(token)
 
   const findMatch = (e) => {
     console.log(e, "39")
@@ -150,30 +158,35 @@ const Periscope = () => {
           <Icontroller name="zip_code" placeholder="Zip code" control={control} />
 
           {pay ? (
-            <StripeCheckout
-              className="form-control"
-              allowRememberMe
-              stripeKey="pk_test_51KOluiEvT7coUybkV5V9bsEwzMG1GStiV16pTbXwRj0BIuWtNoIcE2PVF0ImnIfVCxV7h7d8IIHcd7d8CmnWqWtu00yMhvuQJZ"
-              amount={25 * 100}
-              label="Donate"
-              token={search}
-              name="Donate"
-            />
+            ""
           ) : (
             <>
               <Button
                 bsSize="sm"
                 disabled={loading}
                 color="dark"
-                className="mb-3 shadow-none form-control"
+                className="my-3 shadow-none form-control"
                 type="submit"
               >
                 Pay
               </Button>
+              <p className="text-center p-2 text-dark fw-bold">{message}</p>
             </>
           )}
-          <p>{message}</p>
         </form>
+        {pay ? (
+          <StripeCheckout
+            className="form-control"
+            allowRememberMe
+            stripeKey="pk_test_51KOluiEvT7coUybkV5V9bsEwzMG1GStiV16pTbXwRj0BIuWtNoIcE2PVF0ImnIfVCxV7h7d8IIHcd7d8CmnWqWtu00yMhvuQJZ"
+            amount={25 * 100}
+            label="Checkout"
+            token={search}
+            name="checkout"
+          />
+        ) : (
+          ""
+        )}
       </Col>
       {result.length && report ? (
         <Col md="6">

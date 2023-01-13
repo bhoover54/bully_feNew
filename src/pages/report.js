@@ -22,7 +22,7 @@ const Report = () => {
   const [schoolOPt, setOptions] = useState([])
   const [chosenSchool, setChosenSchool] = useState({})
   const { token, reporter } = useContext(AppContext)
-  const [trustee, setTrustee] = useState()
+  const [notify, setNotify] = useState(false)
   const [otherData, setOtherData] = useState({})
   const [reportType, setReportType] = useState("")
   const [sentReport, setSentReport] = useState("")
@@ -37,7 +37,6 @@ const Report = () => {
   }
 
   const options = () => {
-    console.log(school)
     const opt = []
     school.forEach((e) => {
       opt.push({
@@ -47,11 +46,9 @@ const Report = () => {
       })
     })
     setOptions(opt)
-    console.log(opt)
   }
 
   const chooseSchool = (e) => {
-    console.log(e)
     setChosenSchool(e)
   }
 
@@ -63,54 +60,63 @@ const Report = () => {
   }
 
   const report = async (data) => {
-    const { email, others } = otherData
-    const templateRush = { ...data, ...others, ...chosenSchool, reporterEmail: email }
+    let html = ""
+    // console.log(notify)
+    // return
+    const { email: reporterEmail, others } = reporter
+    const templateRush = { ...data, ...otherData, ...chosenSchool, reporterEmail: reporterEmail }
     const bullyT = bullyTemplate(templateRush)
     const templateWeapon = templateWeaponThreat(templateRush)
     const threat = templateSchoolThreat(templateRush)
 
-    if (reportType === "bullying") setSentReport(bullyT)
-    if (reportType === "weapon in school") setSentReport(templateWeapon)
-    if (reportType === "threats against school") setSentReport(threat)
+    if (reportType === "bullying") html = bullyT
+    if (reportType === "weapon in school") html = templateWeapon
+    if (reportType === "threats against school") html = threat
 
-    setLoading(true)
-    data.school_name = chosenSchool.zap
-    data.zip_code = chosenSchool.value
+    try {
+      setLoading(true)
+      data.school_name = chosenSchool.zap
+      data.zip_code = chosenSchool.value
 
-    const formData = new FormData()
-    formData.append("upload", upload)
-    const j = Object.keys(data)
-    const k = Object.keys(otherData)
+      const formData = new FormData()
+      formData.append("upload", upload)
+      const j = Object.keys(data)
+      const k = Object.keys(otherData)
 
-    j.forEach((e) => formData.append(e, data[e]))
-    k.forEach((e) => formData.append(e, data[e]))
+      j.forEach((e) => formData.append(e, data[e]))
+      k.forEach((e) => formData.append(e, data[e]))
 
-    const response = await fetch(`${BASE_URL}report`, {
-      method: "POST",
-      body: formData,
-      headers: new Headers({
-        "Authorization": `Bearer ${getItem("bly_token")}`
+      const response = await fetch(`${BASE_URL}report`, {
+        method: "POST",
+        body: formData,
+        headers: new Headers({
+          "Authorization": `Bearer ${getItem("bly_token")}`
+        })
       })
-    })
 
-    await response.json()
+      await response.json()
 
-    if (response.status === 200) {
+      if (response.status === 200) {
+        setLoading(false)
+        // setUpload("")
+        reset()
+
+        toast("report sent successfully")
+        const mat = { to: data.email, subject: otherData.report_type, html: html }
+        await sendEmail(mat)
+        if (notify) {
+          mat.to = reporterEmail
+          await sendEmail(mat)
+        }
+
+        return
+      }
+      toast("unable to send report try again latter")
+    } catch (error) {
+      console.log(error)
+    } finally {
       setLoading(false)
-      setUpload("")
-      reset()
-
-      toast("report sent successfully")
-      await sendEmail({
-        to: data.email,
-        subject: otherData.report_type,
-        html: sentReport
-      })
-
-      return
     }
-    toast("unable to send report try again latter")
-    setLoading(false)
   }
 
   const handleEv = (e) => {
@@ -123,11 +129,13 @@ const Report = () => {
       method: "POST",
       body: JSON.stringify(data),
       headers: new Headers({
+        "Content-Type": "application/json",
         "Authorization": `Bearer ${getItem("bly_token")}`
       })
     })
     const j = await response.json()
-    if (j?.message) toast("email sent")
+    if (j.message === "success") toast("email sent")
+    else toast("error sending mail")
   }
 
   useEffect(() => {
@@ -469,7 +477,11 @@ const Report = () => {
 
                   <div className="mb-2">
                     <label className="py-1">
-                      <Input type="checkbox" className="me-2" />
+                      <Input
+                        type="checkbox"
+                        className="me-2"
+                        onChange={(e) => setNotify(e.target.checked)}
+                      />
                       Please send me a reply email confirming that you have received this
                       information, this will allow me to know that the information that I have
                       submitted is being properly addressed. Thank you.
