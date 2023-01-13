@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import jwtDecode from "jwt-decode"
 import { createContext, useEffect, useState } from "react"
 import { getItem, removeItem, setItem } from "./helper"
