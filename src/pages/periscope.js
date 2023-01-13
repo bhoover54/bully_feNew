@@ -13,42 +13,54 @@ const Periscope = () => {
   const [loading, setLoading] = useState(false)
   const [result, setResult] = useState([])
   const [final, setFinal] = useState([])
-  const [data, setData] = useState({})
-  const [report, setReport] = useState("")
+  const [dataR, setData] = useState({})
+  const [report, setReport] = useState(false)
   const [pay, setPay] = useState(false)
-
+  const [message, setMessage] = useState("")
   const [modal, setModal] = useState(false)
 
-  const submit = (dataR) => {
-    console.log(dataR)
-    setData(dataR)
-    setPay(true)
-  }
-  const search = async (token) => {
-    console.log(token, data)
+  const submit = async (data) => {
+    setData(data)
     setLoading(true)
+    setMessage("wait why will get report, You will require to pay a $25 to view report")
     try {
       const response = await fetch(`${BASE_URL}periscope`, {
         method: "POST",
-        body: JSON.stringify({ ...data, token }),
+        body: JSON.stringify(data),
         headers: new Headers({
           "Content-Type": "application/json",
           "Authorization": `Bearer ${getItem("bly_token")}`
         })
       })
       const res = await response.json()
-      setResult(res.data)
-      console.log(res.data)
+      if (res.data) setResult(res.data)
     } catch (error) {
       console.log(error)
     } finally {
       setLoading(false)
-      setPay(false)
       reset()
     }
   }
 
-  const handleToken = (token) => {}
+  const search = async (token) => {
+    try {
+      const response = await fetch(`${BASE_URL}/pay/periscope`, {
+        method: "POST",
+        body: JSON.stringify(token),
+        headers: new Headers({
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${getItem("bly_token")}`
+        })
+      })
+      const res = await response.json()
+      if (res.message === "success") {
+        setReport(true)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   const findMatch = (e) => {
     console.log(e, "39")
     const sort = result.filter((dt) => {
@@ -61,13 +73,15 @@ const Periscope = () => {
 
       return answer
     })
+    if (sort.length > 0) setPay(true)
+    else setMessage("No match for report")
     setFinal(sort)
     console.log(sort)
   }
 
   useEffect(() => {
     if (result.length) {
-      findMatch(data.bully_name)
+      findMatch(dataR.bully_name)
     }
   }, [result])
 
@@ -146,19 +160,22 @@ const Periscope = () => {
               name="Donate"
             />
           ) : (
-            <Button
-              bsSize="sm"
-              disabled={loading}
-              color="dark"
-              className="mb-3 shadow-none form-control"
-              type="submit"
-            >
-              Pay
-            </Button>
+            <>
+              <Button
+                bsSize="sm"
+                disabled={loading}
+                color="dark"
+                className="mb-3 shadow-none form-control"
+                type="submit"
+              >
+                Pay
+              </Button>
+              <p>{message}</p>
+            </>
           )}
         </form>
       </Col>
-      {result.length ? (
+      {result.length && report ? (
         <Col md="6">
           <DataTable columns={columns} data={final} />
         </Col>

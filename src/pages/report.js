@@ -11,6 +11,7 @@ import { toast } from "react-toastify"
 import AppContext from "../misc/appContext"
 import { useNavigate } from "react-router-dom"
 import Select from "react-select"
+import { bullyTemplate, templateSchoolThreat, templateWeaponThreat } from "../misc/template"
 
 const Report = () => {
   const { handleSubmit, control, reset } = useForm()
@@ -20,11 +21,13 @@ const Report = () => {
   const { school, getSchools } = useSchool()
   const [schoolOPt, setOptions] = useState([])
   const [chosenSchool, setChosenSchool] = useState({})
-  const { token, role } = useContext(AppContext)
+  const { token, reporter } = useContext(AppContext)
   const [trustee, setTrustee] = useState()
   const [otherData, setOtherData] = useState({})
   const [reportType, setReportType] = useState("")
+  const [sentReport, setSentReport] = useState("")
   const navigate = useNavigate()
+  // const reporter =  user()
 
   const preview = (e) => {
     const url = e.target.files[0]
@@ -60,6 +63,16 @@ const Report = () => {
   }
 
   const report = async (data) => {
+    const { email, others } = otherData
+    const templateRush = { ...data, ...others, ...chosenSchool, reporterEmail: email }
+    const bullyT = bullyTemplate(templateRush)
+    const templateWeapon = templateWeaponThreat(templateRush)
+    const threat = templateSchoolThreat(templateRush)
+
+    if (reportType === "bullying") setSentReport(bullyT)
+    if (reportType === "weapon in school") setSentReport(templateWeapon)
+    if (reportType === "threats against school") setSentReport(threat)
+
     setLoading(true)
     data.school_name = chosenSchool.zap
     data.zip_code = chosenSchool.value
@@ -68,6 +81,7 @@ const Report = () => {
     formData.append("upload", upload)
     const j = Object.keys(data)
     const k = Object.keys(otherData)
+
     j.forEach((e) => formData.append(e, data[e]))
     k.forEach((e) => formData.append(e, data[e]))
 
@@ -80,11 +94,19 @@ const Report = () => {
     })
 
     await response.json()
+
     if (response.status === 200) {
       setLoading(false)
       setUpload("")
       reset()
-      toast("report sent succfullys")
+
+      toast("report sent successfully")
+      await sendEmail({
+        to: data.email,
+        subject: otherData.report_type,
+        html: sentReport
+      })
+
       return
     }
     toast("unable to send report try again latter")
@@ -92,12 +114,25 @@ const Report = () => {
   }
 
   const handleEv = (e) => {
+    if (e.target.name === "report_type") setReportType(e.target.value)
     setOtherData({ ...otherData, [e.target.name]: e.target.value })
+  }
+
+  const sendEmail = async (data) => {
+    const response = await fetch(`${BASE_URL}send/mail`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: new Headers({
+        "Authorization": `Bearer ${getItem("bly_token")}`
+      })
+    })
+    const j = await response.json()
+    if (j?.message) toast("email sent")
   }
 
   useEffect(() => {
     getSigned()
-    options()
+    if (!schoolOPt.length) options()
   }, [school])
 
   return (
@@ -170,14 +205,30 @@ const Report = () => {
                   )}
 
                   <label className="py-1">
-                    <Input type="radio" name="trustee" className="me-2" onChange={handleEv} /> I am
+                    <Input
+                      type="radio"
+                      name="trustee"
+                      className="me-2"
+                      value="I am
                     a trustee reporting this information for another individual who requests to not
                     be identified; however, I will act as an intermediary so you can immediately
+                    access any additional information you need."
+                      onChange={handleEv}
+                    />{" "}
+                    I am a trustee reporting this information for another individual who requests to
+                    not be identified; however, I will act as an intermediary so you can immediately
                     access any additional information you need.
                   </label>
                   <label className="py-1">
-                    <Input type="radio" name="trustee" className="me-2" onChange={handleEv} /> I am
-                    not a trustee for someone else, I am submitting this information on my own
+                    <Input
+                      type="radio"
+                      name="trustee"
+                      className="me-2"
+                      value="not a trustee for someone else, I am submitting this information on my own
+                    behalf."
+                      onChange={handleEv}
+                    />{" "}
+                    I am not a trustee for someone else, I am submitting this information on my own
                     behalf.
                   </label>
 
@@ -188,45 +239,56 @@ const Report = () => {
                     <Select options={schoolOPt} onChange={chooseSchool} />
                   </div>
 
+                  <Icontroller
+                    name="bully_fname"
+                    placeholder="Bully First Name"
+                    control={control}
+                  />
+                  <Icontroller name="bully_lname" placeholder="Bully Last Name" control={control} />
+                  <Icontroller
+                    name="bully_gender"
+                    placeholder="Gender of bully"
+                    control={control}
+                    type="select"
+                    opt={
+                      <>
+                        <option></option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                      </>
+                    }
+                  />
+                  <Icontroller name="bully_grade" placeholder="Grade of Bully" control={control} />
+
+                  <Icontroller
+                    name="bully_teacher"
+                    placeholder="Homeroom Teacher of bully"
+                    control={control}
+                  />
+
+                  <Icontroller
+                    name="incident_date"
+                    type="date"
+                    placeholder="Date of Incident"
+                    control={control}
+                  />
+
+                  <Icontroller
+                    name="incident_place"
+                    placeholder="Where did this incident occur? Be specific."
+                    control={control}
+                  />
+
+                  <Icontroller
+                    name="incident_time"
+                    type="time"
+                    placeholder="Time of Incident"
+                    control={control}
+                  />
+
                   {/* threat section */}
                   {reportType === "threats against school" && (
                     <>
-                      <Icontroller
-                        name="threat_name"
-                        placeholder="Name of person/student making this threat?"
-                        control={control}
-                      />
-                      <Icontroller
-                        name="threat_gender"
-                        placeholder="Gender of person/student making this threat"
-                        control={control}
-                        type="select"
-                        opt={
-                          <>
-                            <option></option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                          </>
-                        }
-                      />
-                      <Icontroller
-                        name="threat_grade"
-                        placeholder="Grade of person if a student is making this threat?"
-                        control={control}
-                      />
-                      <Icontroller
-                        name="threat_teacher"
-                        placeholder="Homeroom Teacher of person/student making this threat. "
-                        control={control}
-                      />
-
-                      <Icontroller
-                        name="threat_date"
-                        type="date"
-                        placeholder="When is this attack supposed to occur?"
-                        control={control}
-                      />
-
                       <Icontroller
                         name="threat_student_aware"
                         placeholder="Do any other people/students have knowledge of this threat? "
@@ -258,34 +320,6 @@ const Report = () => {
                   {/* weapon section */}
                   {reportType === "weapon in school" && (
                     <>
-                      <Icontroller
-                        name="w_name"
-                        placeholder="Name of the person/student bringing the weapon to school?"
-                        control={control}
-                      />
-                      <Icontroller
-                        name="w_gender"
-                        placeholder="Gender of person/student bringing the weapon to school:"
-                        control={control}
-                        type="select"
-                        opt={
-                          <>
-                            <option></option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                          </>
-                        }
-                      />
-                      <Icontroller
-                        name="w_grade"
-                        placeholder="Grade of person/student bringing the weapon to school."
-                        control={control}
-                      />
-                      <Icontroller
-                        name="w_teacher"
-                        placeholder="Homeroom Teacher of person/student bringing the weapon to school"
-                        control={control}
-                      />
                       <Icontroller
                         name="w_type"
                         placeholder="What type of weapon is this?"
@@ -328,62 +362,6 @@ const Report = () => {
                   {/* bully section */}
                   {reportType === "bullying" && (
                     <>
-                      {/* <Icontroller
-                        name="bully_teacher"
-                        placeholder="Bully Teacher"
-                        control={control}
-                      /> */}
-                      <Icontroller
-                        name="bully_fname"
-                        placeholder="Bully First Name"
-                        control={control}
-                      />
-                      <Icontroller
-                        name="bully_lname"
-                        placeholder="Bully Last Name"
-                        control={control}
-                      />
-                      <Icontroller
-                        name="bully_gender"
-                        placeholder="Gender of bully"
-                        control={control}
-                        type="select"
-                        opt={
-                          <>
-                            <option></option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                          </>
-                        }
-                      />
-                      <Icontroller
-                        name="bully_grade"
-                        placeholder="Grade of Bully"
-                        control={control}
-                      />
-                      <Icontroller
-                        name="bully_teacher"
-                        placeholder="Homeroom Teacher of bully"
-                        control={control}
-                      />
-                      <Icontroller
-                        name="incident_date"
-                        type="date"
-                        placeholder="Date of Incident"
-                        control={control}
-                      />
-                      <Icontroller
-                        name="incident_time"
-                        type="time"
-                        placeholder="Time of Incident"
-                        control={control}
-                      />
-                      <Icontroller
-                        name="incident_place"
-                        placeholder="Where did this incident occur? Be specific."
-                        control={control}
-                      />
-
                       <Icontroller
                         name="staff_witnessed"
                         placeholder="Did any teacher or staff member see this incident?"
