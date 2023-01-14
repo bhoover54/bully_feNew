@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Col, Row, Button } from "reactstrap"
 import { Icontroller } from "./signup"
 import { useForm } from "react-hook-form"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { getItem } from "../misc/helper"
 import BASE_URL from "../misc/url"
 import DataTable from "react-data-table-component"
@@ -70,55 +71,18 @@ const Periscope = () => {
     }
   }
 
-  // const handleToken = (token) => console.log(token)
-
-  // const findMatch = (e) => {
-  //   console.log(e, "39")
-  //   const sort = result.filter((dt) => {
-  //     const regex = new RegExp(e, "gi")
-  //     let answer = ""
-  //     if (dt.fname) answer = dt?.bully_lname.match(regex)
-  //     if (dt.bully_lname) answer = dt?.bully_lname.match(regex)
-  //     if (dt.threat_name) answer = dt?.threat_name.match(regex)
-  //     if (dt.w_name) answer = dt?.w_name.match(regex)
-
-  //     return answer
-  //   })
-  //   if (sort.length > 0) setPay(true)
-  //   else setMessage("No match for report")
-  //   setFinal(sort)
-  //   console.log(sort)
-  // }
-
-  // useEffect(() => {
-  //   if (result.length) {
-  //     findMatch(dataR.bully_name)
-  //   }
-  // }, [result])
-
   const toggle = () => setModal(!modal)
 
   const columns = [
     {
       name: "Student Name",
-      // selector: (row) =>
-      //   `${row?.bully_fname + " " + row?.bully_lname + row.w_name + row.threat_name}`,
       cell: (row) => (
         <>
-          {row?.bully_fname && (
-            <>
-              {row?.bully_fname} {row?.bully_lname}{" "}
-            </>
-          )}
-          {row?.w_name && row.w_name}
-          {row.threat_name && row.threat_name}
+          {row?.bully_fname} {row?.bully_lname}
         </>
       )
     },
-    // {
-    //   name: "Reporter",
-    //   selector: (row) => row.user.fullName
-    // },
+
     {
       name: "Bully Type",
       selector: (row) => row.report_type

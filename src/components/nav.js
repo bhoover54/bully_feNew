@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { Link, Outlet } from "react-router-dom"
+import { Link, Outlet, useNavigate } from "react-router-dom"
 import AppContext from "../misc/appContext"
 import logo from "../assets/images/logo.png"
 import {
@@ -15,13 +15,14 @@ const Nav = () => {
   const { token, logout, role } = useContext(AppContext)
   const [isOpen, setIsOpen] = useState(true)
   const toggle = () => setIsOpen(!isOpen)
+  const navigate = useNavigate()
   return (
     <div>
       <div className="py-1 shadow mb-5 ">
-        <div className="container p-0">
+        <div className="container-fluid px-md-3 p-0">
           <Navbar expand="md">
-            <NavbarBrand href="/">
-              <img src={logo} alt="logo" width="50px" />
+            <NavbarBrand>
+              <img src={logo} alt="logo" width="70px" onClick={() => navigate("/")} role="button" />
             </NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
@@ -31,24 +32,24 @@ const Nav = () => {
                     Donate
                   </Link>
                 </NavItem> */}
-                <NavItem>
+                {/* <NavItem>
                   <Link className="nav-link" to="/report">
                     Report
                   </Link>
-                </NavItem>
+                </NavItem> */}
                 <NavItem>
                   <Link className="nav-link" to="/sponsor">
-                    Sponsor
+                    Get Your Schools Protected
                   </Link>
                 </NavItem>
                 <NavItem>
                   <Link className="nav-link" to="/uploads">
-                    Video
+                    Search Videos
                   </Link>
                 </NavItem>
                 <NavItem>
                   <Link className="nav-link" to="/periscope">
-                    Periscope
+                    Order Periscope Report
                   </Link>
                 </NavItem>
                 <NavItem>
@@ -56,26 +57,31 @@ const Nav = () => {
                     Media
                   </Link>
                 </NavItem>
+                <NavItem>
+                  <Link className="nav-link" to="/policy">
+                    Bully Discipline Policy
+                  </Link>
+                </NavItem>
 
                 {role === "ADMIN" && (
                   <>
                     <NavItem>
                       <Link to="/admin" className="nav-link">
-                        Admin
+                        School Administrators
                       </Link>
                     </NavItem>
-                    {/* <NavItem>
-                      <Link to="/admin/report" className="nav-link">
-                        View Reports
-                      </Link>
-                    </NavItem>
-                    <NavItem>
-                      <Link to="/uploads" className="nav-link">
-                        Uploads
-                      </Link>
-                    </NavItem> */}
                   </>
                 )}
+                <NavItem>
+                  <Link className="nav-link" to="/about">
+                    About
+                  </Link>
+                </NavItem>
+                <NavItem>
+                  <Link className="nav-link" to="/contact">
+                    Contact
+                  </Link>
+                </NavItem>
               </Nav2>
               <Nav2>
                 {token ? (

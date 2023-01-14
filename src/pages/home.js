@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { Button, Col, Row } from "reactstrap"
+import { Col, Row } from "reactstrap"
 
 const Home = () => {
   return (
@@ -23,9 +23,7 @@ const Home = () => {
 
       <p className="text-center p-3">
         To learn how BullyBloxx shuts down bullying in your schools{" "}
-        <Link to="/media" className="text-success">
-          CLICK HERE
-        </Link>{" "}
+        <Link to="/media">CLICK HERE</Link>{" "}
       </p>
       <div className="d-flex gap-2 justify-content-center">
         <Link to="/media" className="border rounded p-2">
