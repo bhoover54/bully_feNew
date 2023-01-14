@@ -59,7 +59,7 @@ const Sponsor = () => {
       method: "POST",
       body: formData,
       headers: new Headers({
-        "Content-Type": "application/json",
+        // "Content-Type": "application/json",
         "Authorization": `Bearer ${getItem("bly_token")}`
       })
     })
