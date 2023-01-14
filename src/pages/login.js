@@ -3,14 +3,14 @@ import { Link, useNavigate } from "react-router-dom"
 import BASE_URL from "../misc/url"
 import { Button, Col, Row } from "reactstrap"
 import { Icontroller } from "./signup"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import AppContext from "../misc/appContext"
 import { toast } from "react-toastify"
 
 const Login = () => {
   const { handleSubmit, control } = useForm()
   const [loading, setLoading] = useState(false)
-  const { login: loggedIn } = useContext(AppContext)
+  const { login: loggedIn, token } = useContext(AppContext)
   const navigate = useNavigate()
 
   const login = async (data) => {
@@ -25,13 +25,17 @@ const Login = () => {
     const result = await response.json()
     if (response.status === 201) {
       loggedIn(result)
-      navigate("/", { replace: true })
       toast("login successful")
+      navigate("/", { replace: true })
       return
     }
     toast("invalid username or password")
     setLoading(false)
   }
+
+  useEffect(() => {
+    if (token) navigate("/")
+  })
 
   return (
     <Row style={{ minHeight: "70vh" }} className="d-flex justify-content-center align-items-center">

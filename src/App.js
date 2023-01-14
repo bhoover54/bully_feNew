@@ -14,6 +14,7 @@ import AdminReport from "./pages/admin-report"
 import AdminSponsor from "./pages/admin-sponsors"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import Media from "./pages/media"
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/report" element={<Report />} />
           <Route path="/uploads" element={<Upload />} />
           <Route path="/periscope" element={<Periscope />} />
+          <Route path="/media" element={<Media />} />
           <Route path="/admin" element={<Admin />}>
             <Route index={true} element={<AdminSponsor />} />
             <Route path="/admin/report" element={<AdminReport />} />

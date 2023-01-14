@@ -51,6 +51,11 @@ const Nav = () => {
                     Periscope
                   </Link>
                 </NavItem>
+                <NavItem>
+                  <Link className="nav-link" to="/media">
+                    Media
+                  </Link>
+                </NavItem>
 
                 {role === "ADMIN" && (
                   <>

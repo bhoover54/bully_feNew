@@ -121,7 +121,13 @@ const AdminReport = () => {
   return (
     <Row>
       <Col className=" px-0 rounded shadow overflow-hidden">
-        <DataTable columns={columns} data={reports} title="Reports" />
+        <DataTable
+          columns={columns}
+          data={reports}
+          title="Reports"
+          pagination={true}
+          paginationPerPage="10"
+        />
       </Col>
       <Modal isOpen={modal} toggle={toggle} backdrop={backdrop}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>

@@ -33,8 +33,10 @@ const Periscope = () => {
         })
       })
       const res = await response.json()
-      if (res.data.length) setResult(res.data)
-      else setMessage("No report found")
+      if (res.data.length) {
+        setPay(true)
+        setResult(res.data)
+      } else setMessage("No report found")
     } catch (error) {
       console.log(error)
     } finally {
@@ -57,41 +59,42 @@ const Periscope = () => {
       const res = await response.json()
       console.log(res)
       if (res.message === "success") {
-        setPay(false)
         setReport(true)
         setMessage("")
         console.log(res, final)
       }
     } catch (error) {
       console.log(error)
+    } finally {
+      setPay(false)
     }
   }
 
   // const handleToken = (token) => console.log(token)
 
-  const findMatch = (e) => {
-    console.log(e, "39")
-    const sort = result.filter((dt) => {
-      const regex = new RegExp(e, "gi")
-      let answer = ""
-      if (dt.fname) answer = dt?.bully_lname.match(regex)
-      if (dt.bully_lname) answer = dt?.bully_lname.match(regex)
-      if (dt.threat_name) answer = dt?.threat_name.match(regex)
-      if (dt.w_name) answer = dt?.w_name.match(regex)
+  // const findMatch = (e) => {
+  //   console.log(e, "39")
+  //   const sort = result.filter((dt) => {
+  //     const regex = new RegExp(e, "gi")
+  //     let answer = ""
+  //     if (dt.fname) answer = dt?.bully_lname.match(regex)
+  //     if (dt.bully_lname) answer = dt?.bully_lname.match(regex)
+  //     if (dt.threat_name) answer = dt?.threat_name.match(regex)
+  //     if (dt.w_name) answer = dt?.w_name.match(regex)
 
-      return answer
-    })
-    if (sort.length > 0) setPay(true)
-    else setMessage("No match for report")
-    setFinal(sort)
-    console.log(sort)
-  }
+  //     return answer
+  //   })
+  //   if (sort.length > 0) setPay(true)
+  //   else setMessage("No match for report")
+  //   setFinal(sort)
+  //   console.log(sort)
+  // }
 
-  useEffect(() => {
-    if (result.length) {
-      findMatch(dataR.bully_name)
-    }
-  }, [result])
+  // useEffect(() => {
+  //   if (result.length) {
+  //     findMatch(dataR.bully_name)
+  //   }
+  // }, [result])
 
   const toggle = () => setModal(!modal)
 
@@ -126,7 +129,7 @@ const Periscope = () => {
     },
     {
       name: "School Grade",
-      selector: (row) => row.threat_grade
+      selector: (row) => row.bully_grade
     },
     {
       name: "Action",
@@ -151,11 +154,19 @@ const Periscope = () => {
     <Row>
       <Col md="6" className="mx-auto mb-5">
         <form onSubmit={handleSubmit(submit)}>
-          <Icontroller name="bully_name" placeholder="Bully's Name" control={control} />
-          <Icontroller name="homeroom_teacher" placeholder="Homeroom teacher" control={control} />
-          <Icontroller name="grade" placeholder="Bully's grade" control={control} />
-          <Icontroller name="school_name" placeholder="School Name" control={control} />
-          <Icontroller name="zip_code" placeholder="Zip code" control={control} />
+          {!pay ? (
+            <>
+              {" "}
+              <Icontroller name="bully_fname" placeholder="Bully's First Name" control={control} />
+              <Icontroller name="bully_lname" placeholder="Bully's Last Name" control={control} />
+              <Icontroller name="bully_teacher" placeholder="Homeroom teacher" control={control} />
+              <Icontroller name="bully_grade" placeholder="Bully's grade" control={control} />
+              <Icontroller name="school_name" placeholder="School Name" control={control} />
+              <Icontroller name="zip_code" placeholder="Zip code" control={control} />
+            </>
+          ) : (
+            ""
+          )}
 
           {pay ? (
             ""
@@ -190,7 +201,7 @@ const Periscope = () => {
       </Col>
       {result.length && report ? (
         <Col md="6">
-          <DataTable columns={columns} data={final} />
+          <DataTable columns={columns} data={result} />
         </Col>
       ) : (
         ""

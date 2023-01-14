@@ -10932,4 +10932,11 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+a {
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+a:hover {
+  color: gray !important;
 }/*# sourceMappingURL=style.css.map */
