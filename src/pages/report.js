@@ -72,9 +72,6 @@ const Report = () => {
     if (reportType === "weapon in school") html = templateWeapon
     if (reportType === "threats against school") html = threat
 
-    // const report = { ...data, ...otherData }
-    // console.log(hf)
-    // return
     try {
       setLoading(true)
       data.school_name = chosenSchool.zap
