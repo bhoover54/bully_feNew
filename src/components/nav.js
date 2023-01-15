@@ -62,12 +62,17 @@ const Nav = () => {
                     Bully Discipline Policy
                   </Link>
                 </NavItem>
+                <NavItem>
+                  <Link className="nav-link" to="/school/admin">
+                    School Administrator
+                  </Link>
+                </NavItem>
 
                 {role === "ADMIN" && (
                   <>
                     <NavItem>
                       <Link to="/admin" className="nav-link">
-                        School Administrators
+                        Admin
                       </Link>
                     </NavItem>
                   </>

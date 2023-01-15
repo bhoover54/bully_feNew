@@ -18,6 +18,7 @@ import Media from "./pages/media"
 import About from "./pages/about"
 import Contact from "./pages/contact"
 import Policy from "./pages/policy"
+import SchoolAdmin from "./pages/school-administerator"
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/policy" element={<Policy />} />
+          <Route path="/school/admin" element={<SchoolAdmin />} />
           <Route path="/admin" element={<Admin />}>
             <Route index={true} element={<AdminSponsor />} />
             <Route path="/admin/report" element={<AdminReport />} />
