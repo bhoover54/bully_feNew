@@ -15,6 +15,10 @@ const AdminReport = () => {
 
   const columns = [
     {
+      name: "S/N",
+      cell: (row, i) => <>{row.id}</>
+    },
+    {
       name: "Student Name",
       // selector: (row) =>
       //   `${row?.bully_fname + " " + row?.bully_lname + row.w_name + row.threat_name}`,

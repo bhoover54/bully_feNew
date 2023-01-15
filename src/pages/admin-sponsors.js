@@ -25,6 +25,10 @@ const AdminSponsor = () => {
 
   const columns = [
     {
+      name: "S/N",
+      cell: (row, i) => <>{i + 1}</>
+    },
+    {
       name: "School Name",
       selector: (row) => row.school_name
     },

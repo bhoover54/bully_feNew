@@ -72,6 +72,9 @@ const Report = () => {
     if (reportType === "weapon in school") html = templateWeapon
     if (reportType === "threats against school") html = threat
 
+    // const report = { ...data, ...otherData }
+    // console.log(hf)
+    // return
     try {
       setLoading(true)
       data.school_name = chosenSchool.zap
@@ -82,8 +85,8 @@ const Report = () => {
       const j = Object.keys(data)
       const k = Object.keys(otherData)
 
-      j.forEach((e) => formData.append(e, data[e]))
-      k.forEach((e) => formData.append(e, data[e]))
+      j.forEach((e) => console.log(e, data[e]))
+      k.forEach((e) => console.log(e, otherData[e]))
 
       const response = await fetch(`${BASE_URL}report`, {
         method: "POST",
