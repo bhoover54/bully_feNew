@@ -8,9 +8,9 @@ import AppContext from "../misc/appContext"
 import { useNavigate } from "react-router-dom"
 const AdminSponsor = () => {
   const { school, getSchools } = useSchool()
-  const { token } = useContext(AppContext)
+  const { token, role } = useContext(AppContext)
   const navigate = useNavigate()
-  if (!token) navigate("/")
+  if (!token || role !== "ADMIN") navigate("/")
   const approve = async (id) => {
     //console.log(id)
     const response = await fetch(`${BASE_URL}approve/school/${id}`, {
