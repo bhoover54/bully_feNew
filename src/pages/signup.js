@@ -86,12 +86,12 @@ const Register = () => {
             placeholder="Phone"
             register={register}
             errors={errors}
-            // others={{
-            //   pattern: /[0-9]/,
-            //   max: 10,
-            //   min: 10
-            // }}
-            // message="invalid phone format"
+            others={{
+              pattern: /[0-9]/,
+              maxLength: 10,
+              minLength: 10
+            }}
+            message="input a valid phone number"
           />
           <Icontroller
             type="password"

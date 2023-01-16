@@ -19,6 +19,7 @@ import About from "./pages/about"
 import Contact from "./pages/contact"
 import Policy from "./pages/policy"
 import SchoolAdmin from "./pages/school-administerator"
+import Footer from "./pages/footer"
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
           <Route path="/signup" element={<Register />} />
         </Route>
       </Routes>
-
+      <Footer />
       <ToastContainer autoClose={7000} hideProgressBar position="top-right" />
     </div>
   )

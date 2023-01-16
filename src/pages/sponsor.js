@@ -149,7 +149,7 @@ const Sponsor = () => {
         )} */}
 
         <Col md="3" className="mb-5">
-          <h4 className="mb-3">Search Sponsored School</h4>
+          <h4 className="mb-3">Is your school protected? Search to see.</h4>
           <form onSubmit={handleSubmit(search)}>
             <Icontroller
               type="text"
@@ -163,15 +163,17 @@ const Sponsor = () => {
               message="School name is required"
             />
             <Icontroller
-              type="text"
+              type="number"
               name="zip_code"
               placeholder="Zip code"
               register={register}
               errors={errors}
               others={{
-                required: true
+                required: true,
+                maxLength: 10,
+                minLength: 10
               }}
-              message="Zip code is required"
+              message="Input a valid zip code"
             />
 
             <Button type="submit" color="dark" size="sm">

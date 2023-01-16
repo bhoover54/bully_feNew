@@ -183,8 +183,11 @@ const Periscope = () => {
                 register={register}
                 errors={errors}
                 others={{
-                  required: true
+                  required: true,
+                  maxLength: 10,
+                  minLength: 10
                 }}
+                message="Input a valid zip code"
               />
             </>
           ) : (
