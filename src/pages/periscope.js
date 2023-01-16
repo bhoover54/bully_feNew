@@ -184,8 +184,8 @@ const Periscope = () => {
                 errors={errors}
                 others={{
                   required: true,
-                  maxLength: 10,
-                  minLength: 10
+                  maxLength: 5,
+                  minLength: 5
                 }}
                 message="Input a valid zip code"
               />

@@ -9,10 +9,3 @@ const Footer = () => (
   </div>
 )
 export default Footer
-{
-  /* <NavItem>
-                  <NavLink className="nav-link" to="/policy">
-                    Bully Discipline Policy
-                  </NavLink>
-                </NavItem> */
-}

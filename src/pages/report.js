@@ -66,8 +66,8 @@ const Report = () => {
   }
 
   const report = async (data) => {
-    console.log(data)
-    return
+    // console.log(data)
+    // return
     let html = ""
 
     const { email: reporterEmail, others } = reporter
@@ -384,7 +384,7 @@ const Report = () => {
                         errors={errors}
                         register={register}
                       />
-                      <div className="mb-2">
+                      {/* <div className="mb-2">
                         <label className="py-1">
                           Do any other people/students have knowledge of this threat?{" "}
                         </label>
@@ -393,7 +393,7 @@ const Report = () => {
                           className="mb-1 form-control shadow-none"
                           {...register("threat_details")}
                         />
-                      </div>
+                      </div> */}
                       <Icontroller
                         type="text"
                         placeholder="In complete detail provide all information you have on this threat."
@@ -444,7 +444,7 @@ const Report = () => {
                         />
                       </div>
 
-                      <div className="mb-2">
+                      {/* <div className="mb-2">
                         <label className="py-1">
                           Do any other people/students have knowledge of this threat?
                         </label>
@@ -457,7 +457,7 @@ const Report = () => {
                           <option value="yes">Yes</option>
                           <option value="no">No</option>
                         </select>
-                      </div>
+                      </div> */}
 
                       <div className="mb-2">
                         <label className="py-1">
@@ -483,12 +483,13 @@ const Report = () => {
                         <select
                           name="staff_witnessed"
                           className="mb-1 form-control shadow-none"
-                          {...register("staff_witnessed")}
+                          {...register("staff_witnessed", { required: true })}
                         >
                           <option></option>
                           <option value="yes">Yes</option>
                           <option value="no">No</option>
                         </select>
+                        {errors["staff_witnessed"] ? <p className="text-danger">required</p> : ""}
                       </div>
 
                       <Icontroller
@@ -511,12 +512,13 @@ const Report = () => {
                         <select
                           name="physical_abuse"
                           className="mb-1 form-control shadow-none"
-                          {...register("physical_abuse")}
+                          {...register("physical_abuse", { required: true })}
                         >
                           <option></option>
                           <option value="yes">Yes</option>
                           <option value="no">No</option>
                         </select>
+                        {errors["physical_abuse"] ? <p className="text-danger">required</p> : ""}
                       </div>
 
                       <div className="mb-2">
@@ -530,7 +532,11 @@ const Report = () => {
                           <option value="yes">Yes</option>
                           <option value="no">No</option>
                         </select>
-                        {errors["victim_handicapped"] && <p>required</p>}
+                        {errors["victim_handicapped"] ? (
+                          <p className="text-danger">required</p>
+                        ) : (
+                          ""
+                        )}
                       </div>
 
                       <div className="mb-2">
@@ -544,7 +550,7 @@ const Report = () => {
                           <option value="yes">Yes</option>
                           <option value="no">No</option>
                         </select>
-                        {errors["victim_younger"] && <p>required</p>}
+                        {errors["victim_younger"] ? <p className="text-danger">required</p> : ""}
                       </div>
 
                       <div className="mb-2">
@@ -561,7 +567,7 @@ const Report = () => {
                           <option value="yes">Yes</option>
                           <option value="no">No</option>
                         </select>
-                        {errors["bully_witnessed"] && <p>required</p>}
+                        {errors["bully_witnessed"] ? <p className="text-danger">required</p> : ""}
                       </div>
 
                       <div className="mb-2">
@@ -578,7 +584,7 @@ const Report = () => {
                           <option value="yes">Yes</option>
                           <option value="no">No</option>
                         </select>
-                        {errors["serail_bully"] && <p>required</p>}
+                        {errors["serail_bully"] ? <p className="text-danger">required</p> : ""}
                       </div>
 
                       {/* <Icontroller

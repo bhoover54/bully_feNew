@@ -41,11 +41,7 @@ const Nav = () => {
                     Media
                   </NavLink>
                 </NavItem>
-                <NavItem>
-                  <NavLink className="nav-link" to="/policy">
-                    Bully Discipline Policy
-                  </NavLink>
-                </NavItem>
+
                 <NavItem>
                   <NavLink className="nav-link" to="/school/admin">
                     School Administrator
