@@ -120,34 +120,6 @@ const Sponsor = () => {
   return (
     <>
       <Row>
-        {/* {Object.keys(found).length ? (
-          <div className="text-center p-3 mb-5 shadow rounded">
-            {found.data.approved === "pending" ? (
-              <> {found.data.school_name.toUpperCase()} is pending approval</>
-            ) : (
-              <>
-                {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is
-                already sponsored by {found.data.business_name} with sponsor balance of $
-                {found.data?.wallet?.balance}. <br />
-                <Button
-                  className="text-decoration-none bg-transparent text-primary border-0"
-                  onClick={() => {
-                    setItem("s_sch", JSON.stringify(found.data))
-                    navigate("/donate")
-                    // console.log(found.data)
-                  }}
-                  disabled={loading}
-                >
-                  Donate{" "}
-                </Button>
-                to school
-              </>
-            )}
-          </div>
-        ) : (
-          ""
-        )} */}
-
         <Col md="3" className="mb-5">
           <h4 className="mb-3">Is your school protected? Search to see.</h4>
           <form onSubmit={handleSubmit(search)}>
@@ -260,6 +232,7 @@ const Sponsor = () => {
                   register={register2}
                   errors={error2}
                   others={{
+                    required: true,
                     pattern: /[0-9]/,
                     maxLength: 10,
                     minLength: 10
