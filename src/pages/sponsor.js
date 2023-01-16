@@ -260,9 +260,11 @@ const Sponsor = () => {
                   register={register2}
                   errors={error2}
                   others={{
-                    required: true
+                    pattern: /[0-9]/,
+                    maxLength: 10,
+                    minLength: 10
                   }}
-                  message="required"
+                  message="input a valid phone number"
                 />
                 <Icontroller
                   type="text"
@@ -271,11 +273,8 @@ const Sponsor = () => {
                   register={register2}
                   errors={error2}
                   others={{
-                    pattern: /[0-9]/,
-                    maxLength: 10,
-                    minLength: 10
+                    required: true
                   }}
-                  message="input a valid phone number"
                 />
                 <Icontroller
                   type="text"
