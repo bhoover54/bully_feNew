@@ -45,6 +45,7 @@ const Report = () => {
 
   const options = () => {
     const opt = []
+    console.log(school)
     school.forEach((e) => {
       opt.push({
         value: e.zip_code,
@@ -56,6 +57,7 @@ const Report = () => {
   }
 
   const chooseSchool = (e) => {
+    console.log(e)
     setChosenSchool(e)
   }
 
@@ -71,7 +73,6 @@ const Report = () => {
     // return
     let html = ""
 
-    console.log(data)
     const { email: reporterEmail, others } = reporter
     const templateRush = { ...data, ...otherData, ...chosenSchool, reporterEmail: reporterEmail }
     const bullyT = bullyTemplate(templateRush)
@@ -84,11 +85,11 @@ const Report = () => {
 
     try {
       setLoading(true)
-      data.school_name = chosenSchool.zap
-      data.zip_code = chosenSchool.value
 
       const formData = new FormData()
       formData.append("upload", upload)
+      formData.append("school_name", chosenSchool.zap)
+      formData.append("zip_code", chosenSchool.value)
       const j = Object.keys(data)
       const k = Object.keys(otherData)
 
