@@ -1,7 +1,7 @@
 export const bullyTemplate = (
   reqBody
 ) => `I have information involving bullying in your school. I am reporting this information through The BullyVaxx system. If you are not
-familiar with The BullyVaxx system please go to www.bullyvaxx.com for details. Once you are on the site if you will click on the School
+familiar with The BullyVaxx system please go to www.bullybloxx.com for details. Once you are on the site if you will click on the School
 Administrator tab at the top of the Home page complete instructions for BullyVaxx will be provided for you. At the bottom of this page is
 a link where you can review my identification video. Thank you
 	<br />
@@ -46,7 +46,7 @@ a link where you can review my identification video. Thank you
 export const templateWeaponThreat = (
   reqBody
 ) => `I have information concernating a threat against your school. I am reporting this information through The BullyVaxx system. If you are not
-familiar with The BullyVaxx system please go to www.bullyvaxx.com for details. Once you are on the site if you will click on the School
+familiar with The BullyVaxx system please go to www.bullybloxx.com for details. Once you are on the site if you will click on the School
 Administrator tab at the top of the Home page complete instructions for BullyVaxx will be provided for you. At the bottom of this page is
 a link where you can review my identification video. Thank you
 <br />
@@ -72,7 +72,7 @@ Dear Principal, please send me a reply email confirming that you have received t
 
 export const templateSchoolThreat = (reqBody) => `Dear Principal, <br/>
 I have information concernating a threat against your school. I am reporting this information through The BullyVaxx system. If you are not
-familiar with The BullyVaxx system please go to www.bullyvaxx.com for details. Once you are on the site if you will click on the School
+familiar with The BullyVaxx system please go to www.bullybloxx.com for details. Once you are on the site if you will click on the School
 Administrator tab at the top of the Home page complete instructions for BullyVaxx will be provided for you. At the bottom of this page is
 a link where you can review my identification video. Thank you
 <br />

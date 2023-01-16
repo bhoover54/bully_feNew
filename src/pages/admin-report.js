@@ -92,7 +92,7 @@ const AdminReport = () => {
   My e-mail address ${reqBody.user?.email}<br />
   Name of School ${reqBody.school_name}<br />
   zip of School ${reqBody.zip_code}<br />
-  Principal’s email address ${reqBody.admin_email}<br />
+  Principal’s email address ${reqBody.email}<br />
 
   Full name of bully ${reqBody.bully_fname + " " + reqBody.bully_lname}<br />
   Gender of bully: ${reqBody.gender}<br />
