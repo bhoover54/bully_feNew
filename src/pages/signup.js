@@ -24,6 +24,10 @@ const Register = () => {
       toast("success")
       return
     }
+    if (response.status === 409) {
+      toast("user with this email already exist")
+      return
+    }
     toast("problem signing up! try again latter")
     setLoading(false)
   }
