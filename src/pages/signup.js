@@ -20,7 +20,7 @@ const Register = () => {
     })
     await response.json()
     if (response.status < 400) {
-      navigate("/sign up success")
+      navigate("/signin")
       toast("success")
       return
     }
