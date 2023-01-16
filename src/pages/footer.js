@@ -5,7 +5,7 @@ const Footer = () => (
     <Link to="/policy" className="text-white">
       Bully Discipline Policy
     </Link>
-    copy 2023
+    copyright 2023
   </div>
 )
 export default Footer
