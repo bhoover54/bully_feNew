@@ -4,7 +4,7 @@ import { Col, Row } from "reactstrap"
 const Home = () => {
   return (
     <Row>
-      <p className="text-center fs-1 fw-bold  m-0">BullyBoxx</p>
+      <p className="text-center fs-1 fw-bold  m-0">Bullybloxx</p>
       <p className="text-center ">
         BullyBloxx empowers a community to provide bully-free schools for its children, and by doing
         so, virtually eliminates the potential for school shootings.
