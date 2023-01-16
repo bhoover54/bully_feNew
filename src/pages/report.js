@@ -71,6 +71,7 @@ const Report = () => {
     // return
     let html = ""
 
+    console.log(data)
     const { email: reporterEmail, others } = reporter
     const templateRush = { ...data, ...otherData, ...chosenSchool, reporterEmail: reporterEmail }
     const bullyT = bullyTemplate(templateRush)
@@ -91,8 +92,8 @@ const Report = () => {
       const j = Object.keys(data)
       const k = Object.keys(otherData)
 
-      j.forEach((e) => console.log(e, data[e]))
-      k.forEach((e) => console.log(e, otherData[e]))
+      j.forEach((e) => formData.append(e, data[e]))
+      k.forEach((e) => formData.append(e, otherData[e]))
 
       const response = await fetch(`${BASE_URL}report`, {
         method: "POST",
@@ -111,11 +112,11 @@ const Report = () => {
 
         toast("report sent successfully")
         const mat = { to: data.email, subject: otherData.report_type, html: html }
-        await sendEmail(mat)
-        if (notify) {
-          mat.to = reporterEmail
-          await sendEmail(mat)
-        }
+        // await sendEmail(mat)
+        // if (notify) {
+        //   mat.to = reporterEmail
+        //   await sendEmail(mat)
+        // }
 
         return
       }
