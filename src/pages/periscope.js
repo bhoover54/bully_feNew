@@ -205,7 +205,7 @@ const Periscope = () => {
                 className="my-3 shadow-none form-control"
                 type="submit"
               >
-                Acces Request
+                Access Report
               </Button>
               <p className="text-center p-2 text-dark fw-bold">{message}</p>
             </>
