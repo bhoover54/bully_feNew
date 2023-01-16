@@ -14,7 +14,13 @@ import Select from "react-select"
 import { bullyTemplate, templateSchoolThreat, templateWeaponThreat } from "../misc/template"
 
 const Report = () => {
-  const { handleSubmit, control, reset } = useForm()
+  const {
+    handleSubmit,
+    control,
+    reset,
+    register,
+    formState: { errors }
+  } = useForm()
   const [upload, setUpload] = useState("")
   const [loading, setLoading] = useState(false)
   const [blob, setBlob] = useState("")
@@ -60,6 +66,8 @@ const Report = () => {
   }
 
   const report = async (data) => {
+    console.log(data)
+    return
     let html = ""
 
     const { email: reporterEmail, others } = reporter
@@ -239,7 +247,19 @@ const Report = () => {
                     behalf.
                   </label>
 
-                  <Icontroller name="email" placeholder="Principal Email" control={control} />
+                  <Icontroller
+                    type="email"
+                    name="email"
+                    placeholder="Principal Email"
+                    errors={errors}
+                    register={register}
+                    others={{
+                      required: true,
+                      pattern: /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g
+                    }}
+                    message="Please use a valid email format"
+                  />
+                  {/* <Icontroller name="email" placeholder="Principal Email" control={control} /> */}
 
                   <div className="mb-2">
                     <label className="py-1">Name of School</label>
@@ -247,79 +267,139 @@ const Report = () => {
                   </div>
 
                   <Icontroller
-                    name="bully_fname"
+                    type="text"
                     placeholder="Bully First Name"
-                    control={control}
+                    name="bully_fname"
+                    errors={errors}
+                    register={register}
+                    others={{
+                      required: true
+                    }}
+                    message="required"
                   />
-                  <Icontroller name="bully_lname" placeholder="Bully Last Name" control={control} />
                   <Icontroller
-                    name="bully_gender"
-                    placeholder="Gender of bully"
-                    control={control}
-                    type="select"
-                    opt={
-                      <>
-                        <option></option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                      </>
-                    }
+                    type="text"
+                    placeholder="Bully last Name"
+                    name="bully_lname"
+                    errors={errors}
+                    register={register}
+                    others={{
+                      required: true
+                    }}
+                    message="rquired"
                   />
-                  <Icontroller name="bully_grade" placeholder="Grade of Bully" control={control} />
+                  <div className="mb-2">
+                    <label className="py-1">Gender of bully</label>
+                    <select
+                      name="bully_gender"
+                      className="mb-1 form-control shadow-none"
+                      {...register("bully_gender", { required: true })}
+                    >
+                      <option></option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </select>
+                    {errors["bully_gender"] ? <p className="text-danger">required</p> : ""}
+                  </div>
 
                   <Icontroller
-                    name="bully_teacher"
+                    type="text"
+                    placeholder="Grade of Bully"
+                    name="bully_grade"
+                    errors={errors}
+                    register={register}
+                    others={{
+                      required: true
+                    }}
+                    message="required"
+                  />
+
+                  <Icontroller
+                    type="text"
                     placeholder="Homeroom Teacher of bully"
-                    control={control}
+                    name="bully_teacher"
+                    errors={errors}
+                    register={register}
+                    others={{
+                      required: true
+                    }}
                   />
-
                   <Icontroller
-                    name="incident_date"
                     type="date"
                     placeholder="Date of Incident"
-                    control={control}
+                    name="incident_date"
+                    errors={errors}
+                    register={register}
+                    others={{
+                      required: true
+                    }}
                   />
-
                   <Icontroller
-                    name="incident_place"
-                    placeholder="Where did this incident occur? Be specific."
-                    control={control}
-                  />
-
-                  <Icontroller
-                    name="incident_time"
                     type="time"
                     placeholder="Time of Incident"
-                    control={control}
+                    name="incident_date"
+                    errors={errors}
+                    register={register}
+                    others={{
+                      required: true
+                    }}
+                  />
+                  <Icontroller
+                    type="text"
+                    placeholder="Where did this incident occur? Be specific."
+                    name="incident_place"
+                    errors={errors}
+                    register={register}
+                    others={{
+                      required: true
+                    }}
                   />
 
                   {/* threat section */}
                   {reportType === "threats against school" && (
                     <>
+                      <div className="mb-2">
+                        <label className="py-1">
+                          Do any other people/students have knowledge of this threat?{" "}
+                        </label>
+                        <select
+                          name="threat_student_aware"
+                          className="mb-1 form-control shadow-none"
+                          {...register("threat_student_aware", { required: true })}
+                        >
+                          <option></option>
+                          <option value="yes">Yes</option>
+                          <option value="no">No</option>
+                        </select>
+                        {errors["threat_student_aware"] ? (
+                          <p className="text-danger">required</p>
+                        ) : (
+                          ""
+                        )}
+                      </div>
                       <Icontroller
-                        name="threat_student_aware"
-                        placeholder="Do any other people/students have knowledge of this threat? "
-                        control={control}
-                        type="select"
-                        opt={
-                          <>
-                            <option></option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                          </>
-                        }
-                      />
-                      <Icontroller
-                        name="threat_other_student"
+                        type="text"
                         placeholder="If yes, what are their names? (if more than one person, separate their names using commas)"
-                        type="textarea"
-                        control={control}
+                        name="threat_other_student"
+                        errors={errors}
+                        register={register}
                       />
+                      <div className="mb-2">
+                        <label className="py-1">
+                          Do any other people/students have knowledge of this threat?{" "}
+                        </label>
+                        <textarea
+                          name="threat_details"
+                          className="mb-1 form-control shadow-none"
+                          {...register("threat_details")}
+                        />
+                      </div>
                       <Icontroller
-                        name="threat_details"
+                        type="text"
                         placeholder="In complete detail provide all information you have on this threat."
-                        type="textarea"
-                        control={control}
+                        name="threat_details"
+                        errors={errors}
+                        register={register}
                       />
                     </>
                   )}
@@ -328,125 +408,180 @@ const Report = () => {
                   {reportType === "weapon in school" && (
                     <>
                       <Icontroller
-                        name="w_type"
+                        type="text"
                         placeholder="What type of weapon is this?"
-                        control={control}
+                        name="w_type"
+                        errors={errors}
+                        register={register}
+                        others={{
+                          required: true
+                        }}
                       />
-                      <Icontroller
-                        name="w_student_aware"
-                        placeholder="Do any other people/students have knowledge of this threat? "
-                        control={control}
-                        type="select"
-                        opt={
-                          <>
-                            <option></option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                          </>
-                        }
-                      />
-                      <Icontroller
-                        name="w_other_students"
-                        placeholder="If yes, what are their names? (if more than one person, separate their names using commas)"
-                        type="textarea"
-                        control={control}
-                      />
-                      <Icontroller
-                        name="w_sknow"
-                        placeholder="Do you know why this student is bringing this weapon to school?"
-                        type="textarea"
-                        control={control}
-                      />
-                      <Icontroller
-                        name="w_details"
-                        placeholder="In complete detail provide all information you have on this threat."
-                        type="textarea"
-                        control={control}
-                      />
+                      <div className="mb-2">
+                        <label className="py-1">
+                          Do any other people/students have knowledge of this threat?
+                        </label>
+                        <select
+                          name="w_student_aware"
+                          className="mb-1 form-control shadow-none"
+                          {...register("threat_student_aware")}
+                        >
+                          <option></option>
+                          <option value="yes">Yes</option>
+                          <option value="no">No</option>
+                        </select>
+                      </div>
+
+                      <div className="mb-2">
+                        <label className="py-1">
+                          If yes, what are their names? (if more than one person, separate their
+                          names using commas)
+                        </label>
+                        <textarea
+                          name="w_other_students"
+                          className="mb-1 form-control shadow-none"
+                          {...register("w_other_students")}
+                        />
+                      </div>
+
+                      <div className="mb-2">
+                        <label className="py-1">
+                          Do any other people/students have knowledge of this threat?
+                        </label>
+                        <select
+                          name="w_sknow"
+                          className="mb-1 form-control shadow-none"
+                          {...register("w_sknow")}
+                        >
+                          <option></option>
+                          <option value="yes">Yes</option>
+                          <option value="no">No</option>
+                        </select>
+                      </div>
+
+                      <div className="mb-2">
+                        <label className="py-1">
+                          In complete detail provide all information you have on this threat. names
+                          using commas)
+                        </label>
+                        <textarea
+                          name="w_details"
+                          className="mb-1 form-control shadow-none"
+                          {...register("w_details")}
+                        />
+                      </div>
                     </>
                   )}
 
                   {/* bully section */}
                   {reportType === "bullying" && (
                     <>
+                      <div className="mb-2">
+                        <label className="py-1">
+                          Did any teacher or staff member see this incident?
+                        </label>
+                        <select
+                          name="staff_witnessed"
+                          className="mb-1 form-control shadow-none"
+                          {...register("staff_witnessed")}
+                        >
+                          <option></option>
+                          <option value="yes">Yes</option>
+                          <option value="no">No</option>
+                        </select>
+                      </div>
+
                       <Icontroller
-                        name="staff_witnessed"
-                        placeholder="Did any teacher or staff member see this incident?"
-                        control={control}
-                        type="select"
-                        opt={
-                          <>
-                            <option></option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                          </>
-                        }
-                      />
-                      <Icontroller
-                        name="staff_witness"
+                        type="text"
                         placeholder="If yes, who was the teacher / staff member?"
-                        control={control}
+                        name="staff_witness"
+                        errors={errors}
+                        register={register}
                       />
                       <Icontroller
-                        name="staff_action"
+                        type="text"
                         placeholder="What actions did the teacher / staff member take?"
-                        control={control}
-                      />
-                      <Icontroller
-                        name="physical_abuse"
-                        placeholder="Did the bully physically abuse the victim?"
-                        control={control}
-                        type="select"
-                        opt={
-                          <>
-                            <option></option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                          </>
-                        }
+                        name="staff_action"
+                        errors={errors}
+                        register={register}
                       />
 
-                      <Icontroller
-                        name="victim_handicapped"
-                        placeholder="Was the victim a handicapped student?"
-                        control={control}
-                        type="select"
-                        opt={
-                          <>
-                            <option></option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                          </>
-                        }
-                      />
-                      <Icontroller
-                        name="victim_younger"
-                        placeholder="Was the victim a younger or smaller student than the bully?"
-                        control={control}
-                        type="select"
-                        opt={
-                          <>
-                            <option></option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                          </>
-                        }
-                      />
+                      <div className="mb-2">
+                        <label className="py-1">Did the bully physically abuse the victim?</label>
+                        <select
+                          name="physical_abuse"
+                          className="mb-1 form-control shadow-none"
+                          {...register("physical_abuse")}
+                        >
+                          <option></option>
+                          <option value="yes">Yes</option>
+                          <option value="no">No</option>
+                        </select>
+                      </div>
 
-                      <Icontroller
-                        name="bully_witnessed"
-                        placeholder="Have you witnessed this bully abusing this same victim/student in the past?"
-                        control={control}
-                        type="select"
-                        opt={
-                          <>
-                            <option></option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                          </>
-                        }
-                      />
-                      <Icontroller
+                      <div className="mb-2">
+                        <label className="py-1">Is the victim handicapped</label>
+                        <select
+                          name="victim_handicapped"
+                          className="mb-1 form-control shadow-none"
+                          {...register("victim_handicapped", { required: true })}
+                        >
+                          <option></option>
+                          <option value="yes">Yes</option>
+                          <option value="no">No</option>
+                        </select>
+                        {errors["victim_handicapped"] && <p>required</p>}
+                      </div>
+
+                      <div className="mb-2">
+                        <label className="py-1">Is the victim younger?</label>
+                        <select
+                          name="victim_younger"
+                          className="mb-1 form-control shadow-none"
+                          {...register("victim_younger", { required: true })}
+                        >
+                          <option></option>
+                          <option value="yes">Yes</option>
+                          <option value="no">No</option>
+                        </select>
+                        {errors["victim_younger"] && <p>required</p>}
+                      </div>
+
+                      <div className="mb-2">
+                        <label className="py-1">
+                          Have you witnessed this bully abusing this same victim/student in the
+                          past?
+                        </label>
+                        <select
+                          name="bully_witnessed"
+                          className="mb-1 form-control shadow-none"
+                          {...register("bully_witnessed", { required: true })}
+                        >
+                          <option></option>
+                          <option value="yes">Yes</option>
+                          <option value="no">No</option>
+                        </select>
+                        {errors["bully_witnessed"] && <p>required</p>}
+                      </div>
+
+                      <div className="mb-2">
+                        <label className="py-1">
+                          Have you witnessed this bully abusing this same victim/student in the
+                          past?
+                        </label>
+                        <select
+                          name="serail_bully"
+                          className="mb-1 form-control shadow-none"
+                          {...register("serail_bully", { required: true })}
+                        >
+                          <option></option>
+                          <option value="yes">Yes</option>
+                          <option value="no">No</option>
+                        </select>
+                        {errors["serail_bully"] && <p>required</p>}
+                      </div>
+
+                      {/* <Icontroller
                         name="serail_bully"
                         placeholder="Have you witnessed this bully abusing other students in the past?"
                         control={control}
@@ -458,19 +593,29 @@ const Report = () => {
                             <option value="no">No</option>
                           </>
                         }
-                      />
-                      <Icontroller
-                        name="details"
-                        placeholder="If Yes, please provide any details of other bullying incidents that you have witnessed or seen in the past involving this bully."
-                        type="textarea"
-                        control={control}
-                      />
-                      <Icontroller
-                        name="other_incident"
-                        placeholder="If more than one bully add their names here Names of any other students that supported the bully’s actions"
-                        type="textarea"
-                        control={control}
-                      />
+                      /> */}
+                      <div className="mb-2">
+                        <label className="py-1">
+                          If Yes, please provide any details of other bullying incidents that you
+                          have witnessed or seen in the past involving this bully.
+                        </label>
+                        <textarea
+                          name="details"
+                          className="mb-1 form-control shadow-none"
+                          {...register("details")}
+                        />
+                      </div>
+                      <div className="mb-2">
+                        <label className="py-1">
+                          If more than one bully add their names here Names of any other students
+                          that supported the bully’s actions
+                        </label>
+                        <textarea
+                          name="other_incident"
+                          className="mb-1 form-control shadow-none"
+                          {...register("other_incident")}
+                        />
+                      </div>
                     </>
                   )}
 

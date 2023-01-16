@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Row, Modal, ModalHeader, ModalBody, ModalFooter, Button, Col } from "reactstrap"
 import BASE_URL from "../misc/url"
 import { getItem } from "../misc/helper"
 import DataTable from "react-data-table-component"
+import AppContext from "../misc/appContext"
+import { useNavigate } from "react-router-dom"
 
 const AdminReport = () => {
   const [reports, setReports] = useState([])
@@ -11,8 +13,9 @@ const AdminReport = () => {
 
   const [modal, setModal] = useState(false)
   const [backdrop, setBackdrop] = useState(true)
-  const [keyboard, setKeyboard] = useState(true)
-
+  const { token, role } = useContext(AppContext)
+  const navigate = useNavigate()
+  if (!token || role !== "ADMIN") navigate("/")
   const columns = [
     {
       name: "S/N",
@@ -58,7 +61,7 @@ const AdminReport = () => {
               setReport(row)
             }}
           >
-            Detail
+            View
           </Button>
         </>
       )
@@ -122,6 +125,7 @@ const AdminReport = () => {
   useEffect(() => {
     getReport()
   }, [])
+
   return (
     <Row>
       <Col className=" px-0 rounded shadow overflow-hidden">

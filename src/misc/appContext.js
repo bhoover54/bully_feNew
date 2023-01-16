@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import jwtDecode from "jwt-decode"
 import { createContext, useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { getItem, removeItem, setItem } from "./helper"
 import BASE_URL from "./url"
 
@@ -11,6 +12,7 @@ export const AppProvider = ({ component }) => {
   const [role, setRole] = useState()
   const [check, setCheck] = useState(false)
   const [reporter, setReporter] = useState({})
+  const navigate = useNavigate()
   const logout = () => {
     removeItem("bly_token")
     removeItem("bly_role")
@@ -20,6 +22,7 @@ export const AppProvider = ({ component }) => {
   const login = (res) => {
     setItem("bly_token", res.token)
     setItem("bly_role", res.role)
+    navigate("/")
     setCheck(!check)
   }
 

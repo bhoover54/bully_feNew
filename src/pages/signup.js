@@ -1,49 +1,110 @@
-import { useForm, Controller } from "react-hook-form"
+import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
 import BASE_URL from "../misc/url"
-import { Button, Col, Input, Row } from "reactstrap"
+import { Button, Col, Row } from "reactstrap"
 import { useState } from "react"
 import { toast } from "react-toastify"
 
 const Register = () => {
-  const { handleSubmit, control } = useForm()
+  const {
+    handleSubmit,
+    register,
+    formState: { errors }
+  } = useForm()
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
   const submit = async (data) => {
     setLoading(true)
-    const response = await fetch(`${BASE_URL}signup`, {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: new Headers({
-        "Content-Type": "application/json"
+    try {
+      const response = await fetch(`${BASE_URL}signup`, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: new Headers({
+          "Content-Type": "application/json"
+        })
       })
-    })
-    await response.json()
-    if (response.status < 400) {
-      navigate("/signin")
-      toast("success")
-      return
+      await response.json()
+      if (response.status < 400) {
+        navigate("/signin")
+        toast("success")
+        return
+      }
+      if (response.status === 409) {
+        toast("user with this email already exist")
+        return
+      }
+      toast("problem signing up! try again latter")
+      setLoading(false)
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setLoading(false)
     }
-    if (response.status === 409) {
-      toast("user with this email already exist")
-      return
-    }
-    toast("problem signing up! try again latter")
-    setLoading(false)
   }
 
   return (
     <Row style={{ minHeight: "70vh" }} className="d-flex justify-content-center align-items-center">
       <Col md="6" lg="4" className="mx-auto  p-5 shadow rounded">
-        {/* <Link to="/" className="btn btn-info btn-sm text-dark fw-bold mb-3">
-          home
-        </Link> */}
         <form onSubmit={handleSubmit(submit)}>
-          <Icontroller name="first_name" placeholder="First Name" control={control} />
-          <Icontroller name="last_name" placeholder="Last Name" control={control} />
-          <Icontroller name="email" placeholder="Email" type="email" control={control} />
-          <Icontroller name="phone" placeholder="Phone" type="number" control={control} />
-          <Icontroller name="password" placeholder="Password" type="password" control={control} />
+          <Icontroller
+            type="text"
+            name="first_name"
+            placeholder="First Name"
+            register={register}
+            errors={errors}
+            others={{
+              required: true
+            }}
+            message="First name is required"
+          />
+          <Icontroller
+            type="text"
+            name="last_name"
+            placeholder="Last Name"
+            register={register}
+            errors={errors}
+            others={{
+              required: true
+            }}
+            message="Last name is required"
+          />
+          <Icontroller
+            type="email"
+            name="email"
+            placeholder="Email"
+            register={register}
+            errors={errors}
+            others={{
+              required: true,
+              pattern: /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g
+            }}
+            message="Please use a valid email format"
+          />
+          <Icontroller
+            type="number"
+            name="phone"
+            placeholder="Phone"
+            register={register}
+            errors={errors}
+            // others={{
+            //   pattern: /[0-9]/,
+            //   max: 10,
+            //   min: 10
+            // }}
+            // message="invalid phone format"
+          />
+          <Icontroller
+            type="password"
+            name="password"
+            placeholder="Password"
+            register={register}
+            errors={errors}
+            others={{
+              required: true
+            }}
+            message="password is required"
+          />
+
           <Button
             color="dark"
             className="shadow-none mb-3 form-control"
@@ -66,29 +127,18 @@ const Register = () => {
 
 export default Register
 
-export const Icontroller = ({ name, placeholder, control, type = "text", opt, defaultV }) => {
+export const Icontroller = ({ register, others, errors, name, message, placeholder, ...rest }) => {
   return (
-    <>
-      <div className="mb-2">
-        <label className="py-1">{placeholder}</label>
-        <Controller
-          name={name}
-          defaultValue={defaultV || ""}
-          control={control}
-          render={({ field }) => (
-            <Input
-              {...field}
-              // onChange={event}
-              bsSize="sm"
-              // placeholder={placeholder}
-              className="shadow-none"
-              type={type}
-            >
-              {opt}
-            </Input>
-          )}
-        />
-      </div>
-    </>
+    <div className="mb-2">
+      <label className="py-1">{placeholder}</label>
+      <input
+        className="mb-1 form-control shadow-none"
+        {...register(name, { ...others })}
+        {...rest}
+      />
+      {errors[name] ? <p className="text-danger">{message || "required"}</p> : ""}
+    </div>
   )
 }
+
+// /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g

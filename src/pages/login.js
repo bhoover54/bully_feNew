@@ -8,7 +8,11 @@ import AppContext from "../misc/appContext"
 import { toast } from "react-toastify"
 
 const Login = () => {
-  const { handleSubmit, control } = useForm()
+  const {
+    handleSubmit,
+    register,
+    formState: { errors }
+  } = useForm()
   const [loading, setLoading] = useState(false)
   const { login: loggedIn, token } = useContext(AppContext)
   const navigate = useNavigate()
@@ -44,8 +48,29 @@ const Login = () => {
           home
         </Link> */}
         <form onSubmit={handleSubmit(login)}>
-          <Icontroller name="email" type="email" placeholder="Email" control={control} />
-          <Icontroller name="password" type="password" placeholder="Password" control={control} />
+          <Icontroller
+            type="email"
+            name="email"
+            placeholder="Email"
+            register={register}
+            errors={errors}
+            others={{
+              required: true,
+              pattern: /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g
+            }}
+            message="Please use a valid email format"
+          />
+          <Icontroller
+            type="password"
+            name="password"
+            placeholder="Password"
+            register={register}
+            errors={errors}
+            others={{
+              required: true
+            }}
+            message="password is required"
+          />
 
           <Button
             color="dark"

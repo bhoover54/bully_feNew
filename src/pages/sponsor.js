@@ -1,23 +1,39 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-useless-escape */
 import { useForm } from "react-hook-form"
 import BASE_URL from "../misc/url"
 import { getItem, setItem } from "../misc/helper"
 import { useContext, useState } from "react"
-import { Button, Col, Input, Row } from "reactstrap"
+import { Button, Col, Input, Modal, ModalBody, Row } from "reactstrap"
 import { Icontroller } from "./signup"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import AppContext from "../misc/appContext"
 
 const Sponsor = () => {
-  const { handleSubmit, reset, control } = useForm()
+  const {
+    handleSubmit,
+    reset,
+    register,
+    formState: { errors }
+  } = useForm()
   const navigate = useNavigate()
-  const { handleSubmit: handleSubmit2, reset: reset2, control: control2 } = useForm()
+  const {
+    handleSubmit: handleSubmit2,
+    reset: reset2,
+    register: register2,
+    formState: { errors: error2 }
+  } = useForm()
   const [message, setMessage] = useState("")
   const [found, setFound] = useState({})
   const [loading, setLoading] = useState(false)
   const { token } = useContext(AppContext)
   const [blob, setBlob] = useState("")
   const [upload, setUpload] = useState("")
+  const [modal, setModal] = useState(false)
+  const [backdrop, setBackdrop] = useState(true)
+
+  const [stage, setStage] = useState("intro")
 
   const search = async (data) => {
     setLoading(true)
@@ -31,10 +47,15 @@ const Sponsor = () => {
     })
     const result = await response.json()
     if (response.status < 400) {
-      if (!result.data) setMessage("school not sponsored by any business")
-      else {
+      if (!result.data) {
+        setMessage(
+          "Your school is currently not protected by the BullyBloxx System. To get this protection for your school please contact a local real estate professional and have them sign up as the Bully Shut Down Ambassador for your school by going to bullybloxx.com and clicking on the Real Estate Pros tab on the home page."
+        )
+      } else {
         setFound(result)
+        setMessage("")
       }
+      toggle()
       reset()
       toast.info("success")
       setLoading(false)
@@ -45,6 +66,8 @@ const Sponsor = () => {
   }
 
   const submitData = async (data) => {
+    // console.log(data)
+    // return
     if (!token) {
       toast("sign in to sponsor a school")
       return
@@ -52,6 +75,7 @@ const Sponsor = () => {
 
     const formData = new FormData()
     formData.append("upload", upload)
+    formData.append("business_type", "real estate")
     const j = Object.keys(data)
     j.forEach((e) => formData.append(e, data[e]))
     //console.log(data)
@@ -68,34 +92,35 @@ const Sponsor = () => {
     if (response.status === 409) {
       toast("school already sponsored")
       setMessage("school already sponsored by another company")
+      toggle()
       setUpload("")
       setBlob("")
       return
     }
     if (response.status < 400) {
-      setMessage("school sponsored successful, awaiting approvals")
+      setMessage(
+        "Thank you for stepping up for your community by serving as a Bully Shut Down Ambassador. Your application is pending and you will be contacted by email as soon as our staff approves your application. You can serve as a Bully Shut Down Ambassador for up to 3 schools, simply submit a separate application for each school. Once you are approved will receive instructions for moving forward through your email. Thank you."
+      )
+      toggle()
       reset2()
     }
   }
+
+  const toggle = () => setModal(!modal)
 
   const preview = (e) => {
     const url = e.target.files[0]
     const blobUrl = URL.createObjectURL(url)
     setBlob(blobUrl)
     setUpload(url)
+    setStage("form")
   }
 
+  const changeStage = (value) => setStage(value)
   return (
     <>
       <Row>
-        {message ? (
-          <Col xs="12">
-            <p className="my-3 text-center">{message}</p>
-          </Col>
-        ) : (
-          ""
-        )}
-        {Object.keys(found).length ? (
+        {/* {Object.keys(found).length ? (
           <div className="text-center p-3 mb-5 shadow rounded">
             {found.data.approved === "pending" ? (
               <> {found.data.school_name.toUpperCase()} is pending approval</>
@@ -121,13 +146,33 @@ const Sponsor = () => {
           </div>
         ) : (
           ""
-        )}
+        )} */}
 
         <Col md="3" className="mb-5">
           <h4 className="mb-3">Search Sponsored School</h4>
           <form onSubmit={handleSubmit(search)}>
-            <Icontroller name="school_name" placeholder="School name" control={control} />
-            <Icontroller name="zip_code" placeholder="Zip code" control={control} />
+            <Icontroller
+              type="text"
+              name="school_name"
+              placeholder="School name"
+              register={register}
+              errors={errors}
+              others={{
+                required: true
+              }}
+              message="School name is required"
+            />
+            <Icontroller
+              type="text"
+              name="zip_code"
+              placeholder="Zip code"
+              register={register}
+              errors={errors}
+              others={{
+                required: true
+              }}
+              message="Zip code is required"
+            />
 
             <Button type="submit" color="dark" size="sm">
               Search
@@ -138,68 +183,160 @@ const Sponsor = () => {
         <Col md="3" />
 
         <Col md="6">
-          <h4 className="mb-3">Sponsor School</h4>
+          <h4 className="mb-3">Is your school protected? </h4>
           <form onSubmit={handleSubmit2(submitData)}>
-            <label className="py-1">Video Intro</label>
-            <Input
-              bsSize="sm"
-              className="mb-3 shadow-none"
-              type="file"
-              name="video"
-              placeholder="Video Evidence? "
-              onChange={preview}
-              accept="video/*"
-              role="button"
-            />
-
-            {upload && (
-              <video width="100%" controls className="mb-3">
-                <source src={blob} />
-                Your browser does not support HTML5 video.
-              </video>
+            {stage === "intro" && (
+              <div>
+                Real Estate Professionals can serve as a Bully Shut Down Ambassador for up to 3
+                different schools in their area. To apply to be a Bully Shutdown Ambassador please{" "}
+                <br />
+                <span role="button" className="text-primary" onClick={() => changeStage("upload")}>
+                  CLICK HERE
+                </span>
+              </div>
             )}
 
-            <Icontroller name="business_name" placeholder="Company name" control={control2} />
-            <Icontroller
-              name="business_type"
-              placeholder="Business Type"
-              control={control2}
-              type="select"
-              opt={
-                <>
-                  <option></option>
-                  <option value="real estate">Real Estate</option>
-                </>
-              }
-            />
-            <Icontroller
-              name="business_email"
-              type="email"
-              placeholder="Business Email"
-              control={control2}
-            />
+            {(stage === "upload" || stage === "form") && (
+              <>
+                <p>
+                  The first step to becoming a Bully Shut Down Ambassador for a school is creating a
+                  verification video confirming who you are. Please upload a "selfie" video of
+                  yourself clearly showing your face with no hats, sun glasses or anything else that
+                  may obstruct your face. Please make the following statement in your video. My name
+                  is __________________ and the name of the business that i work for is
+                  __________________.
+                </p>
+                <label className="py-1">Video Intro</label>
+                <Input
+                  bsSize="sm"
+                  className="mb-3 shadow-none"
+                  type="file"
+                  name="video"
+                  placeholder="Video Evidence? "
+                  onChange={preview}
+                  accept="video/*"
+                  role="button"
+                />
+                {upload && (
+                  <video width="100%" controls className="mb-3">
+                    <source src={blob} />
+                    Your browser does not support HTML5 video.
+                  </video>
+                )}
+              </>
+            )}
 
-            <Icontroller
-              name="business_mobile"
-              type="number"
-              placeholder="Business phone number"
-              control={control2}
-            />
-            <Icontroller
-              name="business_website"
-              placeholder="Business website"
-              control={control2}
-            />
-
-            <Icontroller name="school_name" placeholder="School name" control={control2} />
-            <Icontroller name="zip_code" type="number" placeholder="Zip code" control={control2} />
-
-            <Button type="submit" color="dark" size="sm">
-              Sponsor
-            </Button>
+            {stage === "form" && (
+              <>
+                <Icontroller
+                  type="text"
+                  name="business_name"
+                  placeholder="Business Name"
+                  register={register2}
+                  errors={error2}
+                  others={{
+                    required: true
+                  }}
+                  message="required"
+                />
+                <Icontroller
+                  type="email"
+                  name="business_email"
+                  placeholder="Business Email"
+                  register={register2}
+                  errors={error2}
+                  others={{
+                    required: true,
+                    pattern: /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g
+                  }}
+                  message="Please use a valid email format"
+                />
+                <Icontroller
+                  type="number"
+                  name="business_mobile"
+                  placeholder="Business Mobile Number"
+                  register={register2}
+                  errors={error2}
+                  others={{
+                    required: true
+                  }}
+                  message="required"
+                />
+                <Icontroller
+                  type="text"
+                  name="business_website"
+                  placeholder="Business Website where your picture and identity is displayed."
+                  register={register2}
+                  errors={error2}
+                  others={{
+                    required: true
+                  }}
+                  message="required"
+                />
+                <Icontroller
+                  type="text"
+                  name="school_name"
+                  placeholder="School name"
+                  register={register2}
+                  errors={error2}
+                  others={{
+                    required: true
+                  }}
+                  message="required"
+                />
+                <Icontroller
+                  type="number"
+                  name="zip_code"
+                  placeholder="Zip code"
+                  register={register2}
+                  errors={error2}
+                  others={{
+                    required: true
+                  }}
+                  message="required"
+                />
+                <Button type="submit" color="dark" size="sm">
+                  SUBMIT
+                </Button>
+              </>
+            )}
           </form>
         </Col>
       </Row>
+
+      <Modal isOpen={modal} toggle={toggle} backdrop={backdrop}>
+        <ModalBody>
+          {message && message}
+          {Object.keys(found).length ? (
+            <div className="text-center p-3 mb-5 shadow rounded">
+              {found.data.approved === "pending" ? (
+                <> {found.data.school_name.toUpperCase()} is pending approval</>
+              ) : (
+                <>
+                  {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is
+                  already sponsored by {found.data.business_name} with sponsor balance of $
+                  {found.data?.wallet?.balance}. <br />
+                  <Button
+                    className="text-decoration-none bg-transparent text-primary border-0"
+                    onClick={() => {
+                      setItem("s_sch", JSON.stringify(found.data))
+                      navigate("/donate")
+                      // console.log(found.data)
+                    }}
+                    disabled={loading}
+                  >
+                    Donate{" "}
+                  </Button>
+                  to school
+                </>
+              )}
+            </div>
+          ) : (
+            ""
+          )}
+          s
+        </ModalBody>
+      </Modal>
     </>
   )
 }

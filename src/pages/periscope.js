@@ -10,7 +10,13 @@ import DataTable from "react-data-table-component"
 import StripeCheckout from "react-stripe-checkout"
 
 const Periscope = () => {
-  const { handleSubmit, control, reset } = useForm()
+  const {
+    handleSubmit,
+    control,
+    reset,
+    register,
+    formState: { errors }
+  } = useForm()
   const [loading, setLoading] = useState(false)
   const [result, setResult] = useState([])
   const [final, setFinal] = useState([])
@@ -120,13 +126,66 @@ const Periscope = () => {
         <form onSubmit={handleSubmit(submit)}>
           {!pay ? (
             <>
-              {" "}
-              <Icontroller name="bully_fname" placeholder="Bully's First Name" control={control} />
-              <Icontroller name="bully_lname" placeholder="Bully's Last Name" control={control} />
-              <Icontroller name="bully_teacher" placeholder="Homeroom teacher" control={control} />
-              <Icontroller name="bully_grade" placeholder="Bully's grade" control={control} />
-              <Icontroller name="school_name" placeholder="School Name" control={control} />
-              <Icontroller name="zip_code" placeholder="Zip code" control={control} />
+              <Icontroller
+                name="bully_fname"
+                type="text"
+                placeholder="Bully's First Name"
+                register={register}
+                errors={errors}
+                others={{
+                  required: true
+                }}
+              />
+              <Icontroller
+                name="bully_lname"
+                type="text"
+                placeholder="Bully's Last Name"
+                register={register}
+                errors={errors}
+                others={{
+                  required: true
+                }}
+              />
+              <Icontroller
+                name="bully_teacher"
+                type="text"
+                placeholder="Homeroom teacher"
+                register={register}
+                errors={errors}
+                others={{
+                  required: true
+                }}
+              />
+              <Icontroller
+                name="bully_grade"
+                type="text"
+                placeholder="Bully's grade"
+                register={register}
+                errors={errors}
+                others={{
+                  required: true
+                }}
+              />
+              <Icontroller
+                name="school_name"
+                type="text"
+                placeholder="School Name"
+                register={register}
+                errors={errors}
+                others={{
+                  required: true
+                }}
+              />
+              <Icontroller
+                name="zip_code"
+                type="text"
+                placeholder="Zip code"
+                register={register}
+                errors={errors}
+                others={{
+                  required: true
+                }}
+              />
             </>
           ) : (
             ""
@@ -143,7 +202,7 @@ const Periscope = () => {
                 className="my-3 shadow-none form-control"
                 type="submit"
               >
-                Pay
+                Acces Request
               </Button>
               <p className="text-center p-2 text-dark fw-bold">{message}</p>
             </>

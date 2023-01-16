@@ -1,5 +1,7 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+$dark: #000;
+
 a {
 	text-decoration: none;
 	font-size: 0.9rem;
@@ -8,4 +10,28 @@ a {
 		color: gray !important;
 	}
 
+}
+
+
+
+.nav-link {
+	color: #fff;
+	text-transform: uppercase;
+	position: relative;
+}
+
+.active::before {
+	content: "";
+	width: 25%;
+	position: absolute;
+	background: rgb(244, 67, 54);
+	height: 5px;
+	border-radius: 5px;
+	left: 50%;
+	transform: translate(-50%);
+	bottom: 0;
+}
+
+.navbar-dark {
+	background-color: $dark;
 }

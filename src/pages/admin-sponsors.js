@@ -3,8 +3,14 @@ import useSchool from "../hooks/school.hook"
 import { Button } from "reactstrap"
 
 import BASE_URL from "../misc/url"
+import { useContext } from "react"
+import AppContext from "../misc/appContext"
+import { useNavigate } from "react-router-dom"
 const AdminSponsor = () => {
   const { school, getSchools } = useSchool()
+  const { token } = useContext(AppContext)
+  const navigate = useNavigate()
+  if (!token) navigate("/")
   const approve = async (id) => {
     //console.log(id)
     const response = await fetch(`${BASE_URL}approve/school/${id}`, {
@@ -58,7 +64,7 @@ const AdminSponsor = () => {
     },
     {
       name: "Wallet Balance",
-      selector: (row) => row.wallet.balance
+      selector: (row) => row?.wallet?.balance || 0
     },
     {
       name: "Status",
@@ -75,9 +81,14 @@ const AdminSponsor = () => {
       )
     }
   ]
+
   return (
     <div className=" px-0 rounded shadow overflow-hidden">
-      <DataTable columns={columns} title="Sponsored Scools" pagination data={school} />
+      {token ? (
+        <DataTable columns={columns} title="Sponsored Scools" pagination data={school} />
+      ) : (
+        ""
+      )}
     </div>
   )
 }
