@@ -112,11 +112,11 @@ const Report = () => {
 
         toast("report sent successfully")
         const mat = { to: data.email, subject: otherData.report_type, html: html }
-        // await sendEmail(mat)
-        // if (notify) {
-        //   mat.to = reporterEmail
-        //   await sendEmail(mat)
-        // }
+        await sendEmail(mat)
+        if (notify) {
+          mat.to = reporterEmail
+          await sendEmail(mat)
+        }
 
         return
       }
