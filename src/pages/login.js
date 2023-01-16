@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
 import BASE_URL from "../misc/url"

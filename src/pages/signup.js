@@ -76,6 +76,7 @@ const Register = () => {
             errors={errors}
             others={{
               required: true,
+              // eslint-disable-next-line no-useless-escape
               pattern: /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g
             }}
             message="Please use a valid email format"
