@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Col, Row, Button } from "reactstrap"
+import { Col, Row, Button, Modal, ModalHeader, ModalBody } from "reactstrap"
 import { Icontroller } from "./signup"
 import { useForm } from "react-hook-form"
 import { useState } from "react"
@@ -8,6 +8,11 @@ import { getItem } from "../misc/helper"
 import BASE_URL from "../misc/url"
 import DataTable from "react-data-table-component"
 import StripeCheckout from "react-stripe-checkout"
+import {
+  bullyTemplate2,
+  templateSchoolThreat2,
+  templateWeaponThreat2
+} from "../misc/report-template"
 
 const Periscope = () => {
   const {
@@ -25,6 +30,7 @@ const Periscope = () => {
   const [pay, setPay] = useState(false)
   const [message, setMessage] = useState("")
   const [modal, setModal] = useState(false)
+  const [backdrop, setBackdrop] = useState(true)
 
   const submit = async (data) => {
     setData(data)
@@ -120,6 +126,14 @@ const Periscope = () => {
     }
   ]
 
+  const reportTenplate = (reqBody) => {
+    let html = ""
+    if (reqBody.report_type === "bullying") html = bullyTemplate2(reqBody)
+    if (reqBody.report_type === "weapon in school") html = templateWeaponThreat2(reqBody)
+    if (reqBody.report_type === "threats against school") html = templateSchoolThreat2(reqBody)
+
+    return html
+  }
   return (
     <Row>
       <Col md="6" className="mx-auto mb-5">
@@ -232,6 +246,13 @@ const Periscope = () => {
       ) : (
         ""
       )}
+
+      <Modal isOpen={modal} toggle={toggle} backdrop={backdrop}>
+        <ModalHeader toggle={toggle}>{report.report_type}</ModalHeader>
+        <ModalBody>
+          <div dangerouslySetInnerHTML={{ __html: reportTenplate(report) }} />
+        </ModalBody>
+      </Modal>
     </Row>
   )
 }

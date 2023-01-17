@@ -73,8 +73,14 @@ const Report = () => {
     // return
     let html = ""
 
-    const { email: reporterEmail, others } = reporter
-    const templateRush = { ...data, ...otherData, ...chosenSchool, reporterEmail: reporterEmail }
+    const { email: reporterEmail, ...others } = reporter
+    const templateRush = {
+      ...data,
+      ...otherData,
+      ...chosenSchool,
+      ...others,
+      reporterEmail: reporterEmail
+    }
     const bullyT = bullyTemplate(templateRush)
     const templateWeapon = templateWeaponThreat(templateRush)
     const threat = templateSchoolThreat(templateRush)
@@ -82,6 +88,10 @@ const Report = () => {
     if (reportType === "bullying") html = bullyT
     if (reportType === "weapon in school") html = templateWeapon
     if (reportType === "threats against school") html = threat
+
+    console.log(templateRush)
+    console.log(html)
+    return
 
     try {
       setLoading(true)
@@ -340,7 +350,7 @@ const Report = () => {
                   <Icontroller
                     type="time"
                     placeholder="Time of Incident"
-                    name="incident_date"
+                    name="incident_time"
                     errors={errors}
                     register={register}
                     others={{
@@ -628,7 +638,7 @@ const Report = () => {
                     </>
                   )}
 
-                  <div className="mb-2">
+                  {/* <div className="mb-2">
                     <label className="py-1">
                       <Input
                         type="checkbox"
@@ -639,7 +649,7 @@ const Report = () => {
                       information, this will allow me to know that the information that I have
                       submitted is being properly addressed. Thank you.
                     </label>
-                  </div>
+                  </div> */}
 
                   <Button
                     bsSize="sm"
