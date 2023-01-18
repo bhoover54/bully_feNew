@@ -292,20 +292,23 @@ const Sponsor = () => {
               ) : (
                 <>
                   {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is
-                  already sponsored by {found.data.business_name} with sponsor balance of $
-                  {found.data?.wallet?.balance}. <br />
+                  already sponsored by {found.data.business_name} BullyBloxx is owned, controlled
+                  and funded by the parents in the school and citizens in the community. The cost of
+                  protecting any school, regardless of size, with BullyBloxx is just $300 per month
+                  and is paid for yearly by donations from the parents and community. Currently
+                  there is $535 in donations with a total of $3,600 needed to fund BullyBloxx for a
+                  complete year of protection.
                   <Button
                     className="text-decoration-none bg-transparent text-primary border-0"
                     onClick={() => {
                       setItem("s_sch", JSON.stringify(found.data))
                       navigate("/donate")
-                      // console.log(found.data)
                     }}
                     disabled={loading}
                   >
-                    Donate{" "}
+                    Donate
                   </Button>
-                  to school
+                  so our students can continue to have this protection.
                 </>
               )}
             </div>
@@ -317,5 +320,4 @@ const Sponsor = () => {
     </>
   )
 }
-
 export default Sponsor

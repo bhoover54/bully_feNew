@@ -27,25 +27,29 @@ const AdminSponsor = () => {
 
     await response.json()
     if (response.status < 400) {
+      await sendEmail()
       getSchools()
-      sendEmail()
       return
     }
   }
 
   const toggle = () => setModal(!modal)
 
-  const sendEmail = async (data) => {
+  const sendEmail = async () => {
     const response = await fetch(`${BASE_URL}send/mail`, {
       method: "POST",
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        to: report.user.email,
+        subject: "Sponsorship Approval",
+        html: ` Dear  ${report.user.first_name} <br/>Your Sponsorship request for ${report.school_name} with zip code ${report.zip_code} has been approved`
+      }),
       headers: new Headers({
         "Content-Type": "application/json",
         "Authorization": `Bearer ${getItem("bly_token")}`
       })
     })
     const j = await response.json()
-    if (j.message === "success") toast("email sent")
+    if (j.message === "success") toast(`email sent ${report.user.fullName}`)
     else toast("error sending mail")
   }
 
@@ -74,34 +78,7 @@ const AdminSponsor = () => {
       name: "Business Mobile",
       selector: (row) => row.business_mobile
     },
-    // {
-    //   name: "Business Type",
-    //   selector: (row) => row.business_type
-    // },
-    // {
-    //   name: "Business Website",
-    //   selector: (row) => row.business_website
-    // },
-    // {
-    //   name: "Wallet Balance",
-    //   selector: (row) => row?.wallet?.balance || 0
-    // },
-    // {
-    //   name: "Status",
-    //   cell: (row) => (
-    //     <>
-    //       {row.approved === "pending" ? (
-    //         <Button color="dark" className="rounded-pill" size="sm" onClick={() => approve(row.id)}>
-    //           Approve
-    //         </Button>
-    //       ) : (
-    //         <Badge color="success" pill>
-    //           Approved
-    //         </Badge>
-    //       )}
-    //     </>
-    //   )
-    // },
+
     {
       name: "More",
       cell: (row) => (
@@ -131,7 +108,6 @@ const AdminSponsor = () => {
       <Modal isOpen={modal} toggle={toggle} backdrop={backdrop}>
         {Object.keys(report).length ? (
           <>
-            {" "}
             <ModalHeader toggle={toggle}>
               {report?.school_name.toUpperCase()} -{" "}
               <small className="text-muted">{report.zip_code}</small> <br />

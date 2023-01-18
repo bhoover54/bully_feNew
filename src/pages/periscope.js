@@ -35,7 +35,9 @@ const Periscope = () => {
   const submit = async (data) => {
     setData(data)
     setLoading(true)
-    setMessage("wait why will get report, You will require to pay a $25 to view report")
+    setMessage(
+      "Searching Report” once the report is found displays this “Report found, accessing the report costs $25. Checkout"
+    )
     try {
       const response = await fetch(`${BASE_URL}periscope`, {
         method: "POST",
