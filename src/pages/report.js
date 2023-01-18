@@ -89,10 +89,6 @@ const Report = () => {
     if (reportType === "weapon in school") html = templateWeapon
     if (reportType === "threats against school") html = threat
 
-    console.log(templateRush)
-    console.log(html)
-    return
-
     try {
       setLoading(true)
 
