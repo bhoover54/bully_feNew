@@ -1,18 +1,22 @@
 import DataTable from "react-data-table-component"
 import useSchool from "../hooks/school.hook"
-import { Button } from "reactstrap"
+import { Badge, Button, Modal, ModalHeader, ModalBody } from "reactstrap"
 
 import BASE_URL from "../misc/url"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import AppContext from "../misc/appContext"
 import { useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
+import { getItem } from "../misc/helper"
 const AdminSponsor = () => {
   const { school, getSchools } = useSchool()
   const { token, role } = useContext(AppContext)
+  const [modal, setModal] = useState(false)
+  const [backdrop, setBackdrop] = useState(true)
+  const [report, setReport] = useState({})
   const navigate = useNavigate()
   if (!token || role !== "ADMIN") navigate("/")
   const approve = async (id) => {
-    //console.log(id)
     const response = await fetch(`${BASE_URL}approve/school/${id}`, {
       method: "PUT",
       body: JSON.stringify({}),
@@ -20,13 +24,29 @@ const AdminSponsor = () => {
         "Content-Type": "application/json"
       })
     })
+
     await response.json()
     if (response.status < 400) {
-      //console.log(result)
       getSchools()
+      sendEmail()
       return
     }
-    //console.log(result)
+  }
+
+  const toggle = () => setModal(!modal)
+
+  const sendEmail = async (data) => {
+    const response = await fetch(`${BASE_URL}send/mail`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: new Headers({
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${getItem("bly_token")}`
+      })
+    })
+    const j = await response.json()
+    if (j.message === "success") toast("email sent")
+    else toast("error sending mail")
   }
 
   const columns = [
@@ -54,30 +74,49 @@ const AdminSponsor = () => {
       name: "Business Mobile",
       selector: (row) => row.business_mobile
     },
+    // {
+    //   name: "Business Type",
+    //   selector: (row) => row.business_type
+    // },
+    // {
+    //   name: "Business Website",
+    //   selector: (row) => row.business_website
+    // },
+    // {
+    //   name: "Wallet Balance",
+    //   selector: (row) => row?.wallet?.balance || 0
+    // },
+    // {
+    //   name: "Status",
+    //   cell: (row) => (
+    //     <>
+    //       {row.approved === "pending" ? (
+    //         <Button color="dark" className="rounded-pill" size="sm" onClick={() => approve(row.id)}>
+    //           Approve
+    //         </Button>
+    //       ) : (
+    //         <Badge color="success" pill>
+    //           Approved
+    //         </Badge>
+    //       )}
+    //     </>
+    //   )
+    // },
     {
-      name: "Business Type",
-      selector: (row) => row.business_type
-    },
-    {
-      name: "Business Website",
-      selector: (row) => row.business_website
-    },
-    {
-      name: "Wallet Balance",
-      selector: (row) => row?.wallet?.balance || 0
-    },
-    {
-      name: "Status",
+      name: "More",
       cell: (row) => (
-        <>
-          {row.approved === "pending" ? (
-            <Button color="dark" onClick={() => approve(row.id)}>
-              Approve
-            </Button>
-          ) : (
-            row.approved
-          )}
-        </>
+        <Button
+          size="sm"
+          color="dark"
+          className="rounded-pill px-3"
+          onClick={() => {
+            // console.log(row.id)
+            toggle()
+            setReport(row)
+          }}
+        >
+          view
+        </Button>
       )
     }
   ]
@@ -89,6 +128,54 @@ const AdminSponsor = () => {
       ) : (
         ""
       )}
+      <Modal isOpen={modal} toggle={toggle} backdrop={backdrop}>
+        {Object.keys(report).length ? (
+          <>
+            {" "}
+            <ModalHeader toggle={toggle}>
+              {report?.school_name.toUpperCase()} -{" "}
+              <small className="text-muted">{report.zip_code}</small> <br />
+              {report.approved === "pending" ? (
+                <Button onClick={() => approve(report.id)} className="rounded-pill" size="sm">
+                  Approve
+                </Button>
+              ) : (
+                <Badge color="success" pill>
+                  <span style={{ fontSize: ".6rem" }}>approved</span>
+                </Badge>
+              )}
+            </ModalHeader>
+            <ModalBody>
+              <p>
+                {report.user.fullName}
+                <small className="text-muted d-block">Sponsor Name</small>
+              </p>
+              <p>
+                {report.business_name}
+                <small className="text-muted d-block">Business Name</small>
+              </p>
+              <p>
+                {report.business_email}
+                <small className="text-muted d-block">Business Email</small>
+              </p>
+              <p>
+                {report.business_mobile}
+                <small className="text-muted d-block">Business contact</small>
+              </p>
+              <p>
+                {report.business_website}
+                <small className="text-muted d-block">Business Website</small>
+              </p>
+              <p>
+                ${report.wallet?.balance || 0}
+                <small className="text-muted d-block">Wallet Balance</small>
+              </p>
+            </ModalBody>
+          </>
+        ) : (
+          ""
+        )}
+      </Modal>
     </div>
   )
 }

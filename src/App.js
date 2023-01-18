@@ -20,6 +20,8 @@ import Contact from "./pages/contact"
 import Policy from "./pages/policy"
 import SchoolAdmin from "./pages/school-administerator"
 import Footer from "./pages/footer"
+import MessageToMoms from "./pages/message-to-moms"
+import Letters from "./pages/letters"
 
 function App() {
   return (
@@ -37,12 +39,14 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/policy" element={<Policy />} />
           <Route path="/school/admin" element={<SchoolAdmin />} />
+          <Route path="/message-to-moms" element={<MessageToMoms />} />
+          <Route path="/letters" element={<Letters />} />
+          <Route path="/signin" element={<Login />} />
+          <Route path="/signup" element={<Register />} />
           <Route path="/admin" element={<Admin />}>
             <Route index={true} element={<AdminSponsor />} />
             <Route path="/admin/report" element={<AdminReport />} />
           </Route>
-          <Route path="/signin" element={<Login />} />
-          <Route path="/signup" element={<Register />} />
         </Route>
       </Routes>
       <Footer />

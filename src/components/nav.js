@@ -1,8 +1,20 @@
 import { useContext, useState } from "react"
-import { Outlet, useNavigate, NavLink } from "react-router-dom"
+import { Outlet, useNavigate, NavLink, Link } from "react-router-dom"
 import AppContext from "../misc/appContext"
 import logo from "../assets/images/logo.png"
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav as Nav2, NavItem } from "reactstrap"
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav as Nav2,
+  NavItem,
+  UncontrolledDropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  Button
+} from "reactstrap"
 const Nav = () => {
   const { token, logout, role } = useContext(AppContext)
   const [isOpen, setIsOpen] = useState(true)
@@ -27,8 +39,8 @@ const Nav = () => {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-link" to="/uploads">
-                    Search Videos
+                  <NavLink className={`nav-link ${activeClass}`} to="/message-to-moms">
+                    Message to Moms
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -36,18 +48,49 @@ const Nav = () => {
                     Order Periscope Report
                   </NavLink>
                 </NavItem>
-                <NavItem>
-                  <NavLink className="nav-link" to="/media">
-                    Media
-                  </NavLink>
-                </NavItem>
 
-                <NavItem>
-                  <NavLink className="nav-link" to="/school/admin">
-                    School Administrator
-                  </NavLink>
-                </NavItem>
-
+                <UncontrolledDropdown nav inNavbar>
+                  <DropdownToggle nav>More</DropdownToggle>
+                  <DropdownMenu right>
+                    <DropdownItem>
+                      <Link className=" text-dark" to="/policy">
+                        Bully Discipline Policy
+                      </Link>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <Link className=" text-dark" to="/letters">
+                        Letters
+                      </Link>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <Link className="text-dark" to="/media">
+                        Video Library
+                      </Link>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <Link className="text-dark" to="/school/admin">
+                        School Administrator
+                      </Link>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <Link className=" text-dark" to="/uploads">
+                        Search Videos
+                      </Link>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <Link className="text-dark" to="/about">
+                        About
+                      </Link>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <Link className="text-dark" to="/contact">
+                        Contact
+                      </Link>
+                    </DropdownItem>
+                  </DropdownMenu>
+                </UncontrolledDropdown>
+              </Nav2>
+              <Nav2>
                 {role === "ADMIN" && (
                   <>
                     <NavItem>
@@ -57,23 +100,11 @@ const Nav = () => {
                     </NavItem>
                   </>
                 )}
-                <NavItem>
-                  <NavLink className="nav-link" to="/about">
-                    About
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="nav-link" to="/contact">
-                    Contact
-                  </NavLink>
-                </NavItem>
-              </Nav2>
-              <Nav2>
                 {token ? (
                   <NavItem>
-                    <NavLink onClick={logout} className="nav-link">
+                    <Button onClick={logout} className="nav-link bg-transparent border-0">
                       Sign out
-                    </NavLink>
+                    </Button>
                   </NavItem>
                 ) : (
                   <>

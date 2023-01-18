@@ -69,8 +69,6 @@ const Report = () => {
   }
 
   const report = async (data) => {
-    // console.log(data)
-    // return
     let html = ""
 
     const { email: reporterEmail, ...others } = reporter

@@ -120,8 +120,8 @@ const Sponsor = () => {
   return (
     <>
       <Row>
-        <Col md="3" className="mb-5">
-          <h4 className="mb-3">Is your school protected? Search to see.</h4>
+        <Col md="5" className="mb-5">
+          <h4 className="mb-3">Is your school protected? search to see.</h4>
           <form onSubmit={handleSubmit(search)}>
             <Icontroller
               type="text"
@@ -154,10 +154,10 @@ const Sponsor = () => {
           </form>
         </Col>
 
-        <Col md="3" />
+        <Col md="1" />
 
         <Col md="6">
-          <h4 className="mb-3">Is your school protected? </h4>
+          <h4 className="mb-3">Get your school protected</h4>
           <form onSubmit={handleSubmit2(submitData)}>
             {stage === "intro" && (
               <div>
