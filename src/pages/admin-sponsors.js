@@ -12,7 +12,7 @@ const AdminSponsor = () => {
   const { school, getSchools } = useSchool()
   const { token, role } = useContext(AppContext)
   const [modal, setModal] = useState(false)
-  const [backdrop, setBackdrop] = useState(true)
+  const [backdrop] = useState(true)
   const [report, setReport] = useState({})
   const navigate = useNavigate()
   if (!token || role !== "ADMIN") navigate("/")
