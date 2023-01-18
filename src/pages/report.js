@@ -161,7 +161,11 @@ const Report = () => {
     <Row>
       <Col md="6" className="mx-auto mb-5">
         <form onSubmit={handleSubmit(report)} encType="multipart/form-data">
-          <p>Upload a video evidence to proceed</p>
+          <p>
+            The first step to filing a bully report form is to upload a verification video. This is
+            simply a "selfie" video of you making the following statement: Hello, my username is
+            ______________________ and today's date is _______________________
+          </p>
           <Input
             bsSize="sm"
             className="mb-3 shadow-none"
@@ -652,7 +656,7 @@ const Report = () => {
                     className="mb-3 shadow-none form-control"
                     type="submit"
                   >
-                    Send Report
+                    {loading ? "sending report..." : "      Send Report"}
                   </Button>
                 </>
               )}
