@@ -8,11 +8,7 @@ import { getItem } from "../misc/helper"
 import BASE_URL from "../misc/url"
 import DataTable from "react-data-table-component"
 import StripeCheckout from "react-stripe-checkout"
-import {
-  bullyTemplate2,
-  templateSchoolThreat2,
-  templateWeaponThreat2
-} from "../misc/report-template"
+import { bullyTemplate2, templateSchoolThreat2, templateWeaponThreat2 } from "../misc/report-template"
 
 const Periscope = () => {
   const {
@@ -33,11 +29,10 @@ const Periscope = () => {
   const [backdrop, setBackdrop] = useState(true)
 
   const submit = async (data) => {
+    const key = document.getElementsByClassName("stripe-key")[0]
     setData(data)
     setLoading(true)
-    setMessage(
-      "Searching Report” once the report is found displays this “Report found, accessing the report costs $25. Checkout"
-    )
+    setMessage("Searching Report once the report is found, accessing the report costs $25")
     try {
       const response = await fetch(`${BASE_URL}periscope`, {
         method: "POST",
@@ -49,6 +44,7 @@ const Periscope = () => {
       })
       const res = await response.json()
       if (res.data.length) {
+        key.click()
         setPay(true)
         setResult(res.data)
       } else setMessage("No report found")
@@ -61,7 +57,6 @@ const Periscope = () => {
   }
 
   const search = async (token) => {
-    console.log(token)
     try {
       const response = await fetch(`${BASE_URL}pay/periscope`, {
         method: "POST",
@@ -214,22 +209,26 @@ const Periscope = () => {
             ""
           ) : (
             <>
-              <Button
-                bsSize="sm"
-                disabled={loading}
-                color="dark"
-                className="my-3 shadow-none form-control"
-                type="submit"
-              >
+              <Button bsSize="sm" disabled={loading} color="dark" className="my-3 shadow-none form-control" type="submit">
                 Access Report
               </Button>
               <p className="text-center p-2 text-dark fw-bold">{message}</p>
+              <StripeCheckout
+                onSubmit={submit}
+                className="form-control stripe-key invisible"
+                allowRememberMe
+                stripeKey="pk_test_51KOluiEvT7coUybkV5V9bsEwzMG1GStiV16pTbXwRj0BIuWtNoIcE2PVF0ImnIfVCxV7h7d8IIHcd7d8CmnWqWtu00yMhvuQJZ"
+                amount={25 * 100}
+                label="Checkout"
+                token={search}
+                name="checkout"
+              />
             </>
           )}
         </form>
         {pay ? (
           <StripeCheckout
-            className="form-control"
+            className="form-control  stripe-key invisible"
             allowRememberMe
             stripeKey="pk_test_51KOluiEvT7coUybkV5V9bsEwzMG1GStiV16pTbXwRj0BIuWtNoIcE2PVF0ImnIfVCxV7h7d8IIHcd7d8CmnWqWtu00yMhvuQJZ"
             amount={25 * 100}
