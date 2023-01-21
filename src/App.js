@@ -22,6 +22,8 @@ import SchoolAdmin from "./pages/school-administerator"
 import Footer from "./pages/footer"
 import MessageToMoms from "./pages/message-to-moms"
 import Letters from "./pages/letters"
+import ForgotPassword from "./pages/forgot-password"
+import ResetPassword from "./pages/reset-paswod"
 
 function App() {
   return (
@@ -43,6 +45,8 @@ function App() {
           <Route path="/letters" element={<Letters />} />
           <Route path="/signin" element={<Login />} />
           <Route path="/signup" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/admin" element={<Admin />}>
             <Route index={true} element={<AdminSponsor />} />
             <Route path="/admin/report" element={<AdminReport />} />
