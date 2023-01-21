@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 import { useForm } from "react-hook-form"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import BASE_URL from "../misc/url"
 import { Button, Col, Row } from "reactstrap"
 import { Icontroller } from "./signup"
@@ -31,7 +31,7 @@ const ForgotPassword = () => {
     if (response.status === 201) {
       loggedIn(result)
       toast("login successful")
-      navigate("/", { replace: true })
+      navigate("/reset-password", { replace: true })
       return
     }
     toast("invalid username or password")
@@ -56,19 +56,12 @@ const ForgotPassword = () => {
               required: true,
               pattern: /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g
             }}
-            message="Please use a valid email format"
+            message="Invalid email address"
           />
 
           <Button color="dark" type="submit" className="form-control shadow-none" disabled={loading}>
-            {loading ? "loading... " : "  Sign In"}
+            {loading ? "loading... " : "  Submit"}
           </Button>
-
-          <p className="py-2 text-center">
-            Dont't have an account?{" "}
-            <Link to="/signup" className="text-secondary btn p-0">
-              Sign up
-            </Link>
-          </p>
         </form>
       </Col>
     </Row>

@@ -73,19 +73,19 @@ const Login = () => {
             message="password is required"
           />
 
-          <Button
-            color="dark"
-            type="submit"
-            className="form-control shadow-none"
-            disabled={loading}
-          >
+          <Button color="dark" type="submit" className="form-control shadow-none" disabled={loading}>
             {loading ? "loading... " : "  Sign In"}
           </Button>
 
-          <p className="py-2 text-center">
+          <p className="mt-2 p-0 text-center">
             Dont't have an account?{" "}
             <Link to="/signup" className="text-secondary btn p-0">
               Sign up
+            </Link>
+          </p>
+          <p className="p-0 text-center">
+            <Link to="/forgot-password" className="text-secondary btn p-0">
+              Forgot Password?
             </Link>
           </p>
         </form>
