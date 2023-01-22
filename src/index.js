@@ -9,11 +9,12 @@ import "../src/assets/style.scss"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <AppProvider component={<App />} />
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <AppProvider component={<App />} />
+  </BrowserRouter>
+  // <React.StrictMode>
+
+  // </React.StrictMode>
 )
 
 // If you want to start measuring performance in your app, pass a function

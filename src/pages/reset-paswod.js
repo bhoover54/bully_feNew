@@ -15,13 +15,12 @@ const ResetPassword = () => {
     formState: { errors }
   } = useForm()
   const [loading, setLoading] = useState(false)
-  const { login: loggedIn, token } = useContext(AppContext)
   const navigate = useNavigate()
 
   const resetCode = async (data) => {
     setLoading(true)
-    const response = await fetch(`${BASE_URL}signin`, {
-      method: "POST",
+    const response = await fetch(`${BASE_URL}reset/password`, {
+      method: "PUT",
       body: JSON.stringify(data),
       headers: new Headers({
         "Content-Type": "application/json"
@@ -29,18 +28,13 @@ const ResetPassword = () => {
     })
     const result = await response.json()
     if (response.status === 201) {
-      loggedIn(result)
-      toast("login successful")
-      navigate("/", { replace: true })
+      toast(result.message || "succes")
+      navigate("/signin", { replace: true })
       return
     }
     toast("invalid username or password")
     setLoading(false)
   }
-
-  useEffect(() => {
-    if (token) navigate("/")
-  })
 
   return (
     <Row style={{ minHeight: "70vh" }} className="d-flex justify-content-center align-items-center">
@@ -50,8 +44,8 @@ const ResetPassword = () => {
         </Link> */}
         <form onSubmit={handleSubmit(resetCode)}>
           <Icontroller
-            type="password"
-            name="password"
+            type="text"
+            name="code"
             placeholder="Reset Code"
             register={register}
             errors={errors}
@@ -71,7 +65,7 @@ const ResetPassword = () => {
             }}
           />
 
-          <Icontroller
+          {/* <Icontroller
             type="password"
             name="cpassword"
             placeholder="Confirm Password"
@@ -80,7 +74,7 @@ const ResetPassword = () => {
             others={{
               required: true
             }}
-          />
+          /> */}
 
           <Button color="dark" type="submit" className="form-control shadow-none" disabled={loading}>
             {loading ? "loading... " : "  Sign In"}

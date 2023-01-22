@@ -20,17 +20,17 @@ const ForgotPassword = () => {
 
   const forgotPassword = async (data) => {
     setLoading(true)
-    const response = await fetch(`${BASE_URL}signin`, {
-      method: "POST",
+    const response = await fetch(`${BASE_URL}forgot/password`, {
+      method: "PUT",
       body: JSON.stringify(data),
       headers: new Headers({
         "Content-Type": "application/json"
       })
     })
     const result = await response.json()
-    if (response.status === 201) {
+    if (response.status === 200) {
       loggedIn(result)
-      toast("login successful")
+      toast(result.message)
       navigate("/reset-password", { replace: true })
       return
     }
