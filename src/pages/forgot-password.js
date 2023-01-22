@@ -4,8 +4,7 @@ import { useNavigate } from "react-router-dom"
 import BASE_URL from "../misc/url"
 import { Button, Col, Row } from "reactstrap"
 import { Icontroller } from "./signup"
-import { useContext, useEffect, useState } from "react"
-import AppContext from "../misc/appContext"
+import { useState } from "react"
 import { toast } from "react-toastify"
 
 const ForgotPassword = () => {
@@ -15,7 +14,6 @@ const ForgotPassword = () => {
     formState: { errors }
   } = useForm()
   const [loading, setLoading] = useState(false)
-  const { login: loggedIn, token } = useContext(AppContext)
   const navigate = useNavigate()
 
   const forgotPassword = async (data) => {
@@ -29,7 +27,6 @@ const ForgotPassword = () => {
     })
     const result = await response.json()
     if (response.status === 200) {
-      loggedIn(result)
       toast(result.message)
       navigate("/reset-password", { replace: true })
       return
@@ -37,10 +34,6 @@ const ForgotPassword = () => {
     toast("invalid username or password")
     setLoading(false)
   }
-
-  useEffect(() => {
-    if (token) navigate("/")
-  })
 
   return (
     <Row style={{ minHeight: "70vh" }} className="d-flex justify-content-center align-items-center">

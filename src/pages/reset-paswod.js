@@ -4,8 +4,7 @@ import { Link, useNavigate } from "react-router-dom"
 import BASE_URL from "../misc/url"
 import { Button, Col, Row } from "reactstrap"
 import { Icontroller } from "./signup"
-import { useContext, useEffect, useState } from "react"
-import AppContext from "../misc/appContext"
+import { useState } from "react"
 import { toast } from "react-toastify"
 
 const ResetPassword = () => {
