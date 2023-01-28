@@ -48,12 +48,12 @@ const Upload = () => {
   return (
     <Row>
       <Col lg="4" md="6" className="mx-auto">
-        <Input type="search" className="shadow-none mb-3" onChange={findMatches} placeholder="Search Name for uploaded videos" />
+        <Input type="search" className="shadow-none mb-3" onChange={findMatches} placeholder="Search videos with Username" />
         {search.length && !video.length
           ? search.map((e) => (
               <div className="p-3 my-3 d-flex justify-content-between align-items-center shadow rounded " role="button" onClick={() => showVideos(e)}>
-                {e.fullName}
-                <small>{`@${e.username}` || ""}</small>
+                {/* {e.fullName} */}
+                {`@${e.username}` || ""}
               </div>
             ))
           : ""}
