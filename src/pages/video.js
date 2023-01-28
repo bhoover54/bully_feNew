@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Col, Input, Row } from "reactstrap"
+import { Col, Input, Row, InputGroup, InputGroupText } from "reactstrap"
 import { getItem } from "../misc/helper"
 import BASE_URL from "../misc/url"
 
@@ -48,16 +48,18 @@ const Upload = () => {
   return (
     <Row>
       <Col lg="4" md="6" className="mx-auto">
-        <Input type="search" className="shadow-none mb-3" onChange={findMatches} placeholder="Search videos with Username" />
+        <InputGroup className="mb-3">
+          <InputGroupText>@</InputGroupText>
+          <Input type="search" className="shadow-none" onChange={findMatches} placeholder="Search videos with Username" />
+        </InputGroup>
+
         {search.length && !video.length
           ? search.map((e) => (
               <div className="p-3 my-3 d-flex justify-content-between align-items-center shadow rounded " role="button" onClick={() => showVideos(e)}>
-                {/* {e.fullName} */}
-                {`@${e.username}` || ""}
+                {/* {e.fullName} */}@{e?.username || ""}
               </div>
             ))
           : ""}
-
         {video.length ? (
           <>
             <div className="p-3 my-3 d-flex justify-content-between align-items-center shadow rounded " role="button">
