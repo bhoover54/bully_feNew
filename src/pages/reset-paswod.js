@@ -15,9 +15,11 @@ const ResetPassword = () => {
   } = useForm()
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
+  const params = window.location.search.split("=")[1]
 
   const resetCode = async (data) => {
     setLoading(true)
+    data.email = params
     const response = await fetch(`${BASE_URL}reset/password`, {
       method: "PUT",
       body: JSON.stringify(data),

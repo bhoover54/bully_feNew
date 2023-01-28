@@ -28,7 +28,7 @@ const ForgotPassword = () => {
     const result = await response.json()
     if (response.status === 200) {
       toast(result.message)
-      navigate("/reset-password", { replace: true })
+      navigate(`/reset-password?email=${data.email}`, { replace: true })
       return
     }
     toast("invalid username or password")
