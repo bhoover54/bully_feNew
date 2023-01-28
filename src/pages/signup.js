@@ -23,6 +23,7 @@ const Register = () => {
           "Content-Type": "application/json"
         })
       })
+      const result = await response.json()
       await response.json()
       if (response.status < 400) {
         navigate("/signin")
@@ -30,7 +31,7 @@ const Register = () => {
         return
       }
       if (response.status === 409) {
-        toast("user with this email already exist")
+        toast(result.message)
         return
       }
       toast("problem signing up! try again latter")
@@ -66,7 +67,16 @@ const Register = () => {
             others={{
               required: true
             }}
-            message="Last name is required"
+          />
+          <Icontroller
+            type="text"
+            name="username"
+            placeholder="Username"
+            register={register}
+            errors={errors}
+            others={{
+              required: true
+            }}
           />
           <Icontroller
             type="email"
@@ -106,12 +116,7 @@ const Register = () => {
             message="password is required"
           />
 
-          <Button
-            color="dark"
-            className="shadow-none mb-3 form-control"
-            type="submit"
-            disabled={loading}
-          >
+          <Button color="dark" className="shadow-none mb-3 form-control" type="submit" disabled={loading}>
             {loading ? "loading... " : "  Sign up"}
           </Button>
           <p className="py-2 text-center">
@@ -132,11 +137,7 @@ export const Icontroller = ({ register, others, errors, name, message, placehold
   return (
     <div className="mb-2">
       <label className="py-1">{placeholder}</label>
-      <input
-        className="mb-1 form-control shadow-none"
-        {...register(name, { ...others })}
-        {...rest}
-      />
+      <input className="mb-1 form-control shadow-none" {...register(name, { ...others })} {...rest} />
       {errors[name] ? <p className="text-danger">{message || "required"}</p> : ""}
     </div>
   )
