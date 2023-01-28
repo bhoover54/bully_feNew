@@ -28,7 +28,7 @@ const Upload = () => {
     if (e.target.value.length >= 3) {
       const sort = filter.filter((dt) => {
         const regex = new RegExp(e.target.value, "gi")
-        return dt?.fullName.match(regex) || dt?.email.match(regex)
+        return dt?.username.match(regex) || dt?.fullName.match(regex)
       })
       setSearch(sort)
     } else setSearch([])
@@ -48,31 +48,19 @@ const Upload = () => {
   return (
     <Row>
       <Col lg="4" md="6" className="mx-auto">
-        <Input
-          type="search"
-          className="shadow-none mb-3"
-          onChange={findMatches}
-          placeholder="Search Name for uploaded videos"
-        />
+        <Input type="search" className="shadow-none mb-3" onChange={findMatches} placeholder="Search Name for uploaded videos" />
         {search.length && !video.length
           ? search.map((e) => (
-              <div
-                className="p-3 my-3 d-flex justify-content-between align-items-center shadow rounded "
-                role="button"
-                onClick={() => showVideos(e)}
-              >
+              <div className="p-3 my-3 d-flex justify-content-between align-items-center shadow rounded " role="button" onClick={() => showVideos(e)}>
                 {e.fullName}
-                <small>{e.email}</small>
+                <small>{`@${e.username}` || ""}</small>
               </div>
             ))
           : ""}
 
         {video.length ? (
           <>
-            <div
-              className="p-3 my-3 d-flex justify-content-between align-items-center shadow rounded "
-              role="button"
-            >
+            <div className="p-3 my-3 d-flex justify-content-between align-items-center shadow rounded " role="button">
               {details.name}
               <small>{details.email}</small>
             </div>
