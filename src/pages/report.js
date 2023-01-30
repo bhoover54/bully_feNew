@@ -318,7 +318,7 @@ const Report = () => {
                       <>
                         <Icontroller
                           type="text"
-                          placeholder="First ​Name of the person/student bringing the weapon to school?e"
+                          placeholder="First ​Name of the person/student bringing the weapon to school?"
                           name="bully_fname"
                           errors={errors}
                           register={register}
@@ -344,7 +344,7 @@ const Report = () => {
                       <>
                         <Icontroller
                           type="text"
-                          placeholder="First Name of person/student making this threat? 	"
+                          placeholder="First Name of person/student making this threat?"
                           name="bully_fname"
                           errors={errors}
                           register={register}
@@ -355,7 +355,7 @@ const Report = () => {
                         />
                         <Icontroller
                           type="text"
-                          placeholder="Last Name of person/student making this threat? 	"
+                          placeholder="Last Name of person/student making this threat?"
                           name="bully_lname"
                           errors={errors}
                           register={register}
@@ -580,7 +580,7 @@ const Report = () => {
                       </div>
 
                       <div className="mb-2">
-                        <label className="py-1">Do you know why this student is bringing this weapon to school??</label>
+                        <label className="py-1">Do you know why this student is bringing this weapon to school?</label>
                         <select name="w_sknow" className="mb-1 form-control shadow-none" {...register("threat_student_aware")}>
                           <option></option>
                           <option value="yes">Yes</option>
@@ -604,7 +604,7 @@ const Report = () => {
                       </div> */}
 
                       <div className="mb-2">
-                        <label className="py-1">In complete detail provide all information you have on this threat. names using commas)</label>
+                        <label className="py-1">In complete detail provide all information you have on this threat.</label>
                         <textarea name="w_details" className="mb-1 form-control shadow-none" {...register("w_details")} />
                       </div>
                     </>
