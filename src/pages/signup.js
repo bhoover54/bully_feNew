@@ -24,18 +24,11 @@ const Register = () => {
         })
       })
       const result = await response.json()
-      await response.json()
       if (response.status < 400) {
         navigate("/signin")
         toast("success")
         return
-      }
-      if (response.status === 409) {
-        toast(result.message)
-        return
-      }
-      toast("problem signing up! try again latter")
-      setLoading(false)
+      } else toast(result.message)
     } catch (error) {
       console.log(error)
     } finally {

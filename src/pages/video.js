@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Col, Input, Row, InputGroup, InputGroupText } from "reactstrap"
+import { Col, Input, Row, InputGroup, InputGroupText, Button } from "reactstrap"
 import { getItem } from "../misc/helper"
 import BASE_URL from "../misc/url"
 
@@ -8,6 +8,7 @@ const Upload = () => {
   const [video, setVideos] = useState([])
   const [search, setSearch] = useState([])
   const [details, setDetails] = useState({})
+  const [searchtest, setSearcTest] = useState("")
   const getAllUsers = async () => {
     const response = await fetch(`${BASE_URL}users`, {
       headers: new Headers({
@@ -25,7 +26,7 @@ const Upload = () => {
 
   const findMatches = (e) => {
     setVideos([])
-    if (e.target.value.length >= 3) {
+    if (e > 3) {
       const sort = filter.filter((dt) => {
         const regex = new RegExp(e.target.value, "gi")
         return dt?.username.match(regex) || dt?.fullName.match(regex)
@@ -50,7 +51,8 @@ const Upload = () => {
       <Col lg="4" md="6" className="mx-auto">
         <InputGroup className="mb-3">
           <InputGroupText>@</InputGroupText>
-          <Input type="search" className="shadow-none" onChange={findMatches} placeholder="Search videos with Username" />
+          <Input type="search" className="shadow-none" onChange={(e) => setSearcTest(e.target.value)} placeholder="Search videos with Username" />
+          <Button onClick={() => findMatches(searchtest)}>Search</Button>
         </InputGroup>
 
         {search.length && !video.length

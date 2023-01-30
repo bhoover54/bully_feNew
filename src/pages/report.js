@@ -71,6 +71,11 @@ const Report = () => {
   const report = async (data) => {
     let html = ""
 
+    if (!data.trustee) {
+      toast("Please select if you are a trustee or not")
+      return
+    }
+
     const { email: reporterEmail, ...others } = reporter
     const templateRush = {
       ...data,

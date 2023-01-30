@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 import { useForm } from "react-hook-form"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import BASE_URL from "../misc/url"
 import { Button, Col, Row } from "reactstrap"
 import { Icontroller } from "./signup"
@@ -28,7 +28,7 @@ const ResetPassword = () => {
       })
     })
     const result = await response.json()
-    if (response.status === 201) {
+    if (response.status === 200) {
       toast(result.message || "succes")
       navigate("/signin", { replace: true })
       return
@@ -78,15 +78,15 @@ const ResetPassword = () => {
           /> */}
 
           <Button color="dark" type="submit" className="form-control shadow-none" disabled={loading}>
-            {loading ? "loading... " : "  Sign In"}
+            {loading ? "loading... " : "Reset"}
           </Button>
 
-          <p className="py-2 text-center">
+          {/* <p className="py-2 text-center">
             Dont't have an account?{" "}
             <Link to="/signup" className="text-secondary btn p-0">
               Sign up
             </Link>
-          </p>
+          </p> */}
         </form>
       </Col>
     </Row>
