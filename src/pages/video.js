@@ -4,7 +4,7 @@ import { getItem } from "../misc/helper"
 import BASE_URL from "../misc/url"
 
 const Upload = () => {
-  const [filter, setFilter] = useState([])
+  const [filters, setFilter] = useState([])
   const [video, setVideos] = useState([])
   const [search, setSearch] = useState([])
   const [details, setDetails] = useState({})
@@ -25,12 +25,16 @@ const Upload = () => {
   }
 
   const findMatches = (e) => {
+    console.log(e.length)
+    setSearch([])
     setVideos([])
-    if (e > 3) {
-      const sort = filter.filter((dt) => {
-        const regex = new RegExp(e.target.value, "gi")
-        return dt?.username.match(regex) || dt?.fullName.match(regex)
+    if (e.length > 0) {
+      console.log(filters)
+      const sort = filters.filter((dt) => {
+        const regex = new RegExp(e, "gi")
+        return dt?.username?.match(regex) || dt?.fullName?.match(regex)
       })
+      console.log(sort)
       setSearch(sort)
     } else setSearch([])
   }
