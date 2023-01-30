@@ -25,16 +25,13 @@ const Upload = () => {
   }
 
   const findMatches = (e) => {
-    console.log(e.length)
     setSearch([])
     setVideos([])
     if (e.length > 0) {
-      console.log(filters)
       const sort = filters.filter((dt) => {
         const regex = new RegExp(e, "gi")
         return dt?.username?.match(regex) || dt?.fullName?.match(regex)
       })
-      console.log(sort)
       setSearch(sort)
     } else setSearch([])
   }
