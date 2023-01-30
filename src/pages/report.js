@@ -71,7 +71,7 @@ const Report = () => {
   const report = async (data) => {
     let html = ""
 
-    if (!data.trustee) {
+    if (!otherData.trustee) {
       toast("Please select if you are a trustee or not")
       return
     }
