@@ -24,6 +24,7 @@ import MessageToMoms from "./pages/message-to-moms"
 import Letters from "./pages/letters"
 import ForgotPassword from "./pages/forgot-password"
 import ResetPassword from "./pages/reset-paswod"
+import RealEstate from "./pages/real-estate"
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
           <Route path="/signup" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/real-estate" element={<RealEstate />} />
           <Route path="/admin" element={<Admin />}>
             <Route index={true} element={<AdminSponsor />} />
             <Route path="/admin/report" element={<AdminReport />} />

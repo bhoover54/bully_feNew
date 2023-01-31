@@ -17,14 +17,14 @@ const Home = () => {
           school shootings. */}
         </h3>
         <div className="">
-          <Link to="/media" className="rounded p-2 d-block my-1">
+          <Link to="/real-estate" className="rounded p-2 d-block my-1">
             Real Estate Pros Please Click HERE
           </Link>
           <Link to="/report" className="rounded p-2 d-block my-1">
             Report Bullying / Threats / Weapons
           </Link>
-          <Link to="sponsor" className="rounded p-2 d-block my-1">
-            Is your school protected?
+          <Link to="/sponsor" className="rounded p-2 d-block my-1">
+            DONATE for your school's BullyBloxx protection
           </Link>
         </div>
       </Col>
@@ -41,11 +41,11 @@ const Home = () => {
         ></iframe>
       </Col>
 
-      <p className="text-center p-3">
+      <h2 className="text-center p-3">
         Ask yourself............would your child be safer at school with or without BullyBloxx?
         {/* To learn how BullyBloxx shuts down bullying in your schools{" "}
         <Link to="/media">CLICK HERE</Link>{" "} */}
-      </p>
+      </h2>
     </Row>
   )
 }

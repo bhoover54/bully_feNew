@@ -40,7 +40,7 @@ const Register = () => {
     <Row style={{ minHeight: "70vh" }} className="d-flex justify-content-center align-items-center">
       <Col md="6" lg="4" className="mx-auto  p-5 shadow rounded">
         <form onSubmit={handleSubmit(submit)}>
-          <Icontroller
+          {/* <Icontroller
             type="text"
             name="first_name"
             placeholder="First Name"
@@ -60,7 +60,7 @@ const Register = () => {
             others={{
               required: true
             }}
-          />
+          /> */}
           <Icontroller
             type="text"
             name="username"
