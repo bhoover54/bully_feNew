@@ -66,8 +66,8 @@ const Upload = () => {
         {video.length ? (
           <>
             <div className="p-3 my-3 d-flex justify-content-between align-items-center shadow rounded " role="button">
-              {details.name}
-              <small>{details.email}</small>
+              {details.username}
+              {/* <small>{details.email}</small> */}
             </div>
             {video.map((e) => (
               <div className="mb-3">
