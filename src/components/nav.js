@@ -54,17 +54,17 @@ const Nav = () => {
                   <DropdownMenu right>
                     <DropdownItem>
                       <Link className=" text-dark" to="/policy">
-                        Bully Discipline Policy
+                        Bullybloxx Discipline Policy
                       </Link>
                     </DropdownItem>
                     <DropdownItem>
                       <Link className=" text-dark" to="/letters">
-                        Letters
+                        Bullybloxx Letters
                       </Link>
                     </DropdownItem>
                     <DropdownItem>
                       <Link className="text-dark" to="/media">
-                        Video Library
+                        Bullybloxx Video Library
                       </Link>
                     </DropdownItem>
                     <DropdownItem>
