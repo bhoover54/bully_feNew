@@ -42,7 +42,7 @@ const AdminSponsor = () => {
     const response = await fetch(`${BASE_URL}send/mail`, {
       method: "POST",
       body: JSON.stringify({
-        to: report.user.email,
+        to: report.user?.email,
         subject: "Sponsorship Approval",
         html: ` Dear  ${report.user.first_name} <br/>Your Sponsorship request for ${report.school_name} with zip code ${report.zip_code} has been approved`
       }),
@@ -52,7 +52,7 @@ const AdminSponsor = () => {
       })
     })
     const j = await response.json()
-    if (j.message === "success") toast(`email sent ${report?.user?.fullName || ""} `)
+    if (j.message === "success") toast(`email sent @${report?.user?.username || ""} `)
     else toast("error sending mail")
   }
 
