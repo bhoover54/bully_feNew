@@ -2,7 +2,7 @@ export const bullyTemplate2 = (reqBody) => `
 I have information involving bullying in your school. I am reporting this information through The BullyBlox system. If you are not
   familiar with The BullyBlox system please go to www.bullybloxx.com for details. Once you are on the site if you will click on the School
   Administrator tab at the top of the Home page complete instructions for BullyBlox will be provided for you. I have uploaded an identification video and you can view this video under my username ${
-    reqBody.user.username
+    reqBody?.user?.username || ""
   }.If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you.
 	  <br />
 	  ${reqBody.trustee}<br />
@@ -11,7 +11,7 @@ I have information involving bullying in your school. I am reporting this inform
 	  you. <br />
 	  My Full Name: ${reqBody.first_name} ${reqBody.last_name}<br />
 	  My cell phone number: ${reqBody.phone}<br />
-	  My e-mail address: ${reqBody.user.email}<br />
+	  My e-mail address: ${reqBody?.user?.email}<br />
 	  Name of School: ${reqBody.school_name}<br />
 	  zip of School: ${reqBody.zip_code}<br />
 	  Principal’s email address: ${reqBody.email}<br />

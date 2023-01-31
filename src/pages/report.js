@@ -709,7 +709,7 @@ const Report = () => {
                         {errors["victim_younger"] ? <p className="text-danger">required</p> : ""}
                       </div>
 
-                      <div className="mb-2">
+                      {/* <div className="mb-2">
                         <label className="py-1">Have you witnessed this bully abusing other students in the past?</label>
                         <select name="bully_witnessed" className="mb-1 form-control shadow-none" {...register("bully_witnessed", { required: true })}>
                           <option></option>
@@ -717,7 +717,7 @@ const Report = () => {
                           <option value="no">No</option>
                         </select>
                         {errors["bully_witnessed"] ? <p className="text-danger">required</p> : ""}
-                      </div>
+                      </div> */}
 
                       <div className="mb-2">
                         <label className="py-1">Have you witnessed this bully abusing this same victim/student in the past?</label>
@@ -729,11 +729,11 @@ const Report = () => {
                         {errors["serail_bully"] ? <p className="text-danger">required</p> : ""}
                       </div>
 
-                      <Icontroller
+                      {/* <Icontroller
                         name="bully_witness"
                         placeholder="Were there any witnesses to this incident"
-                        control={control}
                         type="select"
+                        register={register}
                         opt={
                           <>
                             <option></option>
@@ -741,7 +741,15 @@ const Report = () => {
                             <option value="no">No</option>
                           </>
                         }
-                      />
+                      /> */}
+                      <div className="mb-2">
+                        <label className="py-1">Did any teacher or staff member see this incident?</label>
+                        <select name="bully_witness" className="mb-1 form-control shadow-none" {...register("bully_witness")}>
+                          <option></option>
+                          <option value="yes">Yes</option>
+                          <option value="no">No</option>
+                        </select>
+                      </div>
                       <Icontroller type="text" placeholder="If  so, who ?" name="bully_witnesses" errors={errors} register={register} />
                       <div className="mb-2">
                         <label className="py-1">

@@ -6,11 +6,7 @@ import { getItem } from "../misc/helper"
 import DataTable from "react-data-table-component"
 import AppContext from "../misc/appContext"
 import { useNavigate } from "react-router-dom"
-import {
-  bullyTemplate2,
-  templateSchoolThreat2,
-  templateWeaponThreat2
-} from "../misc/report-template"
+import { bullyTemplate2, templateSchoolThreat2, templateWeaponThreat2 } from "../misc/report-template"
 
 const AdminReport = () => {
   const [reports, setReports] = useState([])
@@ -44,11 +40,11 @@ const AdminReport = () => {
     },
     {
       name: "Reporter",
-      selector: (row) => row.user.fullName
+      selector: (row) => row?.user?.fullName || row?.first_name + " " + row?.last_name
     },
     {
       name: "Bully Type",
-      selector: (row) => row.report_type
+      selector: (row) => row?.report_type
     },
     {
       name: "School Name",
@@ -105,13 +101,7 @@ const AdminReport = () => {
   return (
     <Row>
       <Col className=" px-0 rounded shadow overflow-hidden">
-        <DataTable
-          columns={columns}
-          data={reports}
-          title="Reports"
-          pagination={true}
-          paginationPerPage="10"
-        />
+        <DataTable columns={columns} data={reports} title="Reports" pagination={true} paginationPerPage="10" />
       </Col>
       <Modal isOpen={modal} toggle={toggle} backdrop={backdrop}>
         <ModalHeader toggle={toggle}>{report.report_type}</ModalHeader>
