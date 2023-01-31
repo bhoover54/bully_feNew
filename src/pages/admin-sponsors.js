@@ -21,16 +21,19 @@ const AdminSponsor = () => {
       method: "PUT",
       body: JSON.stringify({}),
       headers: new Headers({
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${getItem("bly_token")}`
       })
     })
 
     await response.json()
     if (response.status < 400) {
       await sendEmail()
+      toast("success")
       getSchools()
       return
     }
+    toast("approval fails")
   }
 
   const toggle = () => setModal(!modal)
@@ -100,17 +103,12 @@ const AdminSponsor = () => {
 
   return (
     <div className=" px-0 rounded shadow overflow-hidden">
-      {token ? (
-        <DataTable columns={columns} title="Sponsored Scools" pagination data={school} />
-      ) : (
-        ""
-      )}
+      {token ? <DataTable columns={columns} title="Sponsored Scools" pagination data={school} /> : ""}
       <Modal isOpen={modal} toggle={toggle} backdrop={backdrop}>
         {Object.keys(report).length ? (
           <>
             <ModalHeader toggle={toggle}>
-              {report?.school_name.toUpperCase()} -{" "}
-              <small className="text-muted">{report.zip_code}</small> <br />
+              {report?.school_name.toUpperCase()} - <small className="text-muted">{report.zip_code}</small> <br />
               {report.approved === "pending" ? (
                 <Button onClick={() => approve(report.id)} className="rounded-pill" size="sm">
                   Approve
