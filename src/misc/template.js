@@ -10,7 +10,7 @@ Administrator tab at the top of the Home page complete instructions for Bullyblo
 	If you have any further questions or need to immediately verify this
 	information please contact me and I will provide the answers for
 	you. <br />
-	Your Full Name: ${reqBody.fullName}<br />
+	Your Full Name: ${reqBody.first_name} ${reqBody.last_name}<br />
 	Your cell phone number: ${reqBody.phone}<br />
 	My e-mail address: ${reqBody.reporterEmail}<br />
 	Name of School: ${reqBody.zap}<br />
@@ -56,7 +56,7 @@ If you have any further questions or need to immediately verify this
 information please contact me and I will provide the answers for
 you. <br />
 
-My Full Name: ${reqBody.fullName}<br />
+My Full Name: ${reqBody.first_name} ${reqBody.last_name}<br />
 My cell phone number: ${reqBody.phone}<br />
 My e-mail address: ${reqBody.reporterEmail}<br />
 Name of School: ${reqBody.zap}<br />
@@ -81,7 +81,7 @@ ${reqBody.trustee}<br />
 If you have any further questions or need to immediately verify this
 information please contact me and I will provide the answers for
 you. <br />
-My Full Name: ${reqBody.fullName}<br />
+My Full Name: ${reqBody.first_name} ${reqBody.last_name}<br />
 My cell phone number: ${reqBody.phone}<br />
 My e-mail address: ${reqBody.reporterEmail}<br />
 Name of School: ${reqBody.zap}<br />

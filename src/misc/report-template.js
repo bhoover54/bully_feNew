@@ -9,7 +9,7 @@ I have information involving bullying in your school. I am reporting this inform
 	  If you have any further questions or need to immediately verify this
 	  information please contact me and I will provide the answers for
 	  you. <br />
-	  My Full Name: ${reqBody.user.fullName}<br />
+	  My Full Name: ${reqBody.first_name} ${reqBody.last_name}<br />
 	  My cell phone number: ${reqBody.user.phone}<br />
 	  My e-mail address: ${reqBody.user.email}<br />
 	  Name of School: ${reqBody.school_name}<br />
@@ -55,7 +55,7 @@ I have information concernating a threat against your school. I am reporting thi
   information please contact me and I will provide the answers for
   you. <br />
   
-  My Full Name: ${reqBody.user.fullName}<br />
+  My Full Name: ${reqBody.first_name} ${reqBody.last_name}<br />
   My cell phone number: ${reqBody.user.phone}<br />
   My e-mail address: ${reqBody.user.email}<br />
   Name of School: ${reqBody.school_name}<br />
@@ -79,7 +79,7 @@ Dear Principal, <br/>
   If you have any further questions or need to immediately verify this
   information please contact me and I will provide the answers for
   you. <br />
-  My Full Name: ${reqBody.user.fullName}<br />
+  My Full Name: ${reqBody.first_name} ${reqBody.last_name}<br />
   My cell phone number: ${reqBody.user.phone}<br />
   My e-mail address: ${reqBody.user.email}<br />
   Name of School: ${reqBody.school_name}<br />

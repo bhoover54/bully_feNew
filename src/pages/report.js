@@ -256,10 +256,30 @@ const Report = () => {
                     If you have any further questions or need to immediately verify this information please contact me and I will provide the answers
                     for you.
                   </p>
-                  <div className="mb-2">
+                  <Icontroller
+                    type="text"
+                    name="first_name"
+                    placeholder="My First Name"
+                    errors={errors}
+                    register={register}
+                    others={{
+                      required: true
+                    }}
+                  />
+                  <Icontroller
+                    type="text"
+                    name="last_name"
+                    placeholder="My First Name"
+                    errors={errors}
+                    register={register}
+                    others={{
+                      required: true
+                    }}
+                  />
+                  {/* <div className="mb-2">
                     <label className="py-1">My Full Name</label>
                     <input className="mb-1 form-control shadow-none" value={reporter.fullName} disabled />
-                  </div>
+                  </div> */}
                   <div className="mb-2">
                     <label className="py-1">My cell phone number</label>
                     <input className="mb-1 form-control shadow-none" value={reporter.phone} disabled />
