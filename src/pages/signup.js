@@ -84,7 +84,7 @@ const Register = () => {
             }}
             message="Please use a valid email format"
           />
-          <Icontroller
+          {/* <Icontroller
             type="number"
             name="phone"
             placeholder="Phone"
@@ -96,7 +96,7 @@ const Register = () => {
               minLength: 10
             }}
             message="input a valid phone number"
-          />
+          /> */}
           <Icontroller
             type="password"
             name="password"

@@ -276,14 +276,24 @@ const Report = () => {
                       required: true
                     }}
                   />
+                  <Icontroller
+                    type="text"
+                    name="phone"
+                    placeholder="My cell phone number"
+                    errors={errors}
+                    register={register}
+                    others={{
+                      required: true
+                    }}
+                  />
                   {/* <div className="mb-2">
                     <label className="py-1">My Full Name</label>
                     <input className="mb-1 form-control shadow-none" value={reporter.fullName} disabled />
                   </div> */}
-                  <div className="mb-2">
-                    <label className="py-1">My cell phone number</label>
+                  {/* <div className="mb-2">
+                    <label className="py-1"</label>
                     <input className="mb-1 form-control shadow-none" value={reporter.phone} disabled />
-                  </div>
+                  </div> */}
                   <div className="mb-2">
                     <label className="py-1">My e-mail address</label>
                     <input className="mb-1 form-control shadow-none" value={reporter.email} disabled />
@@ -608,6 +618,14 @@ const Report = () => {
                         </select>
                       </div>
 
+                      <Icontroller
+                        type="text"
+                        placeholder="Where does the student keep this weapon at school?"
+                        name="w_keep"
+                        errors={errors}
+                        register={register}
+                      />
+
                       {/* <div className="mb-2">
                         <label className="py-1">
                           Do any other people/students have knowledge of this threat?
@@ -692,7 +710,7 @@ const Report = () => {
                       </div>
 
                       <div className="mb-2">
-                        <label className="py-1">Have you witnessed this bully abusing this same victim/student in the past?</label>
+                        <label className="py-1">Have you witnessed this bully abusing other students in the past?</label>
                         <select name="bully_witnessed" className="mb-1 form-control shadow-none" {...register("bully_witnessed", { required: true })}>
                           <option></option>
                           <option value="yes">Yes</option>
@@ -711,9 +729,9 @@ const Report = () => {
                         {errors["serail_bully"] ? <p className="text-danger">required</p> : ""}
                       </div>
 
-                      {/* <Icontroller
-                        name="serail_bully"
-                        placeholder="Have you witnessed this bully abusing other students in the past?"
+                      <Icontroller
+                        name="bully_witness"
+                        placeholder="Were there any witnesses to this incident"
                         control={control}
                         type="select"
                         opt={
@@ -723,7 +741,8 @@ const Report = () => {
                             <option value="no">No</option>
                           </>
                         }
-                      /> */}
+                      />
+                      <Icontroller type="text" placeholder="If  so, who ?" name="bully_witnesses" errors={errors} register={register} />
                       <div className="mb-2">
                         <label className="py-1">
                           If Yes, please provide any details of other bullying incidents that you have witnessed or seen in the past involving this
