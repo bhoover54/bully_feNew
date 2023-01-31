@@ -52,7 +52,7 @@ const AdminSponsor = () => {
       })
     })
     const j = await response.json()
-    if (j.message === "success") toast(`email sent ${report.user.fullName}`)
+    if (j.message === "success") toast(`email sent ${report?.user?.fullName || ""} `)
     else toast("error sending mail")
   }
 
@@ -121,23 +121,23 @@ const AdminSponsor = () => {
             </ModalHeader>
             <ModalBody>
               <p>
-                {report.user.fullName}
+                {report.user?.fullName}
                 <small className="text-muted d-block">Sponsor Name</small>
               </p>
               <p>
-                {report.business_name}
+                {report?.business_name}
                 <small className="text-muted d-block">Business Name</small>
               </p>
               <p>
-                {report.business_email}
+                {report?.business_email}
                 <small className="text-muted d-block">Business Email</small>
               </p>
               <p>
-                {report.business_mobile}
+                {report?.business_mobile}
                 <small className="text-muted d-block">Business contact</small>
               </p>
               <p>
-                {report.business_website}
+                {report?.business_website}
                 <small className="text-muted d-block">Business Website</small>
               </p>
               <p>
