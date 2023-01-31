@@ -11,11 +11,11 @@ const useSchool = () => {
     })
     const result = await response.json()
     if (response.status < 400) {
-      // //console.log(result)
+      // ////console.log(result)
       setSchools(result.data)
       return
     }
-    // //console.log(result)
+    // ////console.log(result)
   }
 
   useEffect(() => {

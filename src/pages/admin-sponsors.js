@@ -90,7 +90,7 @@ const AdminSponsor = () => {
           color="dark"
           className="rounded-pill px-3"
           onClick={() => {
-            // console.log(row.id)
+            // //console.log(row.id)
             toggle()
             setReport(row)
           }}

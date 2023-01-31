@@ -66,7 +66,7 @@ const Sponsor = () => {
   }
 
   const submitData = async (data) => {
-    // console.log(data)
+    // //console.log(data)
     // return
     if (!token) {
       toast("sign in to sponsor a school")
@@ -78,7 +78,7 @@ const Sponsor = () => {
     formData.append("business_type", "real estate")
     const j = Object.keys(data)
     j.forEach((e) => formData.append(e, data[e]))
-    //console.log(data)
+    ////console.log(data)
     const response = await fetch(`${BASE_URL}sponsor/school`, {
       method: "POST",
       body: formData,
@@ -161,9 +161,8 @@ const Sponsor = () => {
           <form onSubmit={handleSubmit2(submitData)}>
             {stage === "intro" && (
               <div>
-                Real Estate Professionals can serve as a Bully Shut Down Ambassador for up to 3
-                different schools in their area. To apply to be a Bully Shutdown Ambassador please{" "}
-                <br />
+                Real Estate Professionals can serve as a Bully Shut Down Ambassador for up to 3 different schools in their area. To apply to be a
+                Bully Shutdown Ambassador please <br />
                 <span role="button" className="text-primary" onClick={() => changeStage("upload")}>
                   CLICK HERE
                 </span>
@@ -173,12 +172,10 @@ const Sponsor = () => {
             {(stage === "upload" || stage === "form") && (
               <>
                 <p>
-                  The first step to becoming a Bully Shut Down Ambassador for a school is creating a
-                  verification video confirming who you are. Please upload a "selfie" video of
-                  yourself clearly showing your face with no hats, sun glasses or anything else that
-                  may obstruct your face. Please make the following statement in your video. My name
-                  is __________________ and the name of the business that i work for is
-                  __________________.
+                  The first step to becoming a Bully Shut Down Ambassador for a school is creating a verification video confirming who you are. Please
+                  upload a "selfie" video of yourself clearly showing your face with no hats, sun glasses or anything else that may obstruct your
+                  face. Please make the following statement in your video. My name is __________________ and the name of the business that i work for
+                  is __________________.
                 </p>
                 <label className="py-1">Video Intro</label>
                 <Input
@@ -291,13 +288,10 @@ const Sponsor = () => {
                 <> {found.data.school_name.toUpperCase()} is pending approval</>
               ) : (
                 <>
-                  {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is
-                  already sponsored by {found.data.business_name} BullyBloxx is owned, controlled
-                  and funded by the parents in the school and citizens in the community. The cost of
-                  protecting any school, regardless of size, with BullyBloxx is just $300 per month
-                  and is paid for yearly by donations from the parents and community. Currently
-                  there is $535 in donations with a total of $3,600 needed to fund BullyBloxx for a
-                  complete year of protection.
+                  {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is already sponsored by {found.data.business_name}{" "}
+                  BullyBloxx is owned, controlled and funded by the parents in the school and citizens in the community. The cost of protecting any
+                  school, regardless of size, with BullyBloxx is just $300 per month and is paid for yearly by donations from the parents and
+                  community. Currently there is $535 in donations with a total of $3,600 needed to fund BullyBloxx for a complete year of protection.
                   <Button
                     className="text-decoration-none bg-transparent text-primary border-0"
                     onClick={() => {

@@ -27,7 +27,7 @@ const Donate = () => {
 
     const resData = data
     resData.school_id = school.id
-    console.log(resData, school)
+    //console.log(resData, school)
     const response = await fetch(`${BASE_URL}donate/school`, {
       method: "POST",
       body: JSON.stringify({ token, ...resData }),
@@ -63,13 +63,7 @@ const Donate = () => {
           </div>
           <div className="mb-2">
             <label className="py-1">Amount</label>
-            <Input
-              bsSize="sm"
-              className="shadow-none"
-              name="amount"
-              type="number"
-              onChange={handleChange}
-            />
+            <Input bsSize="sm" className="shadow-none" name="amount" type="number" onChange={handleChange} />
           </div>
           {/* <Icontroller name="name" placeholder="Full Name" control={control} /> */}
           {/* <Icontroller name="email" placeholder="Email" control={control} /> */}

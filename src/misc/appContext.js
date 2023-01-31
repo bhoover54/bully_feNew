@@ -35,7 +35,7 @@ export const AppProvider = ({ component }) => {
     })
     const result = await response.json()
     setReporter(result.data)
-    console.log(result.data, "result")
+    //console.log(result.data, "result")
     // return result.data
   }
 
@@ -49,10 +49,6 @@ export const AppProvider = ({ component }) => {
     else setToken(false)
     if (!Object.keys(reporter).length) user()
   }, [check])
-  return (
-    <AppContext.Provider value={{ token, logout, role, setRole, setToken, login, user, reporter }}>
-      {component}
-    </AppContext.Provider>
-  )
+  return <AppContext.Provider value={{ token, logout, role, setRole, setToken, login, user, reporter }}>{component}</AppContext.Provider>
 }
 export default AppContext

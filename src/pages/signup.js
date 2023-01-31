@@ -30,7 +30,7 @@ const Register = () => {
         return
       } else toast(result.message)
     } catch (error) {
-      console.log(error)
+      //console.log(error)
     } finally {
       setLoading(false)
     }

@@ -80,9 +80,9 @@ const AdminReport = () => {
 
     const result = await response.json()
     if (response.status === 200) {
-      //   //console.log(result)
+      //   ////console.log(result)
       setReports(result.data)
-      //   //console.log(result, response.status)
+      //   ////console.log(result, response.status)
     }
   }
 

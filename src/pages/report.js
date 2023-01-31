@@ -45,7 +45,7 @@ const Report = () => {
 
   const options = () => {
     const opt = []
-    console.log(school)
+    //console.log(school)
     school.forEach((e) => {
       opt.push({
         value: e.zip_code,
@@ -57,7 +57,7 @@ const Report = () => {
   }
 
   const chooseSchool = (e) => {
-    console.log(e)
+    //console.log(e)
     setChosenSchool(e)
   }
 
@@ -132,7 +132,7 @@ const Report = () => {
       }
       toast("unable to send report try again latter")
     } catch (error) {
-      console.log(error)
+      //console.log(error)
     } finally {
       setLoading(false)
     }

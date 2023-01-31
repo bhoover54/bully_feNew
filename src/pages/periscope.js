@@ -49,7 +49,7 @@ const Periscope = () => {
         setResult(res.data)
       } else setMessage("No report found")
     } catch (error) {
-      console.log(error)
+      //console.log(error)
     } finally {
       setLoading(false)
       reset()
@@ -67,14 +67,14 @@ const Periscope = () => {
         })
       })
       const res = await response.json()
-      console.log(res)
+      //console.log(res)
       if (res.message === "success") {
         setReport(true)
         setMessage("")
-        console.log(res, final)
+        //console.log(res, final)
       }
     } catch (error) {
-      console.log(error)
+      //console.log(error)
     } finally {
       setPay(false)
     }
