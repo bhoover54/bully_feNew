@@ -269,7 +269,7 @@ const Report = () => {
                   <Icontroller
                     type="text"
                     name="last_name"
-                    placeholder="My First Name"
+                    placeholder="My Last Name"
                     errors={errors}
                     register={register}
                     others={{
@@ -597,7 +597,7 @@ const Report = () => {
                       />
                       <div className="mb-2">
                         <label className="py-1">Do any other people/students have knowledge of this threat?</label>
-                        <select name="w_student_aware" className="mb-1 form-control shadow-none" {...register("threat_student_aware")}>
+                        <select name="w_student_aware" className="mb-1 form-control shadow-none" {...register("w_student_aware")}>
                           <option></option>
                           <option value="yes">Yes</option>
                           <option value="no">No</option>
@@ -611,7 +611,7 @@ const Report = () => {
 
                       <div className="mb-2">
                         <label className="py-1">Do you know why this student is bringing this weapon to school?</label>
-                        <select name="w_sknow" className="mb-1 form-control shadow-none" {...register("threat_student_aware")}>
+                        <select name="w_sknow" className="mb-1 form-control shadow-none" {...register("w_sknow")}>
                           <option></option>
                           <option value="yes">Yes</option>
                           <option value="no">No</option>

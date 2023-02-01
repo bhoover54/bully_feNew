@@ -60,6 +60,7 @@ const AdminReport = () => {
             onClick={() => {
               toggle()
               setReport(row)
+              console.log(row)
             }}
           >
             View
