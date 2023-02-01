@@ -29,7 +29,7 @@ Administrator tab at the top of the Home page complete instructions for BullyBlo
   <br />
   What actions did the teacher / staff member take?: ${reqBody.staff_action || "no action"}<br />
   Where did this incident occur?: ${reqBody.incident_place}<br />
-  Did the bully physically abuse the victim?: ${reqBody.physical_abuse}<br />
+  Did the bully physically abuse the victim?: ${reqBody.physical_abused}<br />
   Was the victim a handicapped student?: ${reqBody.victim_handicapped}<br />
   Was the victim a
   younger or smaller student than the bully?: ${reqBody.victim_younger}<br />

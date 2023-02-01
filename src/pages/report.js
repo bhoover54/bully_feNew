@@ -677,7 +677,7 @@ const Report = () => {
 
                       <div className="mb-2">
                         <label className="py-1">Did the bully physically abuse the victim?</label>
-                        <select name="physical_abuse" className="mb-1 form-control shadow-none" {...register("physical_abuse", { required: true })}>
+                        <select name="physical_abused" className="mb-1 form-control shadow-none" {...register("physical_abused", { required: true })}>
                           <option></option>
                           <option value="yes">Yes</option>
                           <option value="no">No</option>
