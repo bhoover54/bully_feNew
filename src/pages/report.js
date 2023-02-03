@@ -28,7 +28,7 @@ const Report = () => {
   const { school, getSchools } = useSchool()
   const [schoolOPt, setOptions] = useState([])
   const [chosenSchool, setChosenSchool] = useState({})
-  const { token, reporter } = useContext(AppContext)
+  const { token, reporter, logout } = useContext(AppContext)
   const [notify, setNotify] = useState(false)
   const [otherData, setOtherData] = useState({})
   const [reportType, setReportType] = useState("")
@@ -115,9 +115,13 @@ const Report = () => {
 
       await response.json()
 
+      if (response.status === 403) {
+        toast("session expired, sign in to sponsor school")
+        logout()
+      }
+
       if (response.status === 200) {
         setLoading(false)
-        // setUpload("")
         reset()
 
         toast("report sent successfully")
