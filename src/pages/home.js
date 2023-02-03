@@ -12,7 +12,6 @@ const Home = () => {
       sessionStorage.setItem("welcome", true)
       return
     }
-    console.log(getSession)
   }
 
   useState(() => {

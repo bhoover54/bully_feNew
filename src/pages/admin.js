@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { Link, Outlet, useNavigate } from "react-router-dom"
 import { Col, Row } from "reactstrap"
 import AppContext from "../misc/appContext"
