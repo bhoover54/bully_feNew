@@ -71,6 +71,7 @@ const Sponsor = () => {
       toast("sign in to sponsor a school")
       return
     }
+    setLoading(true)
 
     const formData = new FormData()
     formData.append("upload", upload)
@@ -89,6 +90,7 @@ const Sponsor = () => {
     if (response.status === 403) {
       toast("session expired, sign in to sponsor school")
       logout()
+      setLoading(false)
       return
     }
 
@@ -98,6 +100,7 @@ const Sponsor = () => {
       toggle()
       setUpload("")
       setBlob("")
+      setLoading(false)
       return
     }
 
@@ -108,6 +111,7 @@ const Sponsor = () => {
       toggle()
       reset2()
     }
+    setLoading(false)
   }
 
   const toggle = () => setModal(!modal)
