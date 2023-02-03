@@ -89,6 +89,7 @@ const Sponsor = () => {
     if (response.status === 403) {
       toast("session expired, sign in to sponsor school")
       logout()
+      return
     }
 
     if (response.status === 409) {
