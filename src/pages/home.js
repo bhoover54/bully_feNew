@@ -8,9 +8,11 @@ const Home = () => {
   const session = () => {
     const getSession = sessionStorage.getItem("welcome")
     if (!getSession) {
-      console.log("just opened")
       logout()
-    } else sessionStorage.setItem("welcome", "true")
+      sessionStorage.setItem("welcome", true)
+      return
+    }
+    console.log(getSession)
   }
 
   useState(() => {

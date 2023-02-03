@@ -1,7 +1,15 @@
-import { Link, Outlet } from "react-router-dom"
+import { useContext, useEffect } from "react"
+import { Link, Outlet, useNavigate } from "react-router-dom"
 import { Col, Row } from "reactstrap"
+import AppContext from "../misc/appContext"
 
 const Admin = () => {
+  const { role } = useContext(AppContext)
+  const navigate = useNavigate()
+  if (role && role !== "ADMIN") {
+    navigate("/")
+  }
+
   return (
     <Row>
       <Col md="2">
