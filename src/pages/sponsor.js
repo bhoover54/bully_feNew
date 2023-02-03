@@ -24,6 +24,7 @@ const Sponsor = () => {
     register: register2,
     formState: { errors: error2 }
   } = useForm()
+  const { logout } = useContext(AppContext)
   const [message, setMessage] = useState("")
   const [found, setFound] = useState({})
   const [loading, setLoading] = useState(false)
@@ -66,8 +67,6 @@ const Sponsor = () => {
   }
 
   const submitData = async (data) => {
-    // //console.log(data)
-    // return
     if (!token) {
       toast("sign in to sponsor a school")
       return
@@ -78,17 +77,20 @@ const Sponsor = () => {
     formData.append("business_type", "real estate")
     const j = Object.keys(data)
     j.forEach((e) => formData.append(e, data[e]))
-    ////console.log(data)
     const response = await fetch(`${BASE_URL}sponsor/school`, {
       method: "POST",
       body: formData,
       headers: new Headers({
-        // "Content-Type": "application/json",
         "Authorization": `Bearer ${getItem("bly_token")}`
       })
     })
 
     await response.json()
+    if (response.status === 403) {
+      toast("session expired, sign in to sponsor school")
+      logout()
+    }
+
     if (response.status === 409) {
       toast("school already sponsored")
       setMessage("school already sponsored by another company")
@@ -97,6 +99,7 @@ const Sponsor = () => {
       setBlob("")
       return
     }
+
     if (response.status < 400) {
       setMessage(
         "Thank you for stepping up for your community by serving as a Bully Shut Down Ambassador. Your application is pending and you will be contacted by email as soon as our staff approves your application. You can serve as a Bully Shut Down Ambassador for up to 3 schools, simply submit a separate application for each school. Once you are approved will receive instructions for moving forward through your email. Thank you."

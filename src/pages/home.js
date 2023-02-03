@@ -1,7 +1,21 @@
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { Col, Row } from "reactstrap"
 import banner from "../assets/images/banner.jpeg"
+import AppContext from "../misc/appContext"
 const Home = () => {
+  const { logout } = useContext(AppContext)
+  const session = () => {
+    const getSession = sessionStorage.getItem("welcome")
+    if (!getSession) {
+      console.log("just opened")
+      logout()
+    } else sessionStorage.setItem("welcome", "true")
+  }
+
+  useState(() => {
+    session()
+  }, [])
   return (
     <Row>
       <Col md="6">
