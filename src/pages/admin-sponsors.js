@@ -14,6 +14,7 @@ const AdminSponsor = () => {
   const [modal, setModal] = useState(false)
   const [backdrop] = useState(true)
   const [report, setReport] = useState({})
+  const [approved, setApproved] = useState(false)
   const navigate = useNavigate()
   if (!token || role !== "ADMIN") navigate("/")
   const approve = async (id) => {
@@ -30,6 +31,7 @@ const AdminSponsor = () => {
     if (response.status < 400) {
       await sendEmail()
       toast("success")
+      setApproved(true)
       getSchools()
       return
     }
@@ -92,7 +94,7 @@ const AdminSponsor = () => {
           color="dark"
           className="rounded-pill px-3"
           onClick={() => {
-            // //console.log(row.id)
+            setApproved(false)
             toggle()
             setReport(row)
           }}
@@ -111,7 +113,7 @@ const AdminSponsor = () => {
           <>
             <ModalHeader toggle={toggle}>
               {report?.school_name.toUpperCase()} - <small className="text-muted">{report.zip_code}</small> <br />
-              {report.approved === "pending" ? (
+              {report.approved === "pending" && !approved ? (
                 <Button onClick={() => approve(report.id)} className="rounded-pill" size="sm">
                   Approve
                 </Button>

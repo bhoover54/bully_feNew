@@ -210,7 +210,7 @@ const Sponsor = () => {
                 <Icontroller
                   type="text"
                   name="realtor_name"
-                  placeholder="Realtor's name"
+                  placeholder="Realtor's Name"
                   register={register2}
                   errors={error2}
                   others={{
