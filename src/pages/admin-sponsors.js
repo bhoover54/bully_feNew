@@ -44,7 +44,9 @@ const AdminSponsor = () => {
       body: JSON.stringify({
         to: report.user?.email,
         subject: "Sponsorship Approval",
-        html: ` Dear  ${report.user.first_name} <br/>Your Sponsorship request for ${report.school_name} with zip code ${report.zip_code} has been approved`
+        html: `Dear  ${report?.realtor_name || report.user.first_name} <br/>Your Sponsorship request for ${report.school_name} with zip code ${
+          report.zip_code
+        } has been approved`
       }),
       headers: new Headers({
         "Content-Type": "application/json",

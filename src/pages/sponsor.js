@@ -209,6 +209,17 @@ const Sponsor = () => {
               <>
                 <Icontroller
                   type="text"
+                  name="realtor_name"
+                  placeholder="Realtor's name"
+                  register={register2}
+                  errors={error2}
+                  others={{
+                    required: true
+                  }}
+                />
+
+                <Icontroller
+                  type="text"
                   name="business_name"
                   placeholder="Business Name"
                   register={register2}
