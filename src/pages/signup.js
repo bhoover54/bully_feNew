@@ -126,11 +126,23 @@ const Register = () => {
 
 export default Register
 
-export const Icontroller = ({ register, others, errors, name, message, placeholder, ...rest }) => {
+export const Icontroller = ({ register, others, errors, name, message, placeholder, num = false, ...rest }) => {
+  function isNumberKey(evt) {
+    var charCode = evt.which ? evt.which : evt.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) return false
+    return true
+  }
   return (
     <div className="mb-2">
       <label className="py-1">{placeholder}</label>
-      <input className="mb-1 form-control shadow-none" {...register(name, { ...others })} {...rest} />
+      {!num ? (
+        <>
+          <input className="mb-1 form-control shadow-none" {...register(name, { ...others })} {...rest} />
+        </>
+      ) : (
+        <input className="mb-1 form-control shadow-none" {...register(name, { ...others })} {...rest} onKeyUp={isNumberKey} onKeyDown={isNumberKey} />
+      )}
+
       {errors[name] ? <p className="text-danger">{message || "required"}</p> : ""}
     </div>
   )

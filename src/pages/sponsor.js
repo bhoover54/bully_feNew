@@ -144,6 +144,7 @@ const Sponsor = () => {
             />
             <Icontroller
               type="number"
+              num={true}
               name="zip_code"
               placeholder="Zip code"
               register={register}
