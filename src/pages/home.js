@@ -1,10 +1,11 @@
 import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
-import { Col, Row } from "reactstrap"
+import { Col, Modal, ModalBody, Row } from "reactstrap"
 import banner from "../assets/images/banner.jpeg"
 import AppContext from "../misc/appContext"
 const Home = () => {
   const { logout } = useContext(AppContext)
+  const [openModal, setOpenModal] = useState(false)
   const session = () => {
     const getSession = sessionStorage.getItem("welcome")
     if (!getSession) {
@@ -13,6 +14,8 @@ const Home = () => {
       return
     }
   }
+
+  const toggle = () => setOpenModal(!openModal)
 
   useState(() => {
     session()
@@ -35,7 +38,7 @@ const Home = () => {
           <Link to="/real-estate" className="rounded p-2 d-block my-1">
             Real Estate Pros Please Click HERE
           </Link>
-          <Link to="/report" className="rounded p-2 d-block my-1">
+          <Link onClick={toggle} className="rounded p-2 d-block my-1">
             Report Bullying / Threats / Weapons
           </Link>
           <Link to="/sponsor" className="rounded p-2 d-block my-1">
@@ -61,6 +64,28 @@ const Home = () => {
         {/* To learn how BullyBloxx shuts down bullying in your schools{" "}
         <Link to="/media">CLICK HERE</Link>{" "} */}
       </h2>
+
+      <Modal isOpen={openModal} toggle={toggle}>
+        <ModalBody>
+          <p>
+            The first step to reporting bullying through BullyBloxx is to confirm that the incident meets the standards to be labeled a bullying
+            incident. Below are some very simple guidelines that will quickly help you determine if an incident meets these requirements:
+          </p>
+          <p>It IS NOT BULLYING when:</p>
+          <ol>
+            <li>Someone says or does something hurtful UNINTENTIONALLY and they only do it once; that is called being RUDE.</li>
+            <li>Someone says or does something hurtful INTENTIONALLY and they only do it once; that is called being MEAN.</li>
+          </ol>
+          <h5>HOWEVER</h5>
+          <p>
+            When someone says or does something hurtful INTENTIONALLY and they do it MORE THAN ONCE, even when you tell them to stop or they can see
+            that you are upset………...THAT IS BULLYING and it should be reported EVERY TIME it occurs.
+          </p>
+          <p>
+            If this incident meets the standards for bullying please <Link to="/report"> CLICK HERE </Link> to access the Bully Reporting Forms.{" "}
+          </p>
+        </ModalBody>
+      </Modal>
     </Row>
   )
 }
