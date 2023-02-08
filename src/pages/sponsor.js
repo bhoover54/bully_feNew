@@ -129,7 +129,10 @@ const Sponsor = () => {
     <>
       <Row>
         <Col md="5" className="mb-5">
-          <h4 className="mb-3">Is your school protected? search to see.</h4>
+          <h4 className="mb-3">
+            To see if your school is protected OR to donate to your school's BullyBloxx protection please enter your school's information below
+          </h4>
+          {/* <h4 className="mb-3">Is your school protected? search to see.</h4> */}
           <form onSubmit={handleSubmit(search)}>
             <Icontroller
               type="text"
