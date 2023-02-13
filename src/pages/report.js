@@ -22,6 +22,7 @@ const Report = () => {
     register,
     formState: { errors }
   } = useForm()
+
   const [upload, setUpload] = useState("")
   const [loading, setLoading] = useState(false)
   const [blob, setBlob] = useState("")
@@ -33,6 +34,8 @@ const Report = () => {
   const [otherData, setOtherData] = useState({})
   const [reportType, setReportType] = useState("")
   const [sentReport, setSentReport] = useState("")
+  const [bullyGroup, setBullyGroup] = useState({})
+  const [bullyCount, setBullyCount] = useState([1, 2, 3])
   const navigate = useNavigate()
   // const reporter =  user()
 
@@ -143,8 +146,13 @@ const Report = () => {
   }
 
   const handleEv = (e) => {
-    if (e.target.name === "report_type") setReportType(e.target.value)
-    setOtherData({ ...otherData, [e.target.name]: e.target.value })
+    const { name, value } = e.target
+    if (parseInt(name.slice(-1))) {
+      setBullyGroup({ ...bullyCount, [name]: value })
+    } else {
+      if (e.target.name === "report_type") setReportType(e.target.value)
+      setOtherData({ ...otherData, [e.target.name]: e.target.value })
+    }
   }
 
   const sendEmail = async (data) => {
@@ -160,6 +168,9 @@ const Report = () => {
     if (j.message === "success") toast("email sent")
     else toast("error sending mail")
   }
+
+  // eslint-disable-next-line no-const-assign
+  const addField = () => setBullyCount([...bullyCount, bullyCount.at(-1) + 1])
 
   useEffect(() => {
     getSigned()
@@ -458,16 +469,168 @@ const Report = () => {
                   </>
                   <>
                     {reportType === "bullying" && (
-                      <Icontroller
-                        type="text"
-                        placeholder="Homeroom Teacher of bully"
-                        name="bully_teacher"
-                        errors={errors}
-                        register={register}
-                        others={{
-                          required: true
-                        }}
-                      />
+                      <>
+                        <Icontroller
+                          type="text"
+                          placeholder="Homeroom Teacher of bully"
+                          name="bully_teacher"
+                          errors={errors}
+                          register={register}
+                          others={{
+                            required: true
+                          }}
+                        />
+
+                        <p>Bully Groupie Information </p>
+                        <p>
+                          Bully Groupies are other students who were present when the bullying incident occurred who may have not actively been
+                          involved in the abuse but who cheered the bully/bullies on and either encouraged the bullies to abuse the victim or who said
+                          humiliating or degrading remarks to the victim. If there are more than 3 bully groupies please list the names and info of
+                          the others in the last section of this report.
+                        </p>
+
+                        {bullyCount.map((e, id) => (
+                          <>
+                            <p className="fw-bold mt-3">Bully Groupie #{id + 1}</p>
+
+                            <Icontroller
+                              type="text"
+                              placeholder="Bully Groupie First Name"
+                              name={`blyg_first_name${id + 1}`}
+                              errors={errors}
+                              register={register}
+                              others={
+                                id === 0 && {
+                                  required: true
+                                }
+                              }
+                            />
+                            <Icontroller
+                              type="text"
+                              placeholder="Bully Groupie Last Name"
+                              name={`blyg_last_name${id + 1}`}
+                              errors={errors}
+                              register={register}
+                              others={
+                                id === 0 && {
+                                  required: true
+                                }
+                              }
+                            />
+                            <Icontroller
+                              type="text"
+                              placeholder="Gender of Bully Groupie"
+                              name={`blyg_gender${id + 1}`}
+                              errors={errors}
+                              register={register}
+                              others={
+                                id === 0 && {
+                                  required: true
+                                }
+                              }
+                            />
+                            <Icontroller
+                              type="text"
+                              placeholder="Grade of Bully Groupiee"
+                              name={`blyg_grade${id + 1}`}
+                              errors={errors}
+                              register={register}
+                              others={
+                                id === 0 && {
+                                  required: true
+                                }
+                              }
+                            />
+                            <Icontroller
+                              type="text"
+                              placeholder="Homeroom Teacher of Bully Groupie"
+                              name={`blyg_teacher${id + 1}`}
+                              errors={errors}
+                              register={register}
+                              others={
+                                id === 0 && {
+                                  required: true
+                                }
+                              }
+                            />
+
+                            <p className="fw-bold mt-3">Bully Victim #{id + 1} (optional)</p>
+                            <Icontroller
+                              type="text"
+                              placeholder="Bully Victim First Name"
+                              name={`blyv_first_name${id + 1}`}
+                              errors={errors}
+                              register={register}
+                            />
+                            <Icontroller
+                              type="text"
+                              placeholder="Bully Victim Last Name"
+                              name={`blyv_last_name${id + 1}`}
+                              errors={errors}
+                              register={register}
+                            />
+                            <Icontroller
+                              type="text"
+                              placeholder="Gender of Bully Victim"
+                              name={`blyv_gender${id + 1}`}
+                              errors={errors}
+                              register={register}
+                            />
+                            <Icontroller
+                              type="text"
+                              placeholder="Grade of Bully Victim"
+                              name={`blyv_grade${id + 1}`}
+                              errors={errors}
+                              register={register}
+                            />
+
+                            <Icontroller
+                              type="text"
+                              placeholder="Homeroom Teacher of Bully Victim"
+                              name={`blyv_teacher${id + 1}`}
+                              errors={errors}
+                              register={register}
+                            />
+
+                            <p className="fw-bold mt-3">Bully Witness #{id + 1}</p>
+                            <Icontroller
+                              type="text"
+                              placeholder="Bully Witness First Name"
+                              name={`blyw_first_name${id + 1}`}
+                              errors={errors}
+                              register={register}
+                            />
+                            <Icontroller
+                              type="text"
+                              placeholder="Bully Witness Last Name"
+                              name={`blyw_last_name${id + 1}`}
+                              errors={errors}
+                              register={register}
+                            />
+                            <Icontroller
+                              type="text"
+                              placeholder="Gender of Bully Witness"
+                              name={`blyw_gender${id + 1}`}
+                              errors={errors}
+                              register={register}
+                            />
+                            <Icontroller
+                              type="text"
+                              placeholder="Grade of Bully Witness"
+                              name={`blyw_grader${id + 1}`}
+                              errors={errors}
+                              register={register}
+                            />
+                            <Icontroller
+                              type="text"
+                              placeholder="Homeroom Teacher of Bully Witness"
+                              name={`blyw_teacher${id + 1}`}
+                              errors={errors}
+                              register={register}
+                            />
+                          </>
+                        ))}
+                      </>
                     )}
                     {reportType === "weapon in school" && (
                       <Icontroller
@@ -761,6 +924,10 @@ const Report = () => {
                           bully.
                         </label>
                         <textarea name="details" className="mb-1 form-control shadow-none" {...register("details")} />
+                      </div>
+                      <div className="mb-2">
+                        <label className="py-1">Please provide all details of the bullying incident that you are reporting today. bully.</label>
+                        <textarea name="details_total" className="mb-1 form-control shadow-none" {...register("details_total")} />
                       </div>
                       <div className="mb-2">
                         <label className="py-1">

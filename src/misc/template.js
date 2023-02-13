@@ -1,10 +1,10 @@
-export const bullyTemplate = (
-  reqBody
-) => `I have information involving bullying in your school. I am reporting this information through The Bullybloxx system. If you are not
-familiar with The Bullybloxx system please go to www.bullybloxx.com for details. Once you are on the site if you will click on the School
-Administrator tab at the top of the Home page complete instructions for Bullybloxx will be provided for you. I have uploaded an identification video and you can view this video under my username ${
+export const bullyTemplate = (reqBody) => `
+Dear Principal, <br/>
+I have information involving bullying in your school. I am reporting this information through The BullyBloxx system. If you are not familiar with The BullyBloxx system please go to www.bullybloxx.com for details. Once you are on the site if you will click on the MORE tab at the top of the Home page and the School Administrator tab will drop down providing you with complete information for addressing this report. <br/>
+Also, on the MORE tab is a drop down that says SEARCH VIDEOS where you can view my identification video under my username ${
   reqBody.username
-}.If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you.
+} where you can see my face and hear my voice.
+.If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you.
 <br />
 ${reqBody.trustee}<br />
 If you have any further questions or need to immediately verify this
@@ -20,6 +20,24 @@ Full name of bully: ${reqBody.bully_fname}: ${reqBody.bully_lname}<br />
 Gender of bully: ${reqBody.bully_gender}<br />
 Grade of bully.: ${reqBody.bully_grade}<br />
 Homeroom Teacher of bully: ${reqBody.bully_teacher}<br />
+${[1, 2, 3].map((e) => (reqBody[`blyg_first_name${e}`] ? "Bully group First Name: " + reqBody[`blyg_first_name${e}`] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyg_last_name${e}`] ? "Bully group Last Name: " + reqBody[`blyg_last_name${e}`] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyg_gender${e}`] ? "Gender of Bully Groupie: " + reqBody[`blyg_gender${e}`] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyg_grade${e}`] ? "Grade of Bully Groupiee : " + reqBody[`blyg_grade${e}`] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyg_teacher${e}`] ? "Homeroom Teacher of Bully Groupie : " + reqBody[`blyg_teacher${e}`] + "<br />" : ""))}
+
+${[1, 2, 3].map((e) => (reqBody[`blyv_first_name${e}`] ? "Bully Victim First Name: " + reqBody[`blyv_first_name${e}`] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyv_last_name${e}`] ? "Bully Victim Last Name: " + reqBody[`blyv_last_name${e}`] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyv_gender${e}`] ? "Gender of Bully Victim: " + reqBody[`blyv_gender${e}`] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyv_grade${e}`] ? "Grade of Bully Victim : " + reqBody[`blyv_grade${e}`] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyv_teacher${e}`] ? "Homeroom Teacher of Bully Victim : " + reqBody[`blyv_teacher${e}`] + "<br />" : ""))}
+
+${[1, 2, 3].map((e) => (reqBody[`blyw_first_name${e}`] ? "Bully Witness First Name: " + reqBody[`blyw_first_name${e}`] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyw_last_name${e}`] ? "Bully Witness Last Name: " + reqBody[`blyw_last_name${e}`] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyw_gender${e}`] ? "Gender of Bully Witness: " + reqBody[`blyw_gender${e}`] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyw_grade${e}`] ? "Grade of Bully Witness : " + reqBody[`blyw_grade${e}`] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyw_teacher${e}`] ? "Homeroom Teacher of Bully Witness : " + reqBody[`blyw_teacher${e}`] + "<br />" : ""))}
+
 Date of incident: ${reqBody.incident_date}<br />
 Time of incident: ${reqBody.incident_time}<br />
 Names of any other students that supported the bully’s actions: ${reqBody.other_incident}
@@ -47,11 +65,14 @@ have submitted is being properly addressed. Thank you.<br />
 `
 
 export const templateWeaponThreat = (reqBody) => `
-I have information concernating a threat against your school. I am reporting this information through The Bullybloxx system. If you are not
-familiar with The Bullybloxx system please go to www.bullybloxx.com for details. Once you are on the site if you will click on the School
-Administrator tab at the top of the Home page complete instructions for Bullybloxx will be provided for you. I have uploaded an identification video and you can view this video under my username ${
+Dear Pincipal, <br />
+I have information involving a weapon in your school. I am reporting this information through The Bullybloxx system. If you are not
+familiar with The Bullybloxx system please go to www.bullybloxx.com for details. Once you are on the site if you will click on the MORE tab at the top of the Home page and the School
+Administrator tab will drop down providing you with complete information for addressing this report.<b />
+Also, on the MORE tab is a drop down that says SEARCH VIDEOS where you can view my identification video under my username ${
   reqBody.username
-}.If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you.
+} where you can see my face and hear my voice. <br />
+.If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you.
 <br />
 ${reqBody.trustee}<br />
 If you have any further questions or need to immediately verify this
@@ -80,10 +101,11 @@ In complete detail provide all information you have on this threat: ${reqBody.ot
 export const templateSchoolThreat = (reqBody) => `
 Dear Principal, <br/>
 I have information concernating a threat against your school. I am reporting this information through The Bullybloxx system. If you are not
-familiar with The Bullybloxx system please go to www.bullybloxx.com for details. Once you are on the site if you will click on the School
-Administrator tab at the top of the Home page complete instructions for Bullybloxx will be provided for you. I have uploaded an identification video and you can view this video under my username ${
+familiar with The Bullybloxx system please go to www.bullybloxx.com for details.Once you are on the site if you will click on the MORE tab at the top of the Home page and the School Administrator tab will drop down providing you with complete information for addressing this report.
+Also, on the MORE tab is a drop down that says SEARCH VIDEOS where you can view my identification video under my username ${
   reqBody.username
-}.If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you.
+} where you can see my face and hear my voice.
+.If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you.
 
 ${reqBody.trustee}<br />
 If you have any further questions or need to immediately verify this
