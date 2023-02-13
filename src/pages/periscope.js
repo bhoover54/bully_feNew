@@ -125,9 +125,9 @@ const Periscope = () => {
 
   const reportTenplate = (reqBody) => {
     let html = ""
-    if (reqBody.report_type === "bullying") html = bullyTemplate2(reqBody)
-    if (reqBody.report_type === "weapon in school") html = templateWeaponThreat2(reqBody)
-    if (reqBody.report_type === "threats against school") html = templateSchoolThreat2(reqBody)
+    if (reqBody.report_type === "bullying") html = bullyTemplate2(reqBody, true)
+    if (reqBody.report_type === "weapon in school") html = templateWeaponThreat2(reqBody, true)
+    if (reqBody.report_type === "threats against school") html = templateSchoolThreat2(reqBody, true)
 
     return html
   }

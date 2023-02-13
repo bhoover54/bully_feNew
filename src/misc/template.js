@@ -20,20 +20,27 @@ Full name of bully: ${reqBody.bully_fname}: ${reqBody.bully_lname}<br />
 Gender of bully: ${reqBody.bully_gender}<br />
 Grade of bully.: ${reqBody.bully_grade}<br />
 Homeroom Teacher of bully: ${reqBody.bully_teacher}<br />
+
 ${[1, 2, 3].map((e) => (reqBody[`blyg_first_name${e}`] ? "Bully group First Name: " + reqBody[`blyg_first_name${e}`] + "<br />" : ""))}
 ${[1, 2, 3].map((e) => (reqBody[`blyg_last_name${e}`] ? "Bully group Last Name: " + reqBody[`blyg_last_name${e}`] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyg_first_name${e}`] ? "Initial of Bully Bully First Name: " + reqBody[`blyg_first_name${e}`][0] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyg_last_name${e}`] ? "Initial of Bully Bully Last Name: " + reqBody[`blyg_last_name${e}`][0] + "<br />" : ""))}
 ${[1, 2, 3].map((e) => (reqBody[`blyg_gender${e}`] ? "Gender of Bully Groupie: " + reqBody[`blyg_gender${e}`] + "<br />" : ""))}
 ${[1, 2, 3].map((e) => (reqBody[`blyg_grade${e}`] ? "Grade of Bully Groupiee : " + reqBody[`blyg_grade${e}`] + "<br />" : ""))}
 ${[1, 2, 3].map((e) => (reqBody[`blyg_teacher${e}`] ? "Homeroom Teacher of Bully Groupie : " + reqBody[`blyg_teacher${e}`] + "<br />" : ""))}
 
 ${[1, 2, 3].map((e) => (reqBody[`blyv_first_name${e}`] ? "Bully Victim First Name: " + reqBody[`blyv_first_name${e}`] + "<br />" : ""))}
 ${[1, 2, 3].map((e) => (reqBody[`blyv_last_name${e}`] ? "Bully Victim Last Name: " + reqBody[`blyv_last_name${e}`] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyv_first_name${e}`] ? "Initial of  Victim First Name: " + reqBody[`blyv_first_name${e}`][0] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyv_last_name${e}`] ? "Initial of Victim Last Name: " + reqBody[`blyv_last_name${e}`][0] + "<br />" : ""))}
 ${[1, 2, 3].map((e) => (reqBody[`blyv_gender${e}`] ? "Gender of Bully Victim: " + reqBody[`blyv_gender${e}`] + "<br />" : ""))}
 ${[1, 2, 3].map((e) => (reqBody[`blyv_grade${e}`] ? "Grade of Bully Victim : " + reqBody[`blyv_grade${e}`] + "<br />" : ""))}
 ${[1, 2, 3].map((e) => (reqBody[`blyv_teacher${e}`] ? "Homeroom Teacher of Bully Victim : " + reqBody[`blyv_teacher${e}`] + "<br />" : ""))}
 
 ${[1, 2, 3].map((e) => (reqBody[`blyw_first_name${e}`] ? "Bully Witness First Name: " + reqBody[`blyw_first_name${e}`] + "<br />" : ""))}
 ${[1, 2, 3].map((e) => (reqBody[`blyw_last_name${e}`] ? "Bully Witness Last Name: " + reqBody[`blyw_last_name${e}`] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyw_first_name${e}`] ? "Initial of  Witness First Name: " + reqBody[`blyw_first_name${e}`][0] + "<br />" : ""))}
+${[1, 2, 3].map((e) => (reqBody[`blyw_last_name${e}`] ? "Initial of  Witness Last Name: " + reqBody[`blyw_last_name${e}`][0] + "<br />" : ""))}
 ${[1, 2, 3].map((e) => (reqBody[`blyw_gender${e}`] ? "Gender of Bully Witness: " + reqBody[`blyw_gender${e}`] + "<br />" : ""))}
 ${[1, 2, 3].map((e) => (reqBody[`blyw_grade${e}`] ? "Grade of Bully Witness : " + reqBody[`blyw_grade${e}`] + "<br />" : ""))}
 ${[1, 2, 3].map((e) => (reqBody[`blyw_teacher${e}`] ? "Homeroom Teacher of Bully Witness : " + reqBody[`blyw_teacher${e}`] + "<br />" : ""))}
@@ -58,6 +65,7 @@ If  so, who ? : ${reqBody.bully_witnesses} <br />
 Have you witnessed this bully abusing this same victim/student in the past?: ${reqBody.serail_bully}
 <br />
 Have you witnessed this bully abusing other students in the past?: ${reqBody.bully_witness}<br />
+Please provide all details of the bullying incident that you are reporting today: ${reqBody.details_total}
 If Yes, please provide any details of other bullying incidents that you have witnessed or seen in the past involving this: ${reqBody.details} <br />
 Please send me a reply email confirming that you have received this
 information, this will allow me to know that the information that I
