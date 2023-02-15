@@ -28,7 +28,7 @@ const Login = () => {
       })
     })
     const result = await response.json()
-    if (response.status === 201) {
+    if (response.status < 400) {
       loggedIn(result)
       toast("login successful")
       navigate("/", { replace: true })
