@@ -181,20 +181,8 @@ const Report = () => {
     <Row>
       <Col md="6" className="mx-auto mb-5">
         <form onSubmit={handleSubmit(report)} encType="multipart/form-data">
-          <p>
-            The first step to filing a bully report form is to upload a verification video. This is simply a "selfie" video of you making the
-            following statement: Hello, my username is ______________________ and today's date is _______________________
-          </p>
-          <Input
-            bsSize="sm"
-            className="mb-3 shadow-none"
-            type="file"
-            name="video"
-            placeholder="Video Evidence? "
-            onChange={preview}
-            accept="video/*"
-            role="button"
-          />
+          <p>The first step to filing a bully report form is to upload a verification video. This is simply a "selfie" video of you making the following statement: Hello, my username is ______________________ and today's date is _______________________</p>
+          <Input bsSize="sm" className="mb-3 shadow-none" type="file" name="video" placeholder="Video Evidence? " onChange={preview} accept="video/*" role="button" />
 
           {upload ? (
             <>
@@ -218,26 +206,21 @@ const Report = () => {
                 <>
                   {reportType === "bullying" && (
                     <p>
-                      I have information involving bullying in your school. I am reporting this information through The BullyBloxx system. If you are
-                      not familiar with The BullyBloxx system please go to www.bullybloxx.com for details. Once you are on the site if you will click
-                      on the School Administrator tab at the top of the Home page complete instructions for BullyBloxx will be provided for you. On
-                      the home page is a search bar where you can enter my username (provided below) and review my identification video. Thank you I
-                      am a trustee reporting this information for a student who requests to not be identified; however, I will act as an intermediary
-                      so you can immediately access any additional information that you may need.
+                      I have information involving bullying in your school. I am reporting this information through The BullyBloxx system. If you are not familiar with The BullyBloxx system please go to www.bullybloxx.com for details. Once you are on the site if you will click on the School
+                      Administrator tab at the top of the Home page complete instructions for BullyBloxx will be provided for you. On the home page is a search bar where you can enter my username {reporter.username || "dummy"} and review my identification video.
+                      {/* Thank you I am a trustee reporting
+                      this information for a student who requests to not be identified; however, I will act as an intermediary so you can immediately access any additional information that you may need. */}
                     </p>
                   )}
                   {reportType === "weapon in school" && (
                     <p>
-                      To report a WEAPON IN THE SCHOOL complete the form below and click SUBMIT REPORT. The report will automatically be sent by email
-                      to the principal: Dear Principal, I have information involving a weapon in your school. I am reporting this threat through The
-                      BullyBloxx system.
+                      To report a WEAPON IN THE SCHOOL complete the form below and click SUBMIT REPORT. The report will automatically be sent by email to the principal: Dear Principal, I have information involving a weapon in your school. I am reporting this threat through The BullyBloxx system.
                     </p>
                   )}
                   {reportType === "threats against school" && (
                     <p>
-                      To report a school shooter or any type threat against a school complete the form below and click SUBMIT REPORT. The report will
-                      automatically be sent by email to the principal: Dear Principal, I have information involving a threat against your school. I am
-                      reporting this threat through The BullyBloxx system.
+                      To report a school shooter or any type threat against a school complete the form below and click SUBMIT REPORT. The report will automatically be sent by email to the principal: Dear Principal, I have information involving a threat against your school. I am reporting this threat
+                      through The BullyBloxx system.
                     </p>
                   )}
                   <label className="py-1">
@@ -251,8 +234,7 @@ const Report = () => {
                     access any additional information you need."
                       onChange={handleEv}
                     />{" "}
-                    I am a trustee reporting this information for another individual who requests to not be identified; however, I will act as an
-                    intermediary so you can immediately access any additional information you need.
+                    I am a trustee reporting this information for another individual who requests to not be identified; however, I will act as an intermediary so you can immediately access any additional information you need.
                   </label>
                   <label className="py-1">
                     <Input
@@ -265,12 +247,8 @@ const Report = () => {
                     />{" "}
                     I am not a trustee for someone else, I am submitting this information on my own behalf.
                   </label>
-                  I have uploaded an identification video and you can view this video under my username{" "}
-                  <span className="text-uppercase fw-bold">{reporter.username || "dummy"}</span>
-                  <p>
-                    If you have any further questions or need to immediately verify this information please contact me and I will provide the answers
-                    for you.
-                  </p>
+                  I have uploaded an identification video and you can view this video under my username <span className="text-uppercase fw-bold">{reporter.username || "dummy"}</span>
+                  <p>If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you.</p>
                   <Icontroller
                     type="text"
                     name="first_name"
@@ -483,10 +461,8 @@ const Report = () => {
 
                         <p>Bully Groupie Information </p>
                         <p>
-                          Bully Groupies are other students who were present when the bullying incident occurred who may have not actively been
-                          involved in the abuse but who cheered the bully/bullies on and either encouraged the bullies to abuse the victim or who said
-                          humiliating or degrading remarks to the victim. If there are more than 3 bully groupies please list the names and info of
-                          the others in the last section of this report.
+                          Bully Groupies are other students who were present when the bullying incident occurred who may have not actively been involved in the abuse but who cheered the bully/bullies on and either encouraged the bullies to abuse the victim or who said humiliating or degrading
+                          remarks to the victim. If there are more than 3 bully groupies please list the names and info of the others in the last section of this report.
                         </p>
 
                         {bullyCount.map((e, id) => (
@@ -555,79 +531,19 @@ const Report = () => {
                             />
 
                             <p className="fw-bold mt-3">Bully Victim #{id + 1} (optional)</p>
-                            <Icontroller
-                              type="text"
-                              placeholder="Bully Victim First Name"
-                              name={`blyv_first_name${id + 1}`}
-                              errors={errors}
-                              register={register}
-                            />
-                            <Icontroller
-                              type="text"
-                              placeholder="Bully Victim Last Name"
-                              name={`blyv_last_name${id + 1}`}
-                              errors={errors}
-                              register={register}
-                            />
-                            <Icontroller
-                              type="text"
-                              placeholder="Gender of Bully Victim"
-                              name={`blyv_gender${id + 1}`}
-                              errors={errors}
-                              register={register}
-                            />
-                            <Icontroller
-                              type="text"
-                              placeholder="Grade of Bully Victim"
-                              name={`blyv_grade${id + 1}`}
-                              errors={errors}
-                              register={register}
-                            />
+                            <Icontroller type="text" placeholder="Bully Victim First Name" name={`blyv_first_name${id + 1}`} errors={errors} register={register} />
+                            <Icontroller type="text" placeholder="Bully Victim Last Name" name={`blyv_last_name${id + 1}`} errors={errors} register={register} />
+                            <Icontroller type="text" placeholder="Gender of Bully Victim" name={`blyv_gender${id + 1}`} errors={errors} register={register} />
+                            <Icontroller type="text" placeholder="Grade of Bully Victim" name={`blyv_grade${id + 1}`} errors={errors} register={register} />
 
-                            <Icontroller
-                              type="text"
-                              placeholder="Homeroom Teacher of Bully Victim"
-                              name={`blyv_teacher${id + 1}`}
-                              errors={errors}
-                              register={register}
-                            />
+                            <Icontroller type="text" placeholder="Homeroom Teacher of Bully Victim" name={`blyv_teacher${id + 1}`} errors={errors} register={register} />
 
                             <p className="fw-bold mt-3">Bully Witness #{id + 1}</p>
-                            <Icontroller
-                              type="text"
-                              placeholder="Bully Witness First Name"
-                              name={`blyw_first_name${id + 1}`}
-                              errors={errors}
-                              register={register}
-                            />
-                            <Icontroller
-                              type="text"
-                              placeholder="Bully Witness Last Name"
-                              name={`blyw_last_name${id + 1}`}
-                              errors={errors}
-                              register={register}
-                            />
-                            <Icontroller
-                              type="text"
-                              placeholder="Gender of Bully Witness"
-                              name={`blyw_gender${id + 1}`}
-                              errors={errors}
-                              register={register}
-                            />
-                            <Icontroller
-                              type="text"
-                              placeholder="Grade of Bully Witness"
-                              name={`blyw_grader${id + 1}`}
-                              errors={errors}
-                              register={register}
-                            />
-                            <Icontroller
-                              type="text"
-                              placeholder="Homeroom Teacher of Bully Witness"
-                              name={`blyw_teacher${id + 1}`}
-                              errors={errors}
-                              register={register}
-                            />
+                            <Icontroller type="text" placeholder="Bully Witness First Name" name={`blyw_first_name${id + 1}`} errors={errors} register={register} />
+                            <Icontroller type="text" placeholder="Bully Witness Last Name" name={`blyw_last_name${id + 1}`} errors={errors} register={register} />
+                            <Icontroller type="text" placeholder="Gender of Bully Witness" name={`blyw_gender${id + 1}`} errors={errors} register={register} />
+                            <Icontroller type="text" placeholder="Grade of Bully Witness" name={`blyw_grader${id + 1}`} errors={errors} register={register} />
+                            <Icontroller type="text" placeholder="Homeroom Teacher of Bully Witness" name={`blyw_teacher${id + 1}`} errors={errors} register={register} />
                           </>
                         ))}
                       </>
@@ -712,24 +628,14 @@ const Report = () => {
                     <>
                       <div className="mb-2">
                         <label className="py-1">Do any other people/students have knowledge of this threat? </label>
-                        <select
-                          name="threat_student_aware"
-                          className="mb-1 form-control shadow-none"
-                          {...register("threat_student_aware", { required: true })}
-                        >
+                        <select name="threat_student_aware" className="mb-1 form-control shadow-none" {...register("threat_student_aware", { required: true })}>
                           <option></option>
                           <option value="yes">Yes</option>
                           <option value="no">No</option>
                         </select>
                         {errors["threat_student_aware"] ? <p className="text-danger">required</p> : ""}
                       </div>
-                      <Icontroller
-                        type="text"
-                        placeholder="If yes, what are their names? (if more than one person, separate their names using commas)"
-                        name="threat_other_student"
-                        errors={errors}
-                        register={register}
-                      />
+                      <Icontroller type="text" placeholder="If yes, what are their names? (if more than one person, separate their names using commas)" name="threat_other_student" errors={errors} register={register} />
                       {/* <div className="mb-2">
                         <label className="py-1">
                           Do any other people/students have knowledge of this threat?{" "}
@@ -740,13 +646,7 @@ const Report = () => {
                           {...register("threat_details")}
                         />
                       </div> */}
-                      <Icontroller
-                        type="text"
-                        placeholder="In complete detail provide all information you have on this threat."
-                        name="threat_details"
-                        errors={errors}
-                        register={register}
-                      />
+                      <Icontroller type="text" placeholder="In complete detail provide all information you have on this threat." name="threat_details" errors={errors} register={register} />
                     </>
                   )}
                   {/* weapon section */}
@@ -785,13 +685,7 @@ const Report = () => {
                         </select>
                       </div>
 
-                      <Icontroller
-                        type="text"
-                        placeholder="Where does the student keep this weapon at school?"
-                        name="w_keep"
-                        errors={errors}
-                        register={register}
-                      />
+                      <Icontroller type="text" placeholder="Where does the student keep this weapon at school?" name="w_keep" errors={errors} register={register} />
 
                       {/* <div className="mb-2">
                         <label className="py-1">
@@ -827,20 +721,8 @@ const Report = () => {
                         {errors["staff_witnessed"] ? <p className="text-danger">required</p> : ""}
                       </div>
 
-                      <Icontroller
-                        type="text"
-                        placeholder="If yes, who was the teacher / staff member?"
-                        name="staff_witness"
-                        errors={errors}
-                        register={register}
-                      />
-                      <Icontroller
-                        type="text"
-                        placeholder="What actions did the teacher / staff member take?"
-                        name="staff_action"
-                        errors={errors}
-                        register={register}
-                      />
+                      <Icontroller type="text" placeholder="If yes, who was the teacher / staff member?" name="staff_witness" errors={errors} register={register} />
+                      <Icontroller type="text" placeholder="What actions did the teacher / staff member take?" name="staff_action" errors={errors} register={register} />
 
                       <div className="mb-2">
                         <label className="py-1">Did the bully physically abuse the victim?</label>
@@ -854,11 +736,7 @@ const Report = () => {
 
                       <div className="mb-2">
                         <label className="py-1">Was the victim handicapped student?</label>
-                        <select
-                          name="victim_handicapped"
-                          className="mb-1 form-control shadow-none"
-                          {...register("victim_handicapped", { required: true })}
-                        >
+                        <select name="victim_handicapped" className="mb-1 form-control shadow-none" {...register("victim_handicapped", { required: true })}>
                           <option></option>
                           <option value="yes">Yes</option>
                           <option value="no">No</option>
@@ -919,10 +797,7 @@ const Report = () => {
                       </div>
                       <Icontroller type="text" placeholder="If  so, who ?" name="bully_witnesses" errors={errors} register={register} />
                       <div className="mb-2">
-                        <label className="py-1">
-                          If Yes, please provide any details of other bullying incidents that you have witnessed or seen in the past involving this
-                          bully.
-                        </label>
+                        <label className="py-1">If Yes, please provide any details of other bullying incidents that you have witnessed or seen in the past involving this bully.</label>
                         <textarea name="details" className="mb-1 form-control shadow-none" {...register("details")} />
                       </div>
                       <div className="mb-2">
@@ -930,9 +805,7 @@ const Report = () => {
                         <textarea name="details_total" className="mb-1 form-control shadow-none" {...register("details_total")} />
                       </div>
                       <div className="mb-2">
-                        <label className="py-1">
-                          If more than one bully add their names here Names of any other students that supported the bully’s actions
-                        </label>
+                        <label className="py-1">If more than one bully add their names here Names of any other students that supported the bully’s actions</label>
                         <textarea name="other_incident" className="mb-1 form-control shadow-none" {...register("other_incident")} />
                       </div>
                     </>
