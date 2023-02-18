@@ -25,7 +25,7 @@ const Periscope = () => {
   const [report, setReport] = useState(false)
   const [pay, setPay] = useState(false)
   const [message, setMessage] = useState("")
-  const [modal, setModal] = useState(false)
+  const [modal, setModal] = useState(true)
   const [backdrop, setBackdrop] = useState(true)
 
   const submit = async (data) => {
@@ -213,32 +213,11 @@ const Periscope = () => {
                 Access Report
               </Button>
               <p className="text-center p-2 text-dark fw-bold">{message}</p>
-              <StripeCheckout
-                onSubmit={submit}
-                className="form-control stripe-key invisible"
-                allowRememberMe
-                stripeKey="pk_test_51KOluiEvT7coUybkV5V9bsEwzMG1GStiV16pTbXwRj0BIuWtNoIcE2PVF0ImnIfVCxV7h7d8IIHcd7d8CmnWqWtu00yMhvuQJZ"
-                amount={25 * 100}
-                label="Checkout"
-                token={search}
-                name="checkout"
-              />
+              <StripeCheckout onSubmit={submit} className="form-control stripe-key invisible" allowRememberMe stripeKey="pk_test_51KOluiEvT7coUybkV5V9bsEwzMG1GStiV16pTbXwRj0BIuWtNoIcE2PVF0ImnIfVCxV7h7d8IIHcd7d8CmnWqWtu00yMhvuQJZ" amount={25 * 100} label="Checkout" token={search} name="checkout" />
             </>
           )}
         </form>
-        {pay ? (
-          <StripeCheckout
-            className="form-control  stripe-key invisible"
-            allowRememberMe
-            stripeKey="pk_test_51KOluiEvT7coUybkV5V9bsEwzMG1GStiV16pTbXwRj0BIuWtNoIcE2PVF0ImnIfVCxV7h7d8IIHcd7d8CmnWqWtu00yMhvuQJZ"
-            amount={25 * 100}
-            label="Checkout"
-            token={search}
-            name="checkout"
-          />
-        ) : (
-          ""
-        )}
+        {pay ? <StripeCheckout className="form-control  stripe-key invisible" allowRememberMe stripeKey="pk_test_51KOluiEvT7coUybkV5V9bsEwzMG1GStiV16pTbXwRj0BIuWtNoIcE2PVF0ImnIfVCxV7h7d8IIHcd7d8CmnWqWtu00yMhvuQJZ" amount={25 * 100} label="Checkout" token={search} name="checkout" /> : ""}
       </Col>
       {result.length && report ? (
         <Col md="6">
@@ -248,11 +227,27 @@ const Periscope = () => {
         ""
       )}
 
-      <Modal isOpen={modal} toggle={toggle} backdrop={backdrop}>
-        <ModalHeader toggle={toggle}>{report.report_type}</ModalHeader>
-        <ModalBody>
-          <div dangerouslySetInnerHTML={{ __html: reportTenplate(report) }} />
-        </ModalBody>
+      <Modal isOpen={modal} toggle={report?.report_type && toggle} backdrop={backdrop}>
+        {Object.keys(report).length ? (
+          <>
+            <ModalHeader toggle={toggle}>{report.report_type}</ModalHeader>
+            <ModalBody>
+              <div dangerouslySetInnerHTML={{ __html: reportTenplate(report) }} />
+            </ModalBody>
+          </>
+        ) : (
+          <ModalBody>
+            A Periscope Report provides valuable information to a parent/person: 1- Who has a child that is being bullied by one or more bullies at school. 2- Who has reported this abuse to school administrators but administrators have not stopped the abuse. A Periscope Report provides a information
+            sheet showing every time the bully has been reported and certain information regarding the abuse involved in the incident; it is a complete history of the bully’s behavior. It shows just how many strikes this bully has against them and the level of bullying the administrators are
+            tolerating from this bully. The Periscope Report is one of the main functions in BullyBloxx that separates BullyBloxx from all other anti-bullying systems. It literally allows parents to look over the wall of the school and see everything regarding bullying in the school. It provides
+            parents with valuable evidence that has never been available to them before now due to FERPA laws. With this information and evidence parents have what they need to get abuse of their child stopped. By viewing the “How to Quickly Shut Down a Bully with BullyBloxx” video you will be
+            provided step by step instructions for using a Periscope Report. Please{" "}
+            <span className="text-primary" onClick={() => setModal(false)} role="button">
+              CLICK HERE
+            </span>{" "}
+            to request A Periscope Report.
+          </ModalBody>
+        )}
       </Modal>
     </Row>
   )

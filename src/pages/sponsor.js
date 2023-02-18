@@ -129,9 +129,7 @@ const Sponsor = () => {
     <>
       <Row>
         <Col md="5" className="mb-5">
-          <h4 className="mb-3">
-            To see if your school is protected OR to donate to your school's BullyBloxx protection please enter your school's information below
-          </h4>
+          <h4 className="mb-3">To see if your school is protected OR to donate to your school's BullyBloxx protection please enter your school's information below</h4>
           {/* <h4 className="mb-3">Is your school protected? search to see.</h4> */}
           <form onSubmit={handleSubmit(search)}>
             <Icontroller
@@ -169,12 +167,11 @@ const Sponsor = () => {
         <Col md="1" />
 
         <Col md="6">
-          <h4 className="mb-3">Get your school protected</h4>
+          <h4 className="mb-3">Get your school / schools protected</h4>
           <form onSubmit={handleSubmit2(submitData)}>
             {stage === "intro" && (
               <div>
-                Real Estate Professionals can serve as a Bully Shut Down Ambassador for up to 3 different schools in their area. To apply to be a
-                Bully Shutdown Ambassador please <br />
+                Real Estate Professionals can serve as a Bully Shut Down Ambassador for up to 3 different schools in their area. To apply to be a Bully Shutdown Ambassador please <br />
                 <span role="button" className="text-primary" onClick={() => changeStage("upload")}>
                   CLICK HERE
                 </span>
@@ -184,22 +181,11 @@ const Sponsor = () => {
             {(stage === "upload" || stage === "form") && (
               <>
                 <p>
-                  The first step to becoming a Bully Shut Down Ambassador for a school is creating a verification video confirming who you are. Please
-                  upload a "selfie" video of yourself clearly showing your face with no hats, sun glasses or anything else that may obstruct your
-                  face. Please make the following statement in your video. My name is __________________ and the name of the business that i work for
-                  is __________________.
+                  The first step to becoming a Bully Shut Down Ambassador for a school is creating a verification video confirming who you are. Please upload a "selfie" video of yourself clearly showing your face with no hats, sun glasses or anything else that may obstruct your face. Please make the
+                  following statement in your video. My name is __________________ and the name of the business that i work for is __________________.
                 </p>
                 <label className="py-1">Video Intro</label>
-                <Input
-                  bsSize="sm"
-                  className="mb-3 shadow-none"
-                  type="file"
-                  name="video"
-                  placeholder="Video Evidence? "
-                  onChange={preview}
-                  accept="video/*"
-                  role="button"
-                />
+                <Input bsSize="sm" className="mb-3 shadow-none" type="file" name="video" placeholder="Video Evidence? " onChange={preview} accept="video/*" role="button" />
                 {upload && (
                   <video width="100%" controls className="mb-3">
                     <source src={blob} />
@@ -311,10 +297,8 @@ const Sponsor = () => {
                 <> {found.data.school_name.toUpperCase()} is pending approval</>
               ) : (
                 <>
-                  {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is already sponsored by {found.data.business_name}{" "}
-                  BullyBloxx is owned, controlled and funded by the parents in the school and citizens in the community. The cost of protecting any
-                  school, regardless of size, with BullyBloxx is just $300 per month and is paid for yearly by donations from the parents and
-                  community. Currently there is $535 in donations with a total of $3,600 needed to fund BullyBloxx for a complete year of protection.
+                  {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is already sponsored by {found.data.business_name} BullyBloxx is owned, controlled and funded by the parents in the school and citizens in the community. The cost of protecting any school, regardless of
+                  size, with BullyBloxx is just $300 per month and is paid for yearly by donations from the parents and community. Currently there is $535 in donations with a total of $3,600 needed to fund BullyBloxx for a complete year of protection.
                   <Button
                     className="text-decoration-none bg-transparent text-primary border-0"
                     onClick={() => {

@@ -25,6 +25,8 @@ import Letters from "./pages/letters"
 import ForgotPassword from "./pages/forgot-password"
 import ResetPassword from "./pages/reset-paswod"
 import RealEstate from "./pages/real-estate"
+import BullyFreeSchool from "./pages/bully-free-school"
+import Ambassador from "./pages/ambasador"
 
 function App() {
   return (
@@ -49,6 +51,8 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/real-estate" element={<RealEstate />} />
+          <Route path="/bully-free-school" element={<BullyFreeSchool />} />
+          <Route path="/ambassador" element={<Ambassador />} />
           <Route path="/admin" element={<Admin />}>
             <Route index={true} element={<AdminSponsor />} />
             <Route path="/admin/report" element={<AdminReport />} />

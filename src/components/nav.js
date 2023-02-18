@@ -2,19 +2,7 @@ import { useContext, useState } from "react"
 import { Outlet, useNavigate, NavLink, Link } from "react-router-dom"
 import AppContext from "../misc/appContext"
 import logo from "../assets/images/logo.png"
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav as Nav2,
-  NavItem,
-  UncontrolledDropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-  Button
-} from "reactstrap"
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav as Nav2, NavItem, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Button } from "reactstrap"
 const Nav = () => {
   const { token, logout, role } = useContext(AppContext)
   const [isOpen, setIsOpen] = useState(true)
@@ -44,14 +32,19 @@ const Nav = () => {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-link" to="/periscope">
-                    Order Periscope Report
+                  <NavLink className="nav-link" to="/bully-free-school">
+                    Bully-Free Schools
                   </NavLink>
                 </NavItem>
 
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav>More</DropdownToggle>
                   <DropdownMenu right>
+                    <DropdownItem>
+                      <Link className=" text-dark" to="/periscope">
+                        Order Periscope Report
+                      </Link>
+                    </DropdownItem>
                     <DropdownItem>
                       <Link className=" text-dark" to="/policy">
                         Bullybloxx Discipline Policy
@@ -60,6 +53,11 @@ const Nav = () => {
                     <DropdownItem>
                       <Link className=" text-dark" to="/letters">
                         Bullybloxx Letters
+                      </Link>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <Link className=" text-dark" to="/ambassador">
+                        Bully Shut Down Ambassadors
                       </Link>
                     </DropdownItem>
                     <DropdownItem>

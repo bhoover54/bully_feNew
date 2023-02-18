@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { getItem } from "../misc/helper"
 import BASE_URL from "../misc/url"
-import { Button, Col, Input, Row } from "reactstrap"
+import { Button, Col, Input, Modal, ModalBody, Row } from "reactstrap"
 import { Icontroller } from "./signup"
 import useSchool from "../hooks/school.hook"
 import { toast } from "react-toastify"
@@ -36,8 +36,11 @@ const Report = () => {
   const [sentReport, setSentReport] = useState("")
   const [bullyGroup, setBullyGroup] = useState({})
   const [bullyCount, setBullyCount] = useState([1, 2, 3])
+  const [modal, setModal] = useState(false)
   const navigate = useNavigate()
   // const reporter =  user()
+
+  const toggle = () => setModal(!modal)
 
   const preview = (e) => {
     const url = e.target.files[0]
@@ -125,6 +128,7 @@ const Report = () => {
 
       if (response.status === 200) {
         setLoading(false)
+        toggle()
         reset()
 
         toast("report sent successfully")
@@ -842,6 +846,12 @@ const Report = () => {
             ""
           )}
         </form>
+        <Modal isOpen={modal} toggle={toggle}>
+          <ModalBody>
+            Your report has been received and entered into the BullyBloxx system/database. Thank You for using BullyBloxx to protect your school. Please encourage every student to use BullyBloxx to report any bullying that they see or threats that they become aware of. Your community appreciates you
+            being an upstander.
+          </ModalBody>
+        </Modal>
       </Col>
     </Row>
   )
