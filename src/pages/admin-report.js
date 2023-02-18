@@ -59,6 +59,7 @@ const AdminReport = () => {
             size="sm"
             onClick={() => {
               toggle()
+              console.log(row)
               setReport(row)
             }}
           >

@@ -207,9 +207,9 @@ const Report = () => {
                   {reportType === "bullying" && (
                     <p>
                       I have information involving bullying in your school. I am reporting this information through The BullyBloxx system. If you are not familiar with The BullyBloxx system please go to www.bullybloxx.com for details. Once you are on the site if you will click on the School
-                      Administrator tab at the top of the Home page complete instructions for BullyBloxx will be provided for you. On the home page is a search bar where you can enter my username {reporter.username || "dummy"} and review my identification video.
+                      Administrator tab at the top of the Home page complete instructions for BullyBloxx will be provided for you. On the home page is a search bar where you can enter my username {reporter.username || ""} and review my identification video.
                       {/* Thank you I am a trustee reporting
-                      this information for a student who requests to not be identified; however, I will act as an intermediary so you can immediately access any additional information that you may need. */}
+                      this information for a student whfo requests to not be identified; however, I will act as an intermediary so you can immediately access any additional information that you may need. */}
                     </p>
                   )}
                   {reportType === "weapon in school" && (
@@ -247,7 +247,7 @@ const Report = () => {
                     />{" "}
                     I am not a trustee for someone else, I am submitting this information on my own behalf.
                   </label>
-                  I have uploaded an identification video and you can view this video under my username <span className="text-uppercase fw-bold">{reporter.username || "dummy"}</span>
+                  {/* I have uploaded an identification video and you can view this video under my username <span className="text-uppercase fw-bold">{reporter.username || ""}</span> */}
                   <p>If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you.</p>
                   <Icontroller
                     type="text"
@@ -529,7 +529,12 @@ const Report = () => {
                                 }
                               }
                             />
+                          </>
+                        ))}
 
+                        <p className="mt-3">Bully Victim/Victim’s Information (optional)</p>
+                        {bullyCount.map((e, id) => (
+                          <>
                             <p className="fw-bold mt-3">Bully Victim #{id + 1} (optional)</p>
                             <Icontroller type="text" placeholder="Bully Victim First Name" name={`blyv_first_name${id + 1}`} errors={errors} register={register} />
                             <Icontroller type="text" placeholder="Bully Victim Last Name" name={`blyv_last_name${id + 1}`} errors={errors} register={register} />
@@ -537,7 +542,12 @@ const Report = () => {
                             <Icontroller type="text" placeholder="Grade of Bully Victim" name={`blyv_grade${id + 1}`} errors={errors} register={register} />
 
                             <Icontroller type="text" placeholder="Homeroom Teacher of Bully Victim" name={`blyv_teacher${id + 1}`} errors={errors} register={register} />
+                          </>
+                        ))}
 
+                        <p className="mt-3">Bullying Witness Information- Please provide the information for any student who witnessed this incident:</p>
+                        {bullyCount.map((e, id) => (
+                          <>
                             <p className="fw-bold mt-3">Bully Witness #{id + 1}</p>
                             <Icontroller type="text" placeholder="Bully Witness First Name" name={`blyw_first_name${id + 1}`} errors={errors} register={register} />
                             <Icontroller type="text" placeholder="Bully Witness Last Name" name={`blyw_last_name${id + 1}`} errors={errors} register={register} />

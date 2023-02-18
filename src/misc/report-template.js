@@ -4,9 +4,9 @@ ${
     ? `
 I have information involving bullying in your school. I am reporting this information through The BullyBlox system. If you are not
 familiar with The BullyBlox system please go to www.bullybloxx.com for details. Once you are on the site if you will click on the School
-Administrator tab at the top of the Home page complete instructions for BullyBlox will be provided for you. I have uploaded an identification video and you can view this video under my username ${
+Administrator tab at the top of the Home page complete instructions for BullyBlox will be provided for you. I have uploaded an identification video and you can view this video under my username<b> ${
         reqBody?.user?.username || ""
-      }.If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you.
+      }</b>. If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you.
 <br /> <br />
 ${reqBody.trustee}<br /> <br />
 If you have any further questions or need to immediately verify this
@@ -16,45 +16,61 @@ My Full Name: ${reqBody.first_name} ${reqBody.last_name}<br /> <br />
 My cell phone number: ${reqBody.phone}<br /> <br />
 My e-mail address: ${reqBody?.email || reqBody?.user?.email}<br /> <br />
 `
-    : `<br /> <br />`
+    : ``
 }
-
-
 
 Name of School: ${reqBody.school_name}<br /> <br />
 zip of School: ${reqBody.zip_code}<br /> <br />
-Principal’s email address: ${reqBody.email}<br /> <br />
-Full name of bully: ${reqBody.bully_fname}: ${reqBody.bully_lname}<br /> <br />
-Gender of bully:: ${reqBody.bully_gender}<br /> <br />
-Grade of bully.: ${reqBody.bully_grade}<br /> <br />
+${!periscope ? `Principal’s email address: ${reqBody.email}<br /> <br />` : ""}
+
+${!periscope ? `Full name of bully: ${reqBody.bully_fname} ${reqBody.bully_lname}<br /> <br />` : ""}
+What is the first initial in the bully’s first name: ${reqBody.bully_fname[0]} <br /><br />
+What is the first initial in the bully’s last name: ${reqBody.bully_lname[0]} <br /><br />
+Gender of bully: ${reqBody.bully_gender}<br /> <br />
+Grade of bully: ${reqBody.bully_grade}<br /> <br />
 Homeroom Teacher of bully: ${reqBody.bully_teacher}<br /> <br />
 
 ${
-  periscope
-    ? `${[1, 2, 3].map((e) => reqBody[`blyv_first_name${e}`] && `Bully Victim First Name ${e} : ` + reqBody[`blyv_first_name${e}`] + "<br /> <br />")}
-  ${[1, 2, 3].map((e) => reqBody[`blyv_last_name${e}`] && `Bully Victim Last Name ${e} : ` + reqBody[`blyv_last_name${e}`] + "<br /> <br />")}
-  ${[1, 2, 3].map((e) => reqBody[`blyv_first_name${e}`] && `Initial of  Victim First Name ${e} : ` + reqBody[`blyv_first_name${e}`][0] + "<br /> <br />")}
-  ${[1, 2, 3].map((e) => reqBody[`blyv_last_name${e}`] && `Initial of Victim Last Name ${e} : ` + reqBody[`blyv_last_name${e}`][0] + "<br /> <br />")}
-  ${[1, 2, 3].map((e) => reqBody[`blyv_gender${e}`] && `Gender of Bully Victim ${e} : ` + reqBody[`blyv_gender${e}`] + "<br /> <br />")}
-  ${[1, 2, 3].map((e) => reqBody[`blyv_grade${e}`] && `Grade of Bully Victim  ${e} : ` + reqBody[`blyv_grade${e}`] + "<br /> <br />")}
-  ${[1, 2, 3].map((e) => reqBody[`blyv_teacher${e}`] && `Homeroom Teacher of Bully Victim  ${e} : ` + reqBody[`blyv_teacher${e}`] + "<br /> <br />")}
-  
-  ${[1, 2, 3].map((e) => reqBody[`blyw_first_name${e}`] && `Bully Witness First Name ${e} : ` + reqBody[`blyw_first_name${e}`] + "<br /> <br />")}
-  ${[1, 2, 3].map((e) => reqBody[`blyw_last_name${e}`] && `Bully Witness Last Name ${e} : ` + reqBody[`blyw_last_name${e}`] + "<br /> <br />")}
-  ${[1, 2, 3].map((e) => reqBody[`blyw_first_name${e}`] && `Initial of  Witness First Name ${e} : ` + reqBody[`blyw_first_name${e}`][0] + "<br /> <br />")}
-  ${[1, 2, 3].map((e) => reqBody[`blyw_last_name${e}`] && `Initial of  Witness Last Name ${e} : ` + reqBody[`blyw_last_name${e}`][0] + "<br /> <br />")}
-  ${[1, 2, 3].map((e) => reqBody[`blyw_gender${e}`] && `Gender of Bully Witness ${e} : ` + reqBody[`blyw_gender${e}`] + "<br /> <br />")}
-  ${[1, 2, 3].map((e) => reqBody[`blyw_grade${e}`] && `Grade of Bully Witness  ${e} : ` + reqBody[`blyw_grade${e}`] + "<br /> <br />")}
-  ${[1, 2, 3].map((e) => reqBody[`blyw_teacher${e}`] && `Homeroom Teacher of Bully Witness  ${e} : ` + reqBody[`blyw_teacher${e}`] + `<br /> <br />`)}`
+  !periscope
+    ? `
+      ${[1, 2, 3].map((e) => reqBody[`blyg_first_name${e}`] && `Bully group First Name ${e}:  ${reqBody[`blyg_first_name${e}`]}<br /> <br />`)}${[1, 2, 3].map((e) => reqBody[`blyg_last_name${e}`] && `Bully group Last Name ${e}: ` + reqBody[`blyg_last_name${e}`] + "<br /> <br />")}
+      ${[1, 2, 3].map((e) => reqBody[`blyg_gender${e}`] && `Gender of Bully Groupie ${e} : ` + reqBody[`blyg_gender${e}`] + "<br /> <br />")}${[1, 2, 3].map((e) => reqBody[`blyg_grade${e}`] && `Grade of Bully Groupiee  ${e} : ` + reqBody[`blyg_grade${e}`] + "<br /> <br />")}
+      ${[1, 2, 3].map((e) => reqBody[`blyg_teacher${e}`] && `Homeroom Teacher of Bully Groupie ${e} : ` + reqBody[`blyg_teacher${e}`] + "<br /> <br />")}
+    `
+    : `${[1, 2, 3].map((e) => (reqBody[`blyg_first_name${e}`] ? `Initial of Bully Groupie First Name ${e}: ` + reqBody[`blyg_first_name${e}`][0] + "<br /> <br />" : ""))}
+    ${[1, 2, 3].map((e) => (reqBody[`blyg_last_name${e}`] ? `Initial of Bully Groupie Last Name ${e}: ` + reqBody[`blyg_last_name${e}`][0] + "<br /> <br />" : ""))}
+    ${[1, 2, 3].map((e) => (reqBody[`blyg_gender${e}`] ? `Gender of Bully Groupie ${e}: ` + reqBody[`blyg_gender${e}`] + "<br /> <br />" : ""))}
+    ${[1, 2, 3].map((e) => (reqBody[`blyg_grade${e}`] ? `Grade of Bully Groupiee  ${e}: ` + reqBody[`blyg_grade${e}`] + "<br /> <br />" : ""))}
+    `
+}
+
+${
+  !periscope
+    ? `
+      ${[1, 2, 3].map((e) => reqBody[`blyv_first_name${e}`] && `Bully Victim First Name ${e} : ` + reqBody[`blyv_first_name${e}`] + "<br /> <br />")}
+      ${[1, 2, 3].map((e) => reqBody[`blyv_last_name${e}`] && `Bully Victim Last Name ${e} : ` + reqBody[`blyv_last_name${e}`] + "<br /> <br />")}
+      ${[1, 2, 3].map((e) => reqBody[`blyv_first_name${e}`] && `Initial of  Victim First Name ${e} : ` + reqBody[`blyv_first_name${e}`][0] + "<br /> <br />")}
+      ${[1, 2, 3].map((e) => reqBody[`blyv_last_name${e}`] && `Initial of Victim Last Name ${e} : ` + reqBody[`blyv_last_name${e}`][0] + "<br /> <br />")}
+      ${[1, 2, 3].map((e) => reqBody[`blyv_gender${e}`] && `Gender of Bully Victim ${e} : ` + reqBody[`blyv_gender${e}`] + "<br /> <br />")}
+      ${[1, 2, 3].map((e) => reqBody[`blyv_grade${e}`] && `Grade of Bully Victim  ${e} : ` + reqBody[`blyv_grade${e}`] + "<br /> <br />")}
+      ${[1, 2, 3].map((e) => reqBody[`blyv_teacher${e}`] && `Homeroom Teacher of Bully Victim  ${e} : ` + reqBody[`blyv_teacher${e}`] + "")}
+      ${[1, 2, 3].map((e) => reqBody[`blyw_first_name${e}`] && `Bully Witness First Name ${e} : ` + reqBody[`blyw_first_name${e}`] + "<br /> <br />")}
+      ${[1, 2, 3].map((e) => reqBody[`blyw_last_name${e}`] && `Bully Witness Last Name ${e} : ` + reqBody[`blyw_last_name${e}`] + "<br /> <br />")}
+      ${[1, 2, 3].map((e) => reqBody[`blyw_first_name${e}`] && `Initial of  Witness First Name ${e} : ` + reqBody[`blyw_first_name${e}`][0] + "<br /> <br />")}
+      ${[1, 2, 3].map((e) => reqBody[`blyw_last_name${e}`] && `Initial of  Witness Last Name ${e} : ` + reqBody[`blyw_last_name${e}`][0] + "<br /> <br />")}
+      ${[1, 2, 3].map((e) => reqBody[`blyw_gender${e}`] && `Gender of Bully Witness ${e} : ` + reqBody[`blyw_gender${e}`] + "<br /> <br />")}
+      ${[1, 2, 3].map((e) => reqBody[`blyw_grade${e}`] && `Grade of Bully Witness  ${e} : ` + reqBody[`blyw_grade${e}`] + "<br /> <br />")}
+      ${[1, 2, 3].map((e) => reqBody[`blyw_teacher${e}`] && `Homeroom Teacher of Bully Witness  ${e} : ` + reqBody[`blyw_teacher${e}`] + ``)}
+    `
     : ``
 }
 
 
-  Date of incident: ${reqBody.incident_date}<br /> <br />
+
+
+Date of incident: ${reqBody.incident_date}<br /> <br />
   Time of incident: ${reqBody.incident_time}<br /> <br />
-  Names of any other students that supported the bully’s actions: ${reqBody.other_incident}
-  <br /> <br />
-  Did any teacher or staff member see this incident?: ${reqBody.staff_witnessed}<br /> <br />
+
   Did any teacher or staff member see this incident?: ${reqBody.staff_witnessed}<br /> <br />
   If yes, who was the teacher / staff member?: ${reqBody.staff_witness || "no witness"}
   <br /> <br />
