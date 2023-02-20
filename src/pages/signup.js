@@ -4,6 +4,7 @@ import BASE_URL from "../misc/url"
 import { Button, Col, Row } from "reactstrap"
 import { useState } from "react"
 import { toast } from "react-toastify"
+import { Loader } from "./login"
 
 const Register = () => {
   const {
@@ -27,10 +28,13 @@ const Register = () => {
       if (response.status < 400) {
         navigate("/signin")
         toast("success")
+        setLoading(false)
         return
-      } else toast(result.message)
+      }
+      setLoading(false)
+      toast(result.message)
     } catch (error) {
-      //console.log(error)
+      console.log(error)
     } finally {
       setLoading(false)
     }
@@ -38,29 +42,9 @@ const Register = () => {
 
   return (
     <Row style={{ minHeight: "70vh" }} className="d-flex justify-content-center align-items-center">
+      {loading ? <Loader /> : <></>}
       <Col md="6" lg="4" className="mx-auto  p-5 shadow rounded">
         <form onSubmit={handleSubmit(submit)}>
-          {/* <Icontroller
-            type="text"
-            name="first_name"
-            placeholder="First Name"
-            register={register}
-            errors={errors}
-            others={{
-              required: true
-            }}
-            message="First name is required"
-          />
-          <Icontroller
-            type="text"
-            name="last_name"
-            placeholder="Last Name"
-            register={register}
-            errors={errors}
-            others={{
-              required: true
-            }}
-          /> */}
           <Icontroller
             type="text"
             name="username"
@@ -84,19 +68,7 @@ const Register = () => {
             }}
             message="Please use a valid email format"
           />
-          {/* <Icontroller
-            type="number"
-            name="phone"
-            placeholder="Phone"
-            register={register}
-            errors={errors}
-            others={{
-              pattern: /[0-9]/,
-              maxLength: 10,
-              minLength: 10
-            }}
-            message="input a valid phone number"
-          /> */}
+
           <Icontroller
             type="password"
             name="password"

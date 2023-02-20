@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import { Outlet, useNavigate, NavLink, Link } from "react-router-dom"
 import AppContext from "../misc/appContext"
-import logo from "../assets/images/logo.png"
+import logo from "../assets/images/blyblox.jpeg"
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav as Nav2, NavItem, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Button } from "reactstrap"
 const Nav = () => {
   const { token, logout, role } = useContext(AppContext)
@@ -16,7 +16,7 @@ const Nav = () => {
         <div className="container-fluid p-0 mb-5 ">
           <Navbar expand="md" className="navbar-dark">
             <NavbarBrand>
-              <img src={logo} alt="logo" width="70px" onClick={() => navigate("/")} role="button" />
+              <img src={logo} alt="logo" width="50px" onClick={() => navigate("/")} role="button" className="rounded-circle" />
             </NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>

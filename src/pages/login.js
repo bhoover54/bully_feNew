@@ -44,6 +44,8 @@ const Login = () => {
 
   return (
     <Row style={{ minHeight: "70vh" }} className="d-flex justify-content-center align-items-center">
+      {loading ? <Loader /> : <></>}
+
       <Col md="6" lg="4" className="mx-auto  p-5 shadow rounded">
         {/* <Link to="/" className="btn btn-info btn-sm text-dark fw-bold mb-3">
           home
@@ -95,3 +97,14 @@ const Login = () => {
 }
 
 export default Login
+
+export const Loader = () => (
+  <div className="loader">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+)
