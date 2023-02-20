@@ -20,74 +20,79 @@ const Nav = () => {
             </NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
-              <Nav2 className="me-auto" navbar>
-                <NavItem>
-                  <NavLink className={`nav-link ${activeClass}`} to="/sponsor">
-                    Get Your Schools Protected
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className={`nav-link ${activeClass}`} to="/message-to-moms">
-                    Message to Moms
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="nav-link" to="/bully-free-school">
-                    Bully-Free Schools
-                  </NavLink>
-                </NavItem>
+              {!role || role !== "ADMIN" ? (
+                <Nav2 className="me-auto" navbar>
+                  <NavItem>
+                    <NavLink className={`nav-link ${activeClass}`} to="/sponsor">
+                      Get Your Schools Protected
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink className={`nav-link ${activeClass}`} to="/message-to-moms">
+                      Message to Moms
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink className="nav-link" to="/bully-free-school">
+                      Bully-Free Schools
+                    </NavLink>
+                  </NavItem>
 
-                <UncontrolledDropdown nav inNavbar>
-                  <DropdownToggle nav>More</DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem>
-                      <Link className=" text-dark" to="/periscope">
-                        Order Periscope Report
-                      </Link>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Link className=" text-dark" to="/policy">
-                        Bullybloxx Discipline Policy
-                      </Link>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Link className=" text-dark" to="/letters">
-                        Bullybloxx Letters
-                      </Link>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Link className=" text-dark" to="/ambassador">
-                        Bully Shut Down Ambassadors
-                      </Link>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Link className="text-dark" to="/media">
-                        Bullybloxx Video Library
-                      </Link>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Link className="text-dark" to="/school/admin">
-                        School Administrator
-                      </Link>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Link className=" text-dark" to="/uploads">
-                        Search Videos
-                      </Link>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Link className="text-dark" to="/about">
-                        About
-                      </Link>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Link className="text-dark" to="/contact">
-                        Contact
-                      </Link>
-                    </DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
-              </Nav2>
+                  <UncontrolledDropdown nav inNavbar>
+                    <DropdownToggle nav>More</DropdownToggle>
+                    <DropdownMenu right>
+                      <DropdownItem>
+                        <Link className=" text-dark" to="/periscope">
+                          Order Periscope Report
+                        </Link>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <Link className=" text-dark" to="/policy">
+                          Bullybloxx Discipline Policy
+                        </Link>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <Link className=" text-dark" to="/letters">
+                          Bullybloxx Letters
+                        </Link>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <Link className=" text-dark" to="/ambassador">
+                          Bully Shut Down Ambassadors
+                        </Link>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <Link className="text-dark" to="/media">
+                          Bullybloxx Video Library
+                        </Link>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <Link className="text-dark" to="/school/admin">
+                          School Administrator
+                        </Link>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <Link className=" text-dark" to="/uploads">
+                          Search Videos
+                        </Link>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <Link className="text-dark" to="/about">
+                          About
+                        </Link>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <Link className="text-dark" to="/contact">
+                          Contact
+                        </Link>
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
+                </Nav2>
+              ) : (
+                <></>
+              )}
+
               <Nav2>
                 {role === "ADMIN" && (
                   <>
