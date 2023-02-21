@@ -37,6 +37,8 @@ const Report = () => {
   const [bullyGroup, setBullyGroup] = useState({})
   const [bullyCount, setBullyCount] = useState([1, 2, 3])
   const [modal, setModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false)
+
   const navigate = useNavigate()
   // const reporter =  user()
 
@@ -155,6 +157,7 @@ const Report = () => {
       setBullyGroup({ ...bullyCount, [name]: value })
     } else {
       if (e.target.name === "report_type") setReportType(e.target.value)
+      if (value === "bullying") setOpenModal(true)
       setOtherData({ ...otherData, [e.target.name]: e.target.value })
     }
   }
@@ -416,7 +419,6 @@ const Report = () => {
                       {reportType === "weapon in school" && <label className="py-1">​Gender of person/student bringing the weapon to school?</label>}
                       {reportType === "threats against school" && <label className="py-1">Gender of person/student making this threat:</label>}
                     </>
-
                     <select name="bully_gender" className="mb-1 form-control shadow-none" {...register("bully_gender", { required: true })}>
                       <option></option>
                       <option value="male">Male</option>
@@ -513,7 +515,17 @@ const Report = () => {
                                 }
                               }
                             />
-                            <Icontroller
+
+                            <div className="mb-2">
+                              <label className="py-1"> Gender of Bully Groupie</label>
+                              <select name={`blyg_gender${id + 1}`} className="mb-1 form-control shadow-none" {...register(`blyg_gender${id + 1}`, { required: id === 0 && true })}>
+                                <option></option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                              </select>
+                            </div>
+
+                            {/* <Icontroller
                               type="text"
                               placeholder="Gender of Bully Groupie"
                               name={`blyg_gender${id + 1}`}
@@ -524,10 +536,11 @@ const Report = () => {
                                   required: true
                                 }
                               }
-                            />
+                            /> */}
+
                             <Icontroller
                               type="text"
-                              placeholder="Grade of Bully Groupiee"
+                              placeholder="Grade of Bully Groupie"
                               name={`blyg_grade${id + 1}`}
                               errors={errors}
                               register={register}
@@ -558,7 +571,17 @@ const Report = () => {
                             <p className="fw-bold mt-3">Bully Victim #{id + 1} (optional)</p>
                             <Icontroller type="text" placeholder="Bully Victim First Name" name={`blyv_first_name${id + 1}`} errors={errors} register={register} />
                             <Icontroller type="text" placeholder="Bully Victim Last Name" name={`blyv_last_name${id + 1}`} errors={errors} register={register} />
-                            <Icontroller type="text" placeholder="Gender of Bully Victim" name={`blyv_gender${id + 1}`} errors={errors} register={register} />
+
+                            <div className="mb-2">
+                              <label className="py-1"> Gender of Bully Victim </label>
+                              <select name={`blyv_gender${id + 1}`} className="mb-1 form-control shadow-none" {...register(`blyv_gender${id + 1}`)}>
+                                <option></option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                              </select>
+                            </div>
+
+                            {/* <Icontroller type="text" placeholder="Gender of Bully Victim" name={`blyv_gender${id + 1}`} errors={errors} register={register} /> */}
                             <Icontroller type="text" placeholder="Grade of Bully Victim" name={`blyv_grade${id + 1}`} errors={errors} register={register} />
 
                             <Icontroller type="text" placeholder="Homeroom Teacher of Bully Victim" name={`blyv_teacher${id + 1}`} errors={errors} register={register} />
@@ -571,7 +594,15 @@ const Report = () => {
                             <p className="fw-bold mt-3">Bully Witness #{id + 1}</p>
                             <Icontroller type="text" placeholder="Bully Witness First Name" name={`blyw_first_name${id + 1}`} errors={errors} register={register} />
                             <Icontroller type="text" placeholder="Bully Witness Last Name" name={`blyw_last_name${id + 1}`} errors={errors} register={register} />
-                            <Icontroller type="text" placeholder="Gender of Bully Witness" name={`blyw_gender${id + 1}`} errors={errors} register={register} />
+                            <div className="mb-2">
+                              <label className="py-1"> Gender of Bully Witness{id + 1}</label>
+                              <select name={`blyw_gender${id + 1}`} className="mb-1 form-control shadow-none" {...register(`blyw_gender${id + 1}`)}>
+                                <option></option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                              </select>
+                            </div>
+                            {/* <Icontroller type="text" placeholder="Gender of Bully Witness" name={`blyw_gender${id + 1}`} errors={errors} register={register} /> */}
                             <Icontroller type="text" placeholder="Grade of Bully Witness" name={`blyw_grader${id + 1}`} errors={errors} register={register} />
                             <Icontroller type="text" placeholder="Homeroom Teacher of Bully Witness" name={`blyw_teacher${id + 1}`} errors={errors} register={register} />
                           </>
@@ -862,6 +893,28 @@ const Report = () => {
             ""
           )}
         </form>
+
+        <Modal isOpen={openModal} toggle={toggle}>
+          <ModalBody>
+            <p>The first step to reporting bullying through BullyBloxx is to confirm that the incident meets the standards to be labeled a bullying incident. Below are some very simple guidelines that will quickly help you determine if an incident meets these requirements:</p>
+            <p>It IS NOT BULLYING when:</p>
+            <ol>
+              <li>Someone says or does something hurtful UNINTENTIONALLY and they only do it once; that is called being RUDE.</li>
+              <li>Someone says or does something hurtful INTENTIONALLY and they only do it once; that is called being MEAN.</li>
+            </ol>
+            <h5>HOWEVER</h5>
+            <p>When someone says or does something hurtful INTENTIONALLY and they do it MORE THAN ONCE, even when you tell them to stop or they can see that you are upset………...THAT IS BULLYING and it should be reported EVERY TIME it occurs.</p>
+            <p>
+              If this incident meets the standards for bullying please{" "}
+              <span role="button" style={{ color: "blue" }} onClick={() => setOpenModal(false)}>
+                {" "}
+                CLICK HERE{" "}
+              </span>{" "}
+              to access the Bully Reporting Forms.{" "}
+            </p>
+          </ModalBody>
+        </Modal>
+
         <Modal isOpen={modal} toggle={toggle}>
           <ModalBody>
             Your report has been received and entered into the BullyBloxx system/database. Thank You for using BullyBloxx to protect your school. Please encourage every student to use BullyBloxx to report any bullying that they see or threats that they become aware of. Your community appreciates you
