@@ -106,7 +106,9 @@ const Sponsor = () => {
 
     if (response.status < 400) {
       setMessage(
-        "Thank you for stepping up for your community by serving as a Bully Shut Down Ambassador. Your application is pending and you will be contacted by email as soon as our staff approves your application. You can serve as a Bully Shut Down Ambassador for up to 3 schools, simply submit a separate application for each school. Once you are approved will receive instructions for moving forward through your email. Thank you."
+        `Thank you for stepping up for your community by serving as a Bully Shut Down Ambassador. Your application is pending and you will be contacted by email as soon as our staff approves your application.
+        You can serve as a Bully Shut Down Ambassador for up to 3 schools, simply submit a separate application for each school. Once you are approved will receive instructions for moving forward through your email. <br />
+        If you haven’t received an email in 24 hours please check your spam. Thank you.`
       )
       toggle()
       reset2()
@@ -200,7 +202,7 @@ const Sponsor = () => {
                 <Icontroller
                   type="text"
                   name="realtor_name"
-                  placeholder="Realtor's Name"
+                  placeholder="Your Name"
                   register={register2}
                   errors={error2}
                   others={{
@@ -211,7 +213,7 @@ const Sponsor = () => {
                 <Icontroller
                   type="text"
                   name="business_name"
-                  placeholder="Business Name"
+                  placeholder="Name of Business / Agency"
                   register={register2}
                   errors={error2}
                   others={{
@@ -222,7 +224,7 @@ const Sponsor = () => {
                 <Icontroller
                   type="email"
                   name="business_email"
-                  placeholder="Business Email"
+                  placeholder="Your Business Email Address"
                   register={register2}
                   errors={error2}
                   others={{
@@ -248,7 +250,7 @@ const Sponsor = () => {
                 <Icontroller
                   type="text"
                   name="business_website"
-                  placeholder="Business Website where your picture and identity is displayed."
+                  placeholder="The link to your Business Website where your picture and identity is displayed."
                   register={register2}
                   errors={error2}
                   others={{
@@ -290,15 +292,23 @@ const Sponsor = () => {
 
       <Modal isOpen={modal} toggle={toggle} backdrop={backdrop}>
         <ModalBody>
-          {message && message}
+          {message ? <p dangerouslySetInnerHTML={{ __html: message }}></p> : ""}
           {Object.keys(found).length ? (
             <div className="text-center p-3 mb-5 shadow rounded">
               {found.data.approved === "pending" ? (
-                <> {found.data.school_name.toUpperCase()} is pending approval</>
+                <>
+                  {/* {found.data.school_name.toUpperCase()} is pending approval */}
+                  An application to be the Bully Shut Down Ambassador for {found.data.school_name.toUpperCase()} has been submitted and is pending approval. if you will check back in 24 hours it should be through the approval process. If you are a real estate pro of any kind please search another
+                  school in your market area and re-submit an application to be it’s Bully Shutdown Ambassador. Thank You
+                </>
               ) : (
                 <>
-                  {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is already sponsored by {found.data.business_name} BullyBloxx is owned, controlled and funded by the parents in the school and citizens in the community. The cost of protecting any school, regardless of
-                  size, with BullyBloxx is just $300 per month and is paid for yearly by donations from the parents and community. Currently there is $535 in donations with a total of $3,600 needed to fund BullyBloxx for a complete year of protection.
+                  {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is already sponsored by {found.data.business_name} <br />
+                  BullyBloxx is owned, controlled and funded by the parents in the school and citizens in the community.
+                  <br />
+                  The cost of protecting any school, regardless of size, with BullyBloxx is just $300 per month and is paid for yearly by donations from the parents and community. <br />A total of $3,600 is needed to fund BullyBloxx for a complete year of protection at{" "}
+                  {found.data.school_name.toUpperCase()} <br />
+                  Currently there is $535 in donations with a total of $3,600 needed to fund BullyBloxx for a complete year of protection.
                   <Button
                     className="text-decoration-none bg-transparent text-primary border-0"
                     onClick={() => {

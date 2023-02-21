@@ -3,7 +3,7 @@ import useSchool from "../hooks/school.hook"
 import { Badge, Button, Modal, ModalHeader, ModalBody } from "reactstrap"
 
 import BASE_URL from "../misc/url"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import AppContext from "../misc/appContext"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
@@ -15,7 +15,9 @@ const AdminSponsor = () => {
   const [backdrop] = useState(true)
   const [report, setReport] = useState({})
   const [approved, setApproved] = useState(false)
+  const [search, setSearch] = useState()
   const navigate = useNavigate()
+
   if (!token || role !== "ADMIN") navigate("/")
   const approve = async (id) => {
     const response = await fetch(`${BASE_URL}approve/school/${id}`, {
@@ -44,11 +46,16 @@ const AdminSponsor = () => {
     const response = await fetch(`${BASE_URL}send/mail`, {
       method: "POST",
       body: JSON.stringify({
-        to: report.user?.email,
+        to: report.business_name,
         subject: "Sponsorship Approval",
-        html: `Dear  ${report?.realtor_name || report.user.first_name} <br/>Your Sponsorship request for ${report.school_name} with zip code ${
-          report.zip_code
-        } has been approved`
+        html: `Dear  ${report?.realtor_name || report.user.first_name} <br/>
+        Thank you for stepping up for your community by serving as a Bully Shut Down Ambassador. Your Sponsorship request for ${report.school_name} with zip code ${report.zip_code}  has been approved. <br />
+
+        Private donations ranging from $300 - $650 may already be in your school’s wallet depending on the demographics and location of your school. You can determine this by simply entering your school and it’s zip code in the search engine on the Get Your School Protected tab on the home page of bullybloxx.com <br />
+
+        Now that you are approved as a Bully Shutdown Ambassador please go to the home page of bullybloxx.com , click on the MO0RE tab at the top and then click on the Bully Shutdown Ambassador tab that drops dow to access all information for moving forward.<br />
+        
+        Your Sponsorship request for ${report.school_name} with zip code ${report.zip_code} has been approved`
       }),
       headers: new Headers({
         "Content-Type": "application/json",
@@ -59,6 +66,19 @@ const AdminSponsor = () => {
     if (j.message === "success") toast(`email sent @${report?.user?.username || ""} `)
     else toast("error sending mail")
   }
+
+  const filter = (dt) => () => {
+    if (dt === "all") {
+      setSearch(school)
+      return
+    }
+    const filterd = school.filter((e) => e.approved === dt)
+    setSearch(filterd)
+  }
+
+  useEffect(() => {
+    setSearch(school)
+  }, [school])
 
   const columns = [
     {
@@ -107,7 +127,19 @@ const AdminSponsor = () => {
 
   return (
     <div className=" px-0 rounded shadow overflow-hidden">
-      {token ? <DataTable columns={columns} title="Sponsored Scools" pagination data={school} /> : ""}
+      <div className="text-center gap-3 py-2">
+        <Button className="btn-primary" onClick={filter("all")}>
+          All
+        </Button>
+        <Button className="btn-success mx-3" onClick={filter("approved")}>
+          Approved
+        </Button>
+        <Button className="btn-danger" onClick={filter("pending")}>
+          Pending
+        </Button>
+      </div>
+
+      {token ? <DataTable columns={columns} title="Sponsored Scools" pagination data={search} /> : ""}
       <Modal isOpen={modal} toggle={toggle} backdrop={backdrop}>
         {Object.keys(report).length ? (
           <>

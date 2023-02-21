@@ -42,7 +42,7 @@ const Report = () => {
   const navigate = useNavigate()
   // const reporter =  user()
 
-  const toggle = () => setModal(!modal)
+  const toggle = () => !openModal && setModal(!modal)
 
   const preview = (e) => {
     const url = e.target.files[0]
@@ -213,12 +213,10 @@ const Report = () => {
                 <>
                   {reportType === "bullying" && (
                     <p>
-                      <strong>
-                        Dear Principal, <br />
-                        I have information involving bullying in your school. I am reporting this information through The BullyBloxx system. If you are not familiar with The BullyBloxx system please go to www.bullybloxx.com for details. Once you are on the site if you will click on the MORE tab at
-                        the top of the Home page and the School Administrator tab will drop down providing you with complete information for addressing this report. <br />
-                        Also, on the MORE tab is a drop down that says SEARCH VIDEOS where you can view my identification video under my username <span style={{ color: "red" }}> {reporter.username || ""} </span> where you can see my face and hear my voice.
-                      </strong>
+                      Dear Principal, <br />
+                      I have information involving bullying in your school. I am reporting this information through The BullyBloxx system. If you are not familiar with The BullyBloxx system please go to www.bullybloxx.com for details. Once you are on the site if you will click on the MORE tab at the
+                      top of the Home page and the School Administrator tab will drop down providing you with complete information for addressing this report. <br />
+                      Also, on the MORE tab is a drop down that says SEARCH VIDEOS where you can view my identification video under my username <span className="fw-bold"> {reporter.username || ""} </span> where you can see my face and hear my voice.
                     </p>
                   )}
                   {reportType === "weapon in school" && (
@@ -226,12 +224,10 @@ const Report = () => {
                       To report a WEAPON IN THE SCHOOL complete the form below and click SUBMIT REPORT. The report will automatically be sent by email to the principal: Dear Principal,
                       <br />
                       <br />
-                      <strong>
-                        Dear Principal, <br />I have information involving a weapon in your school. I am reporting this information through The BullyBloxx system. If you are not familiar with The BullyBloxx system please go to www.bullybloxx.com for details. Once you are on the site you will click
-                        on the MORE tab at the top of the Home page and the School Administrator tab will drop down providing you with complete information for addressing this report. Also, on the MORE tab is a drop down that says SEARCH VIDEOS where you can view my identification video under my
-                        username <span style={{ color: "red" }}> {reporter.username || ""} </span>
-                        where you can see my face and hear my voice. <br /> If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you.
-                      </strong>
+                      Dear Principal, <br />I have information involving a weapon in your school. I am reporting this information through The BullyBloxx system. If you are not familiar with The BullyBloxx system please go to www.bullybloxx.com for details. Once you are on the site you will click on
+                      the MORE tab at the top of the Home page and the School Administrator tab will drop down providing you with complete information for addressing this report. Also, on the MORE tab is a drop down that says SEARCH VIDEOS where you can view my identification video under my username{" "}
+                      <span className="fw-bold"> {reporter.username || ""} </span>
+                      where you can see my face and hear my voice. <br /> If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you.
                       <br />
                     </p>
                   )}
@@ -239,11 +235,9 @@ const Report = () => {
                     <p>
                       To report a school shooter or any type threat against a school, complete the form below and click SUBMIT REPORT. The report will automatically be sent by email to the principal: <br />
                       <br />
-                      <strong>
-                        Dear Principal, <br />I have information involving a threat against your school. I am reporting this information through The BullyBloxx system. If you are not familiar with The BullyBloxx system please go to www.bullybloxx.com for details. Once you are on the site if you will
-                        click on the MORE tab at the top of the Home page and the School Administrator tab will drop down providing you with complete information for addressing this report. Also, on the MORE tab is a drop down that says SEARCH VIDEOS where you can view my identification video under
-                        my username <span style={{ color: "red" }}> {reporter.username || ""} </span> where you can see my face and hear my voice. <br /> If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you
-                      </strong>
+                      Dear Principal, <br />I have information involving a threat against your school. I am reporting this information through The BullyBloxx system. If you are not familiar with The BullyBloxx system please go to www.bullybloxx.com for details. Once you are on the site if you will
+                      click on the MORE tab at the top of the Home page and the School Administrator tab will drop down providing you with complete information for addressing this report. Also, on the MORE tab is a drop down that says SEARCH VIDEOS where you can view my identification video under my
+                      username <span className="fw-bold"> {reporter.username || ""} </span> where you can see my face and hear my voice. <br /> If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you
                     </p>
                   )}
                   <label className="py-1">
@@ -595,7 +589,7 @@ const Report = () => {
                             <Icontroller type="text" placeholder="Bully Witness First Name" name={`blyw_first_name${id + 1}`} errors={errors} register={register} />
                             <Icontroller type="text" placeholder="Bully Witness Last Name" name={`blyw_last_name${id + 1}`} errors={errors} register={register} />
                             <div className="mb-2">
-                              <label className="py-1"> Gender of Bully Witness{id + 1}</label>
+                              <label className="py-1"> Gender of Bully Witness</label>
                               <select name={`blyw_gender${id + 1}`} className="mb-1 form-control shadow-none" {...register(`blyw_gender${id + 1}`)}>
                                 <option></option>
                                 <option value="male">Male</option>
