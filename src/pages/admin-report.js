@@ -43,7 +43,7 @@ const AdminReport = () => {
       selector: (row) => row?.user?.fullName || row?.first_name + " " + row?.last_name
     },
     {
-      name: "Bully Type",
+      name: "Report Type",
       selector: (row) => row?.report_type
     },
     {
@@ -57,6 +57,7 @@ const AdminReport = () => {
           <Button
             color="dark"
             size="sm"
+            className="rounded-pill"
             onClick={() => {
               toggle()
               console.log(row)
