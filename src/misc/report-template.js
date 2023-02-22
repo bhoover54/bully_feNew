@@ -65,25 +65,30 @@ ${
     : ``
 }
 
-
-
-
 Date of incident: ${reqBody.incident_date}<br /> <br />
   Time of incident: ${reqBody.incident_time}<br /> <br />
 
   Did any teacher or staff member see this incident?: ${reqBody.staff_witnessed}<br /> <br />
   If yes, who was the teacher / staff member?: ${reqBody.staff_witness || "no witness"}
   <br /> <br />
-  What actions did the teacher / staff member take?: ${reqBody.staff_action || "no action"}<br /> <br />
+${!periscope ? `What actions did the teacher / staff member take?: ${reqBody.staff_action || "no action"}<br /> <br />` : ``}
+
   Where did this incident occur?: ${reqBody.incident_place}<br /> <br />
   Did the bully physically abuse the victim?: ${reqBody.physical_abused}<br /> <br />
   Was the victim a handicapped student?: ${reqBody.victim_handicapped}<br /> <br />
   Was the victim a
   younger or smaller student than the bully?: ${reqBody.victim_younger}<br /> <br />
-  In complete detail provide all information you have on this threat.: ${reqBody.details}
-  <br /> <br />
+  ${
+    !periscope
+      ? `  In complete detail provide all information you have on this threat.: ${reqBody.details}
+  <br /> <br /> `
+      : ``
+  }
+
   Were there any witnesses to this incident?: ${reqBody.bully_witness}<br /> <br />
-  If  so, who ? : ${reqBody.bully_witnesses} <br /> <br />
+
+  ${!periscope ? `  If so, who ? : ${reqBody.bully_witnesses} <br /> <br />` : ``}
+
   Have you witnessed this bully abusing this same victim/student in the past?: ${reqBody.serail_bully}
   <br /> <br />
   Have you witnessed this bully abusing other students in the past?: ${reqBody.bully_witness}<br /> <br />
@@ -96,7 +101,7 @@ Date of incident: ${reqBody.incident_date}<br /> <br />
   information, this will allow me to know that the information that I
   have submitted is being properly addressed. Thank you.<br /> <br />
     `
-      : ""
+      : ``
   }
   
   `

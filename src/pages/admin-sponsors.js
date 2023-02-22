@@ -14,13 +14,14 @@ const AdminSponsor = () => {
   const [modal, setModal] = useState(false)
   const [backdrop] = useState(true)
   const [report, setReport] = useState({})
-  const [approved, setApproved] = useState(false)
+  const [approved, setApproved] = useState("")
   const [search, setSearch] = useState()
   const navigate = useNavigate()
 
   if (!token || role !== "ADMIN") navigate("/")
-  const approve = async (id) => {
-    const response = await fetch(`${BASE_URL}approve/school/${id}`, {
+  const approve = async (id, deny = "") => {
+    const url = deny ? `${id}?type=deny` : id
+    const response = await fetch(`${BASE_URL}approve/school/${url}`, {
       method: "PUT",
       body: JSON.stringify({}),
       headers: new Headers({
@@ -31,16 +32,21 @@ const AdminSponsor = () => {
 
     await response.json()
     if (response.status < 400) {
-      await sendEmail()
+      if (url === id) {
+        await sendEmail()
+        setApproved("Approved")
+      } else setApproved("Denied")
       toast("success")
-      setApproved(true)
       getSchools()
       return
     }
     toast("approval fails")
   }
 
-  const toggle = () => setModal(!modal)
+  const toggle = () => {
+    setModal(!modal)
+    setApproved("")
+  }
 
   const sendEmail = async () => {
     const response = await fetch(`${BASE_URL}send/mail`, {
@@ -145,13 +151,18 @@ const AdminSponsor = () => {
           <>
             <ModalHeader toggle={toggle}>
               {report?.school_name.toUpperCase()} - <small className="text-muted">{report.zip_code}</small> <br />
-              {report.approved === "pending" && !approved ? (
-                <Button onClick={() => approve(report.id)} className="rounded-pill" size="sm">
-                  Approve
-                </Button>
+              {report.approved === "pending" && !approved.length ? (
+                <>
+                  <Button onClick={() => approve(report.id)} className="rounded-pill" size="sm">
+                    Approve
+                  </Button>
+                  <Button onClick={() => approve(report.id, "denied")} className="rounded-pill btn-danger ms-3" size="sm">
+                    Deny
+                  </Button>
+                </>
               ) : (
                 <Badge color="success" pill>
-                  <span style={{ fontSize: ".6rem" }}>approved</span>
+                  <span style={{ fontSize: ".6rem" }}>{approved || report?.approved}</span>
                 </Badge>
               )}
             </ModalHeader>
@@ -163,6 +174,10 @@ const AdminSponsor = () => {
               <p>
                 {report?.business_name}
                 <small className="text-muted d-block">Business Name</small>
+              </p>
+              <p>
+                {report?.user?.username || "Not avalible"}
+                <small className="text-muted d-block">User Name</small>
               </p>
               <p>
                 {report?.business_email}
