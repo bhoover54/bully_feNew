@@ -58,8 +58,7 @@ Was the victim a
 younger or smaller student than the bully?: ${reqBody.victim_younger}<br /> <br />
 In complete detail provide all information you have on this threat.: ${reqBody.details}
 <br /> <br />
-Were there any witnesses to this incident?: ${reqBody.bully_witness}<br /> <br />
-If  so, who ? : ${reqBody.bully_witnesses} <br /> <br />
+
 Have you witnessed this bully abusing this same victim/student in the past?: ${reqBody.serail_bully}
 <br /> <br />
 Have you witnessed this bully abusing other students in the past?: ${reqBody.bully_witness}<br /> <br />

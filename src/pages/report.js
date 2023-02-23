@@ -789,7 +789,7 @@ const Report = () => {
                           </>
                         }
                       /> */}
-                      <div className="mb-2">
+                      {/* <div className="mb-2">
                         <label className="py-1">Did any teacher or staff member see this incident?</label>
                         <select name="bully_witness" className="mb-1 form-control shadow-none" {...register("bully_witness")}>
                           <option></option>
@@ -801,7 +801,7 @@ const Report = () => {
                       <div className="mb-2">
                         <label className="py-1">If Yes, please provide any details of other bullying incidents that you have witnessed or seen in the past involving this bully.</label>
                         <textarea name="details" className="mb-1 form-control shadow-none" {...register("details")} />
-                      </div>
+                      </div> */}
                       <div className="mb-2">
                         <label className="py-1">Please provide all details of the bullying incident that you are reporting today. bully.</label>
                         <textarea name="details_total" className="mb-1 form-control shadow-none" {...register("details_total")} />
