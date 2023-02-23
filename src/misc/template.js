@@ -45,7 +45,6 @@ ${[1, 2, 3].map((e) => (reqBody[`blyw_teacher${e}`] ? `Homeroom Teacher of Bully
 
 Date of incident: ${reqBody.incident_date}<br /> <br />
 Time of incident: ${reqBody.incident_time}<br /> <br />
-Names of any other students that supported the bully’s actions: ${reqBody.other_incident}
 <br /> <br />
 Did any teacher or staff member see this incident?: ${reqBody.staff_witnessed}<br /> <br />
 If yes, who was the teacher / staff member?: ${reqBody.staff_witness || "no witness"}
@@ -56,14 +55,11 @@ Did the bully physically abuse the victim?: ${reqBody.physical_abused}<br /> <br
 Was the victim a handicapped student?: ${reqBody.victim_handicapped}<br /> <br />
 Was the victim a
 younger or smaller student than the bully?: ${reqBody.victim_younger}<br /> <br />
-In complete detail provide all information you have on this threat.: ${reqBody.details}
 <br /> <br />
 
 Have you witnessed this bully abusing this same victim/student in the past?: ${reqBody.serail_bully}
 <br /> <br />
-Have you witnessed this bully abusing other students in the past?: ${reqBody.bully_witness}<br /> <br />
 Please provide all details of the bullying incident that you are reporting today: ${reqBody.details_total}
-If Yes, please provide any details of other bullying incidents that you have witnessed or seen in the past involving this: ${reqBody.details} <br /> <br />
 Please send me a reply email confirming that you have received this
 information, this will allow me to know that the information that I
 have submitted is being properly addressed. Thank you.<br /> <br />
