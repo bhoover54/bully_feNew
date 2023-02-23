@@ -804,7 +804,7 @@ const Report = () => {
                         <textarea name="details" className="mb-1 form-control shadow-none" {...register("details")} />
                       </div> */}
                       <div className="mb-2">
-                        <label className="py-1">Please provide all details of the bullying incident that you are reporting today. bully.</label>
+                        <label className="py-1">Please provide all details of the bullying incident that you are reporting today.</label>
                         <textarea name="details_total" className="mb-1 form-control shadow-none" {...register("details_total")} />
                       </div>
                       {/* <div className="mb-2">
