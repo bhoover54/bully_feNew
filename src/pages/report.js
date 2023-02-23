@@ -84,7 +84,8 @@ const Report = () => {
       return
     }
 
-    const { email: reporterEmail, ...others } = reporter
+    const { email: reporterEmail, first_name, last_name, phone, ...others } = reporter
+
     const templateRush = {
       ...data,
       ...otherData,
@@ -495,7 +496,7 @@ const Report = () => {
 
                             <div className="mb-2">
                               <label className="py-1"> Gender of Bully Groupie</label>
-                              <select name={`blyg_gender${id + 1}`} className="mb-1 form-control shadow-none" {...register(`blyg_gender${id + 1}`, { required: id === 0 && true })}>
+                              <select name={`blyg_gender${id + 1}`} className="mb-1 form-control shadow-none" {...register(`blyg_gender${id + 1}`)}>
                                 <option></option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
