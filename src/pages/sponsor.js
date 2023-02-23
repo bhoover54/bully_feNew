@@ -53,8 +53,15 @@ const Sponsor = () => {
           "Your school is currently not protected by the BullyBloxx System. To get this protection for your school please contact a local real estate professional and have them sign up as the Bully Shut Down Ambassador for your school by going to bullybloxx.com and clicking on the Real Estate Pros tab on the home page."
         )
       } else {
-        setFound(result)
-        setMessage("")
+        if (result.data.approved === "denied") {
+          setMessage(
+            "Your school is currently not protected by the BullyBloxx System. To get this protection for your school please contact a local real estate professional and have them sign up as the Bully Shut Down Ambassador for your school by going to bullybloxx.com and clicking on the Real Estate Pros tab on the home page."
+          )
+          setFound({})
+        } else {
+          setFound(result)
+          setMessage("")
+        }
       }
       toggle()
       reset()
@@ -308,7 +315,7 @@ const Sponsor = () => {
                   <br />
                   The cost of protecting any school, regardless of size, with BullyBloxx is just $300 per month and is paid for yearly by donations from the parents and community. <br />A total of $3,600 is needed to fund BullyBloxx for a complete year of protection at{" "}
                   {found.data.school_name.toUpperCase()} <br />
-                  Currently there is $535 in donations with a total of $3,600 needed to fund BullyBloxx for a complete year of protection.
+                  Currently there is ${found?.data?.wallet?.balance} in donations with a total of $3,600 needed to fund BullyBloxx for a complete year of protection.
                   <Button
                     className="text-decoration-none bg-transparent text-primary border-0"
                     onClick={() => {

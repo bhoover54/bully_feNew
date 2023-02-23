@@ -265,8 +265,7 @@ const Report = () => {
                     />{" "}
                     I am not a trustee for someone else, I am submitting this information on my own behalf.
                   </label>
-                  {/* I have uploaded an identification video and you can view this video under my username <span className="text-uppercase fw-bold">{reporter.username || ""}</span> */}
-                  {/* <p>If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you.</p> */}
+
                   <Icontroller
                     type="text"
                     name="first_name"
@@ -478,8 +477,8 @@ const Report = () => {
 
                         <p>Bully Groupie Information </p>
                         <p>
-                          Bully Groupies are other students who were present when the bullying incident occurred who may have not actively been involved in the abuse but who cheered the bully/bullies on and either encouraged the bullies to abuse the victim or who said humiliating or degrading
-                          remarks to the victim. If there are more than 3 bully groupies please list the names and info of the others in the last section of this report.
+                          Bully Groupies are other students who were present when the bullying incident occurred who may have not actively been involved in the abuse but who cheered the bully/bullies on or encouraged the bullies to abuse the victim. If there are more than 3 bully groupies please
+                          list the names and info of the others in the last section of this report.
                         </p>
 
                         {bullyCount.map((e, id) => (

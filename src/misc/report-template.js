@@ -37,11 +37,7 @@ ${
       ${[1, 2, 3].map((e) => reqBody[`blyg_gender${e}`] && `Gender of Bully Groupie ${e} : ` + reqBody[`blyg_gender${e}`] + "<br /> <br />")}${[1, 2, 3].map((e) => reqBody[`blyg_grade${e}`] && `Grade of Bully Groupiee  ${e} : ` + reqBody[`blyg_grade${e}`] + "<br /> <br />")}
       ${[1, 2, 3].map((e) => reqBody[`blyg_teacher${e}`] && `Homeroom Teacher of Bully Groupie ${e} : ` + reqBody[`blyg_teacher${e}`] + "<br /> <br />")}
     `
-    : `${[1, 2, 3].map((e) => (reqBody[`blyg_first_name${e}`] ? `Initial of Bully Groupie First Name ${e}: ` + reqBody[`blyg_first_name${e}`][0] + "<br /> <br />" : ""))}
-    ${[1, 2, 3].map((e) => (reqBody[`blyg_last_name${e}`] ? `Initial of Bully Groupie Last Name ${e}: ` + reqBody[`blyg_last_name${e}`][0] + "<br /> <br />" : ""))}
-    ${[1, 2, 3].map((e) => (reqBody[`blyg_gender${e}`] ? `Gender of Bully Groupie ${e}: ` + reqBody[`blyg_gender${e}`] + "<br /> <br />" : ""))}
-    ${[1, 2, 3].map((e) => (reqBody[`blyg_grade${e}`] ? `Grade of Bully Groupiee  ${e}: ` + reqBody[`blyg_grade${e}`] + "<br /> <br />" : ""))}
-    `
+    : ``
 }
 
 ${
@@ -108,7 +104,7 @@ ${!periscope ? `What actions did the teacher / staff member take?: ${reqBody.sta
 
 export const templateWeaponThreat2 = (reqBody, periscope = false) => `
 ${
-  periscope
+  !periscope
     ? `
 I have information concernating a threat against your school. I am reporting this information through The BullyBlox system. If you are not
   familiar with The BullyBlox system please go to www.bullybloxx.com for details. Once you are on the site if you will click on the School

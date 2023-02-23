@@ -21,6 +21,7 @@ const AdminSponsor = () => {
   if (!token || role !== "ADMIN") navigate("/")
   const approve = async (id, deny = "") => {
     const url = deny ? `${id}?type=deny` : id
+
     const response = await fetch(`${BASE_URL}approve/school/${url}`, {
       method: "PUT",
       body: JSON.stringify({}),
@@ -32,10 +33,10 @@ const AdminSponsor = () => {
 
     await response.json()
     if (response.status < 400) {
-      if (url === id) {
-        await sendEmail()
-        setApproved("Approved")
-      } else setApproved("Denied")
+      if (!deny) setApproved("Approved")
+      else setApproved("Denied")
+
+      await sendEmail(deny)
       toast("success")
       getSchools()
       return
@@ -48,11 +49,12 @@ const AdminSponsor = () => {
     setApproved("")
   }
 
-  const sendEmail = async () => {
+  const sendEmail = async (sent = "") => {
+    if (sent.length) return
     const response = await fetch(`${BASE_URL}send/mail`, {
       method: "POST",
       body: JSON.stringify({
-        to: report.business_name,
+        to: report.business_email,
         subject: "Sponsorship Approval",
         html: `Dear  ${report?.realtor_name || report.user.first_name} <br/>
         Thank you for stepping up for your community by serving as a Bully Shut Down Ambassador. Your Sponsorship request for ${report.school_name} with zip code ${report.zip_code}  has been approved. <br />
@@ -168,7 +170,7 @@ const AdminSponsor = () => {
             </ModalHeader>
             <ModalBody>
               <p>
-                {report.user?.fullName}
+                {report.realtor_name}
                 <small className="text-muted d-block">Sponsor Name</small>
               </p>
               <p>

@@ -48,7 +48,7 @@ const Register = () => {
           <Icontroller
             type="text"
             name="username"
-            placeholder="Username"
+            placeholder="Choose Username"
             register={register}
             errors={errors}
             others={{
