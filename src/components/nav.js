@@ -28,6 +28,11 @@ const Nav = () => {
                     </NavLink>
                   </NavItem>
                   <NavItem>
+                    <NavLink className={`nav-link ${activeClass}`} to="/how-bullybloxx-works">
+                      How it works
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
                     <NavLink className={`nav-link ${activeClass}`} to="/message-to-moms">
                       Message to Moms
                     </NavLink>

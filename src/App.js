@@ -27,6 +27,7 @@ import ResetPassword from "./pages/reset-paswod"
 import RealEstate from "./pages/real-estate"
 import BullyFreeSchool from "./pages/bully-free-school"
 import Ambassador from "./pages/ambasador"
+import HowItWOrks from "./pages/how-it-work"
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
           <Route path="/policy" element={<Policy />} />
           <Route path="/school/admin" element={<SchoolAdmin />} />
           <Route path="/message-to-moms" element={<MessageToMoms />} />
+          <Route path="/how-bullybloxx-works" element={<HowItWOrks />} />
           <Route path="/letters" element={<Letters />} />
           <Route path="/signin" element={<Login />} />
           <Route path="/signup" element={<Register />} />

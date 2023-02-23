@@ -60,7 +60,6 @@ const AdminReport = () => {
             className="rounded-pill"
             onClick={() => {
               toggle()
-              console.log(row)
               setReport(row)
             }}
           >
