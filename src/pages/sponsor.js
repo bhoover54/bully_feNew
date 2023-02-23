@@ -103,7 +103,7 @@ const Sponsor = () => {
 
     if (response.status === 409) {
       toast("school already sponsored")
-      setMessage("school already sponsored by another company")
+      setMessage("This school already has an approved Bully Shutdown Ambassador")
       toggle()
       setUpload("")
       setBlob("")
@@ -310,12 +310,9 @@ const Sponsor = () => {
                 </>
               ) : (
                 <>
-                  {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is already sponsored by {found.data.business_name} <br />
-                  BullyBloxx is owned, controlled and funded by the parents in the school and citizens in the community.
-                  <br />
-                  The cost of protecting any school, regardless of size, with BullyBloxx is just $300 per month and is paid for yearly by donations from the parents and community. <br />A total of $3,600 is needed to fund BullyBloxx for a complete year of protection at{" "}
-                  {found.data.school_name.toUpperCase()} <br />
-                  Currently there is ${found?.data?.wallet?.balance} in donations with a total of $3,600 needed to fund BullyBloxx for a complete year of protection.
+                  The Bully Shut Down Ambassador for {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is {found.data.realtor_name} of {found.data.business_name} <br /> <br />
+                  BullyBloxx is owned, controlled and funded by the parents in the school and citizens in the community. The cost of protecting any school, regardless of size, with BullyBloxx is just $300 per month and is paid for yearly by donations from the parents and community. <br /> <br />A
+                  total of $3,600 is needed to fund BullyBloxx for a complete year of protection at {found.data.school_name.toUpperCase()}
                   <Button
                     className="text-decoration-none bg-transparent text-primary border-0"
                     onClick={() => {

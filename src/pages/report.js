@@ -188,7 +188,8 @@ const Report = () => {
     <Row>
       <Col md="6" className="mx-auto mb-5">
         <form onSubmit={handleSubmit(report)} encType="multipart/form-data">
-          <p>The first step to filing a bully report form is to upload a verification video. This is simply a "selfie" video of you making the following statement: Hello, my username is ______________________ and today's date is _______________________</p>
+          <p>The first step to filing any report form is to upload a verification video. This is simply a "selfie" video of you making the following statement: Hello, my username is ________ and today's date is _________</p>
+          <p>Videos can be used over and over and are good for one year and then must be replaced.</p>
           <Input bsSize="sm" className="mb-3 shadow-none" type="file" name="video" placeholder="Video Evidence? " onChange={preview} accept="video/*" role="button" />
 
           {upload ? (
@@ -330,6 +331,10 @@ const Report = () => {
                   <>
                     {reportType === "bullying" && (
                       <>
+                        <p className="fw-bold py-2">
+                          Bully Information : <br />
+                          If more than one bully please submit a separate bully report form for each one
+                        </p>
                         <Icontroller
                           type="text"
                           placeholder="Bully First Name"
@@ -485,30 +490,8 @@ const Report = () => {
                           <>
                             <p className="fw-bold mt-3">Bully Groupie #{id + 1}</p>
 
-                            <Icontroller
-                              type="text"
-                              placeholder="Bully Groupie First Name"
-                              name={`blyg_first_name${id + 1}`}
-                              errors={errors}
-                              register={register}
-                              others={
-                                id === 0 && {
-                                  required: true
-                                }
-                              }
-                            />
-                            <Icontroller
-                              type="text"
-                              placeholder="Bully Groupie Last Name"
-                              name={`blyg_last_name${id + 1}`}
-                              errors={errors}
-                              register={register}
-                              others={
-                                id === 0 && {
-                                  required: true
-                                }
-                              }
-                            />
+                            <Icontroller type="text" placeholder="Bully Groupie First Name" name={`blyg_first_name${id + 1}`} errors={errors} register={register} />
+                            <Icontroller type="text" placeholder="Bully Groupie Last Name" name={`blyg_last_name${id + 1}`} errors={errors} register={register} />
 
                             <div className="mb-2">
                               <label className="py-1"> Gender of Bully Groupie</label>
@@ -519,43 +502,8 @@ const Report = () => {
                               </select>
                             </div>
 
-                            {/* <Icontroller
-                              type="text"
-                              placeholder="Gender of Bully Groupie"
-                              name={`blyg_gender${id + 1}`}
-                              errors={errors}
-                              register={register}
-                              others={
-                                id === 0 && {
-                                  required: true
-                                }
-                              }
-                            /> */}
-
-                            <Icontroller
-                              type="text"
-                              placeholder="Grade of Bully Groupie"
-                              name={`blyg_grade${id + 1}`}
-                              errors={errors}
-                              register={register}
-                              others={
-                                id === 0 && {
-                                  required: true
-                                }
-                              }
-                            />
-                            <Icontroller
-                              type="text"
-                              placeholder="Homeroom Teacher of Bully Groupie"
-                              name={`blyg_teacher${id + 1}`}
-                              errors={errors}
-                              register={register}
-                              others={
-                                id === 0 && {
-                                  required: true
-                                }
-                              }
-                            />
+                            <Icontroller type="text" placeholder="Grade of Bully Groupie" name={`blyg_grade${id + 1}`} errors={errors} register={register} />
+                            <Icontroller type="text" placeholder="Homeroom Teacher of Bully Groupie" name={`blyg_teacher${id + 1}`} errors={errors} register={register} />
                           </>
                         ))}
 
@@ -575,7 +523,6 @@ const Report = () => {
                               </select>
                             </div>
 
-                            {/* <Icontroller type="text" placeholder="Gender of Bully Victim" name={`blyv_gender${id + 1}`} errors={errors} register={register} /> */}
                             <Icontroller type="text" placeholder="Grade of Bully Victim" name={`blyv_grade${id + 1}`} errors={errors} register={register} />
 
                             <Icontroller type="text" placeholder="Homeroom Teacher of Bully Victim" name={`blyv_teacher${id + 1}`} errors={errors} register={register} />
@@ -596,7 +543,7 @@ const Report = () => {
                                 <option value="female">Female</option>
                               </select>
                             </div>
-                            {/* <Icontroller type="text" placeholder="Gender of Bully Witness" name={`blyw_gender${id + 1}`} errors={errors} register={register} /> */}
+
                             <Icontroller type="text" placeholder="Grade of Bully Witness" name={`blyw_grader${id + 1}`} errors={errors} register={register} />
                             <Icontroller type="text" placeholder="Homeroom Teacher of Bully Witness" name={`blyw_teacher${id + 1}`} errors={errors} register={register} />
                           </>
@@ -859,10 +806,10 @@ const Report = () => {
                         <label className="py-1">Please provide all details of the bullying incident that you are reporting today. bully.</label>
                         <textarea name="details_total" className="mb-1 form-control shadow-none" {...register("details_total")} />
                       </div>
-                      <div className="mb-2">
+                      {/* <div className="mb-2">
                         <label className="py-1">If more than one bully add their names here Names of any other students that supported the bully’s actions</label>
                         <textarea name="other_incident" className="mb-1 form-control shadow-none" {...register("other_incident")} />
-                      </div>
+                      </div> */}
                     </>
                   )}
                   {/* <div className="mb-2">
