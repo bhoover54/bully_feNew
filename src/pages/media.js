@@ -2,7 +2,7 @@ import { Row, Col } from "reactstrap"
 
 const Media = () => {
   const video = [
-    { path: "L0IkAdTtuhM", name: "Real estate Pros" },
+    { path: "zgqFsb_GemA", name: "Real estate Pros" },
     { path: "qj0d9M3Uj2c", name: "The Switch" },
     { path: "EX9oDLxDtMA", name: "Why police will never blame bullying" },
     { path: "fziG3WmNjkY", name: "How bullybloxx works?" }
