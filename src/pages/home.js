@@ -41,6 +41,9 @@ const Home = () => {
           <Link to="/sponsor" className="rounded p-2 d-block my-1">
             DONATE for your school's BullyBloxx protection
           </Link>
+          <Link className="rounded p-2 d-block my-1" to="/media">
+            BullyBloxx Video Library
+          </Link>
         </div>
       </Col>
 

@@ -115,7 +115,7 @@ const Nav = () => {
                     </Button>
                   </NavItem>
                 ) : (
-                  <>
+                  <div className="d-md-flex">
                     <NavItem>
                       <NavLink to="/signin" className="nav-link">
                         Sign in
@@ -126,7 +126,7 @@ const Nav = () => {
                         Sign up
                       </NavLink>
                     </NavItem>
-                  </>
+                  </div>
                 )}
               </Nav2>
             </Collapse>
