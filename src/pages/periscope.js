@@ -213,11 +213,11 @@ const Periscope = () => {
                 Access Report
               </Button>
               <p className="text-center p-2 text-dark fw-bold">{message}</p>
-              <StripeCheckout onSubmit={submit} className="form-control stripe-key invisible" allowRememberMe stripeKey="pk_test_51KOluiEvT7coUybkV5V9bsEwzMG1GStiV16pTbXwRj0BIuWtNoIcE2PVF0ImnIfVCxV7h7d8IIHcd7d8CmnWqWtu00yMhvuQJZ" amount={25 * 100} label="Checkout" token={search} name="checkout" />
+              <StripeCheckout onSubmit={submit} className="form-control stripe-key invisible" allowRememberMe stripeKey="pk_live_51KOluiEvT7coUybkk0w1l1FcznFHxuMwtNmvB0a3Km9RROS2ZRehenWquqIQAqEBDNtjnVBadiKSVrMIGY16S9yY00LRMjIpdf" amount={25 * 100} label="Checkout" token={search} name="checkout" />
             </>
           )}
         </form>
-        {pay ? <StripeCheckout className="form-control  stripe-key invisible" allowRememberMe stripeKey="pk_test_51KOluiEvT7coUybkV5V9bsEwzMG1GStiV16pTbXwRj0BIuWtNoIcE2PVF0ImnIfVCxV7h7d8IIHcd7d8CmnWqWtu00yMhvuQJZ" amount={25 * 100} label="Checkout" token={search} name="checkout" /> : ""}
+        {pay ? <StripeCheckout className="form-control  stripe-key invisible" allowRememberMe stripeKey="pk_live_51KOluiEvT7coUybkk0w1l1FcznFHxuMwtNmvB0a3Km9RROS2ZRehenWquqIQAqEBDNtjnVBadiKSVrMIGY16S9yY00LRMjIpdf" amount={25 * 100} label="Checkout" token={search} name="checkout" /> : ""}
       </Col>
       {result.length && report ? (
         <Col md="6">
