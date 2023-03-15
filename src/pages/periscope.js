@@ -243,7 +243,7 @@ const Periscope = () => {
             parents with valuable evidence that has never been available to them before now due to FERPA laws. With this information and evidence parents have what they need to get abuse of their child stopped. By viewing the “How to Quickly Shut Down a Bully with BullyBloxx” video you will be
             provided step by step instructions for using a Periscope Report. Please{" "} */}
             <iframe width="300px" height="400" src={`https://www.youtube.com/embed/STiksvFv9KQ`} title="periscope" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            <span className="text-primary" onClick={() => setModal(false)} role="button">
+            <span className="text-primary d-block" onClick={() => setModal(false)} role="button">
               CLICK HERE
             </span>{" "}
             to request A Periscope Report.

@@ -6,7 +6,8 @@ const Media = () => {
     { path: "qj0d9M3Uj2c", name: "The Switch" },
     { path: "EX9oDLxDtMA", name: "Why police will never blame bullying" },
     { path: "fziG3WmNjkY", name: "How bullybloxx works?" },
-    { path: "Sceu2fJZPfU", name: "How to quickly shut down a bully?" }
+    { path: "Sceu2fJZPfU", name: "How to quickly shut down a bully?" },
+    { path: "STiksvFv9KQ", name: "Periscope Report" }
   ]
 
   return (
