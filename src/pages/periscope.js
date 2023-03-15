@@ -237,11 +237,12 @@ const Periscope = () => {
           </>
         ) : (
           <ModalBody>
-            A Periscope Report provides valuable information to a parent/person: 1- Who has a child that is being bullied by one or more bullies at school. 2- Who has reported this abuse to school administrators but administrators have not stopped the abuse. A Periscope Report provides a information
+            {/* A Periscope Report provides valuable information to a parent/person: 1- Who has a child that is being bullied by one or more bullies at school. 2- Who has reported this abuse to school administrators but administrators have not stopped the abuse. A Periscope Report provides a information
             sheet showing every time the bully has been reported and certain information regarding the abuse involved in the incident; it is a complete history of the bully’s behavior. It shows just how many strikes this bully has against them and the level of bullying the administrators are
             tolerating from this bully. The Periscope Report is one of the main functions in BullyBloxx that separates BullyBloxx from all other anti-bullying systems. It literally allows parents to look over the wall of the school and see everything regarding bullying in the school. It provides
             parents with valuable evidence that has never been available to them before now due to FERPA laws. With this information and evidence parents have what they need to get abuse of their child stopped. By viewing the “How to Quickly Shut Down a Bully with BullyBloxx” video you will be
-            provided step by step instructions for using a Periscope Report. Please{" "}
+            provided step by step instructions for using a Periscope Report. Please{" "} */}
+            <iframe width="300px" height="400" src={`https://www.youtube.com/embed/STiksvFv9KQ`} title="periscope" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             <span className="text-primary" onClick={() => setModal(false)} role="button">
               CLICK HERE
             </span>{" "}
