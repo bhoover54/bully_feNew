@@ -243,7 +243,7 @@ const Sponsor = () => {
                 <Icontroller
                   type="number"
                   name="business_mobile"
-                  placeholder="Business Mobile Number"
+                  placeholder="Business Mobile Number (without hyphens)"
                   register={register2}
                   errors={error2}
                   others={{
