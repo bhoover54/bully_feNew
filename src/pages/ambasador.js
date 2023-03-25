@@ -40,6 +40,8 @@ const Ambassador = () => {
         Posting this initial notice is all that you do to get everything started remembering that the heading of this post on your social media should be “ATTENTION: All Kex Middle School Parents” (again, substituting your school’s name for Kex Middle School).
         <br />
         Within a few weeks you will receive another article of interest to the parents and community to post, again strengthening your bond with all parents in the school and members of the community. Thanks again for your service to your community.
+        <br />
+        You should post this initial statement at least 2 times a week for at least 5 weeks on all of your social media to be sure that every parent in the school knows about this protection.
       </p>
     </Row>
   )

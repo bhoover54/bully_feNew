@@ -3,14 +3,14 @@ import { Row } from "reactstrap"
 const About = () => {
   return (
     <Row>
-      <h3>About</h3>
-      <p>My name is Mack Galphin and I led in the development of BullyBloxx. Parents and communities all over America are demanding bully-free schools for three main reasons:</p>
+      <h3>About Us</h3>
+      <p>My name is Mack Galphin and I led in the development of BullyBloxx. Neighborhoods and communities want bully free schools for 4 main reasons:</p>
       <p>
         <ol>
-          <li>To provide a much safer environment for their children in their school.</li>
-          <li> To create a new environment in the school that is happier, brighter and much more conducive to learning allowing students to be educated at a much higher and far more effective level.</li>
-          <li>To reap the financial rewards and the significant increase in property values from living in a neighborhood with bully-free schools.</li>
-          <li>Any responsible parent in today’s world would immediately seize the opportunity to have their children in a Bully-Free school.</li>
+          <li>To provide a much safer environment for children in their schools.</li>
+          <li> To create an environment where children can thrive, socially and academically, without being afraid of anyone.</li>
+          <li>To reap the financial rewards of living in a neighborhood with bully-free schools and the significant increase in property values gained from that. Bully-Free neighborhoods should also see a reduction in crime, especially domestic crime.</li>
+          <li>Any responsible parent in today’s world would immediately seize an opportunity to have their children in a Bully-Free school.</li>
         </ol>
       </p>
       <p>
