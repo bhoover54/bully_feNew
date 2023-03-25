@@ -5,7 +5,7 @@ import banner from "../assets/images/banner.jpeg"
 import AppContext from "../misc/appContext"
 const Home = () => {
   const { logout } = useContext(AppContext)
-  const [modal, setModal] = useState(true)
+  const [modal, setModal] = useState(false)
 
   const session = () => {
     const getSession = sessionStorage.getItem("welcome")
