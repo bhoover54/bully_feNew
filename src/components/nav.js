@@ -42,6 +42,11 @@ const Nav = () => {
                       Bully-Free Schools
                     </NavLink>
                   </NavItem>
+                  <NavItem>
+                    <NavLink className="nav-link" to="/test-bullybloxx">
+                      Test BulllyBloxx
+                    </NavLink>
+                  </NavItem>
 
                   <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav>More</DropdownToggle>
@@ -79,6 +84,11 @@ const Nav = () => {
                       <DropdownItem>
                         <Link className=" text-dark" to="/uploads">
                           Search Videos
+                        </Link>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <Link className=" text-dark" to="/test-bullybloxx">
+                          Test BulllyBloxx
                         </Link>
                       </DropdownItem>
                       <DropdownItem>

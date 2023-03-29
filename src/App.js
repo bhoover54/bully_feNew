@@ -28,6 +28,7 @@ import RealEstate from "./pages/real-estate"
 import BullyFreeSchool from "./pages/bully-free-school"
 import Ambassador from "./pages/ambasador"
 import HowItWOrks from "./pages/how-it-work"
+import TestBullyBlox from "./pages/test"
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
           <Route path="/real-estate" element={<RealEstate />} />
           <Route path="/bully-free-school" element={<BullyFreeSchool />} />
           <Route path="/ambassador" element={<Ambassador />} />
+          <Route path="/test-bullybloxx" element={<TestBullyBlox />} />
           <Route path="/admin" element={<Admin />}>
             <Route index={true} element={<AdminSponsor />} />
             <Route path="/admin/report" element={<AdminReport />} />
