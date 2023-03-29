@@ -42,11 +42,6 @@ const Nav = () => {
                       Bully-Free Schools
                     </NavLink>
                   </NavItem>
-                  <NavItem>
-                    <NavLink className="nav-link" to="/test-bullybloxx">
-                      Test BulllyBloxx
-                    </NavLink>
-                  </NavItem>
 
                   <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav>More</DropdownToggle>
