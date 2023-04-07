@@ -312,7 +312,7 @@ const Sponsor = () => {
                 <>
                   The Bully Shut Down Ambassador for {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is {found.data.realtor_name} of {found.data.business_name} <br /> <br />
                   BullyBloxx is owned, controlled and funded by the parents in the school and citizens in the community. The cost of protecting any school, regardless of size, with BullyBloxx is just $75 per week and is paid for yearly by donations from the parents and community. <br /> <br />A
-                  balance of $2,965 is needed to fund BullyBloxx for a complete year of protection at {found.data.school_name.toUpperCase()}
+                  balance of ${3000 - parseInt(found.data.wallet.balance)} is needed to fund BullyBloxx for a complete year of protection at {found.data.school_name.toUpperCase()}
                   <Button
                     className="text-decoration-none bg-transparent text-primary border-0"
                     onClick={() => {
