@@ -101,18 +101,18 @@ const AdminSponsor = () => {
       name: "Zip Code",
       selector: (row) => row.zip_code
     },
-    {
-      name: "Business Name",
-      selector: (row) => row.business_name
-    },
+    // {
+    //   name: "Business Name",
+    //   selector: (row) => row?.business_name ||  ""
+    // },
     {
       name: "Business Email",
-      selector: (row) => row.business_email
+      selector: (row) => row?.business_email || ""
     },
-    {
-      name: "Business Mobile",
-      selector: (row) => row.business_mobile
-    },
+    // {
+    //   name: "Business Mobile",
+    //   selector: (row) => row?.business_mobile || ""
+    // },
 
     {
       name: "More",
@@ -169,14 +169,14 @@ const AdminSponsor = () => {
               )}
             </ModalHeader>
             <ModalBody>
-              <p>
+              {/* <p>
                 {report.realtor_name}
                 <small className="text-muted d-block">Sponsor Name</small>
-              </p>
-              <p>
+              </p> */}
+              {/* <p>
                 {report?.business_name}
                 <small className="text-muted d-block">Business Name</small>
-              </p>
+              </p> */}
               <p>
                 {report?.user?.username || "Not avalible"}
                 <small className="text-muted d-block">User Name</small>
@@ -185,14 +185,14 @@ const AdminSponsor = () => {
                 {report?.business_email}
                 <small className="text-muted d-block">Business Email</small>
               </p>
-              <p>
+              {/* <p>
                 {report?.business_mobile}
                 <small className="text-muted d-block">Business contact</small>
-              </p>
-              <p>
+              </p> */}
+              {/* <p>
                 {report?.business_website}
                 <small className="text-muted d-block">Business Website</small>
-              </p>
+              </p> */}
               <p>
                 ${report.wallet?.balance || 0}
                 <small className="text-muted d-block">Wallet Balance</small>

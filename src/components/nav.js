@@ -82,6 +82,16 @@ const Nav = () => {
                         </Link>
                       </DropdownItem>
                       <DropdownItem>
+                        <Link className=" text-dark" to="/verification">
+                          Sample verification Video
+                        </Link>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <Link className=" text-dark" to="/band-booster">
+                          Band Booster Parents
+                        </Link>
+                      </DropdownItem>
+                      <DropdownItem>
                         <Link className=" text-dark" to="/test-bullybloxx">
                           Test BulllyBloxx
                         </Link>

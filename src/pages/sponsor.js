@@ -47,11 +47,11 @@ const Sponsor = () => {
       })
     })
     const result = await response.json()
+
     if (response.status < 400) {
       if (!result.data) {
-        setMessage(
-          "Your school is currently not protected by the BullyBloxx System. To get this protection for your school please contact a local real estate professional and have them sign up as the Bully Shut Down Ambassador for your school by going to bullybloxx.com and clicking on the Real Estate Pros tab on the home page."
-        )
+        setFound({})
+        setMessage("Your school is currently not protected by the BullyBloxx System.")
       } else {
         if (result.data.approved === "denied") {
           setMessage(
@@ -192,6 +192,8 @@ const Sponsor = () => {
                 <p>
                   The first step to becoming a Bully Shut Down Ambassador for a school is creating a verification video confirming who you are. Please upload a "selfie" video of yourself clearly showing your face with no hats, sun glasses or anything else that may obstruct your face. Please make the
                   following statement in your video. My name is __________________ and the name of the business that i work for is __________________.
+                  <br />
+                  Band Booster Parents - My name is __________________ and I am a member of the __________________ Band Booster Club.
                 </p>
                 <label className="py-1">Video Intro</label>
                 <Input bsSize="sm" className="mb-3 shadow-none" type="file" name="video" placeholder="Video Evidence? " onChange={preview} accept="video/*" role="button" />
@@ -206,7 +208,7 @@ const Sponsor = () => {
 
             {stage === "form" && (
               <>
-                <Icontroller
+                {/* <Icontroller
                   type="text"
                   name="realtor_name"
                   placeholder="Your Name"
@@ -215,9 +217,9 @@ const Sponsor = () => {
                   others={{
                     required: true
                   }}
-                />
+                /> */}
 
-                <Icontroller
+                {/* <Icontroller
                   type="text"
                   name="business_name"
                   placeholder="Name of Business / Agency"
@@ -227,7 +229,7 @@ const Sponsor = () => {
                     required: true
                   }}
                   message="required"
-                />
+                /> */}
                 <Icontroller
                   type="email"
                   name="business_email"
@@ -240,7 +242,7 @@ const Sponsor = () => {
                   }}
                   message="Please use a valid email format"
                 />
-                <Icontroller
+                {/* <Icontroller
                   type="number"
                   name="business_mobile"
                   placeholder="Business Mobile Number (without hyphens)"
@@ -253,8 +255,8 @@ const Sponsor = () => {
                     minLength: 10
                   }}
                   message="input a valid phone number"
-                />
-                <Icontroller
+                /> */}
+                {/* <Icontroller
                   type="text"
                   name="business_website"
                   placeholder="The link to your Business Website where your picture and identity is displayed."
@@ -263,11 +265,11 @@ const Sponsor = () => {
                   others={{
                     required: true
                   }}
-                />
+                /> */}
                 <Icontroller
                   type="text"
                   name="school_name"
-                  placeholder="School name"
+                  placeholder="School name that you are applying to be the Bully Shutdown Ambassador for"
                   register={register2}
                   errors={error2}
                   others={{
@@ -299,9 +301,9 @@ const Sponsor = () => {
 
       <Modal isOpen={modal} toggle={toggle} backdrop={backdrop}>
         <ModalBody>
-          {message ? <p dangerouslySetInnerHTML={{ __html: message }}></p> : ""}
+          {message && <p dangerouslySetInnerHTML={{ __html: message }}></p>}
           {Object.keys(found).length ? (
-            <div className="text-center p-3 mb-5 shadow rounded">
+            <div className=" p-3 mb-5 shadow rounded">
               {found.data.approved === "pending" ? (
                 <>
                   {/* {found.data.school_name.toUpperCase()} is pending approval */}
@@ -310,19 +312,25 @@ const Sponsor = () => {
                 </>
               ) : (
                 <>
-                  The Bully Shut Down Ambassador for {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is {found.data.realtor_name} of {found.data.business_name} <br /> <br />
-                  BullyBloxx is owned, controlled and funded by the parents in the school and citizens in the community. The cost of protecting any school, regardless of size, with BullyBloxx is just $75 per week and is paid for yearly by donations from the parents and community. <br /> <br />A
-                  balance of ${3000 - parseInt(found.data.wallet.balance)} is needed to fund BullyBloxx for a complete year of protection at {found.data.school_name.toUpperCase()}
-                  <Button
-                    className="text-decoration-none bg-transparent text-primary border-0"
+                  The BullyBloxx system is currently activated for {found.data.school_name.toUpperCase()} school with zip code {found.data.zip_code}. <br />
+                  <br />
+                  {/* The Bully Shut Down Ambassador for {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is {found.data.realtor_name} of {found.data.business_name} <br /> <br /> */}
+                  BullyBloxx is owned, controlled and funded by the parents in the school and citizens in the community. <br />
+                  <br /> The cost of protecting any school, regardless of size, with BullyBloxx is just $75 per week and is paid for yearly by donations from the parents and community. <br /> <br />A balance of ${3000 - parseInt(found.data.wallet.balance)} is needed to fund BullyBloxx for a complete
+                  year of protection at {found.data.school_name.toUpperCase()} <br />
+                  Please{" "}
+                  <span
+                    className="text-decoration-none bg-transparent text-primary border-0 "
                     onClick={() => {
                       setItem("s_sch", JSON.stringify(found.data))
                       navigate("/donate")
                     }}
                     disabled={loading}
+                    role="link"
+                    style={{ cursor: "pointer" }}
                   >
                     Donate
-                  </Button>
+                  </span>{" "}
                   so our students can continue to have this protection.
                 </>
               )}

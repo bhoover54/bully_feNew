@@ -29,6 +29,8 @@ import BullyFreeSchool from "./pages/bully-free-school"
 import Ambassador from "./pages/ambasador"
 import HowItWOrks from "./pages/how-it-work"
 import TestBullyBlox from "./pages/test"
+import Verification from "./pages/verification"
+import BandBooster from "./pages/band"
 
 function App() {
   return (
@@ -57,6 +59,8 @@ function App() {
           <Route path="/bully-free-school" element={<BullyFreeSchool />} />
           <Route path="/ambassador" element={<Ambassador />} />
           <Route path="/test-bullybloxx" element={<TestBullyBlox />} />
+          <Route path="/verification" element={<Verification />} />
+          <Route path="/band-booster" element={<BandBooster />} />
           <Route path="/admin" element={<Admin />}>
             <Route index={true} element={<AdminSponsor />} />
             <Route path="/admin/report" element={<AdminReport />} />

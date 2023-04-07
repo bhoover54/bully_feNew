@@ -1,5 +1,5 @@
 import { Row } from "reactstrap"
-import audio from "../assets/audio/BullyBloxx-Ruth_Rosen.wav"
+import audio from "../assets/audio/audio.mp3"
 const TestBullyBlox = () => {
   return (
     <Row>
