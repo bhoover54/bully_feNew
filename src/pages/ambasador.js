@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Row } from "reactstrap"
 
 const Ambassador = () => {
@@ -5,8 +6,10 @@ const Ambassador = () => {
     <Row>
       <h2>Bully Shutdown Ambassadors</h2>
       <p>
-        Hello and congratulations on becoming a Bully Shutdown Ambassador. <br /> If you are a Band Booster Club Parent please leave this page, go to the MORE tab and then click on the Band Booster Club Parents tab. If you are a Real Estate pro , continue reading here. <br /> <br /> By stepping
-        forward you are not only providing a very critical service to your community, you are also creating new relationships with the thousands of families connected to your school/schools. This is what makes Bully Shutdown Ambassador positions lead generating machines for agents.
+        Hello and congratulations on becoming a Bully Shutdown Ambassador. <br /> If you are a Band Booster Club Parent please leave this page, go to the MORE tab and then click on the Band Booster Club Parents tab. If you are a Real Estate pro,{" "}
+        <Link to="/band-booster">continue reading here. </Link>
+        <br /> <br /> By stepping forward you are not only providing a very critical service to your community, you are also creating new relationships with the thousands of families connected to your school/schools. This is what makes Bully Shutdown Ambassador positions lead generating machines for
+        agents.
       </p>
       <p>Ambassadors receive very interesting and informative articles from BullyBloxx every 3-4 weeks by email. Ambasadors have only one responsibility; to post this information on all of their social media accounts for the parents of the school and members of the community to see.</p>
       <p>
