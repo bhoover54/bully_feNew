@@ -9,6 +9,7 @@ import { Icontroller } from "./signup"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import AppContext from "../misc/appContext"
+import { Loader } from "./login"
 
 const Sponsor = () => {
   const {
@@ -28,6 +29,7 @@ const Sponsor = () => {
   const [message, setMessage] = useState("")
   const [found, setFound] = useState({})
   const [loading, setLoading] = useState(false)
+  const [showLoader, setShowLoader] = useState(false)
   const { token } = useContext(AppContext)
   const [blob, setBlob] = useState("")
   const [upload, setUpload] = useState("")
@@ -38,6 +40,7 @@ const Sponsor = () => {
 
   const search = async (data) => {
     setLoading(true)
+    setShowLoader(true)
     const response = await fetch(`${BASE_URL}school/filter`, {
       method: "POST",
       body: JSON.stringify(data),
@@ -67,9 +70,11 @@ const Sponsor = () => {
       reset()
       toast.info("success")
       setLoading(false)
+      setShowLoader(false)
       return
     }
     setLoading(false)
+    setShowLoader(false)
     toast.info("not found")
   }
 
@@ -138,6 +143,7 @@ const Sponsor = () => {
     <>
       <Row>
         <Col md="5" className="mb-5">
+          {loading && showLoader ? <Loader message="the search to be completed" /> : <></>}
           <h4 className="mb-3">To see if your school is protected OR to donate to your school's BullyBloxx protection please enter your school's information below</h4>
           {/* <h4 className="mb-3">Is your school protected? search to see.</h4> */}
           <form onSubmit={handleSubmit(search)}>

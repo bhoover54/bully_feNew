@@ -42,7 +42,7 @@ const Register = () => {
 
   return (
     <Row style={{ minHeight: "70vh" }} className="d-flex justify-content-center align-items-center">
-      {loading ? <Loader /> : <></>}
+      {loading ? <Loader message="sign you up" /> : <></>}
       <Col md="6" lg="4" className="mx-auto  p-5 shadow rounded">
         <form onSubmit={handleSubmit(submit)}>
           <Icontroller
