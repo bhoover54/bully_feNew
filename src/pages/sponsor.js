@@ -186,7 +186,8 @@ const Sponsor = () => {
           <form onSubmit={handleSubmit2(submitData)}>
             {stage === "intro" && (
               <div>
-                Real Estate Professionals can serve as a Bully Shut Down Ambassador for up to 3 different schools in their area. To apply to be a Bully Shutdown Ambassador please <br />
+                {/* Real Estate Professionals can serve as a Bully Shut Down Ambassador for up to 3 different schools in their area */}
+                Band Booster Parents and Real Estate Professionals can serve as a Bully Shut Down Ambassador for up to 3 different schools in their area. To apply to be a Bully Shutdown Ambassador please <br />
                 <span role="button" className="text-primary" onClick={() => changeStage("upload")}>
                   CLICK HERE
                 </span>
@@ -197,9 +198,12 @@ const Sponsor = () => {
               <>
                 <p>
                   The first step to becoming a Bully Shut Down Ambassador for a school is creating a verification video confirming who you are. Please upload a "selfie" video of yourself clearly showing your face with no hats, sun glasses or anything else that may obstruct your face. Please make the
-                  following statement in your video. My name is __________________ and the name of the business that i work for is __________________.
+                  following statement in your video.
                   <br />
-                  Band Booster Parents - My name is __________________ and I am a member of the __________________ Band Booster Club.
+                  Real Estate Pros- My name is ______ and the name of the business that i work for is ______.
+                  <br />
+                  Band Booster Parents - My name is ______ and I am a member of the ______ Band Booster Club.
+                  <br />
                 </p>
                 <label className="py-1">Video Intro</label>
                 <Input bsSize="sm" className="mb-3 shadow-none" type="file" name="video" placeholder="Video Evidence? " onChange={preview} accept="video/*" role="button" />
@@ -239,7 +243,7 @@ const Sponsor = () => {
                 <Icontroller
                   type="email"
                   name="business_email"
-                  placeholder="Your Business Email Address"
+                  placeholder="Your Email Address"
                   register={register2}
                   errors={error2}
                   others={{

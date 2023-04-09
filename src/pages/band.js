@@ -5,8 +5,8 @@ const BandBooster = () => {
     <Row>
       <h3>Band Booster Parents</h3>
       <p>
-        Hello and congratulations on becoming a Bully Shutdown Ambassador. By stepping forward you are providing a very critical service for your students and your community. You can serve as a Bully Shutdown Ambassador for up to 3 schools. Please work with your group to get all schools in the
-        district covered with this protection, including elementary schools; the harmful bullying usually starts in the 4th grade.
+        Hello and congratulations if you have just become a Bully Shutdown Ambassador. Please know that we do not reveal the identity of any Band Booster Parent. By stepping forward you are providing a very critical service for your students and your community. You can serve as a Bully Shutdown
+        Ambassador for up to 3 schools. Please work with your group to get all schools in the district covered with this protection, including elementary schools; the harmful bullying usually starts in the 4th grade.
       </p>
       <p>Ambassadors receive very interesting and informative articles from BullyBloxx every 3-4 weeks by email. Ambassadors have only one responsibility; to post this information on all of their social media accounts for the parents of the school and members of the community to see.</p>
       <p>
