@@ -37,13 +37,16 @@ const Home = () => {
         </h3>
         <div className="">
           <Link className="rounded p-2 d-block my-1" onClick={() => toggle()}>
-            Real Estate Pros - Please Click Here
+            Real Estate Pros
+          </Link>
+          <Link className="rounded p-2 d-block my-1" to="/summary" onClick={() => toggle()}>
+            BullyBloxx Quick Summary
           </Link>
           <Link to="/report" className="rounded p-2 d-block my-1">
             Report Bullying / Threats / Weapons
           </Link>
           <Link to="/sponsor" className="rounded p-2 d-block my-1">
-            DONATE for your school's BullyBloxx protection
+            CONTRIBUTE for your school's BullyBloxx protection
           </Link>
           <Link className="rounded p-2 d-block my-1" to="/media">
             BullyBloxx Video Library

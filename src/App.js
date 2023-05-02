@@ -32,6 +32,7 @@ import TestBullyBlox from "./pages/test"
 import Verification from "./pages/verification"
 import BandBooster from "./pages/band"
 import WalkThrough from "./pages/walk-through"
+import Summary from "./pages/summary"
 
 function App() {
   return (
@@ -63,6 +64,8 @@ function App() {
           <Route path="/verification" element={<Verification />} />
           <Route path="/band-booster" element={<BandBooster />} />
           <Route path="/walk-through" element={<WalkThrough />} />
+          <Route path="/walk-through" element={<WalkThrough />} />
+          <Route path="/summary" element={<Summary />} />
           <Route path="/admin" element={<Admin />}>
             <Route index={true} element={<AdminSponsor />} />
             <Route path="/admin/report" element={<AdminReport />} />

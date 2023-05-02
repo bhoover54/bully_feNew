@@ -144,7 +144,7 @@ const Sponsor = () => {
       <Row>
         <Col md="5" className="mb-5">
           {loading && showLoader ? <Loader message="the search to be completed" /> : <></>}
-          <h4 className="mb-3">To see if your school is protected OR to donate to your school's BullyBloxx protection please enter your school's information below</h4>
+          <h4 className="mb-3">To see if your school is protected OR to contribute to your school's BullyBloxx protection please enter your school's information below</h4>
           {/* <h4 className="mb-3">Is your school protected? search to see.</h4> */}
           <form onSubmit={handleSubmit(search)}>
             <Icontroller
@@ -197,12 +197,13 @@ const Sponsor = () => {
             {(stage === "upload" || stage === "form") && (
               <>
                 <p>
-                  The first step to becoming a Bully Shut Down Ambassador for a school is creating a verification video confirming who you are. Please upload a "selfie" video of yourself clearly showing your face with no hats, sun glasses or anything else that may obstruct your face. Please make the
-                  following statement in your video.
+                  he first step is creating a verification video confirming which school district you want protected. NOTE- BullyBloxx does not share this video with anyone, this is just for our purposes. Please upload a "selfie" video of yourself clearly showing your face with no hats, sun glasses
+                  or anything else that may obstruct your face. Please make the following statement in your video.
                   <br />
-                  Real Estate Pros- My name is ______ and the name of the business that i work for is ______.
+                  “Please activate BullyBloxx for the ______ school district zip code _______”.
+                  {/* Real Estate Pros- My name is ______ and the name of the business that i work for is ______.
                   <br />
-                  Band Booster Parents - My name is ______ and I am a member of the ______ Band Booster Club.
+                  Band Booster Parents - My name is ______ and I am a member of the ______ Band Booster Club. */}
                   <br />
                 </p>
                 <label className="py-1">Video Intro</label>
@@ -218,28 +219,7 @@ const Sponsor = () => {
 
             {stage === "form" && (
               <>
-                {/* <Icontroller
-                  type="text"
-                  name="realtor_name"
-                  placeholder="Your Name"
-                  register={register2}
-                  errors={error2}
-                  others={{
-                    required: true
-                  }}
-                /> */}
-
-                {/* <Icontroller
-                  type="text"
-                  name="business_name"
-                  placeholder="Name of Business / Agency"
-                  register={register2}
-                  errors={error2}
-                  others={{
-                    required: true
-                  }}
-                  message="required"
-                /> */}
+                <p>Please submit a separate form for each school in your district, the same verification video can be used for every school.</p>
                 <Icontroller
                   type="email"
                   name="business_email"
@@ -252,34 +232,11 @@ const Sponsor = () => {
                   }}
                   message="Please use a valid email format"
                 />
-                {/* <Icontroller
-                  type="number"
-                  name="business_mobile"
-                  placeholder="Business Mobile Number (without hyphens)"
-                  register={register2}
-                  errors={error2}
-                  others={{
-                    required: true,
-                    pattern: /[0-9]/,
-                    maxLength: 10,
-                    minLength: 10
-                  }}
-                  message="input a valid phone number"
-                /> */}
-                {/* <Icontroller
-                  type="text"
-                  name="business_website"
-                  placeholder="The link to your Business Website where your picture and identity is displayed."
-                  register={register2}
-                  errors={error2}
-                  others={{
-                    required: true
-                  }}
-                /> */}
+
                 <Icontroller
                   type="text"
                   name="school_name"
-                  placeholder="School name that you are applying to be the Bully Shutdown Ambassador for"
+                  placeholder="School Name"
                   register={register2}
                   errors={error2}
                   others={{
@@ -290,7 +247,7 @@ const Sponsor = () => {
                 <Icontroller
                   type="number"
                   name="zip_code"
-                  placeholder="Zip code"
+                  placeholder="School Zip code"
                   register={register2}
                   errors={error2}
                   others={{
@@ -324,11 +281,11 @@ const Sponsor = () => {
                 <>
                   The BullyBloxx system is currently activated for {found.data.school_name.toUpperCase()} school with zip code {found.data.zip_code}. <br />
                   <br />
-                  {/* The Bully Shut Down Ambassador for {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is {found.data.realtor_name} of {found.data.business_name} <br /> <br /> */}
                   BullyBloxx is owned, controlled and funded by the parents in the school and citizens in the community. <br />
-                  <br /> The cost of protecting any school, regardless of size, with BullyBloxx is just $75 per week and is paid for yearly by donations from the parents and community. <br /> <br />A balance of ${3000 - parseInt(found.data.wallet.balance)} is needed to fund BullyBloxx for a complete
+                  Please CONTRIBUTE so our students can continue to have this protection.
+                  {/* <br /> The cost of protecting any school, regardless of size, with BullyBloxx is just $75 per week and is paid for yearly by donations from the parents and community. <br /> <br />A balance of ${3000 - parseInt(found.data.wallet.balance)} is needed to fund BullyBloxx for a complete
                   year of protection at {found.data.school_name.toUpperCase()} <br />
-                  Please{" "}
+                  Please{" "} */}
                   <span
                     className="text-decoration-none bg-transparent text-primary border-0 "
                     onClick={() => {
