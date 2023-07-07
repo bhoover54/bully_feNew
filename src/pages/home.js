@@ -62,7 +62,8 @@ const Home = () => {
         {/* <iframe width="100%" height="400" src="https://www.youtube.com/embed/P4EDSU8rQHc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
       </Col>
 
-
+      <h3>How the Bully Periscope Shuts the Bully Down</h3>
+     
 
       <h2 className="text-center p-3">
         Ask yourself............would your child be safer at school with or without BullyBloxx?
