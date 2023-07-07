@@ -66,43 +66,50 @@ const Home = () => {
           is the most powerful component of the entire BullyBloxx system.  Please allow us the next 2 minutes to explain how this highly effective safety system protects your
           child.            
         </p>
-        <br />
         <p className="">
           BullyBloxx is and independent, 3rd party system that functions automatically and completely on its own.  Nobody, including town administrators or school administrators,
           have any type of authority or control over this system.
         </p>
-        <br />
         <p className="">
           The BullyBloxx system has it's own bully, threat and weapons reporting functions.  In most cases reports are submitted for students by trusted adults.  This provides 100%
           protection for the reporting student, not even the prindipal knows who they are.
         </p>
-        <br />
         <p className="">
           When a bully report comes in, it is downloaded in both the bully's database as well as the school's database.  A copy of the report is sent to the principal so they can
           shut the abuse down.
         </p>
-        <br />
         <p className="">
           If the bully strikes a 2nd time, a pre-written letter is attached to the 2nd bully report notifying the principal of the next steps that will be taken if
           this bully strikes again.  This letter is posted on the BullyBloxx Letters tab.
         </p> 
-        <br />
         <p className="">
           If the bully strikes a 3rd time, the Bully Periscope takes over.  The trusted adult clicks on the Bully Periscope tab and obtains a complete history of
           reports against this bully showing the numbers of incidents that have been reported against them and the details of their abuse.
         </p> 
-        <br />
         <p className="">
           The trusted adult then clicks on the BullyBloxx Letters tab and obtains the pre-written letter for the Superintendent and board members.  This letter advises
           if the bully strikes again, and is still allowed to remain in school, all communications and letters along with the Bully Periscope Report for this bully 
           (without their name attached) will be provided to local media so the community can be informed of the dangerous levels of bullying that administrators are
           allowing in the schools.
         </p>
-        <br />
         <p className="">
           Long story short; no school board will allow it's members or the district to be publically, but rightfully, drug through the mud in the local media so an
           an undisciplined bully can abuse other students.  That will not happen anywhere.
         </p> 
+        <p className="">
+            Board Members will give the directive to shut down every bully, even if expulsion is required, before the situation reaches the point where the media is involved.
+        </p>
+        <p className="">
+          Once that directive is issued the immediate result will be a bully free school environment that is solidly protected against bullycides or revenge school shootings.
+        </p>
+        <p className="">
+          To get your schools protected by The Bully Periscope and the BullyBloxx system please click on the Get Your Schools Protected tab at the top left of the home page 
+          and follow the directions. And please remember, BullyBloxx doesn’t charge a direct fee for all it provides, it relies on contributions to function. Please contribute 
+          so your school’s students can continue to have this great protection.
+        </p>
+        <p className="">
+          If you are a teacher or staff member please click on the Teachers and Staff Members tab to see how you can use The BullyBloxx system just as students can.
+        </p>
       </Col>
 
       
