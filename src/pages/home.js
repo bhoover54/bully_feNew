@@ -70,7 +70,7 @@ const Home = () => {
 
       <Modal isOpen={modal} toggle={toggle}>
         <ModalBody>
-          Teachers and Staff Members
+          <b>Teachers and Staff Members</b>
           <br />
           Through the development of the BullyBloxx system we interviewed countless teachers and staff memeber who worked in schools that turned a blind eye to bullying. 
           These teachers and staff were broken hearted by what they have seen and the helplessness they have felt to do anything but try and comfort the victims. Those days 
