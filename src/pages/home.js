@@ -37,7 +37,7 @@ const Home = () => {
         </h3>
         <div className="">
           <Link className="rounded p-2 d-block my-1" onClick={() => toggle()}>
-            Teaachers and Staff Members
+            Teachers and Staff Members
           </Link>
           <Link className="rounded p-2 d-block my-1" to="/summary" onClick={() => toggle()}>
             BullyBloxx Quick Summary
