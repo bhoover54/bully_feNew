@@ -57,10 +57,10 @@ const Home = () => {
         </div>
       </Col>
 
-      <Col md={8} lg={7} className="mx-auto my-3">
+{/*<Col md={8} lg={7} className="mx-auto my-3">
         <iframe width="100%" height="400" src="https://www.youtube.com/embed/-3HWAP4MXU8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         {/* <iframe width="100%" height="400" src="https://www.youtube.com/embed/P4EDSU8rQHc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
-      </Col>
+      </Col>*/}
 
       <h2 className="text-center p-3">
         Ask yourself............would your child be safer at school with or without BullyBloxx?
