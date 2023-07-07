@@ -4,7 +4,7 @@ import { Row } from "reactstrap"
 const WalkThrough = () => {
   return (
     <Row>
-      <h3 className="mb-3">BULLYBLOXX WALK THROUGH</h3>
+      <h3 className="mb-3">BULLYBLOXX DETAILED TUTORIAL</h3>
       <p>
         Every day, 22 American students will take their own lives to end the abuse they suffer from bullies at school. Bullying is a very complex issue that has been almost impossible to resolve because of all of the underlying issues and problems connected to it. BullyBloxx is an easy to use, but
         broad reaching system, that addresses and resolves each of these underlying problems that have been standing in the way of transforming our schools from bully-laden back to bully-free, where they should be.
