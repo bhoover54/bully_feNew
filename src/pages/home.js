@@ -39,9 +39,9 @@ const Home = () => {
           <Link className="rounded p-2 d-block my-1" onClick={() => toggle()}>
             Teachers and Staff Members
           </Link>
-          <Link className="rounded p-2 d-block my-1" to="/summary" onClick={() => toggle()}>
+          {/*<Link className="rounded p-2 d-block my-1" to="/summary" onClick={() => toggle()}>
             BullyBloxx Quick Summary
-          </Link>
+          </Link> */}
           <Link to="/report" className="rounded p-2 d-block my-1">
             Report Bullying / Threats / Weapons
           </Link>
