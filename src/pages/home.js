@@ -83,16 +83,6 @@ const Home = () => {
           Have a trusted relative or friend create a BullyBloxx account and click on the Report Bullying tab and upload a verification video for you.  They can send you
           the username and password for the account as well as a copy of the video and you can submit and your trusted friend or relative will not have to bothered with any
           of it.  Your identity will be 100% protected and you can file a reprt on every bully incident that you see.
-          /*If you are a real estate professional, thanks to BullyBloxx, you alone have the ability to transform your community into a bully free community for all students K-12. BullyBloxx allows you to serve as a Bully Shutdown Ambassador for up to 3 schools meaning that you alone can make your
-          community’s elementary school, middle school and high school all bully-free. BullyBloxx also makes the exception for you to serve as a Bully Shutdown Ambassador for a 4th school if your community has a Jr. High School or 4th school of any type. The market desirability and value of every
-          home skyrockets when their students have bully-free schools to attend.
-          <br />
-          <br />
-          Make a difference, make your community’s schools bully-free and be the face of that bully-free community. This is not only an incredibly noble thing to do for your community, it is also very good for your business. To view information video on the value to you, your community and your
-          business of becoming a Bully Shutdown Ambassador in your area school/schools please <Link to="/media"> CLICK HERE</Link>
-          <br />
-          <br />
-          To submit a Bully Shutdown Ambassador request for a school / schools in your area please <Link to="/sponsor">CLICK HERE</Link>*/
         </ModalBody>
       </Modal>
     </Row>
