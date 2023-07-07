@@ -4,7 +4,7 @@ const Summary = () => {
   return (
     <Row>
       <h3>BullyBloxx Quick Summary</h3>
-      <p>The BullyBloxx system was specifically created to end three epidemics; bullying, bullycides and rampage school shootings. These epidemics are devastating the lives of our young people and restraining their educational systems at very low levels.</p>
+  {/*<p>The BullyBloxx system was specifically created to end three epidemics; bullying, bullycides and rampage school shootings. These epidemics are devastating the lives of our young people and restraining their educational systems at very low levels.</p>
       <p>
         The parents and citizens in the community completely own and have total authority over the BullyBloxx system. When a community implements BullyBloxx for its schools, it is in reality doing 2 different things:
         <ol>
@@ -24,7 +24,7 @@ const Summary = () => {
         BullyBloxx never refuses to activate the system for any school district. BullyBloxx doesn’t charge a direct fee for using the system. The cost of providing BullyBloxx is funded by contributions from the community. Once BullyBloxx is activated in a school district everyone in the community
         benefits in one way or another. Families without children in school see a significant increase in property values; the community becomes a much more peaceful place to live and attracts quality families from other place. Any responsible parent in today’s world would immediate seize an
         opportunity to have their children in a bully-free school. Each individual citizen contributes whatever amount they choose based on the benefit that BullyBloxx brings to them and their family.
-      </p>
+      </p>*/}
     </Row>
   )
 }
