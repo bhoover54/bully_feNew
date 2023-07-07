@@ -52,7 +52,7 @@ const Home = () => {
             BullyBloxx Video Library
           </Link>
           <Link className="rounded p-2 d-block my-1" to="/walk-through">
-            BullyBloxx Walk-Through
+            BullyBloxx Detailed Tutorial
           </Link>
         </div>
       </Col>
