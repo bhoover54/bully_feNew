@@ -70,7 +70,20 @@ const Home = () => {
 
       <Modal isOpen={modal} toggle={toggle}>
         <ModalBody>
-          If you are a real estate professional, thanks to BullyBloxx, you alone have the ability to transform your community into a bully free community for all students K-12. BullyBloxx allows you to serve as a Bully Shutdown Ambassador for up to 3 schools meaning that you alone can make your
+          Teachers and Staff Members
+          <br />
+          Through the development of the BullyBloxx system we interviewed countless teachers and staff memeber who worked in schools that turned a blind eye to bullying. 
+          These teachers and staff were broken hearted by what they have seen and the helplessness they have felt to do anything but try and comfort the victims. Those days 
+          are over. 
+          <br />
+          Teachers and staff members can report bullying or threats through BullyBloxx just like students can.  If you are a teacher or staff member, over 21 years of age
+          here is what to do:
+          <br />
+          <br />
+          Have a trusted relative or friend create a BullyBloxx account and click on the Report Bullying tab and upload a verification video for you.  They can send you
+          the username and password for the account as well as a copy of the video and you can submit and your trusted friend or relative will not have to bothered with any
+          of it.  Your identity will be 100% protected and you can file a reprt on every bully incident that you see.
+          //*If you are a real estate professional, thanks to BullyBloxx, you alone have the ability to transform your community into a bully free community for all students K-12. BullyBloxx allows you to serve as a Bully Shutdown Ambassador for up to 3 schools meaning that you alone can make your
           community’s elementary school, middle school and high school all bully-free. BullyBloxx also makes the exception for you to serve as a Bully Shutdown Ambassador for a 4th school if your community has a Jr. High School or 4th school of any type. The market desirability and value of every
           home skyrockets when their students have bully-free schools to attend.
           <br />
@@ -79,7 +92,7 @@ const Home = () => {
           business of becoming a Bully Shutdown Ambassador in your area school/schools please <Link to="/media"> CLICK HERE</Link>
           <br />
           <br />
-          To submit a Bully Shutdown Ambassador request for a school / schools in your area please <Link to="/sponsor">CLICK HERE</Link>
+          To submit a Bully Shutdown Ambassador request for a school / schools in your area please <Link to="/sponsor">CLICK HERE</Link>*//
         </ModalBody>
       </Modal>
     </Row>
