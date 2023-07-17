@@ -31,7 +31,7 @@ const Home = () => {
       </Col>
       <Col md="6" className="d-flex flex-column justify-content-center p-3">
         <h3 className="">
-          BullyBloxx empowers a community to provide bully-free schools for its children, and by doing so, virtually eliminates the potential for school shootings and bullycides.
+          BullyBloxx TEST empowers a community to provide bully-free schools for its children, and by doing so, virtually eliminates the potential for school shootings and bullycides.
           {/* BullyBloxx empowers a community to provide bully-free schools for its children, and by doing so, virtually eliminates the potential for
           school shootings. */}
         </h3>
