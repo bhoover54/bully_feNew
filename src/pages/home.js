@@ -65,8 +65,7 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
            The Bully Periscope is a new, parent developed, “super-weapon”, that has been created to bring to an end to our long, losing and disastrous war against bullying. That, in a nutshell, is what The Bully Periscope is.        
         </p>
         <p className="">
-          BullyBloxx is and independent, 3rd party system that functions automatically and completely on its own.  Nobody, including town administrators or school administrators,
-          have any type of authority or control over this system.
+   Our surveys and studies revealed that parents overwhelmingly agree that a “red line” must be drawn for bullies giving them 3 strikes during the school year with a 4th strike resulting in the bully being removed from the campus and transferred to an alternative school, home school, etc. Parents also agree that this “4  strike” standard is more than fair to any bully; giving them repeated opportunities to stop abusing their schoolmates.
         </p>
         <p className="">
           The BullyBloxx system has it's own bully, threat and weapons reporting functions.  In most cases reports are submitted for students by trusted adults.  This provides 100%
