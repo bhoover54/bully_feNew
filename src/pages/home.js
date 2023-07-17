@@ -68,8 +68,7 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
    Our surveys and studies revealed that parents overwhelmingly agree that a “red line” must be drawn for bullies giving them 3 strikes during the school year with a 4th strike resulting in the bully being removed from the campus and transferred to an alternative school, home school, etc. Parents also agree that this “4  strike” standard is more than fair to any bully; giving them repeated opportunities to stop abusing their schoolmates.
         </p>
         <p className="">
-          The BullyBloxx system has it's own bully, threat and weapons reporting functions.  In most cases reports are submitted for students by trusted adults.  This provides 100%
-          protection for the reporting student, not even the prindipal knows who they are.
+      The Bully Periscope, by design, allows communities and parents to implement and enforce this “4 strikes and you’re out” standard for bullying in their schools. At the same time, The Bully Periscope also quickly shuts down bullies who are abusing others.
         </p>
         <p className="">
           When a bully report comes in, it is downloaded in both the bully's database as well as the school's database.  A copy of the report is sent to the principal so they can
