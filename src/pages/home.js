@@ -62,9 +62,7 @@ const Home = () => {
         {/* <iframe width="100%" height="400" src="https://www.youtube.com/embed/P4EDSU8rQHc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
         <h3>How the Bully Periscope Shuts the Bully Down</h3>
         <p className="">
-          A "super-weapon" has just been released to bring an end to the long and disastrous war against bullying; it is called "The Bully Periscope". The Bully Periscope
-          is the most powerful component of the entire BullyBloxx system.  Please allow us the next 2 minutes to explain how this highly effective safety system protects your
-          child.            
+         A special weapon bully periscope TEST 123          
         </p>
         <p className="">
           BullyBloxx is and independent, 3rd party system that functions automatically and completely on its own.  Nobody, including town administrators or school administrators,
