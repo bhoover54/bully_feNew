@@ -77,8 +77,7 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
    Please view this video link below explaining the information that a Bully Periscope Report provides and then please review the  TORPEDO YOUR BULLY tab to see how easy it is to shut down any bully by using the information provided by this Bully Periscope Report.
         </p> 
         <p className="">
-          If the bully strikes a 3rd time, the Bully Periscope takes over.  The trusted adult clicks on the Bully Periscope tab and obtains a complete history of
-          reports against this bully showing the numbers of incidents that have been reported against them and the details of their abuse.
+       If you are a parent or youth leader of any kind, please review the information in the MESSAGES TO MOMS tab, it is vitally important that youth leaders and parents follow the instructions provided there.
         </p> 
         <p className="">
           The trusted adult then clicks on the BullyBloxx Letters tab and obtains the pre-written letter for the Superintendent and board members.  This letter advises
