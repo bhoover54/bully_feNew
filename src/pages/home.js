@@ -30,10 +30,10 @@ const Home = () => {
         </div>
       </Col>
       <Col md="6" className="d-flex flex-column justify-content-center p-3">
-        <h3 className="">
-          BullyBloxx TEST empowers a community to provide bully-free schools for its children, and by doing so, virtually eliminates the potential for school shootings and bullycides.
-          {/* BullyBloxx empowers a community to provide bully-free schools for its children, and by doing so, virtually eliminates the potential for
-          school shootings. */}
+        <h3 className=""> Once The Bully Periscope “locks in” on a bully, it’s OVER!
+The Bully Periscope immediately intervenes and quickly shuts down any bully.
+          {/* Once The Bully Periscope “locks in” on a bully, it’s OVER!
+The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
         </h3>
         <div className="">
           <Link className="rounded p-2 d-block my-1" onClick={() => toggle()}>
@@ -46,7 +46,7 @@ const Home = () => {
             Report Bullying / Threats / Weapons
           </Link>
           <Link to="/sponsor" className="rounded p-2 d-block my-1">
-            CONTRIBUTE for your school's BullyBloxx protection
+            CONTRIBUTE for your school's Bully Periscope protection
           </Link>
           <Link className="rounded p-2 d-block my-1" to="/media">
             BullyBloxx Video Library
@@ -60,9 +60,9 @@ const Home = () => {
       <Col md={8} lg={7} className="mx-auto my-3">
         {/* <iframe width="100%" height="400" src="https://www.youtube.com/embed/-3HWAP4MXU8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
         {/* <iframe width="100%" height="400" src="https://www.youtube.com/embed/P4EDSU8rQHc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
-        <h3>How the Bully Periscope Shuts the Bully Down</h3>
+        <h3>THE BULLY PERISCOPE? What is it? </h3>
         <p className="">
-         A special weapon bully periscope TEST 123          
+           The Bully Periscope is a new, parent developed, “super-weapon”, that has been created to bring to an end to our long, losing and disastrous war against bullying. That, in a nutshell, is what The Bully Periscope is.        
         </p>
         <p className="">
           BullyBloxx is and independent, 3rd party system that functions automatically and completely on its own.  Nobody, including town administrators or school administrators,
