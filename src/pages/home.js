@@ -71,8 +71,7 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
       The Bully Periscope, by design, allows communities and parents to implement and enforce this “4 strikes and you’re out” standard for bullying in their schools. At the same time, The Bully Periscope also quickly shuts down bullies who are abusing others.
         </p>
         <p className="">
-          When a bully report comes in, it is downloaded in both the bully's database as well as the school's database.  A copy of the report is sent to the principal so they can
-          shut the abuse down.
+   Inside this system is a special function called The Bully Periscope Report. This report, for the first time ever, provides parents of bully victims the complete history of abuse of the bully that is targeting their child. Any parent who has suffered through useless meetings with school administrators attempting to stop the bullying of their child and sleepless nights feeling the guilt of forcing their child to go to school and face this abuse can testify as to how valuable this information is. 
         </p>
         <p className="">
           If the bully strikes a 2nd time, a pre-written letter is attached to the 2nd bully report notifying the principal of the next steps that will be taken if
