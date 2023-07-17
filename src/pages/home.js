@@ -80,7 +80,7 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
        If you are a parent or youth leader of any kind, please review the information in the MESSAGES TO MOMS tab, it is vitally important that youth leaders and parents follow the instructions provided there.
         </p> 
         <p className="">
-       And please remember, BullyBloxx doesn’t charge a direct fee for all it provides, it relies on contributions to function. Please contribute 
+       And please remember, The Bully Periscope doesn’t charge a direct fee for all it provides, it relies on contributions to function. Please contribute 
           so your school’s students can continue to have this great protection.
         </p>
         <p className="">
