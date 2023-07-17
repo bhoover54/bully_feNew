@@ -74,8 +74,7 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
    Inside this system is a special function called The Bully Periscope Report. This report, for the first time ever, provides parents of bully victims the complete history of abuse of the bully that is targeting their child. Any parent who has suffered through useless meetings with school administrators attempting to stop the bullying of their child and sleepless nights feeling the guilt of forcing their child to go to school and face this abuse can testify as to how valuable this information is. 
         </p>
         <p className="">
-          If the bully strikes a 2nd time, a pre-written letter is attached to the 2nd bully report notifying the principal of the next steps that will be taken if
-          this bully strikes again.  This letter is posted on the BullyBloxx Letters tab.
+   Please view this video link below explaining the information that a Bully Periscope Report provides and then please review the  TORPEDO YOUR BULLY tab to see how easy it is to shut down any bully by using the information provided by this Bully Periscope Report.
         </p> 
         <p className="">
           If the bully strikes a 3rd time, the Bully Periscope takes over.  The trusted adult clicks on the Bully Periscope tab and obtains a complete history of
