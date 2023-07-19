@@ -74,7 +74,7 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
           The Bully Periscope, by design, allows communities and parents to implement and enforce this “4 strikes and you’re out” standard for bullying in their schools. At the same time, The Bully Periscope also quickly shuts down bullies who are abusing others. Here is how:
         </p>
         <p className="">
-   Inside this system is a special function called The Bully Periscope Report. This report, for the FIRST TIME EVER, provides parents of bully victims with all information on previous bullying reports that have been filed against their bully by others. Making this bullying information public forces everyone who has any responsibility or role in the situation to be fully accountable for their negligence or failure. 
+   Inside this system is a special function called The Bully Periscope Report. This report, for the FIRST TIME EVER, provides parents of bully victims with all information from previous bullying reports that have been filed against their bully by others. Making this bullying information public forces everyone who has any responsibility or role in the situation to be fully accountable for their negligence or failure. 
        </p> 
         <p className="">
         Please view this video link below detailing the valuable information that a Bully Periscope Report provides you and then please review the TORPEDO YOUR BULLY tab for step by step, easy to follow instructions for utilizing this information from your bully’s Periscope Report to quickly stop their abuse.
