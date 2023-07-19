@@ -65,7 +65,7 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
            The Bully Periscope is a new, parent developed, “super-weapon”, that has been created to bring to an end to our long, losing and disastrous war against bullying. That, in a nutshell, is what The Bully Periscope is.        
         </p>
         <p className="">
-   Our surveys and studies revealed that parents overwhelmingly agree that a “red line” must be drawn for bullies giving them 3 strikes during the school year with a 4th strike resulting in the bully being removed from the campus and transferred to an alternative school, home school, etc. Parents also agree that this “4  strike” standard is more than fair to any bully; giving them repeated opportunities to stop abusing their schoolmates.
+    Our surveys and studies revealed that parents overwhelmingly agree that a “red line” must be drawn for bullies. A line giving them 3 strikes during the school year, with a 4th strike resulting in the bully being removed from the campus and transferred to an alternative school, home school, etc. 
         </p>
         <p className="">
       The Bully Periscope, by design, allows communities and parents to implement and enforce this “4 strikes and you’re out” standard for bullying in their schools. At the same time, The Bully Periscope also quickly shuts down bullies who are abusing others.
