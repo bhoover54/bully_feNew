@@ -22,11 +22,11 @@ const Nav = () => {
             <Collapse isOpen={isOpen} navbar>
               {!role || role !== "ADMIN" ? (
                 <Nav2 className="me-auto" navbar>
-                  <NavItem>
+                {/* <NavItem>
                     <NavLink className={`nav-link ${activeClass}`} to="/sponsor">
                       Get Your Schools Protected
                     </NavLink>
-                  </NavItem>
+                  </NavItem> */}
                   <NavItem>
                     <NavLink className={`nav-link ${activeClass}`} to="/periscope">
                       Bully Periscope
