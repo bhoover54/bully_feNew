@@ -185,13 +185,13 @@ const Sponsor = () => {
           {/* <h4 className="mb-3">Get your school / schools protected</h4> */}
           <form onSubmit={handleSubmit2(submitData)}>
             {stage === "intro" && (
-              {/* <div>
-                {/* Real Estate Professionals can serve as a Bully Shut Down Ambassador for up to 3 different schools in their area */}
+              <div>
+                {/* Real Estate Professionals can serve as a Bully Shut Down Ambassador for up to 3 different schools in their area 
                 Band Booster Parents and Real Estate Professionals can serve as a Bully Shut Down Ambassador for up to 3 different schools in their area. To apply to be a Bully Shutdown Ambassador please <br />
                 <span role="button" className="text-primary" onClick={() => changeStage("upload")}>
                   CLICK HERE
-                </span>
-              </div> */}
+                </span> */}
+              </div>
             )}
 
             {(stage === "upload" || stage === "form") && (
