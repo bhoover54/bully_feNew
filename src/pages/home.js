@@ -71,13 +71,13 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
           Parents also agree that this “4 strike” standard is more than fair to any bully; giving them repeated opportunities to stop abusing their schoolmates.
         </p>
         <p className="">
-          The Bully Periscope, by design, allows communities and parents to implement and enforce this “4 strikes and you’re out” standard for bullying in their schools. At the same time, The Bully Periscope also quickly shuts down bullies who are abusing others.
+          The Bully Periscope, by design, allows communities and parents to implement and enforce this “4 strikes and you’re out” standard for bullying in their schools. At the same time, The Bully Periscope also quickly shuts down bullies who are abusing others. Here is how:
         </p>
         <p className="">
-   Inside this system is a special function called The Bully Periscope Report. This report, for the FIRST TIME EVER, provides parents of bully victims with all information on previous bullying that has been reported against their bully. Making this bullying information public forces everyone who has any responsibility or role in the situation to be fully accountable for their negligence or failure. 
+   Inside this system is a special function called The Bully Periscope Report. This report, for the FIRST TIME EVER, provides parents of bully victims with all information on previous bullying reports that have been filed against their bully by others. Making this bullying information public forces everyone who has any responsibility or role in the situation to be fully accountable for their negligence or failure. 
        </p> 
         <p className="">
-        Please view this video link below explaining the information that a Bully Periscope Report provides and then please review the TORPEDO YOUR BULLY tab for step by step, easy to follow instructions for utilizing the information from your  bully’s Periscope Report to quickly stop their abuse.
+        Please view this video link below detailing the valuable information that a Bully Periscope Report provides you and then please review the TORPEDO YOUR BULLY tab for step by step, easy to follow instructions for utilizing this information from your bully’s Periscope Report to quickly stop their abuse.
        </p> 
           <p className="">
           Any parent who has suffered through useless meetings with school administrators attempting to stop the bullying of their child and sleepless nights feeling the guilt of forcing their child to go to school and face this abuse can testify as to how important and valuable this information is.
