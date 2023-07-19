@@ -77,7 +77,7 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
       At the same time, The Bully Periscope also quickly shuts down bullies who are abusing others. Here is how:
           </p>
         <p className="">
-    Inside this system is a special function called The Bully Periscope Report. This report gives parents of bully victims , for the FIRST TIME EVER,full access to all other bully reports that have been filed against their bully, this school year. Making this bullying information public forces everyone who has any responsibility or role in the situation to be fully accountable for their negligence or failure. When the bully’s record isn’t hidden, everything changes 180 degrees; and quickly.
+    Inside this system is a special function called The Bully Periscope Report. This report gives parents of bully victims,for the FIRST TIME EVER, full access to every other bully report that has been filed against their bully during this school year. Making this bullying information public forces everyone who has any responsibility or role in the situation to be fully accountable for their negligence or failure. When the bully’s record isn’t hidden, everything changes 180 degrees; and quickly.
        </p> 
         <p className="">
         Please view this video link below detailing the valuable information that a Bully Periscope Report provides you and then please review the TORPEDO YOUR BULLY tab for step by step, easy to follow instructions for utilizing this information from your bully’s Periscope Report to quickly stop their abuse.
