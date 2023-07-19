@@ -68,14 +68,18 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
     Our surveys and studies revealed that parents overwhelmingly agree that a “red line” must be drawn for bullies. A line giving them 3 strikes during the school year, with a 4th strike resulting in the bully being removed from the campus and transferred to an alternative school, home school, etc. 
         </p>
         <p className="">
-      The Bully Periscope, by design, allows communities and parents to implement and enforce this “4 strikes and you’re out” standard for bullying in their schools. At the same time, The Bully Periscope also quickly shuts down bullies who are abusing others.
+          Parents also agree that this “4 strike” standard is more than fair to any bully; giving them repeated opportunities to stop abusing their schoolmates.
+        </p>
+        <p className="">
+          The Bully Periscope, by design, allows communities and parents to implement and enforce this “4 strikes and you’re out” standard for bullying in their schools. At the same time, The Bully Periscope also quickly shuts down bullies who are abusing others.
         </p>
         <p className="">
    Inside this system is a special function called The Bully Periscope Report. This report, for the FIRST TIME EVER, provides parents of bully victims with all information on previous bullying that has been reported against their bully. Making this bullying information public forces everyone who has any responsibility or role in the situation to be fully accountable for their negligence or failure. 
-        </p>
-        <p class
-        </p> Please view this video link below explaining the information that a Bully Periscope Report provides and then please review the TORPEDO YOUR BULLY tab for step by step, easy to follow instructions for utilizing the information from your  bully’s Periscope Report to quickly stop their abuse.
+       </p> 
         <p className="">
+        Please view this video link below explaining the information that a Bully Periscope Report provides and then please review the TORPEDO YOUR BULLY tab for step by step, easy to follow instructions for utilizing the information from your  bully’s Periscope Report to quickly stop their abuse.
+       </p> 
+          <p className="">
        If you are a parent or youth leader of any kind, please review the information in the MESSAGES TO MOMS tab, it is vitally important that youth leaders and parents follow the instructions provided there.
         </p> 
         <p className="">
