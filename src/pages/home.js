@@ -71,8 +71,11 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
           Parents also agree that this “4 strike” standard is more than fair to any bully; giving them repeated opportunities to stop abusing their schoolmates.
         </p>
         <p className="">
-          The Bully Periscope, by design, allows communities and parents to implement and enforce this “4 strikes and you’re out” standard for bullying in their schools. At the same time, The Bully Periscope also quickly shuts down bullies who are abusing others. Here is how:
+          The Bully Periscope, by design, allows communities and parents to implement and enforce this “4 strikes and you’re out” standard for bullying in their schools. 
         </p>
+        <p className="">
+      At the same time, The Bully Periscope also quickly shuts down bullies who are abusing others. Here is how:
+          </p>
         <p className="">
    Inside this system is a special function called The Bully Periscope Report. This report, for the FIRST TIME EVER, provides parents of bully victims with all information from the current year's bully reports that have been filed against the bully by others. Making this bullying information public forces everyone who has any responsibility or role in the situation to be fully accountable for their negligence or failure. 
        </p> 
