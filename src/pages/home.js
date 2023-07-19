@@ -80,6 +80,9 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
         Please view this video link below explaining the information that a Bully Periscope Report provides and then please review the TORPEDO YOUR BULLY tab for step by step, easy to follow instructions for utilizing the information from your  bully’s Periscope Report to quickly stop their abuse.
        </p> 
           <p className="">
+          Any parent who has suffered through useless meetings with school administrators attempting to stop the bullying of their child and sleepless nights feeling the guilt of forcing their child to go to school and face this abuse can testify as to how important and valuable this information is.
+             </p> 
+          <p className="">
        If you are a parent or youth leader of any kind, please review the information in the MESSAGES TO MOMS tab, it is vitally important that youth leaders and parents follow the instructions provided there.
         </p> 
         <p className="">
