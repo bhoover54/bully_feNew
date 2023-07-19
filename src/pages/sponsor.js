@@ -181,7 +181,7 @@ const Sponsor = () => {
 
         <Col md="1" />
 
-        {/* <Col md="6">
+        <Col md="6">
           <h4 className="mb-3">Get your school / schools protected</h4>
           <form onSubmit={handleSubmit2(submitData)}>
             {stage === "intro" && (
@@ -263,7 +263,7 @@ const Sponsor = () => {
               </>
             )}
           </form>
-        </Col> */}
+        </Col>
       </Row>
 
       <Modal isOpen={modal} toggle={toggle} backdrop={backdrop}>
