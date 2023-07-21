@@ -23,7 +23,7 @@ const Donate = () => {
   const handleChange = (e) => setData({ ...data, [e.target.name]: e.target.value })
 
   const handleToken = async (token) => {
-    // setData({ ...data, school_id: school.id })
+   setData({ ...data, school_id: school.id })
 
     const resData = data
     resData.school_id = school.id
