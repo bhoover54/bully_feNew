@@ -106,6 +106,11 @@ const Nav = () => {
                           Contact
                         </Link>
                       </DropdownItem>
+                      <DropdownItem>
+                        <Link className="text-dark" to="/walk_through">
+                          Bully Periscope Detailed Tutorial
+                        </Link>
+                      </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
                 </Nav2>
