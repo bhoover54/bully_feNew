@@ -55,6 +55,9 @@ const Donate = () => {
       <Col md="6" className="mx-auto mb-5">
         <form onSubmit={handleSubmit(submit)}>
           <p>
+            School ID: <span className="fw-bold text-uppercase"> {school.school_id} </span>
+          </p>
+          <p>
             School Name: <span className="fw-bold text-uppercase"> {school.school_name} </span>
           </p>
           <div className="mb-2">
