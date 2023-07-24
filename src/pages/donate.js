@@ -54,12 +54,9 @@ const Donate = () => {
     <Row>
       <Col md="6" className="mx-auto mb-5">
         <form onSubmit={handleSubmit(submit)}>
-          <p>
-            School ID:  <span className="fw-bold text-uppercase"> {school.school_id} </span>
-          </p>
-          <p>
+          {/* <p>
             School Name: <span className="fw-bold text-uppercase"> {school.school_name} </span>
-          </p>
+          </p> */}
           <div className="mb-2">
             <label className="py-1">Full Name</label>
             <Input bsSize="sm" className="shadow-none" name="name" onChange={handleChange} />
