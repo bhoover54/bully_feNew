@@ -45,7 +45,7 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
           <Link to="/report" className="rounded p-2 d-block my-1">
             Report Bullying / Threats / Weapons
           </Link>
-          <Link to="/sponsor" className="rounded p-2 d-block my-1">
+          <Link to="/sponsor" className="rounded p-2 d-block my-1" to="/donate">
             CONTRIBUTE for your school's Bully Periscope protection
           </Link>
           <Link className="rounded p-2 d-block my-1" to="/media">
