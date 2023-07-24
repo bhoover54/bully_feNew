@@ -80,7 +80,7 @@ const Periscope = () => {
     }
   }
 
-  const toggle = () => setModal(!modal)
+  const toggle = () => setModal(modal)
 
   const columns = [
     {
