@@ -107,7 +107,7 @@ const Nav = () => {
                         </Link>
                       </DropdownItem>
                       <DropdownItem>
-                        <Link className="text-dark" to="/walk_through">
+                        <Link className="text-dark" to="/walk-through">
                           Bully Periscope Detailed Tutorial
                         </Link>
                       </DropdownItem>
