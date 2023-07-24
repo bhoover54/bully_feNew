@@ -30,7 +30,7 @@ const Home = () => {
         </div>
       </Col>
       <Col md="6" className="d-flex flex-column justify-content-center p-3">
-        <h3 className=""> Once The Bully Periscope “locks in” on a bully, it’s GAME OVER!
+        <h3 className=""> Once The Bully Periscope “locks in” on a bully, it’s GAME OVER!<br />
 The Bully Periscope immediately intervenes and quickly shuts down any bully.
           {/* Once The Bully Periscope “locks in” on a bully, it’s OVER!
 The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
