@@ -51,10 +51,10 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
           <Link to="/sponsor" className="rounded p-2 d-block my-1" to="/donate">
             CONTRIBUTE for your school's Bully Periscope protection
           </Link>
-          <Link className="rounded p-2 d-block my-1" to="/media">
+          {/* <Link className="rounded p-2 d-block my-1" to="/media">
             BullyBloxx Video Library
           </Link>
-{/*       <Link className="rounded p-2 d-block my-1" to="/walk-through">
+          <Link className="rounded p-2 d-block my-1" to="/walk-through">
             Bully Periscope Detailed Tutorial
           </Link> */}
         </div>
