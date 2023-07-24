@@ -25,7 +25,7 @@ const Periscope = () => {
   const [report, setReport] = useState(false)
   const [pay, setPay] = useState(false)
   const [message, setMessage] = useState("")
-  const [modal, setModal] = useState(true)
+  const [modal, setModal] = useState(false)
   const [backdrop, setBackdrop] = useState(true)
 
   const submit = async (data) => {
@@ -80,7 +80,7 @@ const Periscope = () => {
     }
   }
 
-  const toggle = () => setModal(modal)
+  const toggle = () => setModal(!modal)
 
   const columns = [
     {
