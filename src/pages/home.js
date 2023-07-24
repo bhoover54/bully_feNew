@@ -54,9 +54,9 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
           <Link className="rounded p-2 d-block my-1" to="/media">
             BullyBloxx Video Library
           </Link>
-          <Link className="rounded p-2 d-block my-1" to="/walk-through">
-            BullyBloxx Detailed Tutorial
-          </Link>
+{/*       <Link className="rounded p-2 d-block my-1" to="/walk-through">
+            Bully Periscope Detailed Tutorial
+          </Link> */}
         </div>
       </Col>
 
