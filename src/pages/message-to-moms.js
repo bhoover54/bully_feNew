@@ -6,7 +6,7 @@ const MessageToMoms = () => {
       <Col xs="12" md="8" className="mx-auto">
         <h3 className="mb-3"> Message to Moms</h3>
         <p className="">
-The real truth is this; parents, especially moms now have control over whether or not their child gets bullied at school. Singl            
+The real truth is this; parents, especially moms now have control over whether or not their child gets bullied at school. Single moms, the parents who have struggled the most from bullying, now have the same power as anyone else to protect their children from bullying. With this system parents can collectively establish a bully-free school environment for their children by doing 2 simple things:             
   </p>
     <p className="">
     1- Sit down with your children regularly and tell them to please come to you anytime they see or experience bullying so it can be reported through this system. 
