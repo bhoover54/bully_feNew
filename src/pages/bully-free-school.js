@@ -4,7 +4,7 @@ const BullyFreeSchool = () => {
   return (
     <Row>
       <h3>Bully Free Schools</h3>
-      <p className="">
+  {/* <p className="">
   In bully-free schools, students don't abuse each other. If an incident does occur, the abuser is immediately shut down before it happens again. When students and parents come together and use The Bully Periscope, this is the new school environment that they can create by driving bullying out of the school 
       </p>
       <p className="">
@@ -17,7 +17,7 @@ const BullyFreeSchool = () => {
         </ol>
       </p>
 
-      <p className="">Please, look at the Message to Moms video at the top of The Bully Periscope homepage with your children. Follow the instructions there and bullying in the school will cease very quickly.</p>
+      <p className="">Please, look at the Message to Moms video at the top of The Bully Periscope homepage with your children. Follow the instructions there and bullying in the school will cease very quickly.</p> */}
     </Row>
   )
 }
