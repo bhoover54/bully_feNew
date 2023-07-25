@@ -15,6 +15,8 @@ The real truth is this; parents, especially moms now have control over whether o
     2- When a bullying incident does occur follow the instructions in the TORPEDO YOUR BULLY tab to quickly shut the bully down.
    </p>
   <p className="">
+    These 2 things are all that is asked of parents to end this war on bullying and provide their child with a school without bullying to go to.
+If you are a church youth leader, coach, scoutmaster or anyone else who leads young people please make sure every one of your members understands how important it is to use this system and end the bullying in their schools.
    </p>
         {/*<iframe width="100%" height="500" src="https://www.youtube.com/embed/J_bWh5pI7lA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
       </Col>
