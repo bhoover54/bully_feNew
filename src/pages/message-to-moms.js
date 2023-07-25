@@ -16,6 +16,8 @@ The real truth is this; parents, especially moms now have control over whether o
    </p>
   <p className="">
     These 2 things are all that is asked of parents to end this war on bullying and provide their child with a school without bullying to go to.
+       </p>
+  <p className="">
 If you are a church youth leader, coach, scoutmaster or anyone else who leads young people please make sure every one of your members understands how important it is to use this system and end the bullying in their schools.
    </p>
         {/*<iframe width="100%" height="500" src="https://www.youtube.com/embed/J_bWh5pI7lA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
