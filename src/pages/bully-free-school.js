@@ -5,7 +5,7 @@ const BullyFreeSchool = () => {
     <Row>
       <h3>Bully Free Schools</h3>
       <p className="">
-  In bully-free schools students don't abuse each other. If an incident does occur, the abuser is immediately shut down before it happens again. When students and parents come together and use The Bully Periscope, this is the new school environment that they can create by driving bullying out of the school 
+  In bully-free schools, students don't abuse each other. If an incident does occur, the abuser is immediately shut down before it happens again. When students and parents come together and use The Bully Periscope, this is the new school environment that they can create by driving bullying out of the school 
       </p>
       <p className="">
         Neighborhoods and communities want bully free schools for 4 main reasons:
