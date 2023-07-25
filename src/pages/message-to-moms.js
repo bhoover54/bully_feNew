@@ -16,9 +16,7 @@ If you are a church youth leader, coach, scoutmaster or anyone else who leads yo
         {/*<iframe width="100%" height="500" src="https://www.youtube.com/embed/J_bWh5pI7lA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
       </Col>
     </Row>
-        <p className="">
-
-  </p>
+        
   )
 }
 
