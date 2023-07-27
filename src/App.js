@@ -47,7 +47,6 @@ function App() {
           <Route path="/uploads" element={<Upload />} />
           <Route path="/periscope" element={<Periscope />} />
           <Route path="/media" element={<Media />} />
-          <Route path="/torpedo" element={<Torpedo />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/policy" element={<Policy />} />
@@ -66,7 +65,6 @@ function App() {
           <Route path="/test-bullybloxx" element={<TestBullyBlox />} />
           <Route path="/verification" element={<Verification />} />
           <Route path="/band-booster" element={<BandBooster />} />
-          <Route path="/walk-through" element={<WalkThrough />} />
           <Route path="/walk-through" element={<WalkThrough />} />
           <Route path="/summary" element={<Summary />} />
           <Route path="/admin" element={<Admin />}>
