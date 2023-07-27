@@ -10,7 +10,6 @@ import Home from "./pages/home"
 import Nav from "./components/nav"
 import Upload from "./pages/video"
 import Periscope from "./pages/periscope"
-import Torpedo from "./pages/torpedo"
 import TrustedAdult from "./pages/trusted-adult"
 import AdminReport from "./pages/admin-report"
 import AdminSponsor from "./pages/admin-sponsors"
@@ -54,7 +53,6 @@ function App() {
           <Route path="/school/admin" element={<SchoolAdmin />} />
           <Route path="/message-to-moms" element={<MessageToMoms />} />
           <Route path="/trusted-adult" element={<TrustedAdult />} />
-          <Route path="/torpedo" element={<Torpedo />} />
           <Route path="/how-bullybloxx-works" element={<HowItWOrks />} />
           <Route path="/letters" element={<Letters />} />
           <Route path="/signin" element={<Login />} />
