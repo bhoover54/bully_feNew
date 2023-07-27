@@ -46,26 +46,26 @@ const Nav = () => {
                   <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav>More</DropdownToggle>
                     <DropdownMenu right>
-                      <DropdownItem>
+                    {/* <DropdownItem>
                         <Link className=" text-dark" to="/periscope">
                           Order Periscope Report
                         </Link>
-                      </DropdownItem>
+                      </DropdownItem> */}
                       <DropdownItem>
                         <Link className=" text-dark" to="/policy">
                           Bully Periscope Discipline Policy
                         </Link>
                       </DropdownItem>
-                      <DropdownItem>
+                      {/* <DropdownItem>
                         <Link className=" text-dark" to="/letters">
                           Bully Periscope Letters
                         </Link>
-                      </DropdownItem>
+                      </DropdownItem> 
                       <DropdownItem>
                         <Link className=" text-dark" to="/ambassador">
                           Bully Shut Down Ambassadors
                         </Link>
-                      </DropdownItem>
+                      </DropdownItem>*/}
                       <DropdownItem>
                         <Link className="text-dark" to="/media">
                           Bully Periscope Video Library
@@ -86,16 +86,16 @@ const Nav = () => {
                           Sample verification Video
                         </Link>
                       </DropdownItem>
-                      <DropdownItem>
+                      {/* <DropdownItem>
                         <Link className=" text-dark" to="/band-booster">
                           Band Booster Parents
-                        </Link>
+                        </Link> 
                       </DropdownItem>
                       <DropdownItem>
                         <Link className=" text-dark" to="/test-bullybloxx">
                           Test BulllyBloxx
                         </Link>
-                      </DropdownItem>
+                      </DropdownItem> */}
                       <DropdownItem>
                         <Link className="text-dark" to="/about">
                           About
