@@ -28,8 +28,8 @@ const Nav = () => {
                     </NavLink>
                   </NavItem> */}
                   <NavItem>
-                    <NavLink className={`nav-link ${activeClass}`} to="/periscope">
-                      Bully Periscope
+                    <NavLink className={`nav-link ${activeClass}`} to="/trusted-adult">
+                      Trusted Adult
                     </NavLink>
                   </NavItem>
                   <NavItem>
