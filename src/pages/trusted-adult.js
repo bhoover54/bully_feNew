@@ -1,4 +1,3 @@
-
 import { Col, Row } from "reactstrap"
 
 const TrustedAdult = () => {
