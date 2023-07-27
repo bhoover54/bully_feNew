@@ -26,7 +26,7 @@ const Nav = () => {
                     <NavLink className={`nav-link ${activeClass}`} to="/torpedo">
                       Torpedo Test
                     </NavLink>
-                  </NavItem> */}
+                  </NavItem>
                   <NavItem>
                     <NavLink className={`nav-link ${activeClass}`} to="/trusted-adult">
                       Trusted Adult
