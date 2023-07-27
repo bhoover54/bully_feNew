@@ -53,12 +53,12 @@ const Nav = () => {
                       </DropdownItem>
                       <DropdownItem>
                         <Link className=" text-dark" to="/policy">
-                          BullyBloxx Discipline Policy
+                          Bully Periscope Discipline Policy
                         </Link>
                       </DropdownItem>
                       <DropdownItem>
                         <Link className=" text-dark" to="/letters">
-                          BullyBloxx Letters
+                          Bully Periscope Letters
                         </Link>
                       </DropdownItem>
                       <DropdownItem>
