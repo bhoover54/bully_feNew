@@ -68,7 +68,7 @@ const Nav = () => {
                       </DropdownItem>
                       <DropdownItem>
                         <Link className="text-dark" to="/media">
-                          BullyBloxx Video Library
+                          Bully Periscope Video Library
                         </Link>
                       </DropdownItem>
                       <DropdownItem>
