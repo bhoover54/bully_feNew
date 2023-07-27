@@ -22,9 +22,9 @@ const Nav = () => {
             <Collapse isOpen={isOpen} navbar>
               {!role || role !== "ADMIN" ? (
                 <Nav2 className="me-auto" navbar>
-                {/* <NavItem>
-                    <NavLink className={`nav-link ${activeClass}`} to="/sponsor">
-                      Get Your Schools Protected
+                  <NavItem>
+                    <NavLink className={`nav-link ${activeClass}`} to="/torpedo">
+                      Torpedo Test
                     </NavLink>
                   </NavItem> */}
                   <NavItem>
