@@ -22,11 +22,11 @@ const Nav = () => {
             <Collapse isOpen={isOpen} navbar>
               {!role || role !== "ADMIN" ? (
                 <Nav2 className="me-auto" navbar>
-                  <NavItem>
+                {/*<NavItem>
                     <NavLink className={`nav-link ${activeClass}`} to="/torpedo">
                       Torpedo Test
                     </NavLink>
-                  </NavItem>
+                  </NavItem> */}
                   <NavItem>
                     <NavLink className={`nav-link ${activeClass}`} to="/trusted-adult">
                       Trusted Adult
@@ -46,11 +46,11 @@ const Nav = () => {
                   <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav>More</DropdownToggle>
                     <DropdownMenu right>
-                    {/* <DropdownItem>
-                        <Link className=" text-dark" to="/periscope">
-                          Order Periscope Report
+                      <DropdownItem>
+                        <Link className=" text-dark" to="/torpedo">
+                          Torpedo Test
                         </Link>
-                      </DropdownItem> */}
+                      </DropdownItem>
                       <DropdownItem>
                         <Link className=" text-dark" to="/policy">
                           Bully Periscope Discipline Policy
