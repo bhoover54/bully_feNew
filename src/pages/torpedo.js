@@ -57,7 +57,7 @@ const Torpedo = () => {
               <b>Situation #1</b> – If you previously emailed letter #1 to the principal or letter #2 to the Superintendent and school board members please click <a href="/letter4"><b>HERE</b></a>.
           </p>
           <p className="">
-              <b>Situation #2</b> - You previously emailed letter #3 to the Superintendent and school board members please click HERE.
+              <b>Situation #2</b> - You previously emailed letter #3 to the Superintendent and school board members please click <a href="/sit-3_2"><b>HERE</b></a>.
           </p>
           <br /><br />
           <p className="">
