@@ -31,7 +31,7 @@ const Home = () => {
       </Col>
       <Col md="6" className="d-flex flex-column justify-content-center p-3">
         <h3 className=""> Once The Bully Periscope “locks in” on a bully, it’s GAME OVER!<br />
-                          The Bully Periscope immediately intervenes and quickly shuts down any bully.
+                          
         </h3>
         <div className="">
           <Link className="rounded p-2 d-block my-1" onClick={() => toggle()}>
