@@ -18,6 +18,13 @@ const Torpedo = () => {
             Every bully report is downloaded in both the bully’s database as well as the school’s database. A copy of the bully report is sent to the principal with instructions to immediately 
             shut the abuse from this bully down.    
         </p>
+        <p className="">
+              <b>The Second Time the Bully Strikes:</b>
+        </p>
+        <p className="">
+              If the bully strikes a second time, whether against your student or another student, this tells you that you are dealing with a repeat offender bully. This is a bully that abuses again and again. At this point you should take 
+              a step back and allow The Bully Periscope System to intervene and take over the situation. To do this take these 2 simple actions:
+        </p>
       </Col>
     </Row>
   )
