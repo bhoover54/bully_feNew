@@ -36,7 +36,7 @@ const Torpedo = () => {
               After receiving the Bully Periscope Report on your bully, choose and click on which of the 3 situations below applies to you and then take the action provided:
           </p>
           <p className="">
-              <b>Situation #1</b> - If The Bully Periscope Report shows that this bully has only been reported by you, your 2 reports are the only incidents against the bully please click HERE.
+              <b>Situation #1</b> - If The Bully Periscope Report shows that this bully has only been reported by you, your 2 reports are the only incidents against the bully please click <a href="/letter1"><b>HERE</b></a>.
           </p>
           <p className="">
               <b>Situation #2</b> - The Bully Periscope Report shows that in addition to your 2 reports this bully has been reported one other time by someone else, making a total number of 3 
