@@ -31,8 +31,10 @@ const Torpedo = () => {
               2nd – Obtain a  Bully Periscope Report on your bully. This is your bully’s complete record of abusing and bullying others. 
               Once you have this Bully Periscope Report the information in the report will determine and dictate what actions you take next to shut down this abuse.<br />
                     Please click <a href="/periscope">HERE</a> to order a Bully Periscope Report on your bully.
-
           </p>
+          <p className="">
+              After receiving the Bully Periscope Report on your bully, choose and click on which of the 3 situations below applies to you and then take the action provided:
+          </p> 
       </Col>
     </Row>
   )
