@@ -31,9 +31,7 @@ const Home = () => {
       </Col>
       <Col md="6" className="d-flex flex-column justify-content-center p-3">
         <h3 className=""> Once The Bully Periscope “locks in” on a bully, it’s GAME OVER!<br />
-The Bully Periscope immediately intervenes and quickly shuts down any bully.
-          {/* Once The Bully Periscope “locks in” on a bully, it’s OVER!
-The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
+                          The Bully Periscope immediately intervenes and quickly shuts down any bully.
         </h3>
         <div className="">
           <Link className="rounded p-2 d-block my-1" onClick={() => toggle()}>
@@ -48,13 +46,13 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
           <Link to="/torpedo" className="rounded p-2 d-block my-1">
             Torpedo Your Bully
           </Link>
-          <Link to="/sponsor" className="rounded p-2 d-block my-1" to="/donate">
+          <Link to="/donate" className="rounded p-2 d-block my-1">
             CONTRIBUTE for your school's Bully Periscope protection
           </Link>
           {/* <Link className="rounded p-2 d-block my-1" to="/media">
             BullyBloxx Video Library
           </Link>
-          <Link className="rounded p-2 d-block my-1" to="/walk-through">
+          <Link to="/walk-through" className="rounded p-2 d-block my-1">
             Bully Periscope Detailed Tutorial
           </Link> */}
         </div>
@@ -68,7 +66,7 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
            The Bully Periscope is a new, parent developed, “super-weapon”, that has been created to bring to an end to our long, losing and disastrous war against bullying in our schools. That, in a nutshell, is what The Bully Periscope is.        
         </p>
         <p className="">
-    Our surveys and studies revealed that parents overwhelmingly agree that a “red line” must be drawn for bullies. A line giving them 3 strikes during the school year, with a 4th strike resulting in the bully being removed from the campus and transferred to an alternative school, home school, online school, etc. 
+          Our surveys and studies revealed that parents overwhelmingly agree that a “red line” must be drawn for bullies. A line giving them 3 strikes during the school year, with a 4th strike resulting in the bully being removed from the campus and transferred to an alternative school, home school, online school, etc. 
         </p>
         <p className="">
           Parents also agree that this “4 strike” standard is more than fair to any bully; giving them repeated opportunities to stop abusing their schoolmates.
@@ -77,22 +75,22 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
           The Bully Periscope, by design, empowers communities and parents with the ability to implement and enforce this “4 strikes and you’re out” standard, creating a bully-free environment in their schools. 
         </p>
         <p className="">
-      At the same time, The Bully Periscope also quickly shuts down bullies who are abusing others. Here is how:
-          </p>
+          At the same time, The Bully Periscope also quickly shuts down bullies who are abusing others. Here is how:
+        </p>
         <p className="">
-    Inside this system is a special function called The Bully Periscope Report. This report gives parents of bully victims, for the FIRST TIME EVER, full access to every other bully report that has been filed against their bully during this school year. Making this bullying information public forces everyone who has any responsibility or role in the situation to be fully accountable for their negligence or failure. When the bully’s records can't be hidden, everything changes 180 degrees; and quickly.
-       </p> 
+          Inside this system is a special function called The Bully Periscope Report. This report gives parents of bully victims, for the FIRST TIME EVER, full access to every other bully report that has been filed against their bully during this school year. Making this bullying information public forces everyone who has any responsibility or role in the situation to be fully accountable for their negligence or failure. When the bully’s records can't be hidden, everything changes 180 degrees; and quickly.
+         </p> 
         <p className="">
-        Please view this video link below detailing the valuable information that a Bully Periscope Report provides you and then please review the TORPEDO YOUR BULLY tab for step by step, easy to follow instructions for utilizing this information from your bully’s Periscope Report to quickly stop their abuse.
-       </p> 
-          <p className="">
+          Please view this video link below detailing the valuable information that a Bully Periscope Report provides you and then please review the TORPEDO YOUR BULLY tab for step by step, easy to follow instructions for utilizing this information from your bully’s Periscope Report to quickly stop their abuse.
+         </p> 
+        <p className="">
           Any parent who has suffered through useless meetings with school administrators attempting to stop the bullying of their child and sleepless nights feeling the guilt of forcing their child to go to school and face this abuse can testify as to how important and valuable this information is.
-             </p> 
-          <p className="">
-       If you are a parent or youth leader of any kind, please review the information in the MESSAGES TO MOMS tab, it is vitally important that youth leaders and parents follow the instructions provided there.
         </p> 
         <p className="">
-       And please remember, The Bully Periscope doesn’t charge a direct fee for all it provides, it relies on contributions to function. Please contribute 
+           If you are a parent or youth leader of any kind, please review the information in the MESSAGES TO MOMS tab, it is vitally important that youth leaders and parents follow the instructions provided there.
+        </p> 
+        <p className="">
+           And please remember, The Bully Periscope doesn’t charge a direct fee for all it provides, it relies on contributions to function. Please contribute 
           so your school’s students can continue to have this great protection.
         </p>
       </Col>     
