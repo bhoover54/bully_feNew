@@ -4,7 +4,6 @@ const Sit_32 = () => {
   return (
     <Row>
       <Col xs="12" md="8" className="mx-auto">
-        <h3 className="mb-3"> Message to Moms</h3>
         <p className="">
             <b><i>If you previously emailed letter #3 to the Superintendent and school board members please follow the instructions below:</i></b>
         </p>
