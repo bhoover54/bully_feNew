@@ -25,6 +25,13 @@ const Torpedo = () => {
               If the bully strikes a second time, whether against your student or another student, this tells you that you are dealing with a repeat offender bully. This is a bully that abuses again and again. At this point you should take 
               a step back and allow The Bully Periscope System to intervene and take over the situation. To do this take these 2 simple actions:
         </p>
+          <p className="">
+              1st - File a 2nd bully report, just like you filed the first report. ALWAYS file a bully report.<br />
+              2nd – Obtain a  Bully Periscope Report on your bully. This is your bully’s complete record of abusing and bullying others. 
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     Once you have this Bully Periscope Report the information in the report will determine and dictate what actions you take next to shut down this abuse. 
+                    Please click HERE to order a Bully Periscope Report on your bully.
+
+          </p>
       </Col>
     </Row>
   )
