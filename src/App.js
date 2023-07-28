@@ -10,6 +10,7 @@ import Home from "./pages/home"
 import Nav from "./components/nav"
 import Upload from "./pages/video"
 import Periscope from "./pages/periscope"
+import Torpedo_Main from "./pages/torpedo"
 import AdminReport from "./pages/admin-report"
 import AdminSponsor from "./pages/admin-sponsors"
 import { ToastContainer } from "react-toastify"
@@ -40,6 +41,7 @@ function App() {
           <Route path="/report" element={<Report />} />
           <Route path="/uploads" element={<Upload />} />
           <Route path="/periscope" element={<Periscope />} />
+          <Route path="/torpedo" element={<Torpedo_Main />} />
           <Route path="/media" element={<Media />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
