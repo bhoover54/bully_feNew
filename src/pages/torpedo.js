@@ -54,7 +54,7 @@ const Torpedo = () => {
             3rd bully report on the  bully and then choose which of the 2 situations below applies to you and take the action provided for that situation:
           </p>
           <p className="">
-              <b>Situation #1</b> – If you previously emailed letter #1 to the principal or letter #2 to the Superintendent and school board members please click HERE.
+              <b>Situation #1</b> – If you previously emailed letter #1 to the principal or letter #2 to the Superintendent and school board members please click <a href="/letter4"><b>HERE</b></a>.
           </p>
           <p className="">
               <b>Situation #2</b> - You previously emailed letter #3 to the Superintendent and school board members please click HERE.
