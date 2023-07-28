@@ -9,7 +9,7 @@ const Torpedo = () => {
             The following procedures empowers parents, single or otherwise, to quickly end any abuse their child is enduring from bullying at school, and to stop this harm without needing assistance from anyone. We call this action Torpedoing Your Bully.             
         </p>
         <p className="">
-            The First Time the Bully Strikes:
+            <b>The First Time the Bully Strikes:</b>
         </p>
         <p className="">
             The Bully Periscope has its own bully, threat and weapons reporting system. When any bully strikes, go to the Bully Reporting Form tab and report the incident; 
