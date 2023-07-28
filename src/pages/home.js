@@ -109,7 +109,10 @@ The Bully Periscope immediately intervenes and quickly shuts down any bully. */}
         
         </p>
       </Col>
-
+      <Col md={8} lg={7} className="mx-auto my-3">
+        <iframe width="100%" height="400" src="https://youtu.be/rB7W1Wf2J7c" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        {/* <iframe width="100%" height="400" src="https://www.youtube.com/embed/P4EDSU8rQHc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
+      </Col>
       
 
       <h2 className="text-center p-3">
