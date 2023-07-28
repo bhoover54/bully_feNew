@@ -30,11 +30,22 @@ const Torpedo = () => {
               1st - File a 2nd bully report, just like you filed the first report. ALWAYS file a bully report.<br />
               2nd – Obtain a  Bully Periscope Report on your bully. This is your bully’s complete record of abusing and bullying others. 
               Once you have this Bully Periscope Report the information in the report will determine and dictate what actions you take next to shut down this abuse.<br />
-                    Please click <a href="/periscope">HERE</a> to order a Bully Periscope Report on your bully.
+                    Please click <a href="/periscope"><b>HERE</b></a> to order a Bully Periscope Report on your bully.
           </p>
           <p className="">
               After receiving the Bully Periscope Report on your bully, choose and click on which of the 3 situations below applies to you and then take the action provided:
-          </p> 
+          </p>
+          <p className="">
+              <b>Situation #1</b> - If The Bully Periscope Report shows that this bully has only been reported by you, your 2 reports are the only incidents against the bully please click HERE.
+          </p>
+          <p className="">
+              <b>Situation #2</b> - The Bully Periscope Report shows that in addition to your 2 reports this bully has been reported one other time by someone else, making a total number of 3 
+              reports against this bully please click HERE.
+          </p>
+          <p className="">
+              <b>Situation #3</b> - The Bully Periscope Report shows that in addition to your 2 reports this bully has been reported for 2 or more other incidents of bullying, 
+              making a total number of reports against this bully 4 or more please click HERE.
+          </p>
       </Col>
     </Row>
   )
