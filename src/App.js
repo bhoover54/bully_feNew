@@ -26,6 +26,7 @@ import MessageToMoms from "./pages/message-to-moms"
 import Letters from "./pages/letters"
 import Letter1 from "./pages/letter1"
 import Letter2 from "./pages/letter2"
+import Letter3 from "./pages/letter3"
 import ForgotPassword from "./pages/forgot-password"
 import ResetPassword from "./pages/reset-paswod"
 import RealEstate from "./pages/real-estate"
@@ -61,6 +62,7 @@ function App() {
           <Route path="/letters" element={<Letters />} />
           <Route path="/letter1" element={<Letter1 />} />
           <Route path="/letter2" element={<Letter2 />} />
+          <Route path="/letter3" element={<Letter3 />} />
           <Route path="/signin" element={<Login />} />
           <Route path="/signup" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
