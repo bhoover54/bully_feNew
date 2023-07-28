@@ -47,7 +47,7 @@ const Nav = () => {
                     <DropdownToggle nav>More</DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem>
-                        <Link className=" text-dark" to="/torpedo">
+                        <Link className=" text-dark" to="/testb">
                           Torpedo Test
                         </Link>
                       </DropdownItem>
