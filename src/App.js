@@ -11,6 +11,7 @@ import Nav from "./components/nav"
 import Upload from "./pages/video"
 import Periscope from "./pages/periscope"
 import TrustedAdult from "./pages/trusted-adult"
+import TestB from "./pages/testb"
 import AdminReport from "./pages/admin-report"
 import AdminSponsor from "./pages/admin-sponsors"
 import { ToastContainer } from "react-toastify"
@@ -53,6 +54,7 @@ function App() {
           <Route path="/school/admin" element={<SchoolAdmin />} />
           <Route path="/message-to-moms" element={<MessageToMoms />} />
           <Route path="/trusted-adult" element={<TrustedAdult />} />
+          <Route path="/testb" element={<TestB />} />
           <Route path="/how-bullybloxx-works" element={<HowItWOrks />} />
           <Route path="/letters" element={<Letters />} />
           <Route path="/signin" element={<Login />} />
