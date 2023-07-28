@@ -44,7 +44,7 @@ const Torpedo = () => {
           </p>
           <p className="">
               <b>Situation #3</b> - The Bully Periscope Report shows that in addition to your 2 reports this bully has been reported for 2 or more other incidents of bullying, 
-              making a total number of reports against this bully 4 or more please click HERE.
+              making a total number of reports against this bully 4 or more please click <a href="/letter3"><b>HERE</b></a>.
           </p>
       </Col>
     </Row>
