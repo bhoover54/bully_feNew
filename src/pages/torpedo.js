@@ -46,6 +46,29 @@ const Torpedo = () => {
               <b>Situation #3</b> - The Bully Periscope Report shows that in addition to your 2 reports this bully has been reported for 2 or more other incidents of bullying, 
               making a total number of reports against this bully 4 or more please click <a href="/letter3"><b>HERE</b></a>.
           </p>
+          <p className="">
+            <b>The Third Time the Bully Strikes:</b>
+          </p>
+          <p className="">
+            Very, very rarely does a bully strike again once The Bully Periscope is activated in second step above, however, if the bully does strikes again file a bully report on the incident, file a 
+            3rd bully report on the  bully and then choose which of the 2 situations below applies to you and take the action provided for that situation:
+          </p>
+          <p className="">
+              <b>Situation #1</b> – If you previously emailed letter #1 to the principal or letter #2 to the Superintendent and school board members please click HERE.
+          </p>
+          <p className="">
+              <b>Situation #2</b> - You previously emailed letter #3 to the Superintendent and school board members please click HERE.
+          </p>
+          <br /><br />
+          <p className="">
+              Long story short, now that a bully’s record of abusing others can no longer be kept secret and can be accessed and laid on the table for all to see, no school board will allow it’s board members or their school district to be publicly disgraced on social media or local media so an undisciplined bully can abuse other students. School boards will also not allow one bully to carry the district deep into the legal liability swamp by repeatedly bullying others. This will not happen anywhere.
+In most cases what will happen is board members will give the directive that priority #1 is to shut down every bully before the situation reaches the point where any media gets involved or there is any potential legal liability resulting from the bully’s abuse of others.
+The end result will be a bully free school environment protected and maintained by the “4 strikes and you’re out” standard. A bully-free school also offers the highest protection against bullycides and revenge school shootings.
+ The Bully Periscope is an independent, 3rd party system that functions automatically and completely on its own. Nobody, including town administrators or school administrators, has any type of authority or control over this system.
+If you feel that your school’s bully discipline policy is to lenient we provide an excellent Bully Discipline Policy that can be viewed on the BULLY PERISCOPE DISCIPLINE POLICY tab in the MORE section.
+If you are a teacher or staff member please click on the Teachers and Staff Members tab to see how you can use The Bully Periscope System just as students can.
+If you are the parent of a dating aged daughter The Bully Periscope can also be a valuable tool for you. Not all bullies abuse their girlfriends, but a very high number do. If you have suspicions or doubts about anyone that your daughter is dating, get a Bully Periscope report on them and see if they have any history of abusing others.
+              </p>
       </Col>
     </Row>
   )
