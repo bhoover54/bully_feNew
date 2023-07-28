@@ -1,6 +1,6 @@
 import { Col, Row } from "reactstrap"
 
-const TrustedAdult = () => {
+const TrustedAdt = () => {
   return (
     <Row>
       <Col xs="12" md="8" className="mx-auto">
@@ -29,5 +29,5 @@ const TrustedAdult = () => {
   )
 }
 
-export default TrustedAdult
+export default TrustedAdt
 
