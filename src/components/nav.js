@@ -46,11 +46,11 @@ const Nav = () => {
                   <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav>More</DropdownToggle>
                     <DropdownMenu right>
-                      <DropdownItem>
+                      </*<DropdownItem>
                         <Link className=" text-dark" to="/torpedo">
                           Torpedo Test
                         </Link>
-                      </DropdownItem>
+                      </DropdownItem>*/>
                       <DropdownItem>
                         <Link className=" text-dark" to="/policy">
                           Bully Periscope Discipline Policy
