@@ -3,9 +3,9 @@ import { Row } from "reactstrap"
 const Letter1 = () => {
   return (
     <Row>
-      <p className="">
+      <p className=""><b><i>
           If this is your situation please complete the letter below, (LETTER #1) copy and paste it in an email it to the principal with the heading Immediate Attention Requested 
-          along with a copy of your bully’s Periscope Report.
+          along with a copy of your bully’s Periscope Report.</i></b>
       </p>
       <p className="py-4">
         ________________ Date <br /><br />
