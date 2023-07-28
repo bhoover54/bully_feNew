@@ -6,8 +6,7 @@ const Torpedo = () => {
       <Col xs="12" md="8" className="mx-auto">
         <h3 className="mb-3">Torpedo Your Bully</h3>
         <p className="">
-            Moms and trusted adults are the heroes behind The Bully Periscope System. Moms are the ones who encourage their children to use The Bully Periscope and report every bullying incident that they experience or witness……...trusted adults allow students to report these incidents without anyone knowing who they are………..not even the principal……...once the report has been filed the trusted adult becomes a “bully liaison” and passes questions and answers back and forth between the student and principal if any additional information on the bully is needed……..Trusted adults can live many states away and they can be family, friends, church youth leaders, scoutmasters, or anyone else who will help the child being victimized to stop this abuse……….
-            Here is the best way to help a student as their trusted adult:             
+            The following procedures empowers parents, single or otherwise, to quickly end any abuse their child is enduring from bullying at school, and to stop this harm without needing assistance from anyone. We call this action Torpedoing Your Bully.             
         </p>
         <p className="">
             1- Choose a username and password and sign up. Place the letters TA at the end of the username.
