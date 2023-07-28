@@ -93,7 +93,12 @@ const Home = () => {
            And please remember, The Bully Periscope doesn’t charge a direct fee for all it provides, it relies on contributions to function. Please contribute 
           so your school’s students can continue to have this great protection.
         </p>
-      </Col>     
+      </Col>  
+
+      <Col xs="12" md="8" className="mx-auto">
+        <h3 className="mb-3">Bully Periscope Report </h3>
+        <iframe width="100%" height="500" src="https://youtu.be/rB7W1Wf2J7c" title="Bully Periscope Report Details" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      </Col>
 
       <h2 className="text-center p-3">
         Ask yourself............would your child be safer at school with or without The Bully Periscope?
