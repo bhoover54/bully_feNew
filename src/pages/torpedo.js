@@ -9,7 +9,7 @@ const Torpedo = () => {
             The following procedures empowers parents, single or otherwise, to quickly end any abuse their child is enduring from bullying at school, and to stop this harm without needing assistance from anyone. We call this action Torpedoing Your Bully.             
         </p>
         <p className="">
-            1- Choose a username and password and sign up. Place the letters TA at the end of the username.
+            The First Time the Bully Strikes:
         </p>
         <p className="">
             2- Download a verification video (this is all explained on the bully report form page)    
