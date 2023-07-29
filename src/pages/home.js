@@ -81,7 +81,8 @@ const Home = () => {
           Inside this system is a special function called The Bully Periscope Report. This report gives parents of bully victims, for the FIRST TIME EVER, full access to every other bully report that has been filed against their bully during this school year. Making this bullying information public forces everyone who has any responsibility or role in the situation to be fully accountable for their negligence or failure. When the bully’s records can't be hidden, everything changes 180 degrees; and quickly.
          </p> 
         <p className="">
-          Please view this video link below detailing the valuable information that a Bully Periscope Report provides you and then please review the TORPEDO YOUR BULLY tab for step by step, easy to follow instructions for utilizing this information from your bully’s Periscope Report to quickly stop their abuse.
+          Please view this video link below detailing the valuable information that a Bully Periscope Report provides you and then please review the TORPEDO YOUR BULLY tab for step by step, easy to follow instructions for utilizing this information from your bully’s Periscope Report to quickly stop their abuse.<br />
+          <a href="/report-details">Video Link</a>
          </p> 
         <p className="">
           Any parent who has suffered through useless meetings with school administrators attempting to stop the bullying of their child and sleepless nights feeling the guilt of forcing their child to go to school and face this abuse can testify as to how important and valuable this information is.
@@ -95,12 +96,12 @@ const Home = () => {
         </p>
       </Col>  
 
-      <Col xs="12" md="8" className="mx-auto">
+      {/* <Col xs="12" md="8" className="mx-auto">
         <h3 className="mb-3">Bully Periscope Report Details </h3>
         <iframe width="100%" height="400" src="https://youtube.com/embed/rB7W1Wf2J7c" title="Bully Periscope Report Details" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
         {/*<iframe width="100%" height="500" src="https://www.youtube.com/watch?v=rB7W1Wf2J7c" title="Bully Periscope Report Details" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>*/}
-      </Col>
+      </Col> */}
 
       <h2 className="text-center p-3">
         Ask yourself............would your child be safer at school with or without The Bully Periscope?
