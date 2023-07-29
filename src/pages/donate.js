@@ -65,10 +65,10 @@ const Donate = () => {
             <label className="py-1">Zip Code</label>
             <Input bsSize="sm" className="shadow-none" name="zipcode" />
           </div>
-          <div className="mb-2">
+          {/* <div className="mb-2">
             <label className="py-1">Full Name</label>
             <Input bsSize="sm" className="shadow-none" name="name" onChange={handleChange} />
-          </div>
+          </div> */}
           <div className="mb-2">
             <label className="py-1">Amount</label>
             <Input bsSize="sm" className="shadow-none" name="amount" type="number" onChange={handleChange} />
