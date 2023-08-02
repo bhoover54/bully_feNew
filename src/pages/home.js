@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { Col, Row, ModalBody, Modal } from "reactstrap"
-import banner from "../assets/images/banner.jpeg"
+import banner from "../assets/images/banner2.jpg"
 import AppContext from "../misc/appContext"
 const Home = () => {
   const { logout } = useContext(AppContext)
