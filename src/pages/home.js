@@ -78,10 +78,10 @@ const Home = () => {
           At the same time, The Bully Periscope also quickly shuts down bullies who are abusing others. Here is how:
         </p>
         <p className="">
-          Inside this system is a special function called The Bully Periscope Report. This report gives parents of bully victims, for the FIRST TIME EVER, full access to every other bully report that has been filed against their bully during this school year. Making this bullying information public forces everyone who has any responsibility or role in the situation to be fully accountable for their negligence or failure. When the bully’s records can't be hidden, everything changes 180 degrees; and quickly.
+          Inside this system is a special function called The Bully Periscope Report. This report gives parents of bully victims, for the FIRST TIME EVER, full access to all bully reports that have been filed against their bully by others during this school year. Making this bullying information public forces everyone who has any responsibility or role in the situation to be fully accountable for their negligence or failure. When the bully’s records can't be hidden, everything changes 180 degrees; and quickly.
          </p> 
         <p className="">
-          Please view this video link below detailing the valuable information that a Bully Periscope Report provides you and then please review the TORPEDO YOUR BULLY tab for step by step, easy to follow instructions for utilizing this information from your bully’s Periscope Report to quickly stop their abuse.<br />
+          Please view the video link below to see a sample Bully Periscope Report and the valuable information that a Bully Periscope Report provides you. Once you have viewed this video please click on the TORPEDO YOUR BULLY tab for step by step, easy to follow instructions for utilizing this information from your bully’s Periscope Report to quickly stop their abuse.<br />
           <a href="/report-details">Video Link</a>
          </p> 
         <p className="">
@@ -91,8 +91,7 @@ const Home = () => {
            If you are a parent or youth leader of any kind, please review the information in the MESSAGES TO MOMS tab, it is vitally important that youth leaders and parents follow the instructions provided there.
         </p> 
         <p className="">
-           And please remember, The Bully Periscope doesn’t charge a direct fee for all it provides, it relies on contributions to function. Please contribute 
-          so your school’s students can continue to have this great protection.
+           The Bully Periscope relies on your contributions to function. Please contribute so your school’s students can continue to have this great protection. 
         </p>
       </Col>  
 
