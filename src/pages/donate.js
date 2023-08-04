@@ -54,6 +54,11 @@ const Donate = () => {
     <Row>
       <Col md="6" className="mx-auto mb-5">
         <form onSubmit={handleSubmit(submit)}>
+          <p className="">
+            Please remember, The Bully Periscope relies on your contributions to function. 
+            Please contribute so your school’s students can continue to have this great protection.
+          </p>
+          <br />
           {/* <p>
             School Name: <span className="fw-bold text-uppercase"> {school.school_name} </span>
           </p> */}
