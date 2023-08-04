@@ -38,7 +38,7 @@ const Home = () => {
             Teachers and Staff Members
           </Link>
           {/*<Link className="rounded p-2 d-block my-1" to="/summary" onClick={() => toggle()}>
-            BullyBloxx Quick Summary
+            The Bully Periscope Quick Summary
           </Link> */}
           <Link to="/report" className="rounded p-2 d-block my-1">
             Report Bullying / Threats / Weapons
@@ -50,7 +50,7 @@ const Home = () => {
             CONTRIBUTE for your school's Bully Periscope protection
           </Link>
           {/* <Link className="rounded p-2 d-block my-1" to="/media">
-            BullyBloxx Video Library
+            The Bully Periscope Video Library
           </Link>
           <Link to="/walk-through" className="rounded p-2 d-block my-1">
             Bully Periscope Detailed Tutorial
@@ -97,7 +97,7 @@ const Home = () => {
 
       <h2 className="text-center p-3">
         Ask yourself............would your child be safer at school with or without The Bully Periscope?
-        {/* To learn how BullyBloxx shuts down bullying in your schools{" "}
+        {/* To learn how The Bully Periscope shuts down bullying in your schools{" "}
         <Link to="/media">CLICK HERE</Link>{" "} */}
       </h2>
 
