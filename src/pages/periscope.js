@@ -32,7 +32,7 @@ const Periscope = () => {
     const key = document.getElementsByClassName("stripe-key")[0]
     setData(data)
     setLoading(true)
-    setMessage("Searching Report once the report is found, accessing the report costs $25")
+    setMessage("Searching Report once the report is found, accessing the report costs $12.85")
     try {
       const response = await fetch(`${BASE_URL}periscope`, {
         method: "POST",
@@ -213,11 +213,11 @@ const Periscope = () => {
                 Access Report
               </Button>
               <p className="text-center p-2 text-dark fw-bold">{message}</p>
-              <StripeCheckout onSubmit={submit} className="form-control stripe-key invisible" allowRememberMe stripeKey="pk_live_51KOluiEvT7coUybkk0w1l1FcznFHxuMwtNmvB0a3Km9RROS2ZRehenWquqIQAqEBDNtjnVBadiKSVrMIGY16S9yY00LRMjIpdf" amount={10 * 100} label="Checkout" token={search} name="checkout" />
+              <StripeCheckout onSubmit={submit} className="form-control stripe-key invisible" allowRememberMe stripeKey="pk_live_51KOluiEvT7coUybkk0w1l1FcznFHxuMwtNmvB0a3Km9RROS2ZRehenWquqIQAqEBDNtjnVBadiKSVrMIGY16S9yY00LRMjIpdf" amount={12.85 * 100} label="Checkout" token={search} name="checkout" />
             </>
           )}
         </form>
-        {pay ? <StripeCheckout className="form-control  stripe-key invisible" allowRememberMe stripeKey="pk_live_51KOluiEvT7coUybkk0w1l1FcznFHxuMwtNmvB0a3Km9RROS2ZRehenWquqIQAqEBDNtjnVBadiKSVrMIGY16S9yY00LRMjIpdf" amount={10 * 100} label="Checkout" token={search} name="checkout" /> : ""}
+        {pay ? <StripeCheckout className="form-control  stripe-key invisible" allowRememberMe stripeKey="pk_live_51KOluiEvT7coUybkk0w1l1FcznFHxuMwtNmvB0a3Km9RROS2ZRehenWquqIQAqEBDNtjnVBadiKSVrMIGY16S9yY00LRMjIpdf" amount={12.85 * 100} label="Checkout" token={search} name="checkout" /> : ""}
       </Col>
       {result.length && report ? (
         <Col md="6">
