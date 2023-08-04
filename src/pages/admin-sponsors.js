@@ -59,9 +59,9 @@ const AdminSponsor = () => {
         html: `Dear  ${report?.realtor_name || report.user.first_name} <br/><br/>
         Thank you for stepping up for your community by serving as a Bully Shut Down Ambassador. Your Sponsorship request for ${report.school_name} with zip code ${report.zip_code}  has been approved. <br/><br/>
 
-        Private donations ranging from $300 - $650 may already be in your school’s wallet depending on the demographics and location of your school. You can determine this by simply entering your school and it’s zip code in the search engine on the Get Your School Protected tab on the home page of bullybloxx.com <br/><br/>
+        Private donations ranging from $300 - $650 may already be in your school’s wallet depending on the demographics and location of your school. You can determine this by simply entering your school and it’s zip code in the search engine on the Get Your School Protected tab on the home page of The Bully Periscope.com <br/><br/>
 
-        Now that you are approved as a Bully Shutdown Ambassador please go to the home page of bullybloxx.com , click on the more tab at the top and then click on the Bully Shutdown Ambassador tab that drops dow to access all information for moving forward.<br/><br/>
+        Now that you are approved as a Bully Shutdown Ambassador please go to the home page of thebullyperiscope.com , click on the more tab at the top and then click on the Bully Shutdown Ambassador tab that drops dow to access all information for moving forward.<br/><br/>
         
         Your Sponsorship request for ${report.school_name} with zip code ${report.zip_code} has been approved`
       }),
