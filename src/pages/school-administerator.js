@@ -26,14 +26,15 @@ const SchoolAdmin = () => {
       <p>
         Here is a checklist of suggestions that we recommend for administrators to utilize to help transition students over to attending a Bully Periscope protected, bully-free school. Hold an assembly and tell all the students these things:
         <ul>
-          <li>The community has decided to make the school bully free and the BullyBloxx system has been activated to accomplish this. Explain what bully-free means.</li>
+          <li>The community has decided to make the school bully free and The Bully Periscope system has been activated to accomplish this. Explain what bully-free means.</li>
           <li>Explain to the students how the system works and make sure that every one understands the one rule of conduct that will protect them from having any bullying issues; “keep your hands and your words to yourself”. Just do that one thing and there will be no problems.</li>
           <li>Explain to the students that if any of them think they are above the rules of bullying, they will quickly find themselves attending alternative school. There is just no avoiding it, explain to them why.</li>
         </ul>
       </p>
       <p>
         What administrators should recognize is this; once a student accumulates more than 3 bully reports, the potential liability to the school from the bully’s mis-behavior quickly compounds. Any tragedy that can be linked to a bully’s abuse where the bully has been reported numerous times to
-        administrators can easily result in staggering damages awarded against the school. It is also worth noting that it is obvious, by the large amounts of damages that are being awarded, that our courts want this bullying in schools to stop. Our courts see the damage to our society from this
+        administrators can easily result in staggering damages awarded against the school.
+        <p>If you follow the news you have seen where the parents of Mallory Grossman just received in July, 2023 $9.1 million in damages from The Rockway Township School District due to their negligence in protecting Mallory from bullies in the school. </p> It is also worth noting that it is obvious, by the large amounts of damages that are being awarded, that our courts want this bullying in schools to stop. Our courts see the damage to our society from this
         bullying and they support ending it, especially local courts. With this as a guide, the best thing to do is to adopt a firm bully discipline policy like the one The Bully Periscope provides and enforce it. If a student refuses to keep their hands and their words to themselves, they are going to expel
         themselves simply by the numbers of incidents they will get reported for. No student can have an unlimited number of bullying strikes, there has to be a red line. Of course, school administrators must investigate to confirm the accusation of bullying and it will be their decision as to
         whether it is or not; nothing has changed there. At The Bully Periscope we believe that our laws in America ensures every student an opportunity for a safe place to learn, but the student must display a certain level of self-control and behavior in order to utilize this safe place to learn. We
