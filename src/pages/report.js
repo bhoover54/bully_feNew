@@ -218,7 +218,7 @@ const Report = () => {
                   {reportType === "bullying" && (
                     <p>
                       Dear Principal, <br />
-                      I have information involving bullying in your school. I am reporting this information through The BullyBloxx system. If you are not familiar with The BullyBloxx system please go to www.bullybloxx.com for details. Once you are on the site if you will click on the MORE tab at the
+                      I have information involving bullying in your school. I am reporting this information through The The Bully Periscope system. If you are not familiar with The The Bully Periscope system please go to www.thebullyperiscope.com for details. Once you are on the site if you will click on the MORE tab at the
                       top of the Home page and the School Administrator tab will drop down providing you with complete information for addressing this report. <br />
                       Also, on the MORE tab is a drop down that says SEARCH VIDEOS where you can view my identification video under my username <span className="fw-bold"> {reporter.username || ""} </span> where you can see my face and hear my voice. <br />
                       If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you.
@@ -229,7 +229,7 @@ const Report = () => {
                       To report a WEAPON IN THE SCHOOL complete the form below and click SUBMIT REPORT. The report will automatically be sent by email to the principal: Dear Principal,
                       <br />
                       <br />
-                      Dear Principal, <br />I have information involving a weapon in your school. I am reporting this information through The BullyBloxx system. If you are not familiar with The BullyBloxx system please go to www.bullybloxx.com for details. Once you are on the site you will click on
+                      Dear Principal, <br />I have information involving a weapon in your school. I am reporting this information through The The Bully Periscope system. If you are not familiar with The The Bully Periscope system please go to www.thebullyperiscope.com for details. Once you are on the site you will click on
                       the MORE tab at the top of the Home page and the School Administrator tab will drop down providing you with complete information for addressing this report. Also, on the MORE tab is a drop down that says SEARCH VIDEOS where you can view my identification video under my username{" "}
                       <span className="fw-bold"> {reporter.username || ""} </span>
                       where you can see my face and hear my voice. <br /> If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you.
@@ -240,7 +240,7 @@ const Report = () => {
                     <p>
                       To report a school shooter or any type threat against a school, complete the form below and click SUBMIT REPORT. The report will automatically be sent by email to the principal: <br />
                       <br />
-                      Dear Principal, <br />I have information involving a threat against your school. I am reporting this information through The BullyBloxx system. If you are not familiar with The BullyBloxx system please go to www.bullybloxx.com for details. Once you are on the site if you will
+                      Dear Principal, <br />I have information involving a threat against your school. I am reporting this information through The The Bully Periscope system. If you are not familiar with The The Bully Periscope system please go to www.thebulluperiscope.com for details. Once you are on the site if you will
                       click on the MORE tab at the top of the Home page and the School Administrator tab will drop down providing you with complete information for addressing this report. Also, on the MORE tab is a drop down that says SEARCH VIDEOS where you can view my identification video under my
                       username <span className="fw-bold"> {reporter.username || ""} </span> where you can see my face and hear my voice. <br /> If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you
                     </p>
@@ -840,7 +840,7 @@ const Report = () => {
 
         <Modal isOpen={openModal} toggle={toggle}>
           <ModalBody>
-            <p>The first step to reporting bullying through BullyBloxx is to confirm that the incident meets the standards to be labeled a bullying incident. Below are some very simple guidelines that will quickly help you determine if an incident meets these requirements:</p>
+            <p>TThe first step to reporting bullying through The Bully Periscope is to confirm that the incident meets the standards to be labeled a bullying incident. Below are some very simple guidelines that will quickly help you determine if an incident meets these requirements:</p>
             <p>It IS NOT BULLYING when:</p>
             <ol>
               <li>Someone says or does something hurtful UNINTENTIONALLY and they only do it once; that is called being RUDE.</li>
@@ -861,7 +861,7 @@ const Report = () => {
 
         <Modal isOpen={modal} toggle={toggle}>
           <ModalBody>
-            Your report has been received and entered into the BullyBloxx system/database. Thank You for using BullyBloxx to protect your school. Please encourage every student to use BullyBloxx to report any bullying that they see or threats that they become aware of. Your community appreciates you
+            Your report has been received and entered into the The Bully Periscope system/database. Thank You for using The Bully Periscope to protect your school. Please encourage every student to use The Bully Periscope to report any bullying that they see or threats that they become aware of. Your community appreciates you
             being an upstander.
           </ModalBody>
         </Modal>
