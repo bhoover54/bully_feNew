@@ -189,8 +189,10 @@ const Report = () => {
     <Row>
       <Col md="6" className="mx-auto mb-5">
         <form onSubmit={handleSubmit(report)} encType="multipart/form-data">
-          <p>The first step to filing any report form is to upload a verification video. This is simply a "selfie" video of you making the following statement: Hello, my username is ________ and today's date is _________</p>
-          <p>Videos can be used over and over and are good for one year and then must be replaced.</p>
+          <p>The first step to filing any type of report form is to upload a verification video. This is simply a "selfie" video of you making the following statement: Hello, my username is ________ and today's date is _________ This few seconds video helps prevent fraudulent bully reporting or sabotage of The Bully Periscope system. 
+              Click <a href="https://www.thebullyperiscope.com/verification" target="_blank">HERE</a> to see a quick sample of a Verification Video.
+          </p>
+          <br />
           <Input bsSize="sm" className="mb-3 shadow-none" type="file" name="video" placeholder="Video Evidence? " onChange={preview} accept="video/*" role="button" />
 
           {upload ? (
