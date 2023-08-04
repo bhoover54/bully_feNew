@@ -240,7 +240,7 @@ const Report = () => {
                     <p>
                       To report a school shooter or any type threat against a school, complete the form below and click SUBMIT REPORT. The report will automatically be sent by email to the principal: <br />
                       <br />
-                      Dear Principal, <br />I have information involving a threat against your school. I am reporting this information through The The Bully Periscope system. If you are not familiar with The The Bully Periscope system please go to www.thebulluperiscope.com for details. Once you are on the site if you will
+                      Dear Principal, <br />I have information involving a threat against your school. I am reporting this information through The The Bully Periscope system. If you are not familiar with The The Bully Periscope system please go to www.thebullyperiscope.com for details. Once you are on the site if you will
                       click on the MORE tab at the top of the Home page and the School Administrator tab will drop down providing you with complete information for addressing this report. Also, on the MORE tab is a drop down that says SEARCH VIDEOS where you can view my identification video under my
                       username <span className="fw-bold"> {reporter.username || ""} </span> where you can see my face and hear my voice. <br /> If you have any further questions or need to immediately verify this information please contact me and I will provide the answers for you
                     </p>
@@ -250,10 +250,8 @@ const Report = () => {
                       type="radio"
                       name="trustee"
                       className="me-2"
-                      value="I am
-                    a trustee reporting this information for another individual who requests to not
-                    be identified; however, I will act as an intermediary so you can immediately
-                    access any additional information you need."
+                      value="I am a trustee reporting this information for another student / individual who wishes to not be identified; 
+                            however, I will act as an intermediary so you can immediately access any additional information you need."
                       onChange={handleEv}
                     />{" "}
                     I am a trustee reporting this information for another individual who requests to not be identified; however, I will act as an intermediary so you can immediately access any additional information you need.
