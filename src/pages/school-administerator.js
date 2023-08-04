@@ -5,9 +5,9 @@ const SchoolAdmin = () => {
     <Row>
       <h3>School Administrator</h3>
       <p>If your school is committed to providing a bully-free environment for your students, you and the other administrators will find this system to be very valuable. Here is how it works:</p>
-      <p>All BullyBloxx reports are received by school administrators through their school email accounts.</p>
+      <p>All Bully Periscope reports are received by school administrators through their school email accounts.</p>
       <p>Any adult, 21 years of age or older, can file a bullying report, school shooter threat or weapon at school report as a trusted adult for a student.</p>
-      <p>On that report will be the trusted adult’s name, email address and telephone number. When they file the report they also upload a verification video into the BullyBloxx database and the username for this verification video is also on the report.</p>
+      <p>On that report will be the trusted adult’s name, email address and telephone number. When they file the report they also upload a verification video into The Bully Periscope database and the username for this verification video is also on the report.</p>
       <p>
         By typing in the username in the Search Videos tab under the MORE link on the thebullyperiscope.com home page, you can review the adult’s video which will allow you to see their face and hear their voice. This eliminates fake or fraudulent reporting. If you find yourself in an urgent or emergency
         situation where you need an immediate, face to face verification with the person filing the report, contact the person through their cell phone and use FaceTime to immediately I.D. and verify them. The ability to immediately access and verify the person filing the report can easily mean life
@@ -36,7 +36,7 @@ const SchoolAdmin = () => {
         administrators can easily result in staggering damages awarded against the school. It is also worth noting that it is obvious, by the large amounts of damages that are being awarded, that our courts want this bullying in schools to stop. Our courts see the damage to our society from this
         bullying and they support ending it, especially local courts. With this as a guide, the best thing to do is to adopt a firm bully discipline policy like the one The Bully Periscope provides and enforce it. If a student refuses to keep their hands and their words to themselves, they are going to expel
         themselves simply by the numbers of incidents they will get reported for. No student can have an unlimited number of bullying strikes, there has to be a red line. Of course, school administrators must investigate to confirm the accusation of bullying and it will be their decision as to
-        whether it is or not; nothing has changed there. At BullyBloxx we believe that our laws in America ensures every student an opportunity for a safe place to learn, but the student must display a certain level of self-control and behavior in order to utilize this safe place to learn. We
+        whether it is or not; nothing has changed there. At The Bully Periscope we believe that our laws in America ensures every student an opportunity for a safe place to learn, but the student must display a certain level of self-control and behavior in order to utilize this safe place to learn. We
         believe it is not guaranteed, it must be earned with proper behavior including not abusing others.
       </p>
     </Row>
