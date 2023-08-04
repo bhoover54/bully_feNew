@@ -33,7 +33,7 @@ const SchoolAdmin = () => {
       </p>
       <p>
         What administrators should recognize is this; once a student accumulates more than 3 bully reports, the potential liability to the school from the bully’s mis-behavior quickly compounds. Any tragedy that can be linked to a bully’s abuse where the bully has been reported numerous times to
-        administrators can easily result in staggering damages awarded against the school.
+        administrators can easily result in staggering damages awarded against the school.</p>
         <p>If you follow the news you have seen where the parents of Mallory Grossman just received in July, 2023 $9.1 million in damages from The Rockway Township School District due to their negligence in protecting Mallory from bullies in the school. </p> It is also worth noting that it is obvious, by the large amounts of damages that are being awarded, that our courts want this bullying in schools to stop. Our courts see the damage to our society from this
         bullying and they support ending it, especially local courts. With this as a guide, the best thing to do is to adopt a firm bully discipline policy like the one The Bully Periscope provides and enforce it. If a student refuses to keep their hands and their words to themselves, they are going to expel
         themselves simply by the numbers of incidents they will get reported for. No student can have an unlimited number of bullying strikes, there has to be a red line. Of course, school administrators must investigate to confirm the accusation of bullying and it will be their decision as to
