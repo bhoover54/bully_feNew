@@ -75,7 +75,7 @@ const Home = () => {
           The Bully Periscope, by design, empowers communities and parents with the ability to implement and enforce this “4 strikes and you’re out” standard, creating a bully-free environment in their schools. 
         </p>
         <p className="">
-          At the same time, The Bully Periscope also quickly shuts down bullies who are abusing others. Here is how:
+          The Bully Periscope creates this bully-free school environment by quickly shutting down bullies who are abusing others. Here is how:
         </p>
         <p className="">
           Inside this system is a special function called The Bully Periscope Report. This report gives parents of bully victims, for the FIRST TIME EVER, full access to all bully reports that have been filed against their bully by others during this school year. Making this bullying information public forces everyone who has any responsibility or role in the situation to be fully accountable for their negligence or failure. When the bully’s records can't be hidden, everything changes 180 degrees; and quickly.
