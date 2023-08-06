@@ -7,7 +7,8 @@ const Torpedo = () => {
       <Col xs="12" md="8" className="mx-auto">
         <h3 className="mb-3">Torpedo Your Bully</h3>
         <p className="">
-              The following procedures empowers every parent, from single parents to traditional parents and all other parents, to quickly end any abuse their child is enduring from bullying at school, and to stop this harm completely on their own, without needing assistance, of any kind, from anyone. We call this action Torpedoing Your Bully.          
+            The following procedures empowers every parent, from single parents to traditional parents and all other parents, to quickly end any abuse their child is enduring 
+            from bullying at school, and to stop this harm completely on their own, without needing assistance, of any kind, from anyone. We call this action Torpedoing Your Bully.          
         </p>
         <p className="">
             <b>The First Time the Bully Strikes:</b>
