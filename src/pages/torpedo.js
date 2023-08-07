@@ -70,6 +70,7 @@ const Torpedo = () => {
               of the school administrators individually as well as multiple parents of the bullies. This type of broad legal liability has become the norm when students have tragic outcomes from bullying. 
           </p>
           <p className="">
+          <p className="">
               In most cases what will happen is board members will give the directive that priority #1 is to shut down every bully before the situation reaches the point where any media gets involved 
               or there is any potential legal liability resulting from the bully’s abuse of others.
           </p>
