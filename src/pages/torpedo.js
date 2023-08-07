@@ -70,6 +70,10 @@ const Torpedo = () => {
               of the school administrators individually as well as multiple parents of the bullies. This type of broad legal liability has become the norm when students have tragic outcomes from bullying. 
           </p>
           <p className="">
+                Courts have significantly broadened the list of defendants that victims and their families can file 
+              lawsuits against. In June, 2023 the family of Levi Creech, a 14 year old 9th grader from Benton, La. who was bullied to death at school, filed 17 separate lawsuits against the school district, some 
+              of the school administrators individually as well as multiple parents of the bullies. This type of broad legal liability has become the norm when students have tragic outcomes from bullying. 
+          </p>
           <p className="">
               In most cases what will happen is board members will give the directive that priority #1 is to shut down every bully before the situation reaches the point where any media gets involved 
               or there is any potential legal liability resulting from the bully’s abuse of others.
