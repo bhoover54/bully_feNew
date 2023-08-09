@@ -885,8 +885,14 @@ const Report = () => {
 
         <Modal isOpen={modal} toggle={toggle}>
           <ModalBody>
-            Your report has been received and entered into the The Bully Periscope system/database. Thank You for using The Bully Periscope to protect your school. Please encourage every student to use The Bully Periscope to report any bullying that they see or threats that they become aware of. Your community appreciates you
-            being an upstander.
+            Your report has been received and entered into the Bully Periscope System/database. Thank You for using The Bully Periscope to protect your school. 
+            <br /><br />
+            Please encourage every student to use The Bully Periscope to report any bullying that they see or threats that they become aware of. 
+            <br /><br />
+            Please share the link  www.thebullyperiscope.com on all social media so every parent will be informed about this protection. 
+            <br /><br />
+            And please remember, The Bully Periscope relies on contributions to function. Please click <a href="/dontate"><b>HERE</b></a> and contribute so your school’s students can continue to have this great protection.
+
           </ModalBody>
         </Modal>
       </Col>
