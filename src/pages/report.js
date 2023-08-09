@@ -254,7 +254,7 @@ const Report = () => {
                             however, I will act as an intermediary so you can immediately access any additional information you need."
                       onChange={handleEv}
                     />{" "}
-                    I am a trustee reporting this information for another student / individual who requests to not be identified; however, I will act as an intermediary so you can immediately access any additional information you need.
+                    AI am a trustee reporting this information for another student / individual who requests to not be identified; however, I will act as an intermediary so you can immediately access any additional information you need.
                   </label>
                   <label className="py-1">
                     <Input
@@ -265,7 +265,7 @@ const Report = () => {
                     behalf."
                       onChange={handleEv}
                     />{" "}
-                    I am not a trustee for someone else, I am submitting this information on my own behalf.
+                    BI am not a trustee for someone else, I am submitting this information on my own behalf.
                   </label>
 
                   <Icontroller
