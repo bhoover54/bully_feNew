@@ -254,7 +254,7 @@ const Report = () => {
                             however, I will act as an intermediary so you can immediately access any additional information you need."
                       onChange={handleEv}
                     />{" "}
-                    AI am a trustee reporting this information for another student / individual who requests to not be identified; however, I will act as an intermediary so you can immediately access any additional information you need.
+                    I am a trustee reporting this information for another student / individual who requests to not be identified; however, I will act as an intermediary so you can immediately access any additional information you need.
                   </label>
                   <label className="py-1">
                     <Input
@@ -265,7 +265,7 @@ const Report = () => {
                     behalf."
                       onChange={handleEv}
                     />{" "}
-                    BI am not a trustee for someone else, I am submitting this information on my own behalf.
+                    I am not a trustee for someone else, I am submitting this information on my own behalf.
                   </label>
 
                   <Icontroller
@@ -315,7 +315,7 @@ const Report = () => {
                   <Icontroller type="text" placeholder="My e-mail address" value={reporter.email} disabled /> */}
                   <div className="mb-2">
                     <label className="py-1">Name of School</label>
-                    <input className="mb-1 form-control shadow-none" value={""} disabled />
+                    <input className="mb-1 form-control shadow-none" value={""} enabled />
                     {/*<Select options={schoolOPt} onChange={chooseSchool} />*/}
                   </div>
                   <Icontroller
