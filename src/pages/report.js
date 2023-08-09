@@ -318,6 +318,10 @@ const Report = () => {
                     <input className="mb-1 form-control shadow-none" value={""} enabled />
                     {/*<Select options={schoolOPt} onChange={chooseSchool} />*/}
                   </div>
+                  <div className="mb-2">
+                    <label className="py-1">School Zip Code</label>
+                    <input className="mb-1 form-control shadow-none" value={""} enabled />
+                  </div>
                   <Icontroller
                     type="email"
                     name="email"
