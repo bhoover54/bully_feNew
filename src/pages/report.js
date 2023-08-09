@@ -891,7 +891,7 @@ const Report = () => {
             <br /><br />
             Please share the link  www.thebullyperiscope.com on all social media so every parent will be informed about this protection. 
             <br /><br />
-            And please remember, The Bully Periscope relies on contributions to function. Please click <a href="/dontate"><b>HERE</b></a> and contribute so your school’s students can continue to have this great protection.
+            And please remember, The Bully Periscope relies on contributions to function. Please click <a href="/donate"><b>HERE</b></a> and contribute so your school’s students can continue to have this great protection.
 
           </ModalBody>
         </Modal>
