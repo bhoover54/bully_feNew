@@ -314,7 +314,7 @@ const Report = () => {
                   <Icontroller type="text" placeholder="My cell phone number" value={reporter.phone} disabled />
                   <Icontroller type="text" placeholder="My e-mail address" value={reporter.email} disabled /> */}
                   
-                  <Icontroller
+                  {/*<Icontroller
                     name="school_name"
                     type="text"
                     placeholder="Name of School"
@@ -333,16 +333,16 @@ const Report = () => {
                     others={{
                       required: false
                     }}
-                  />
-                  {/*<div className="mb-2">
+                  />*/}
+                  <div className="mb-2">
                     <label className="py-1">Name of School</label>
                     <input className="mb-1 form-control shadow-none" value={""} enabled />
-                    <Select options={schoolOPt} onChange={chooseSchool} />
+                    {/*<Select options={schoolOPt} onChange={chooseSchool} />*/}
                   </div>
                   <div className="mb-2">
                     <label className="py-1">School Zip Code</label>
                     <input className="mb-1 form-control shadow-none" value={""} enabled />
-                  </div>*/}
+                  </div>
                   <Icontroller
                     type="email"
                     name="email"
