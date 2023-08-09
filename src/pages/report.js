@@ -313,7 +313,27 @@ const Report = () => {
                   {/* <Icontroller type="text" placeholder="My Full Name" value={reporter.fullName} disabled />
                   <Icontroller type="text" placeholder="My cell phone number" value={reporter.phone} disabled />
                   <Icontroller type="text" placeholder="My e-mail address" value={reporter.email} disabled /> */}
-                  <div className="mb-2">
+                  <Icontroller
+                    name="school_name"
+                    type="text"
+                    placeholder="Name of School"
+                    register={register}
+                    errors={errors}
+                    others={{
+                      required: false
+                    }}
+                  />
+                  <Icontroller
+                    name="zip_code"
+                    type="text"
+                    placeholder="School Zip Code"
+                    register={register}
+                    errors={errors}
+                    others={{
+                      required: false
+                    }}
+                  />
+                  {/*<div className="mb-2">
                     <label className="py-1">Name of School</label>
                     <input className="mb-1 form-control shadow-none" value={""} enabled />
                     {/*<Select options={schoolOPt} onChange={chooseSchool} />*/}
@@ -321,7 +341,7 @@ const Report = () => {
                   <div className="mb-2">
                     <label className="py-1">School Zip Code</label>
                     <input className="mb-1 form-control shadow-none" value={""} enabled />
-                  </div>
+                  </div>*/}
                   <Icontroller
                     type="email"
                     name="email"
