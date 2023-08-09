@@ -254,7 +254,7 @@ const Report = () => {
                             however, I will act as an intermediary so you can immediately access any additional information you need."
                       onChange={handleEv}
                     />{" "}
-                    I am a trustee reporting this information for another individual who requests to not be identified; however, I will act as an intermediary so you can immediately access any additional information you need.
+                    I am a trustee reporting this information for another student / individual who requests to not be identified; however, I will act as an intermediary so you can immediately access any additional information you need.
                   </label>
                   <label className="py-1">
                     <Input
@@ -315,7 +315,8 @@ const Report = () => {
                   <Icontroller type="text" placeholder="My e-mail address" value={reporter.email} disabled /> */}
                   <div className="mb-2">
                     <label className="py-1">Name of School</label>
-                    <Select options={schoolOPt} onChange={chooseSchool} />
+                    <input className="mb-1 form-control shadow-none" value={school_name} disabled />
+                    {/*<Select options={schoolOPt} onChange={chooseSchool} />*/}
                   </div>
                   <Icontroller
                     type="email"
