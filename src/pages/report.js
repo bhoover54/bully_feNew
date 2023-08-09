@@ -336,12 +336,12 @@ const Report = () => {
                   />*/}
                   <div className="mb-2">
                     <label className="py-1">Name of School</label>
-                    <input className="mb-1 form-control shadow-none" value={""} enabled />
+                    <input className="mb-1 form-control shadow-none" value={""} />
                     {/*<Select options={schoolOPt} onChange={chooseSchool} />*/}
                   </div>
                   <div className="mb-2">
                     <label className="py-1">School Zip Code</label>
-                    <input className="mb-1 form-control shadow-none" value={""} enabled />
+                    <input className="mb-1 form-control shadow-none" value={""} />
                   </div>
                   <Icontroller
                     type="email"
