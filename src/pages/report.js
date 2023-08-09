@@ -315,7 +315,7 @@ const Report = () => {
                   <Icontroller type="text" placeholder="My e-mail address" value={reporter.email} disabled /> */}
                   <div className="mb-2">
                     <label className="py-1">Name of School</label>
-                    <input className="mb-1 form-control shadow-none" value={school_name} disabled />
+                    <input className="mb-1 form-control shadow-none" value={""} disabled />
                     {/*<Select options={schoolOPt} onChange={chooseSchool} />*/}
                   </div>
                   <Icontroller
