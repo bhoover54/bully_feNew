@@ -106,8 +106,8 @@ const Report = () => {
 
       const formData = new FormData()
       formData.append("upload", upload)
-      formData.append("school_name", chosenSchool.zap)
-      formData.append("zip_code", chosenSchool.value)
+      formData.append("school_name", schoolname)
+      formData.append("zip_code", zipcode)
       const j = Object.keys(data)
       const k = Object.keys(otherData)
 
@@ -335,14 +335,14 @@ const Report = () => {
                     }}
                   />*/}
                   <div className="mb-2">
-                    <label className="py-1">Name of School</label>
-                    <input className="mb-1 form-control shadow-none" value={""} />
-                    {/*<Select options={schoolOPt} onChange={chooseSchool} />*/}
+                    <label className="py-1">School Name</label>
+                    <Input bsSize="sm" className="shadow-none" name="schoolname" />
                   </div>
                   <div className="mb-2">
-                    <label className="py-1">School Zip Code</label>
-                    <input className="mb-1 form-control shadow-none" value={""} />
+                    <label className="py-1">Zip Code</label>
+                    <Input bsSize="sm" className="shadow-none" name="zipcode" />
                   </div>
+                  {/*<Select options={schoolOPt} onChange={chooseSchool} />*/}
                   <Icontroller
                     type="email"
                     name="email"
