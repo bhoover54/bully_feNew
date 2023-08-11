@@ -314,34 +314,39 @@ const Report = () => {
                   <Icontroller type="text" placeholder="My cell phone number" value={reporter.phone} disabled />
                   <Icontroller type="text" placeholder="My e-mail address" value={reporter.email} disabled /> */}
                   
-                  {/*<Icontroller
-                    name="school_name"
-                    type="text"
-                    placeholder="Name of School"
-                    register={register}
-                    errors={errors}
-                    others={{
-                      required: false
-                    }}
-                  />
                   <Icontroller
-                    name="zip_code"
-                    type="text"
-                    placeholder="School Zip Code"
-                    register={register}
-                    errors={errors}
-                    others={{
-                      required: false
-                    }}
-                  />*/}
-                  <div className="mb-2">
+              type="text"
+              name="school_name"
+              placeholder="School name"
+              register={register}
+              errors={errors}
+              others={{
+                required: true
+              }}
+              message="School name is required"
+            />
+            <Icontroller
+              type="number"
+              num={true}
+              name="zip_code"
+              placeholder="Zip code"
+              register={register}
+              errors={errors}
+              others={{
+                required: true,
+                maxLength: 5,
+                minLength: 5
+              }}
+              message="Input a valid zip code"
+            />
+                {/*<div className="mb-2">
                     <label className="py-1">School Name</label>
                     <Input bsSize="sm" className="shadow-none" name="schoolname" />
                   </div>
                   <div className="mb-2">
                     <label className="py-1">Zip Code</label>
                     <Input bsSize="sm" className="shadow-none" name="zipcode" />
-                  </div>
+                  </div>*/}
                   {/*<Select options={schoolOPt} onChange={chooseSchool} />*/}
                   <Icontroller
                     type="email"
