@@ -71,7 +71,7 @@ const Torpedo = () => {
             1 - Post all communications and letters along with the Bully Periscope Report for this bully on all social media so other parents and citizens are made aware of the dangerous levels of bullying that administrators are allowing in the schools and the level of neglect involving the handling of this particular bully.   
           </p>
           <p className="">
-            2- Provide all communications and letters along with the Bully Periscope Report for this bully to all local media outlets so the entire community is made aware of the dangerous levels of bullying that administrators are allowing in the schools and the level of neglect involving the handling of this particular bully.
+            2 - Provide all communications and letters along with the Bully Periscope Report for this bully to all local media outlets so the entire community is made aware of the dangerous levels of bullying that administrators are allowing in the schools and the level of neglect involving the handling of this particular bully.
           </p>                        
           <br /><br />
           <p className="">
