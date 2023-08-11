@@ -22,13 +22,13 @@ const Report = () => {
     register,
     formState: { errors }
   } = useForm()
-  {/*const {
+  const {
     handleSubmit2,
-    control,
+    control2,
     reset,
     register2,
     formState: { errors }
-  } = useForm()*/}
+  } = useForm()
 
   const [upload, setUpload] = useState("")
   const [loading, setLoading] = useState(false)
