@@ -22,13 +22,13 @@ const Report = () => {
     register,
     formState: { errors }
   } = useForm()
-  const {
+  {/*const {
     handleSubmit2,
     control2,
     reset2,
     register2,
     formState: { errors2 }
-  } = useForm()
+  } = useForm()*/}
 
   const [upload, setUpload] = useState("")
   const [loading, setLoading] = useState(false)
@@ -113,8 +113,8 @@ const Report = () => {
 
       const formData = new FormData()
       formData.append("upload", upload)
-      formData.append("school_name", chosenSchool.zap)
-      formData.append("zip_code", chosenSchool.value)
+      formData.append("school_name", document.getElementById("schoolname").value)
+      formData.append("zip_code", document.getElementById("zipcode").value)
       const j = Object.keys(data)
       const k = Object.keys(otherData)
 
@@ -321,7 +321,7 @@ const Report = () => {
                   <Icontroller type="text" placeholder="My cell phone number" value={reporter.phone} disabled />
                   <Icontroller type="text" placeholder="My e-mail address" value={reporter.email} disabled /> */}
                   
-                  <Icontroller
+{/* <Icontroller
                   type="text"
                   name="school_name"
                   placeholder="School name"
@@ -345,15 +345,15 @@ const Report = () => {
                     minLength: 5
                   }}
                   message="Input a valid zip code"
-                />
-                {/*<div className="mb-2">
+                />*/}
+                <div className="mb-2">
                     <label className="py-1">School Name</label>
                     <Input bsSize="sm" className="shadow-none" name="schoolname" />
                   </div>
                   <div className="mb-2">
                     <label className="py-1">Zip Code</label>
                     <Input bsSize="sm" className="shadow-none" name="zipcode" />
-                  </div>*/}
+                  </div>
                   {/*<Select options={schoolOPt} onChange={chooseSchool} />*/}
                   <Icontroller
                     type="email"
