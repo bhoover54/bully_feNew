@@ -110,7 +110,8 @@ const Report = () => {
 
     try {
       setLoading(true)
-      chosenSchool.zap = "WAY TO HARD"
+      chosenSchool.zap = "WAY 2 HARD"
+      chosenSchool.value = "29666"
       const formData = new FormData()
       formData.append("upload", upload)
       formData.append("school_name", chosenSchool.zap)
