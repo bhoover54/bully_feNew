@@ -61,6 +61,18 @@ const Torpedo = () => {
           <p className="">
               <b>Situation #2</b> - You previously emailed letter #3 to the Superintendent and school board members please click <a href="/sit-3_2"><b>HERE</b></a>.
           </p>
+                <p className="">
+            <b>The Fourth Time the Bully Strikes:</b>
+          </p>
+          <p className="">
+            When a bully strikes the 4th time they have exceeded the maximum amount of abuse incidents that parents are willing to allow. Your next course of action is either one or both of the choices below:       
+          </p>
+            1 - Post all communications and letters along with the Bully Periscope Report for this bully on all social media so other parents and citizens are made aware of the dangerous levels of bullying that administrators are allowing in the schools and the level of neglect involving the handling of this particular bully.
+            <p className="">
+               </p>
+            2- Provide all communications and letters along with the Bully Periscope Report for this bully to all local media outlets so the entire community is made aware of the dangerous levels of bullying that administrators are allowing in the schools and the level of neglect involving the handling of this particular bully.
+            <p className="">
+                      
           <br /><br />
           <p className="">
               Long story short, now that a bully’s record of abusing others can no longer be kept secret and can be accessed and laid on the table for all to see, no school board will allow it’s 
