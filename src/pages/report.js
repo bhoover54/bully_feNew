@@ -22,6 +22,13 @@ const Report = () => {
     register,
     formState: { errors }
   } = useForm()
+  const {
+    handleSubmit2,
+    control,
+    reset,
+    register2,
+    formState: { errors }
+  } = useForm()
 
   const [upload, setUpload] = useState("")
   const [loading, setLoading] = useState(false)
@@ -318,7 +325,7 @@ const Report = () => {
                   type="text"
                   name="school_name"
                   placeholder="School name"
-                  register={register}
+                  register={register2}
                   errors={errors}
                   others={{
                     required: true
@@ -330,7 +337,7 @@ const Report = () => {
                   num={true}
                   name="zip_code"
                   placeholder="Zip code"
-                  register={register}
+                  register={register2}
                   errors={errors}
                   others={{
                     required: true,
