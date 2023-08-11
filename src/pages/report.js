@@ -27,7 +27,7 @@ const Report = () => {
     control2,
     reset2,
     register2,
-    formState: { errors }
+    formState: { errors2 }
   } = useForm()
 
   const [upload, setUpload] = useState("")
