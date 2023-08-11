@@ -25,7 +25,7 @@ const Report = () => {
   const {
     handleSubmit2,
     control2,
-    reset,
+    reset2,
     register2,
     formState: { errors }
   } = useForm()
