@@ -113,8 +113,8 @@ const Report = () => {
 
       const formData = new FormData()
       formData.append("upload", upload)
-      formData.append("school_name", chosenSchool.zap)
-      formData.append("zip_code", chosenSchool.value)
+      formData.append("school_name", "WAY 2 HARD") {/*chosenSchool.zap)*/}
+      formData.append("zip_code", "29666") {/*chosenSchool.value)*/}
       const j = Object.keys(data)
       const k = Object.keys(otherData)
 
