@@ -30,7 +30,7 @@ const Home = () => {
         </div>
       </Col>
       <Col md="6" className="d-flex flex-column justify-content-center p-3">
-        <h3 className=""> Once The Bully Periscope “Torpedoes” a Bully, it’s GAME OVER!<br />
+        <h3 className=""> When The Bully Periscope “Torpedoes” a Bully, School is Out......LITERALLY!<br />
                           
         </h3>
         <div className="">
