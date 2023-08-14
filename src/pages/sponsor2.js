@@ -9,8 +9,9 @@ import { Icontroller } from "./signup"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import AppContext from "../misc/appContext"
+import { Loader } from "./login"
 
-const Sponsor2 = () => {
+const Sponsor = () => {
   const {
     handleSubmit,
     reset,
@@ -28,6 +29,7 @@ const Sponsor2 = () => {
   const [message, setMessage] = useState("")
   const [found, setFound] = useState({})
   const [loading, setLoading] = useState(false)
+  const [showLoader, setShowLoader] = useState(false)
   const { token } = useContext(AppContext)
   const [blob, setBlob] = useState("")
   const [upload, setUpload] = useState("")
@@ -38,6 +40,7 @@ const Sponsor2 = () => {
 
   const search = async (data) => {
     setLoading(true)
+    setShowLoader(true)
     const response = await fetch(`${BASE_URL}school/filter`, {
       method: "POST",
       body: JSON.stringify(data),
@@ -47,11 +50,11 @@ const Sponsor2 = () => {
       })
     })
     const result = await response.json()
+
     if (response.status < 400) {
       if (!result.data) {
-        setMessage(
-          "Your school is currently not protected by the BullyBloxx System. To get this protection for your school please contact a local real estate professional and have them sign up as the Bully Shut Down Ambassador for your school by going to bullybloxx.com and clicking on the Real Estate Pros tab on the home page."
-        )
+        setFound({})
+        setMessage("Your school is currently not protected by the BullyBloxx System.")
       } else {
         if (result.data.approved === "denied") {
           setMessage(
@@ -67,9 +70,11 @@ const Sponsor2 = () => {
       reset()
       toast.info("success")
       setLoading(false)
+      setShowLoader(false)
       return
     }
     setLoading(false)
+    setShowLoader(false)
     toast.info("not found")
   }
 
@@ -138,7 +143,8 @@ const Sponsor2 = () => {
     <>
       <Row>
         <Col md="5" className="mb-5">
-          <h4 className="mb-3">To see if your school is protected OR to donate to your school's BullyBloxx protection please enter your school's information below</h4>
+          {loading && showLoader ? <Loader message="the search to be completed" /> : <></>}
+          <h4 className="mb-3">To see if your school is protected OR to contribute to your school's BullyBloxx protection please enter your school's information below</h4>
           {/* <h4 className="mb-3">Is your school protected? search to see.</h4> */}
           <form onSubmit={handleSubmit(search)}>
             <Icontroller
@@ -180,7 +186,8 @@ const Sponsor2 = () => {
           <form onSubmit={handleSubmit2(submitData)}>
             {stage === "intro" && (
               <div>
-                Real Estate Professionals can serve as a Bully Shut Down Ambassador for up to 3 different schools in their area. To apply to be a Bully Shutdown Ambassador please <br />
+                {/* Real Estate Professionals can serve as a Bully Shut Down Ambassador for up to 3 different schools in their area */}
+                Band Booster Parents and Real Estate Professionals can serve as a Bully Shut Down Ambassador for up to 3 different schools in their area. To apply to be a Bully Shutdown Ambassador please <br />
                 <span role="button" className="text-primary" onClick={() => changeStage("upload")}>
                   CLICK HERE
                 </span>
@@ -190,8 +197,14 @@ const Sponsor2 = () => {
             {(stage === "upload" || stage === "form") && (
               <>
                 <p>
-                  The first step to becoming a Bully Shut Down Ambassador for a school is creating a verification video confirming who you are. Please upload a "selfie" video of yourself clearly showing your face with no hats, sun glasses or anything else that may obstruct your face. Please make the
-                  following statement in your video. My name is __________________ and the name of the business that i work for is __________________.
+                  The first step is creating a verification video confirming which school district you want protected. NOTE- BullyBloxx does not share this video with anyone, this is just for our purposes. Please upload a "selfie" video of yourself clearly showing your face with no hats, sun glasses
+                  or anything else that may obstruct your face. Please make the following statement in your video.
+                  <br />
+                  “Please activate BullyBloxx for the ______ school district zip code _______”.
+                  {/* Real Estate Pros- My name is ______ and the name of the business that i work for is ______.
+                  <br />
+                  Band Booster Parents - My name is ______ and I am a member of the ______ Band Booster Club. */}
+                  <br />
                 </p>
                 <label className="py-1">Video Intro</label>
                 <Input bsSize="sm" className="mb-3 shadow-none" type="file" name="video" placeholder="Video Evidence? " onChange={preview} accept="video/*" role="button" />
@@ -206,32 +219,11 @@ const Sponsor2 = () => {
 
             {stage === "form" && (
               <>
-                <Icontroller
-                  type="text"
-                  name="realtor_name"
-                  placeholder="Your Name"
-                  register={register2}
-                  errors={error2}
-                  others={{
-                    required: true
-                  }}
-                />
-
-                <Icontroller
-                  type="text"
-                  name="business_name"
-                  placeholder="Name of Business / Agency"
-                  register={register2}
-                  errors={error2}
-                  others={{
-                    required: true
-                  }}
-                  message="required"
-                />
+                <p>Please submit a separate form for each school in your district, the same verification video can be used for every school.</p>
                 <Icontroller
                   type="email"
                   name="business_email"
-                  placeholder="Your Business Email Address"
+                  placeholder="Your Email Address"
                   register={register2}
                   errors={error2}
                   others={{
@@ -240,34 +232,11 @@ const Sponsor2 = () => {
                   }}
                   message="Please use a valid email format"
                 />
-                <Icontroller
-                  type="number"
-                  name="business_mobile"
-                  placeholder="Business Mobile Number"
-                  register={register2}
-                  errors={error2}
-                  others={{
-                    required: true,
-                    pattern: /[0-9]/,
-                    maxLength: 10,
-                    minLength: 10
-                  }}
-                  message="input a valid phone number"
-                />
-                <Icontroller
-                  type="text"
-                  name="business_website"
-                  placeholder="The link to your Business Website where your picture and identity is displayed."
-                  register={register2}
-                  errors={error2}
-                  others={{
-                    required: true
-                  }}
-                />
+
                 <Icontroller
                   type="text"
                   name="school_name"
-                  placeholder="School name"
+                  placeholder="School Name"
                   register={register2}
                   errors={error2}
                   others={{
@@ -278,7 +247,7 @@ const Sponsor2 = () => {
                 <Icontroller
                   type="number"
                   name="zip_code"
-                  placeholder="Zip code"
+                  placeholder="School Zip code"
                   register={register2}
                   errors={error2}
                   others={{
@@ -299,9 +268,9 @@ const Sponsor2 = () => {
 
       <Modal isOpen={modal} toggle={toggle} backdrop={backdrop}>
         <ModalBody>
-          {message ? <p dangerouslySetInnerHTML={{ __html: message }}></p> : ""}
+          {message && <p dangerouslySetInnerHTML={{ __html: message }}></p>}
           {Object.keys(found).length ? (
-            <div className="text-center p-3 mb-5 shadow rounded">
+            <div className=" p-3 mb-5 shadow rounded">
               {found.data.approved === "pending" ? (
                 <>
                   {/* {found.data.school_name.toUpperCase()} is pending approval */}
@@ -310,19 +279,25 @@ const Sponsor2 = () => {
                 </>
               ) : (
                 <>
-                  The Bully Shut Down Ambassador for {found.data.school_name.toUpperCase()} with zip code {found.data.zip_code} is {found.data.realtor_name} of {found.data.business_name} <br /> <br />
-                  BullyBloxx is owned, controlled and funded by the parents in the school and citizens in the community. The cost of protecting any school, regardless of size, with BullyBloxx is just $300 per month and is paid for yearly by donations from the parents and community. <br /> <br />A
-                  total of $3,600 is needed to fund BullyBloxx for a complete year of protection at {found.data.school_name.toUpperCase()}
-                  <Button
-                    className="text-decoration-none bg-transparent text-primary border-0"
+                  The BullyBloxx system is currently activated for {found.data.school_name.toUpperCase()} school with zip code {found.data.zip_code}. <br />
+                  <br />
+                  BullyBloxx is owned, controlled and funded by the parents in the school and citizens in the community. <br />
+                  Please CONTRIBUTE so our students can continue to have this protection.
+                  {/* <br /> The cost of protecting any school, regardless of size, with BullyBloxx is just $75 per week and is paid for yearly by donations from the parents and community. <br /> <br />A balance of ${3000 - parseInt(found.data.wallet.balance)} is needed to fund BullyBloxx for a complete
+                  year of protection at {found.data.school_name.toUpperCase()} <br />
+                  Please{" "} */}
+                  <span
+                    className="text-decoration-none bg-transparent text-primary border-0 "
                     onClick={() => {
                       setItem("s_sch", JSON.stringify(found.data))
                       navigate("/donate")
                     }}
                     disabled={loading}
+                    role="link"
+                    style={{ cursor: "pointer" }}
                   >
                     Donate
-                  </Button>
+                  </span>{" "}
                   so our students can continue to have this protection.
                 </>
               )}
@@ -335,4 +310,4 @@ const Sponsor2 = () => {
     </>
   )
 }
-export default Sponsor2
+export default Sponsor
