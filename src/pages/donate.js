@@ -23,7 +23,7 @@ const Donate = () => {
   const handleChange = (e) => setData({ ...data, [e.target.name]: e.target.value })
 
   const handleToken = async (token) => {
-   setData({ ...data, school_id: school.id })
+    // setData({ ...data, school_id: school.id })
 
     const resData = data
     resData.school_id = school.id
@@ -54,26 +54,16 @@ const Donate = () => {
     <Row>
       <Col md="6" className="mx-auto mb-5">
         <form onSubmit={handleSubmit(submit)}>
-          <p className="">
-            Please remember, The Bully Periscope relies on your contributions to function. 
-            Please contribute so your school’s students can continue to have this great protection.
+          <p>
+            School ID: <span className="fw-bold text-uppercase"> {school.school_id} </span>
           </p>
-          <br />
-          {/* <p>
+          <p>
             School Name: <span className="fw-bold text-uppercase"> {school.school_name} </span>
-          </p> */}
+          </p>
           <div className="mb-2">
-            <label className="py-1">School Name</label>
-            <Input bsSize="sm" className="shadow-none" name="schoolname" />
-          </div>
-          <div className="mb-2">
-            <label className="py-1">Zip Code</label>
-            <Input bsSize="sm" className="shadow-none" name="zipcode" />
-          </div>
-          {/* <div className="mb-2">
             <label className="py-1">Full Name</label>
             <Input bsSize="sm" className="shadow-none" name="name" onChange={handleChange} />
-          </div> */}
+          </div>
           <div className="mb-2">
             <label className="py-1">Amount</label>
             <Input bsSize="sm" className="shadow-none" name="amount" type="number" onChange={handleChange} />
