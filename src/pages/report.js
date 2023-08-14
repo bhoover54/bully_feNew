@@ -110,12 +110,12 @@ const Report = () => {
 
     try {
       setLoading(true)
-      chosenSchool.zap = document.getElementById('schoolname').value;
-      chosenSchool.value = document.getElementById('zipcode').value;
+      {/*chosenSchool.zap = document.getElementById('schoolname').value;
+      chosenSchool.value = document.getElementById('zipcode').value;*/}
       const formData = new FormData()
       formData.append("upload", upload)
-      formData.append("school_name", chosenSchool.zap)
-      formData.append("zip_code", chosenSchool.value)
+      formData.append("school_name", document.getElementById('schoolname').value;) {/*chosenSchool.zap)*/}
+      formData.append("zip_code", document.getElementById('zipcode').value;) {/*chosenSchool.value)*/}
       const j = Object.keys(data)
       const k = Object.keys(otherData)
 
