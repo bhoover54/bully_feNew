@@ -290,7 +290,7 @@ const Sponsor = () => {
                     className="text-decoration-none bg-transparent text-primary border-0 "
                     onClick={() => {
                       setItem("s_sch", JSON.stringify(found.data))
-                      navigate("/donate2")
+                      navigate("/donate")
                     }}
                     disabled={loading}
                     role="link"
