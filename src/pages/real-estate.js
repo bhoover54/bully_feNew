@@ -10,7 +10,7 @@ const RealEstate = () => {
       </p>
 
       <p className="">
-        To submit a Bully Shutdown Ambassador request for a school / schools in your area please <Link to="/sponsor"> CLICK HERE</Link>
+        To submit a Bully Shutdown Ambassador request for a school / schools in your area please <Link to="/sponsor2"> CLICK HERE</Link>
       </p>
     </Row>
   )
