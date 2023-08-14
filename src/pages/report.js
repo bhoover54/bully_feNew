@@ -114,8 +114,8 @@ const Report = () => {
       chosenSchool.value = document.getElementById('zipcode').value;*/}
       const formData = new FormData()
       formData.append("upload", upload)
-      formData.append("school_name", document.getElementById('schoolname').value;) {/*chosenSchool.zap)*/}
-      formData.append("zip_code", document.getElementById('zipcode').value;) {/*chosenSchool.value)*/}
+      formData.append("school_name", chosenSchool.zap)
+      formData.append("zip_code", chosenSchool.value)
       const j = Object.keys(data)
       const k = Object.keys(otherData)
 
@@ -355,7 +355,7 @@ const Report = () => {
                     <label className="py-1">Zip Code</label>
                     <Input bsSize="sm" className="shadow-none" name="zipcode" />
                   </div>
-                  {/*<Select options={schoolOPt} onChange={chooseSchool} />*/}
+                  <Select options={schoolOPt} onChange={chooseSchool} />
                   <Icontroller
                     type="email"
                     name="email"
