@@ -282,7 +282,7 @@ const Sponsor = () => {
                   The BullyBloxx system is currently activated for {found.data.school_name.toUpperCase()} school with zip code {found.data.zip_code}. <br />
                   <br />
                   BullyBloxx is owned, controlled and funded by the parents in the school and citizens in the community. <br />
-                  Please CONTRIBUTE so our students can continue to have this protection.
+                  Please CONTRIBUTE so our students can continue to have this protection. <br />
                   {/* <br /> The cost of protecting any school, regardless of size, with BullyBloxx is just $75 per week and is paid for yearly by donations from the parents and community. <br /> <br />A balance of ${3000 - parseInt(found.data.wallet.balance)} is needed to fund BullyBloxx for a complete
                   year of protection at {found.data.school_name.toUpperCase()} <br />
                   Please{" "} */}
@@ -290,7 +290,7 @@ const Sponsor = () => {
                     className="text-decoration-none bg-transparent text-primary border-0 "
                     onClick={() => {
                       setItem("s_sch", JSON.stringify(found.data))
-                      navigate("/donate")
+                      navigate("/donate2")
                     }}
                     disabled={loading}
                     role="link"
