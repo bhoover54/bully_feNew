@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import AppContext from "../misc/appContext"
 
-const Sponsor = () => {
+const Sponsor2 = () => {
   const {
     handleSubmit,
     reset,
@@ -335,4 +335,4 @@ const Sponsor = () => {
     </>
   )
 }
-export default Sponsor
+export default Sponsor2
