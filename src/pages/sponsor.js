@@ -54,7 +54,8 @@ const Sponsor = () => {
     if (response.status < 400) {
       if (!result.data) {
         setFound({})
-        setMessage("Your school is currently not protected by the BullyBloxx System.")
+        setMessage("Your school is currently not protected by The Bully Periscope System.")
+        setStage("form")
       } else {
         if (result.data.approved === "denied") {
           setMessage(
