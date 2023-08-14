@@ -22,13 +22,6 @@ const Report = () => {
     register,
     formState: { errors }
   } = useForm()
-  {/*const {
-    handleSubmit2,
-    control2,
-    reset2,
-    register2,
-    formState: { errors2 }
-  } = useForm()*/}
 
   const [upload, setUpload] = useState("")
   const [loading, setLoading] = useState(false)
@@ -321,32 +314,6 @@ const Report = () => {
                   {/* <Icontroller type="text" placeholder="My Full Name" value={reporter.fullName} disabled />
                   <Icontroller type="text" placeholder="My cell phone number" value={reporter.phone} disabled />
                   <Icontroller type="text" placeholder="My e-mail address" value={reporter.email} disabled /> */}
-                  
-{/* <Icontroller
-                  type="text"
-                  name="school_name"
-                  placeholder="School name"
-                  register={register2}
-                  errors={errors}
-                  others={{
-                    required: true
-                  }}
-                  message="School name is required"
-                />
-                <Icontroller
-                  type="number"
-                  num={true}
-                  name="zip_code"
-                  placeholder="Zip code"
-                  register={register2}
-                  errors={errors}
-                  others={{
-                    required: true,
-                    maxLength: 5,
-                    minLength: 5
-                  }}
-                  message="Input a valid zip code"
-                />*/}
                 <div className="mb-2">
                     <label className="py-1">School Name</label>
                     <Input bsSize="sm" className="shadow-none" name="schoolname" />
