@@ -12,6 +12,24 @@ import BASE_URL from "../misc/url"
 // import { Icontroller } from "./signup"
 
 const Donate = () => {
+// added
+  const [stage, setStage] = useState("intro")
+
+  const search = async (data) => {
+    setLoading(true)
+    setShowLoader(true)
+    const response = await fetch(`${BASE_URL}school/filter`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: new Headers({
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${getItem("bly_token")}`
+      })
+    })
+    const result = await response.json()
+  // End
+
+  
   const { handleSubmit, control, reset } = useForm()
   const school = JSON.parse(getItem("s_sch"))
   const [loading, setLoading] = useState(false)
