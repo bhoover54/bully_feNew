@@ -61,7 +61,7 @@ const Donate = () =>  {
           <br />
           {/* <p>
             School Name: <span className="fw-bold text-uppercase"> {school.school_name} </span>
-          </p> */}
+          </p> 
           <div className="mb-2">
             <label className="py-1">Your Email Address</label>
             <Input bsSize="sm" className="shadow-none" name="emailaddr" />
@@ -73,7 +73,45 @@ const Donate = () =>  {
           <div className="mb-2">
             <label className="py-1">Zip Code</label>
             <Input bsSize="sm" className="shadow-none" name="zipcode" />
-          </div>
+          </div>*/}
+
+          <Icontroller
+                  type="email"
+                  name="business_email"
+                  placeholder="Your Email Address"
+                  register={register2}
+                  errors={error2}
+                  others={{
+                    required: true,
+                    pattern: /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g
+                  }}
+                  message="Please use a valid email format"
+                />
+
+                <Icontroller
+                  type="text"
+                  name="school_name"
+                  placeholder="School Name"
+                  register={register2}
+                  errors={error2}
+                  others={{
+                    required: true
+                  }}
+                  message="required"
+                />
+                <Icontroller
+                  type="number"
+                  name="zip_code"
+                  placeholder="School Zip code"
+                  register={register2}
+                  errors={error2}
+                  others={{
+                    required: true,
+                    maxLength: 5,
+                    minLength: 5
+                  }}
+                  message="Input a valid zip code"
+                />
           {/* <div className="mb-2">
             <label className="py-1">Full Name</label>
             <Input bsSize="sm" className="shadow-none" name="name" onChange={handleChange} />
