@@ -63,10 +63,6 @@ const Donate = () =>
             School Name: <span className="fw-bold text-uppercase"> {school.school_name} </span>
           </p> */}
           <div className="mb-2">
-            <label className="py-1">Your Email Address</label>
-            <Input bsSize="sm" className="shadow-none" name="emailaddr" />
-          </div>
-          <div className="mb-2">
             <label className="py-1">School Name</label>
             <Input bsSize="sm" className="shadow-none" name="schoolname" />
           </div>
