@@ -9,7 +9,7 @@ import { Col, Row, Button, Input } from "reactstrap"
 // import useSchool from "../hooks/school.hook"
 import { getItem } from "../misc/helper"
 import BASE_URL from "../misc/url"
-// import { Icontroller } from "./signup"
+import { Icontroller } from "./signup"
 
 const Donate = () =>  {
   const {
