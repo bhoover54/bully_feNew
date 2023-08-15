@@ -11,7 +11,7 @@ import { getItem } from "../misc/helper"
 import BASE_URL from "../misc/url"
 // import { Icontroller } from "./signup"
 
-const Donate = () =>  
+const Donate = () =>  {
   const { handleSubmit, control, reset } = useForm()
   const school = JSON.parse(getItem("s_sch"))
   const [loading, setLoading] = useState(false)
