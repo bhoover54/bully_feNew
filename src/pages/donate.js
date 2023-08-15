@@ -12,7 +12,13 @@ import BASE_URL from "../misc/url"
 // import { Icontroller } from "./signup"
 
 const Donate = () =>  {
-  const { handleSubmit, control, reset } = useForm()
+  const {
+    handleSubmit,
+    reset,
+    register,
+    formState: { errors }
+  } = useForm()
+  //const { handleSubmit, control, reset } = useForm()
   const school = JSON.parse(getItem("s_sch"))
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
