@@ -79,8 +79,8 @@ const Donate = () =>  {
                   type="email"
                   name="business_email"
                   placeholder="Your Email Address"
-                  register={register2}
-                  errors={error2}
+                  register={register}
+                  errors={error}
                   others={{
                     required: true,
                     pattern: /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g
@@ -92,8 +92,8 @@ const Donate = () =>  {
                   type="text"
                   name="school_name"
                   placeholder="School Name"
-                  register={register2}
-                  errors={error2}
+                  register={register}
+                  errors={error}
                   others={{
                     required: true
                   }}
@@ -103,8 +103,8 @@ const Donate = () =>  {
                   type="number"
                   name="zip_code"
                   placeholder="School Zip code"
-                  register={register2}
-                  errors={error2}
+                  register={register}
+                  errors={error}
                   others={{
                     required: true,
                     maxLength: 5,
