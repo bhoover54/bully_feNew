@@ -11,25 +11,7 @@ import { getItem } from "../misc/helper"
 import BASE_URL from "../misc/url"
 // import { Icontroller } from "./signup"
 
-const Donate = () => {
-// added
-  const [stage, setStage] = useState("intro")
-
-  const search = async (data) => {
-    setLoading(true)
-    setShowLoader(true)
-    const response = await fetch(`${BASE_URL}school/filter`, {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: new Headers({
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${getItem("bly_token")}`
-      })
-    })
-    const result = await response.json()
-  // End
-
-  
+const Donate = () =>  
   const { handleSubmit, control, reset } = useForm()
   const school = JSON.parse(getItem("s_sch"))
   const [loading, setLoading] = useState(false)
@@ -80,6 +62,10 @@ const Donate = () => {
           {/* <p>
             School Name: <span className="fw-bold text-uppercase"> {school.school_name} </span>
           </p> */}
+          <div className="mb-2">
+            <label className="py-1">Your Email Address</label>
+            <Input bsSize="sm" className="shadow-none" name="emailaddr" />
+          </div>
           <div className="mb-2">
             <label className="py-1">School Name</label>
             <Input bsSize="sm" className="shadow-none" name="schoolname" />
