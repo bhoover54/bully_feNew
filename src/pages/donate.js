@@ -140,7 +140,7 @@ const Donate = () =>  {
           >
             Procced 
           </Button> */}
-          <StripeCheckout className="form-control" onSubmit={submit} allowRememberMe stripeKey="pk_live_51KOluiEvT7coUybkk0w1l1FcznFHxuMwtNmvB0a3Km9RROS2ZRehenWquqIQAqEBDNtjnVBadiKSVrMIGY16S9yY00LRMjIpdf" amount={data.amount * 100} label="Donate" token={handleToken} name="Donate" />
+          //<StripeCheckout className="form-control" onSubmit={submit} allowRememberMe stripeKey="pk_live_51KOluiEvT7coUybkk0w1l1FcznFHxuMwtNmvB0a3Km9RROS2ZRehenWquqIQAqEBDNtjnVBadiKSVrMIGY16S9yY00LRMjIpdf" amount={data.amount * 100} label="Donate" token={handleToken} name="Donate" />
         </form>
       </Col>
     </Row>
